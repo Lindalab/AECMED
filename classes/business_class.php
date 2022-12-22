@@ -17,7 +17,9 @@
             
             $sql = "INSERT INTO `business_details`(`business_id`, `number_of_employees`,`formalised_structure`, `sdg_alignment`) VALUES ('$business_id','$number_of_employees','$formalised_structure','$sdg_alignment')";
 
-            return $this->db_query($sql);
+            $this->db_query($sql);
+            
+            return mysqli_insert_id($this->db);
         }
 
         /**
