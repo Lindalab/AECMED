@@ -6,11 +6,13 @@
         /**
          * create new business 
          */
-        function create_business($date_started, $business_name, $business_location, $number_of_employees, $formalised_structure, $sector_of_business, $sdg_alignment, $department, $business_type, $business_description){
+        function create_business($date_started, $business_name, $business_email, $business_location, $number_of_employees, $formalised_structure, $sector_of_business, $sdg_alignment, $department, $business_type, $business_description){
             
             $sql = "";
 
-            return $this->db_query($sql);
+            $this->db_query($sql);
+            
+            return mysqli_insert_id($this->db);
         }
 
         /**
