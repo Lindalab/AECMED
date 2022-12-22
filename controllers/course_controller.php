@@ -52,6 +52,11 @@
         return $course->selet_all_course_student();
     }
 
+    function selet_a_course_student_ctr($course_id){
+        $course = new course;
+        return $course->selet_a_course_student($course_id);
+    }
+
     function select_a_course($course_id){
         $course = new course;
         return $course->select_a_course($course_id);
