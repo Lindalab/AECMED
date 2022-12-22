@@ -37,9 +37,9 @@
         return $event->select_event_type($event_type);
     }
 
-    function event_for_department_ctr(){
+    function event_for_department_ctr($department_id){
         $event = new event;
-        return $event->event_for_department();
+        return $event->event_for_department($department_id);
     }
 
     function event_for_department_a_year_ctr($department_id, $year){
