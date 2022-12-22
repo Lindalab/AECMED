@@ -50,7 +50,8 @@
 
         //list of event organised by department in a given year
         function event_for_department_a_year($department_id, $year){
-            $sql = "SELECT * FROM `events` WHERE `department_id`='$department_id' and `date_organized`='$year' ";
+            $sql = "SELECT *, EXTRACT(YEAR FROM date_organized) 
+            as years FROM `events` WHERE `department_id`='$department_id' and years ='$year' ";
             return $this->db_fetch_all($sql);
         }
 
