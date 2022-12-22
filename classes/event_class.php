@@ -43,15 +43,14 @@
 
         // list of event organised by a department
         function event_for_department($department_id){
-            $sql = "SELECT * FROM `events` WHERE `department_id`='$department_id'";
+            $sql = "SELECT * FROM `events`WHERE `department_id`='$department_id'";
             return $this->db_fetch_all($sql);
         }
 
 
         //list of event organised by department in a given year
         function event_for_department_a_year($department_id, $year){
-            $sql = "SELECT *, EXTRACT(YEAR FROM date_organized) 
-            as years FROM `events` WHERE `department_id`='$department_id' and years ='$year' ";
+            $sql = "SELECT * FROM `events` where EXTRACT(YEAR FROM date_organized)= '$year' and  `department_id`='$department_id'  ";
             return $this->db_fetch_all($sql);
         }
 
