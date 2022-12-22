@@ -56,4 +56,34 @@
         return $project->select_project_stakeholders($project_id);
     }
 
+    function insert_stakeholder_project($stakeholder_id, $project_id){
+        $project = new Project;
+
+        return $project->insert_stakeholder_project($stakeholder_id, $project_id);
+    }
+
+    function delete_stakeholder_project($stakeholder_id, $project_id){
+        $project = new Project;
+
+        return $project->delete_stakeholder_project($stakeholder_id, $project_id);
+    }
+
+    function update_stakeholder_project($stakeholder_id, $project_id){
+        $project = new Project;
+
+        return $project->update_stakeholder_project($stakeholder_id, $project_id);
+    }
+
+    function select_all_stakeholder_project(){
+        $project = new Project;
+
+        return $project->select_all_stakeholder_project();
+    }
+
+    function select_one_stakeholder_project($stakeholder_id, $project_id){
+        $project = new Project;
+
+        return $project->select_one_stakeholder_project($stakeholder_id, $project_id);
+    }
+
 ?>

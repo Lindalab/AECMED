@@ -184,5 +184,34 @@
             return $this->db_fetch_all($sql);
         }
 
+        /**
+         * stakeholder business
+         */
+        function stakeholder_business($business_id){
+            $sql = "";
+            return $this->db_fetch_all($sql);
+        }
+
+        function stakeholder_id_business($stakeholder_id){
+            $sql = "";
+            return $this->db_fetch_all($sql);
+        }
+
+        function insert_stakeholder_business($stakeholder_id, $business_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        function delete_stakeholder_business($stakeholder_id, $business_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        function update_stakeholder_business($stakeholder_id, $business_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+       
     }
 ?>

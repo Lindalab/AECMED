@@ -57,15 +57,30 @@
         return $course->selet_a_course_student($course_id);
     }
 
-    function select_a_course($course_id){
+    function select_a_course_ctr($course_id){
         $course = new course;
         return $course->select_a_course($course_id);
     }
 
-    function select_course_year($year){
+    function select_course_year_ctr($year){
         $course = new course;
         return $course->select_course_year($year);
     }
 
+
+    function stakeholder_modules(){
+        $course = new course;
+        return $course->stakeholder_modules();
+    }
+
+    function insert_stakeholder_modules_ctr($stakeholder_id, $module_id){
+        $course = new course;
+        return $course->insert_stakeholder_modules($stakeholder_id, $module_id);
+    }
+
+    function delete_stakeholder_modules_ctr($stakeholder_id, $module_id){
+        $course = new course;
+        return $course->delete_stakeholder_modules($stakeholder_id, $module_id);
+    }
 
 ?>

@@ -106,4 +106,29 @@
         $business = new Business;
         return $business->number_of_business_in_year($year);
     }
+
+    function stakeholder_business($business_id){
+        $business = new Business;
+        return $business->stakeholder_business($business_id);
+    }
+
+    function stakeholder_id_business($stakeholder_id){
+        $business = new Business;
+        return $business->stakeholder_id_business($stakeholder_id);
+    }
+
+    function insert_stakeholder_business_ctr($stakeholder_id, $business_id){
+        $business = new Business;
+        return $business->insert_stakeholder_business($stakeholder_id, $business_id);
+    }
+
+    function delete_stakeholder_business_ctr($stakeholder_id, $business_id){
+        $business = new Business;
+        return $business->delete_stakeholder_business($stakeholder_id, $business_id);
+    }
+
+    function update_stakeholder_business_ctr($stakeholder_id, $business_id){
+        $business = new Business;
+        return $business->update_stakeholder_business($stakeholder_id, $business_id);
+    }
 ?>

@@ -87,6 +87,27 @@
             return $this->db_fetch_all($sql);
         }
 
+        /**
+         * stakeholder modules
+         */
+        function stakeholder_modules(){
+            $sql = "";
+            return $this->db_fetch_all($sql);
+        }
+
+        function insert_stakeholder_modules($stakeholder_id, $module_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        function delete_stakeholder_modules($stakeholder_id, $module_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        
+
+
     }
 
 

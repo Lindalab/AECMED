@@ -45,16 +45,50 @@
             return $this->db_fetch_all($sql);
         }
 
+    
+
         function select_project_status($status){
             $sql = "";
 
             return $this->db_fetch_all($sql);
         }
 
+
+        // Srakeholder project
+
         function select_project_stakeholders($project_id){
             $sql = "";
             return $this->db_fetch_all($sql);
         }
+
+
+        
+        function insert_stakeholder_project($stakeholder_id, $project_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        function delete_stakeholder_project($stakeholder_id, $project_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        function update_stakeholder_project($stakeholder_id, $project_id){
+            $sql = "";
+            return $this->db_query($sql);
+        }
+
+        function select_all_stakeholder_project(){
+            $sql = "";
+            return $this->db_fetch_all($sql);
+        }
+
+        function select_one_stakeholder_project($stakeholder_id, $project_id){
+            $sql = "";
+            return $this->db_fetch_one($sql);
+        }
+
+    
 
     }
 
