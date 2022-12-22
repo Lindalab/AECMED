@@ -34,7 +34,7 @@ class Grant extends db_connection
         return $this->db_fetch_one($sql);
     }
 
-    // grant for a department
+    //list grant for a department
 
     function select_grant_for_dpt($department_id)
     {
@@ -67,6 +67,15 @@ class Grant extends db_connection
         return $this->db_fetch_one($sql);
     }
 
+    //list of grant for a department in a year
+    function grant_department_in_year($year){
+        $sql = "";
+
+        return $this->db_fetch_all($sql);
+    }
+
+
+
     // PROJECTS
 
     // Sum of funds for a project
@@ -77,15 +86,52 @@ class Grant extends db_connection
         return $this->db_fetch_one($sql);
     }
 
-    //list funds for a project
+
+    // list funds for a project
     function grant_for_project($project_id){
         $sql = "";
 
         return $this->db_fetch_all($sql);
     }
 
-    // lisr of  funds for a project in a year
+    // list of funds for a project in a year
     function grant_for_project_per_year($project_id, $year){
+        $sql = "";
 
+        return $this->db_fetch_all($sql);
+    }
+
+    // BUSINESS
+
+    // list of grant for business
+
+    function business_grant(){
+        $sql = "";
+
+        return $this->db_fetch_all($sql);
+    }
+
+
+    function grant_for_a_business($business_id){
+        $sql = "";
+
+        return $this->db_fetch_all($sql);
+    }
+
+    function grant_for_a_business_per_year($business_id, $year){
+        $sql = "";
+
+        return $this->db_fetch_all($sql);
+    }
+
+    function sum_of_business_grant($business_id){
+        $sql = "";
+
+        return $this->db_fetch_one($sql);
+    }
+
+    function sum_of_business_grant_per_year($business_id){
+        $sql = "";
+        return $this->db_fetch_one($sql);
     }
 }
