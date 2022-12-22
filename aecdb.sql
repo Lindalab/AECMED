@@ -37,6 +37,7 @@ CREATE TABLE `business` (
   `business_email` varchar(30) NOT NULL,
   `department_id` int(11) NOT NULL,
   `business_type` int(3) DEFAULT 0,
+  `sector` varchar(50) NOT NULL,
   `business_description` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -48,8 +49,8 @@ CREATE TABLE `business` (
 
 CREATE TABLE `business_details` (
   `business_id` int(11) NOT NULL,
+  `number_of_employees` int(11) NOT NULL,
   `formalised_structure` varchar(100) NOT NULL,
-  `sector_of_business` varchar(60) NOT NULL,
   `sdg_alignment` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

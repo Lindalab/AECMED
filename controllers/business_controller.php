@@ -2,14 +2,26 @@
 
     require_once("../classes/business_class.php");
 
-    function create_business_ctr($date_started, $business_name, $business_location, $number_of_employees, $formalised_structure, $sector_of_business, $sdg_alignment, $department, $business_type, $business_description){
+    function create_business_ctr($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
         $business = new Business;
-        return $business->create_business($date_started, $business_name, $business_location, $number_of_employees, $formalised_structure, $sector_of_business, $sdg_alignment, $department, $business_type, $business_description);
+        return $business->create_business($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description);
     }
 
-    function update_business_details_ctr($business_id, $date_started, $business_name, $business_location, $number_of_employees, $formalised_structure, $sector_of_business, $sdg_alignment, $department, $business_type, $business_description){
+    function create_business_details_ctr($business_id,$number_of_employees, $formalised_structure, $sdg_alignment){
         $business = new Business;
-        return $business->update_business_details($business_id, $date_started, $business_name, $business_location, $number_of_employees, $formalised_structure, $sector_of_business, $sdg_alignment, $department, $business_type, $business_description);
+        return $business->create_business_details($business_id,$number_of_employees, $formalised_structure, $sdg_alignment);
+    }
+
+
+
+    function update_business_ctr($business_id, $year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
+        $business = new Business;
+        return $business->update_business($business_id, $year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description);
+    }
+
+    function update_business_details_ctr($business_id,$number_of_employees, $formalised_structure, $sdg_alignment){
+        $business= new Business;
+        return $business->update_business_details($business_id,$number_of_employees, $formalised_structure, $sdg_alignment);
     }
 
     function delete_business_ctr($business_id){
@@ -74,9 +86,9 @@
         return $business->delete_business_revenue($business_id);
     }
 
-    function select_one_business_revenue(){
+    function select_one_business_revenue($business_id){
         $business = new Business;
-        return $business->select_one_business_revenue();
+        return $business->select_one_business_revenue($business_id);
     }
 
 
