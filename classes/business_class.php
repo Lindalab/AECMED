@@ -63,6 +63,29 @@
             return $this->db_fetch_one($sql);
         }
 
+        /**
+         * number of businesses currently in service
+         */
+
+        function number_of_businesses(){
+            $sql = "";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
+        /**
+         * businesses started in a particular year
+         */
+        function number_of_business_in_year($year){
+            $sql = "";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
 
 
         // BUSINESS REVENUE
