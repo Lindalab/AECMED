@@ -60,9 +60,9 @@
         return $business->total_one_business_revenue($business_id);
     }
 
-    function total_business_revenue_ctr($business_id){
+    function total_business_revenue_ctr(){
         $business = new Business;
-        return $business->total_business_revenue($business_id);
+        return $business->total_business_revenue();
     }
 
     function total_business_revenue_for_a_year_ctr($business_id, $year){

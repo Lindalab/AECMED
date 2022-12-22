@@ -17,9 +17,9 @@
             
             $sql = "INSERT INTO `business_details`(`business_id`, `number_of_employees`,`formalised_structure`, `sdg_alignment`) VALUES ('$business_id','$number_of_employees','$formalised_structure','$sdg_alignment')";
 
-            $this->db_query($sql);
             
-            return mysqli_insert_id($this->db);
+            
+            return $this->db_query($sql);
         }
 
         /**
@@ -133,8 +133,8 @@
          * total business revenue for a business 
          * all years
          */
-        function total_business_revenue($business_id){
-            $sql = "SELECT SUM(revenue_amount) FROM `business_revenue` WHERE `business_id`= '$business_id'";
+        function total_business_revenue(){
+            $sql = "SELECT SUM(revenue_amount) FROM `business_revenue`";
 
             return $this->db_fetch_one($sql);
         }
