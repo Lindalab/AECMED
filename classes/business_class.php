@@ -43,6 +43,11 @@
             return $this->db_query($sql);
         }
 
+        function select_one_business_email($email){
+            $sql = "SELECT * FROM `business` WHERE `business_email`='$email'";
+            return $this->db_fetch_one($sql);
+        }
+
         /**
          * select businesses for a particular dpt
          */
