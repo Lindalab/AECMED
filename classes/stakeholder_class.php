@@ -9,8 +9,8 @@
             return $this->db_query($sql);
         }
 
-        function update_stakeholder($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image){
-            $sql = "UPDATE `stakeholder` SET `first_name`='$fname',`last_name`='$lname',`stakeholderRole`='$role',`gender`='$gender',`email`='$email',`phone_number`='$phone_number',`stakeholder_image`=$stakeholder_image WHERE `stakeholder_id`='$stakeholder_id'";
+        function update_stakeholder($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number){
+            $sql = "UPDATE `stakeholder` SET `first_name`='$fname',`last_name`='$lname',`stakeholderRole`='$role',`gender`='$gender',`email`='$email',`phone_number`='$phone_number' WHERE `stakeholder_id`='$stakeholder_id'";
             return $this->db_query($sql);
         }
 
