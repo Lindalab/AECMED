@@ -12,7 +12,7 @@
     $root_dir = "../images/stakeholders";
     $upload_root_dir = "../images/stakeholders/";
     $file = $_FILES["stakeholder_image"];
-    $file_dest = $root_dir . "/" . basename(str_replace(' ', '',$file["name"]));
+    $file_dest = $root_dir . "/" . basename(str_replace(' ', '_',$file["name"]));
     $upload_file_dest = $upload_root_dir . basename(str_replace(' ', '_',$file["name"]));
     $file_type = strtolower(pathinfo($file_dest, PATHINFO_EXTENSION));
 
