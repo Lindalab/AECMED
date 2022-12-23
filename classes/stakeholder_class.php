@@ -33,8 +33,6 @@
             $sql = "SELECT * FROM `stakeholder` WHERE `email`='$email'";
             return $this->db_fetch_one($sql);
         }
-
-        
     }
 
 ?>
