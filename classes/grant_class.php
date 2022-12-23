@@ -134,4 +134,38 @@ class Grant extends db_connection
         $sql = "SELECT SUM(amount) FROM `business_grants` WHERE business_id='$business_id' and EXTRACT(YEAR FROM grants.date_received)= '$year' ";
         return $this->db_fetch_one($sql);
     }
+
+    /**
+     * Add project grant
+     * 
+     */
+
+     function add_grant_project(){
+
+     }
+
+     function delete_grant_project(){
+
+     }
+
+     function update_grant_project(){
+
+     }
+
+    /**
+     * business grant
+     * 
+     */
+
+     function add_business_grant(){
+
+     }
+
+     function update_business_grant(){
+
+     }
+
+     function delete_business_grant(){
+        
+     }
 }
