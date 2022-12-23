@@ -4,12 +4,12 @@
     class Department extends db_connection{
 
         function create_department($department_name){
-            $sql = "INSERT INTO `department`(`deparment_name`) VALUES ('$department_name')";
+            $sql = "INSERT INTO `department`(`department_name`) VALUES ('$department_name')";
             return $this->db_query($sql);
         }
 
         function update_department($department_id, $department_name){
-            $sql = "UPDATE `department` SET `deparment_name`=' $department_name' WHERE `department_id`='$department_id' ";
+            $sql = "UPDATE `department` SET `department_name`=' $department_name' WHERE `department_id`='$department_id' ";
             return $this->db_query($sql);
         }
 

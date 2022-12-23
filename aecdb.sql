@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `business` (
   `business_id` int(11) NOT NULL,
-  `date_started` date NOT NULL,
+  `year_started` year NOT NULL,
   `busines_name` varchar(50) DEFAULT NULL,
   `business_logo` varchar(100) NOT NULL,
   `business_location` varchar(50) DEFAULT NULL,
@@ -125,7 +125,7 @@ CREATE TABLE `course_student` (
 
 CREATE TABLE `department` (
   `department_id` int(11) NOT NULL,
-  `deparment_name` varchar(80) NOT NULL
+  `department_name` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -230,7 +230,8 @@ CREATE TABLE `stakeholder` (
   `stakeholderRole` int(11) NOT NULL,
   `gender` int(3) NOT NULL DEFAULT 0,
   `email` varchar(30) NOT NULL,
-  `phone_number` varchar(15) NOT NULL
+  `phone_number` varchar(15) NOT NULL,
+  `stakeholder_image` varchar(100) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

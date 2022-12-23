@@ -1,14 +1,14 @@
 <?php 
     require_once("../classes/stakeholder_class.php");
 
-    function create_stakeholder_ctr($fname, $lname, $role, $gender, $email, $phone_number){
+    function create_stakeholder_ctr($fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image){
         $user = new Stakeholder;
-        return $user->create_stakeholder($fname, $lname, $role, $gender, $email, $phone_number);
+        return $user->create_stakeholder($fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image);
     }
 
-    function update_stakeholder_ctr($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number){
+    function update_stakeholder_ctr($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image){
         $user = new Stakeholder;
-        return $user->update_stakeholder($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number);
+        return $user->update_stakeholder($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image);
     }
 
     function delete_stakeholder_ctr($stakeholder_id){
