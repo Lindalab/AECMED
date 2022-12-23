@@ -31,7 +31,7 @@
 
         // events done in one particular year 
         function select_all_event_in_year($year){
-            $sql = "";
+            $sql = "SELECT * FROM `events` where EXTRACT(YEAR FROM date_organized)= '$year'";
             return $this->db_fetch_all($sql);
         }
 
