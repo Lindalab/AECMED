@@ -2,10 +2,10 @@
 
     require_once("../classes/project_class.php");
 
-    function create_project_ctr($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector){
+    function create_project_ctr($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector,$project_image){
         $project = new Project;
 
-        return $project->create_project($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector);
+        return $project->create_project($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector,$project_image);
     }
 
     function update_project_ctr($project_id, $project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector){

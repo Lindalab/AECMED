@@ -29,6 +29,11 @@
         return $business->delete_business($business_id);
     }
 
+    function select_one_business_email_ctr($email){
+        $business = new Business;
+        return $business->select_one_business_email($email);
+    }
+
     function select_business_for_dpt_ctr($department){
         $business = new Business;
         return $business->select_business_for_dpt($department);
