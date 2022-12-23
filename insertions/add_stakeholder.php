@@ -21,12 +21,12 @@
     if($move){
         $insert = create_stakeholder_ctr($_POST["fname"], $_POST["lname"], $_POST["role"], $_POST["gender"], $_POST["email"], $_POST["phone_number"],$upload_file_dest);
         if($insert){
-            header("../view/index.php?message=1");
+            header("location: ../view/index.php?message=1");
         }else{
-            header("../view/index.php?message=2");
+            header("location:../view/index.php?message=2");
         }
     }else{
-        header("../view/index.php?message=2");
+        header("location: ../view/index.php?message=2");
     }
 
 ?>

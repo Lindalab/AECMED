@@ -5,9 +5,9 @@
     $deleted = delete_stakeholder_ctr($_POST['stakeholder_id']);
 
     if($deleted){
-        header("../view/index.php?message=1");
+        header("location: ../view/index.php?message=1");
     }else{
-        header("../view/index.php?message=2");
+        header("location:../view/index.php?message=2");
     }
 
 ?>

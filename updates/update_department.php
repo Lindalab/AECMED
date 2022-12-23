@@ -4,9 +4,9 @@
     $updated = update_department_ctr($_POST['department_id'], $_POST['department_name']);
 
     if($updated){
-        header("../view/index.php?message=1");
+        header("location: ../view/index.php?message=1");
     }else{
-        header("../view/index.php?message=2");
+        header("location:../view/index.php?message=2");
     }
 
 ?>
