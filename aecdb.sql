@@ -202,7 +202,8 @@ CREATE TABLE `project` (
   `date_started` date NOT NULL,
   `sdg_goals` varchar(15) NOT NULL,
   `department_id` int(11) NOT NULL,
-  `sector` varchar(60) NOT NULL
+  `sector` varchar(60) NOT NULL,
+  `project_image` varchar(100) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

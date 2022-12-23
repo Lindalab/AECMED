@@ -3,9 +3,9 @@
 
     class Project extends db_connection{
 
-        function create_project($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector){
+        function create_project($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector,$project_image){
 
-            $sql = "INSERT INTO `project`(`project_name`, `project_description`, `project_status`, `date_started`, `sdg_goals`, `department_id`, `sector`) VALUES ('$project_name','$desc','$status','$date_Started','$sdg_goals','$department_id','$sector')";
+            $sql = "INSERT INTO `project`(`project_name`, `project_description`, `project_status`, `date_started`, `sdg_goals`, `department_id`, `sector`,`project_image`) VALUES ('$project_name','$desc','$status','$date_Started','$sdg_goals','$department_id','$sector','$project_image')";
 
             return $this->db_query($sql);
 
