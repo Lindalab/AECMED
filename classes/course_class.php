@@ -91,17 +91,17 @@
          * stakeholder modules
          */
         function stakeholder_modules(){
-            $sql = "";
+            $sql = "SELECT * FROM module,stakeholder_modules,stakeholder WHERE module.module_id=stakeholder_modules.module_id and stakeholder.stakeholder_id=stakeholder_modules.stakeholder_id";
             return $this->db_fetch_all($sql);
         }
 
         function insert_stakeholder_modules($stakeholder_id, $module_id){
-            $sql = "";
+            $sql = "INSERT INTO `stakeholder_modules`(`stakeholder_id`, `module_id`) VALUES ('$stakeholder_id','$module_id')";
             return $this->db_query($sql);
         }
 
         function delete_stakeholder_modules($stakeholder_id, $module_id){
-            $sql = "";
+            $sql = "DELETE FROM `stakeholder_modules` WHERE `stakeholder_id`='$stakeholder_id'and `module_id`='$module_id'";
             return $this->db_query($sql);
         }
 

@@ -188,27 +188,27 @@
          * stakeholder business
          */
         function stakeholder_business($business_id){
-            $sql = "";
+            $sql = "SELECT * FROM stakeholder_business,stakeholder,business WHERE stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder_business.business_id=business.business_id and stakeholder_business.business_id= '$business_id' ";
             return $this->db_fetch_all($sql);
         }
 
         function stakeholder_id_business($stakeholder_id){
-            $sql = "";
+            $sql = "SELECT * FROM stakeholder_business,stakeholder,business WHERE stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder_business.business_id=business.business_id and stakeholder_business.stakeholder_id= '$stakeholder_id'";
             return $this->db_fetch_all($sql);
         }
 
         function insert_stakeholder_business($stakeholder_id, $business_id){
-            $sql = "";
+            $sql = "INSERT INTO `stakeholder_business`(`stakeholder_id`, `business_id`) VALUES ('$stakeholder_id','$business_id')";
             return $this->db_query($sql);
         }
 
         function delete_stakeholder_business($stakeholder_id, $business_id){
-            $sql = "";
+            $sql = "DELETE FROM `stakeholder_business` WHERE `stakeholder_id`='$stakeholder_id' and  `business_id`='$business_id' ";
             return $this->db_query($sql);
         }
 
         function update_stakeholder_business($stakeholder_id, $business_id){
-            $sql = "";
+            $sql = "UPDATE `stakeholder_business` SET `stakeholder_id`='$stakeholder_id',`business_id`='$business_id' WHERE `stakeholder_id`='$stakeholder_id' and `business_id`='$business_id' ";
             return $this->db_query($sql);
         }
 

@@ -5,42 +5,42 @@
 
         function create_project($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector){
 
-            $sql = "";
+            $sql = "INSERT INTO `project`(`project_name`, `project_description`, `project_status`, `date_started`, `sdg_goals`, `department_id`, `sector`) VALUES ('$project_name','$desc','$status','$date_Started','$sdg_goals','$department_id','$sector')";
 
             return $this->db_query($sql);
 
         }
 
         function update_project($project_id, $project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector){
-            $sql = "";
+            $sql = "UPDATE `project` SET `project_name`='$project_name',`project_description`='$desc',`project_status`='$status',`date_started`='$date_Started',`sdg_goals`='$sdg_goals',`department_id`='$department_id',`sector`='$sector' WHERE `project_id`='$project_id'";
 
             return $this->db_query($sql);
         }
 
         function delete_project($project_id){
-            $sql = "";
+            $sql = "DELETE FROM `project` WHERE `project_id`='$project_id' ";
 
             return $this->db_query($sql);
         }
 
         function select_all_project(){
-            $sql = "";
+            $sql = "SELECT * FROM `project`";
 
             return $this->db_fetch_all($sql);
         }
 
         function select_one_project($project_id){
-            $sql = "";
+            $sql = "SELECT * FROM `project` WHERE `project_id`='$project_id'";
             return $this->db_fetch_one($sql);
         }
 
         function select_project_under_dpt($department_id){
-            $sql = "";
+            $sql = "SELECT * FROM `project` WHERE `department_id`='$department_id'";
             return $this->db_fetch_all($sql);
         }
 
         function select_project_under_dpt_in_year($department, $year){
-            $sql = "";
+            $sql = "SELECT * FROM `project` WHERE `department_id`='$department' and EXTRACT(YEAR FROM date_started)= '$year' ";
 
             return $this->db_fetch_all($sql);
         }
@@ -48,7 +48,7 @@
     
 
         function select_project_status($status){
-            $sql = "";
+            $sql = "SELECT * FROM `project` WHERE `project_status`='$status'";
 
             return $this->db_fetch_all($sql);
         }
@@ -57,34 +57,34 @@
         // Srakeholder project
 
         function select_project_stakeholders($project_id){
-            $sql = "";
+            $sql = "SELECT * FROM stakeholder,stakeholder_project,project WHERE stakeholder.stakeholder_id=stakeholder_project.stakeholder_id and stakeholder_project.project_id=project.project_id and stakeholder_project.project_id= '$project_id'";
             return $this->db_fetch_all($sql);
         }
 
 
         
         function insert_stakeholder_project($stakeholder_id, $project_id){
-            $sql = "";
+            $sql = "INSERT INTO `stakeholder_project`(`stakeholder_id`, `project_id`) VALUES ('$stakeholder_id','$project_id')";
             return $this->db_query($sql);
         }
 
         function delete_stakeholder_project($stakeholder_id, $project_id){
-            $sql = "";
+            $sql = "DELETE FROM `stakeholder_project` WHERE `stakeholder_id`='$stakeholder_id' and  `project_id`='$project_id' ";
             return $this->db_query($sql);
         }
 
         function update_stakeholder_project($stakeholder_id, $project_id){
-            $sql = "";
+            $sql = "UPDATE `stakeholder_project` SET `stakeholder_id`='$stakeholder_id' WHERE `project_id`='$project_id' ";
             return $this->db_query($sql);
         }
 
         function select_all_stakeholder_project(){
-            $sql = "";
+            $sql = "SELECT * FROM stakeholder,stakeholder_project,project WHERE stakeholder.stakeholder_id=stakeholder_project.stakeholder_id and stakeholder_project.project_id=project.project_id";
             return $this->db_fetch_all($sql);
         }
 
         function select_one_stakeholder_project($stakeholder_id, $project_id){
-            $sql = "";
+            $sql = "SELECT * FROM stakeholder,stakeholder_project,project WHERE stakeholder.stakeholder_id=stakeholder_project.stakeholder_id and stakeholder_project.project_id=project.project_id and project.project_id ='$stakeholder_id' and stakeholder.stakeholder_id='$project_id' ";
             return $this->db_fetch_one($sql);
         }
 
