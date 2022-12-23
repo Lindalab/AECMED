@@ -6,9 +6,9 @@
         return $user->create_stakeholder($fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image);
     }
 
-    function update_stakeholder_ctr($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image){
+    function update_stakeholder_ctr($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number){
         $user = new Stakeholder;
-        return $user->update_stakeholder($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image);
+        return $user->update_stakeholder($stakeholder_id, $fname, $lname, $role, $gender, $email, $phone_number);
     }
 
     function delete_stakeholder_ctr($stakeholder_id){

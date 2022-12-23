@@ -42,9 +42,9 @@
         return $course->update_course_student($course_id, $females, $males, $year);
     }
 
-    function delete_course_student_ctr($course_id, $females, $males, $year){
+    function delete_course_student_ctr($course_id, $year){
         $course = new course;
-        return $course->delete_course_student($course_id, $females, $males, $year);
+        return $course->delete_course_student($course_id, $year);
     }
 
     function selet_all_course_student_ctr(){

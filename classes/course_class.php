@@ -54,8 +54,8 @@
             return $this->db_query($sql);
         }
 
-        function delete_course_student($course_id, $females, $males, $year){
-            $sql = "DELETE FROM `course_student` WHERE `course_id`='$course_id' and `numberoffemaleStudent`='$females'and `numberofmaleStudent`=' $males' and `course_year`='$year' ";
+        function delete_course_student($course_id, $year){
+            $sql = "DELETE FROM `course_student` WHERE `course_id`='$course_id' and `course_year`='$year' ";
 
             return $this->db_query($sql);
         }
