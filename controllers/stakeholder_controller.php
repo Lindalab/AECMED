@@ -30,4 +30,9 @@
         $user = new Stakeholder;
         return $user->select_one_stakeholder_email($email);
     }
+
+    function insert_stakeholder_module_ctr($stakeholder_id,$module_id){
+        $user= new Stakeholder;
+        return $user->insert_stakeholder_module($stakeholder_id,$module_id);
+    }
 ?>

@@ -33,6 +33,10 @@
             $sql = "SELECT * FROM `stakeholder` WHERE `email`='$email'";
             return $this->db_fetch_one($sql);
         }
+        function insert_stakeholder_module($stakeholder_id,$module_id){
+            $sql="INSERT INTO `stakeholder_modules`(`stakeholder_id`, `module_id`) VALUES ('$stakeholder_id','$module_id')";
+            return $this->db_query($sql);
+        }
     }
 
 ?>
