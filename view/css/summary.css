@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+:root {
+    --Ash-red: #700505;
+    --Ash-lightred: #D60B0B;
+    --table-red: #950808;
+}
+
+body {
+    margin: 0;
+    font-family: 'Gabriela';
+    font-weight: normal;
+    height: 100vh;
+}
+
+p {
+    margin: 0px;
+}
+/* Navigation Bar */
+nav {
+    background-color: var(--Ash-red);
+    color: #FFFFFF;
+    float: left;
+    clear: right;
+    height: 100vh;
+    position: fixed;
+}
+
+
+.nav-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#active {
+    background-color: var(--Ash-lightred);
+}
+
+.links {
+    font-size: 18px;
+    font-weight: 700;
+    height: 75px;
+    width: 280px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all ease-in-out 0.25s;
+}
+
+.link {
+    width: 100%;
+    display: inherit;
+    align-items: inherit;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.links:hover {
+    background-color: var(--Ash-lightred);
+}
+
+.nav-logo {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+/* Main Section */
+#main {
+    margin-left: 340px;
+    padding-right: 80px;
+    padding-bottom: 25px;
+}
+
+.heading {
+    margin: 0;
+    padding-top: 20px;
+}
+
+/* Summary Section */
+#summary {
+    margin-block: 30px;
+}
+
+.main-sum {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum-item {
+    padding-inline: 10px;
+    width: 400px;
+}
+
+.sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 0px;
+}
+
+.sum-detail {
+    margin-block: 0px;
+    margin-right: 16px;
+    margin-left: 8px;
+}
+
+.sub-sum {
+    list-style-type: none;
+}
+
+.sub-sum-item {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding-block: 10px;
+}
+
+.custom-popover {
+    --bs-popover-max-width: 195px;
+  }
+
+#card-navs {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-left: 0px;
+    list-style-type: none;
+}
+#card-navs a {
+    margin-right: 28px;
+    margin-bottom: 24px;
+    text-decoration: none;
+    color: #D60B0B;
+    transition: all ease-in-out 0.3s;
+}
+#card-navs a:hover {
+    background-color: #950808;
+    color: white;
+    border-radius: 24px;
+    transform: scale(1.075);
+}
+#card-navs ul {
+    list-style-type: none;
+    padding-left: 16px;
+}
