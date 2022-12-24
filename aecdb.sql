@@ -33,7 +33,7 @@ CREATE TABLE `business` (
   `busines_name` varchar(50) DEFAULT NULL,
   `business_logo` varchar(100) NOT NULL,
   `business_location` varchar(50) DEFAULT NULL,
-  `business_contact` int(15) NOT NULL,
+  `business_contact` varchar(15) NOT NULL,
   `business_email` varchar(30) NOT NULL,
   `department_id` int(11) NOT NULL,
   `business_type` int(3) DEFAULT 0,

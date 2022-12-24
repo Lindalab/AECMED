@@ -1,7 +1,7 @@
 <?php 
-    require_once("../controllers/event_controller.php");
 
-    
+    require_once("../controllers/event_controller.php");
+    $event_id=$_POST['event_id'];
     $event_name=$_POST['event_name'];
     $date=$_POST['date_organized'];
     $target_group=$_POST['target_group'];
@@ -11,12 +11,12 @@
     $event_type=$_POST['event_type'];
     $department_id=$_POST['department_id'];
 
-    $insert = create_event_ctr($event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id);
+    $updated = update_event_ctr($event_id,$event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id);
 
-    if($insert){
+    if($updated){
         header("location: ../view/index.php?message=1");
     }else{
-        header("location:../view/index.php?message=2");
+        header("location: ../view/index.php?message=2");
     }
 
 

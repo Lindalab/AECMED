@@ -12,11 +12,16 @@
         return $business->create_business_details($business_id,$number_of_employees, $formalised_structure, $sdg_alignment);
     }
 
+    function add_business_grant_ctr($grant_id,$business_id, $amount){
+        $business= new Business;
+        return $business->add_business_grant($grant_id,$business_id, $amount);
+    }
 
 
-    function update_business_ctr($business_id, $year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
+
+    function update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
         $business = new Business;
-        return $business->update_business($business_id, $year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description);
+        return $business->update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description);
     }
 
     function update_business_details_ctr($business_id,$number_of_employees, $formalised_structure, $sdg_alignment){

@@ -7,9 +7,9 @@
         return $grant->create_grant($grant_name, $grant_type, $date_received, $grant_desc, $image, $department_id, $amount);
     }
 
-    function update_grant_ctr($grant_id, $grant_name, $grant_type, $date_received, $grant_desc, $image, $department_id, $amount){
+    function update_grant_ctr($grant_id, $grant_name, $grant_type, $date_received, $grant_desc,$department_id, $amount){
         $grant = new Grant;
-        return $grant->update_grant($grant_id, $grant_name, $grant_type, $date_received, $grant_desc, $image, $department_id, $amount);
+        return $grant->update_grant($grant_id, $grant_name, $grant_type, $date_received, $grant_desc,  $department_id, $amount);
     }
 
     function delete_grant_ctr($grant_id){

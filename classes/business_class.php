@@ -22,11 +22,16 @@
             return $this->db_query($sql);
         }
 
+        function add_business_grant($grant_id,$business_id, $amount){
+            $sql = "INSERT INTO `business_grants`(`grant_id`, `business_id`, `amount`) VALUES ('$grant_id','$business_id','$amount')";
+            return $this->db_query($sql);
+        }
+
         /**
          * updates details of the business
          */
-        function update_business($business_id, $year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
-            $sql = "UPDATE `business` SET `year_started`='$year_started',`busines_name`='$business_name',`business_logo`='$business_logo',`business_location`='$business_location',`business_contact`='$business_contact',`business_email`='$business_email',`department_id`='$department',`business_type`='$business_type',`sector`='$sector',`business_description`='$business_description' WHERE `business_id`='$business_id'";
+        function update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
+            $sql = "UPDATE `business` SET `year_started`='$year_started',`busines_name`='$business_name',`business_location`='$business_location',`business_contact`='$business_contact',`business_email`='$business_email',`department_id`='$department',`business_type`='$business_type',`sector`='$sector',`business_description`='$business_description' WHERE `business_id`='$business_id'";
 
             return $this->db_query($sql);
         }
