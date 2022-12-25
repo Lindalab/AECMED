@@ -27,15 +27,12 @@ foreach($res2 as $item){
 <html>
 <head>
 <script>
-window.onload = function () {
+window.onload = function draw() {
     CanvasJS.addColorSet("greenShades",
                 [//colorSet Array
 
                 "#d60b0b",
 				"#960808",
-				
-
-
                 // "#da2323",
 				"#ab0909",
                 "#de3c3c",
@@ -64,10 +61,10 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		minimum: 0,
 	},
 	data: [{
-		type: "column",
+		type: "pie",
         indexLabel: "{y}",
         //color: ["#D60B0B","#950808","#36454F"],
-		yValueFormatString: "$#,###.##",
+		yValueFormatString: "#,###.##",
 		indexLabelPlacement: "inside",
 		indexLabelFontColor: "black",
 		indexLabelFontSize: 18,
@@ -86,8 +83,6 @@ chart.render();
 </head>
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%; display: inline;"></div>
-
-
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </body>
 </html>
