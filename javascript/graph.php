@@ -60,13 +60,14 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		text: "Push-ups Over a Week"
 	},
 	axisY: {
-		title: "Number of Push-ups"
+		title: "Number of Push-ups",
+		minimum: 0,
 	},
 	data: [{
 		type: "column",
         indexLabel: "{y}",
         //color: ["#D60B0B","#950808","#36454F"],
-		yValueFormatString: "#,###.##",
+		yValueFormatString: "$#,###.##",
 		indexLabelPlacement: "inside",
 		indexLabelFontColor: "black",
 		indexLabelFontSize: 18,
