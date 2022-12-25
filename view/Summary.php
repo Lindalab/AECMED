@@ -22,25 +22,25 @@
             <h1>AEC</h1>
         </header>
         <ul id="list">
-            <a href="Summary.html" class="links" id='active'>
+            <a href="Summary.php" class="links" id='active'>
                 <li class="link">
                     <img class="nav-logo" src="./assets/summary-icon.svg" alt="Design Lab Icon">
                     <p>Summary</p>
                 </li>
             </a>
-            <a href="AVI.html" class="links">
+            <a href="AVI.php" class="links">
                 <li class="link">
                     <img class="nav-logo" src="./assets/avi-icon.svg" alt="Ashesi Venture Incubator Icon">
                     <p>Ashesi Venture Incubator</p>
                 </li>
             </a>
-            <a href="D-Lab.html" class="links">
+            <a href="D-Lab.php" class="links">
                 <li class="link">
                     <img class="nav-logo" src="./assets/dlab-icon.svg" alt="Design Lab Icon">
                     <p>Design Lab</p>
                 </li>
             </a>
-            <a href="TAC.html" class="links">
+            <a href="TAC.php" class="links">
                 <li class="link">
                     <img class="nav-logo" src="./assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
                     <p>Teaching Across Curriculum</p>
