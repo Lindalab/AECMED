@@ -7,7 +7,7 @@
     <title>AEC - Summary</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/summary.css">
+    <link rel="stylesheet" href="../css/summary.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" 
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" 
     crossorigin="anonymous" async defer></script>
@@ -24,25 +24,25 @@
         <ul id="list">
             <a href="Summary.php" class="links" id='active'>
                 <li class="link">
-                    <img class="nav-logo" src="./assets/summary-icon.svg" alt="Design Lab Icon">
+                    <img class="nav-logo" src="../assets/summary-icon.svg" alt="Design Lab Icon">
                     <p>Summary</p>
                 </li>
             </a>
             <a href="AVI.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./assets/avi-icon.svg" alt="Ashesi Venture Incubator Icon">
+                    <img class="nav-logo" src="../assets/avi-icon.svg" alt="Ashesi Venture Incubator Icon">
                     <p>Ashesi Venture Incubator</p>
                 </li>
             </a>
             <a href="D-Lab.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./assets/dlab-icon.svg" alt="Design Lab Icon">
+                    <img class="nav-logo" src="../assets/dlab-icon.svg" alt="Design Lab Icon">
                     <p>Design Lab</p>
                 </li>
             </a>
             <a href="TAC.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
+                    <img class="nav-logo" src="../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
                     <p>Teaching Across Curriculum</p>
                 </li>
             </a>
