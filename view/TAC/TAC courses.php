@@ -7,19 +7,11 @@
     <title>AEC - Teaching Across Curriculum</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<<<<<<<< HEAD:view/TAC courses.php
-    <link rel="stylesheet" href="./css/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous" defer></script>
-    <script src="./js/pagination.js" async defer></script>
-========
     <link rel="stylesheet" href="./../../css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous" defer></script>
     <script src="./../../js/pagination.js" async defer></script>
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
 </head>
 <body>
     <nav>
@@ -27,29 +19,6 @@
             <h1>AEC</h1>
         </header>
         <ul id="list">
-<<<<<<<< HEAD:view/TAC courses.php
-            <a href="Summary.php" class="links">
-                <li class="link">
-                    <img class="nav-logo" src="./assets/summary-icon.svg" alt="Design Lab Icon">
-                    <p>Summary</p>
-                </li>
-            </a>
-            <a href="AVI.php" class="links">
-                <li class="link">
-                    <img class="nav-logo" src="./assets/avi-icon.svg" alt="Ashesi Venture Incubator Icon">
-                    <p>Ashesi Venture Incubator</p>
-                </li>
-            </a>
-            <a href="D-Lab.php" class="links">
-                <li class="link">
-                    <img class="nav-logo" src="./assets/dlab-icon.svg" alt="Design Lab Icon">
-                    <p>Design Lab</p>
-                </li>
-            </a>
-            <a href="TAC.php" class="links" id='active'>
-                <li class="link">
-                    <img class="nav-logo" src="./assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-========
             <a href="../Summary.php" class="links">
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/summary-icon.svg" alt="Design Lab Icon">
@@ -71,7 +40,6 @@
             <a href="../TAC.php" class="links" id='active'>
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                     <p>Teaching Across Curriculum</p>
                 </li>
             </a>
@@ -83,11 +51,7 @@
             <!-- Breadcrumb -->
             <section aria-label="breadcrumb">
                 <ol class="breadcrumb">
-<<<<<<<< HEAD:view/TAC courses.php
-                  <li class="breadcrumb-item"><a href="TAC.php">..</a></li>
-========
                   <li class="breadcrumb-item"><a href="../TAC.php">..</a></li>
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                   <li class="breadcrumb-item active" aria-current="page">Courses</li>
                 </ol>
             </section>
@@ -101,11 +65,7 @@
                                     <h5 class="card-title">Student Projects - 15</h5>
                                 </div>
                                 <div class="col-3">
-<<<<<<<< HEAD:view/TAC courses.php
-                                    <img src="" alt="Student projects image">
-========
                                     <img class="card-icons" src="../../assets/projects-icon.svg" alt="Student projects image">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                                 </div>
                             </div>
                         </div> 
@@ -169,11 +129,7 @@
                         </td>
                         <td>
                             <a href="TAC Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -192,11 +148,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -215,11 +167,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -238,11 +186,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -261,11 +205,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -284,11 +224,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -307,11 +243,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -330,11 +262,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -353,11 +281,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -376,11 +300,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
@@ -399,11 +319,7 @@
                         </td>
                         <td>
                             <a href="D-Lab Section-view.php">
-<<<<<<<< HEAD:view/TAC courses.php
-                                <img src="" alt="View icon">
-========
                                 <img src="./../../assets/read-more.svg" alt="View icon">
->>>>>>>> a0ab27656da31ead928913ebe1eb320439586709:view/TAC/TAC courses.php
                             </a>
                         </td>
                     </tr>
