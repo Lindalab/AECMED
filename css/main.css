@@ -144,11 +144,12 @@ ul {
     margin-bottom: 24px;
     width: 22rem;
     text-decoration: none;
-    color: black;
+    color: white;
+    background-color: #950808;
     transition: all ease-in-out 0.3s;
 }
 #card-navs a:hover {
-    background-color: #950808;
+    background-color: #D60B0B;
     color: white;
     border-radius: 24px;
     transform: scale(1.075);
@@ -160,10 +161,16 @@ ul {
 .card {
     background-color: inherit;
     height: 8.25rem;
+    width: 22rem;
+}
+.card-subtitle {
+    color: black;
+    font-weight: 500;
 }
 .card-icons {
     width: 36px;
     height: 36px;
+    color: white;
 }
 .pagination li:hover{
     cursor: pointer;
@@ -191,4 +198,199 @@ ul {
     height: 375px;
     width: 500px;
     background-color: gainsboro;
+}
+
+/* Views */
+.view-sec {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 24px;
+}
+.view {
+    display: flex;
+    justify-content: center;
+    width: 75rem;
+    overflow-x: auto;
+}
+.img-view {
+    height: 175px;
+    width: 175px;
+    border-radius: 40%;
+}
+.img-frame {
+    text-align: center;
+    margin-inline: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    /* Navigation bar */
+    nav {
+        height: 100%;
+    }
+    .links {
+        font-size: 12px;
+        font-weight: 700;
+        height: 75px;
+        width: 250px;
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all ease-in-out 0.25s;
+    }
+    
+    .link {
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .links:hover {
+        background-color: var(--Ash-lightred);
+    }
+    
+    .nav-logo {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    /* Navigation end */
+    #main {
+        margin-left: 300px;
+        padding-right: 80px;
+        padding-bottom: 25px;
+    }
+
+    .sub-sum-item {
+        font-size: 14px
+    }
+    #card-navs a {
+        width: 13.5rem;
+    }
+    .card {
+        padding-inline: 10px;
+        width: 13.5rem;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .card-subtitle {
+        font-size: 0.8rem;
+    }
+    .view-sec {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-left: 50px;
+        padding-bottom: 24px;
+    }
+    .card-icons {
+        width: 28px;
+        height: 28px;
+        color: white;
+    }
+    .view {
+        display: flex;
+        justify-content:flex-start;
+        width: 75rem;
+        overflow-x: auto;
+    }
+    .img-view {
+        height: 150px;
+        width: 150px;
+        border-radius: 40%;
+    }
+    .img-frame {
+        text-align: center;
+        margin-inline: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Navigation bar */
+    nav {
+        height: 100%;
+    }
+    .links {
+        font-size: 12px;
+        font-weight: 700;
+        height: 75px;
+        width: 220px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all ease-in-out 0.25s;
+    }
+    
+    .link {
+        font-size: 12px;
+        font-weight: normal;
+    }
+    
+    .links:hover {
+        background-color: var(--Ash-lightred);
+    }
+    
+    .nav-logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    /* Navigation end */
+    #main {
+        margin-left: 250px;
+        padding-right: 80px;
+        padding-bottom: 25px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    .sub-sum-item {
+        font-size: 12px
+    }
+    .card {
+        padding-inline: 10px;
+        width: 200px;
+    }
+    #card-navs a {
+        width: 12rem;
+    }
+    .card {
+        padding-inline: 10px;
+        width: 12rem;
+    }
+    .card-title {
+        font-size: 0.9rem;
+    }
+    .card-subtitle {
+        font-size: 0.7rem;
+    }
+    .card-icons {
+        width: 28px;
+        height: 28px;
+        color: white;
+    }
+    .view-sec {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-left: 50px;
+        padding-bottom: 24px;
+    }
+    .view {
+        display: flex;
+        justify-content:flex-start;
+        width: 75rem;
+        overflow-x: auto;
+    }
+    .img-view {
+        height: 125px;
+        width: 125px;
+        border-radius: 40%;
+    }
+    .img-frame {
+        text-align: center;
+        margin-inline: 8px;
+    }
 }

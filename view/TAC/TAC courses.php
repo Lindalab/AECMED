@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEC - Teaching Across Curriculum</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="./../../css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous" defer></script>
     <script src="./../../js/pagination.js" async defer></script>
+
 </head>
+
 <body>
     <nav>
         <header class="nav-head pt-4">
@@ -51,14 +53,14 @@
             <!-- Breadcrumb -->
             <section aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="../TAC.php">..</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Courses</li>
+                    <li class="breadcrumb-item"><a href="../TAC.php">..</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Courses</li>
                 </ol>
             </section>
             <!-- Card Navigations -->
             <ul id="card-navs">
                 <a href="TAC student projects.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -68,7 +70,7 @@
                                     <img class="card-icons" src="../../assets/projects-icon.svg" alt="Student projects image">
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </li>
                 </a>
             </ul>
@@ -326,41 +328,61 @@
                 </tbody>
             </table>
             <!--		Start Pagination -->
-			<div class='pagination-container' >
-				<div aria-label="Page navigation example">
-				  <ul class="pagination">
-                    <li class="page-item" data-page="prev" >
-                        <span> &laquo; <span class="sr-only"></span></span>
-                    </li>
-				   <!--	Here the JS Function Will Add the Rows -->
-                    <li class="page-item" data-page="next" id="prev">
-                        <span> &raquo; <span class="sr-only"></span></span>
-                    </li>
-				  </ul>
-				</div>
-			</div>
+            <div class='pagination-container'>
+                <div aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item" data-page="prev">
+                            <span> &laquo; <span class="sr-only"></span></span>
+                        </li>
+                        <!--	Here the JS Function Will Add the Rows -->
+                        <li class="page-item" data-page="next" id="prev">
+                            <span> &raquo; <span class="sr-only"></span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <!-- Data visualization -->
         <section class="data-viz mt-5">
             <figure>
-                <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <?php
+
+                $conn = mysqli_connect('localhost', "root", "", "shoppn");
+                $sql = "SELECT * FROM `products`";
+                $res = mysqli_query($conn, $sql);
+                $res2 = mysqli_fetch_all($res, MYSQLI_ASSOC);
+                $dataPoints = array();
+                foreach ($res2 as $item) {
+                    array_push($dataPoints, array("y" => $item['product_price'], "label" => $item['product_title']));
+                }
+                ?>
+
+
+                <!--Bar Graph -->
+                <div class="bgraph" id="graph_1">
                     Bar graph for platform projects for past four years
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Platform Projects for the past four(4) years
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph">
                     Bar graph for fellow projects for past four years
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Fellow Projects for the past four(4) years
                 </figcaption>
             </figure>
         </section>
+        <!-- <div id="container2" style="height: 370px; width: 50%;">Hello</div> -->
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("column", "graph_1", "fun", "ylabel", "xlabel", <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>);
+    </script>
 </body>
+
 </html>

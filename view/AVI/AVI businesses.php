@@ -58,7 +58,7 @@
             <!-- Card Navigations -->
             <ul id="card-navs">
                 <a href="AVI business section.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -72,7 +72,7 @@
                     </li>
                 </a>
                 <a href="AVI business section.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -86,7 +86,7 @@
                     </li>
                 </a>
                 <a href="AVI business section.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">

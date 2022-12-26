@@ -54,12 +54,12 @@
             <!-- Card Navigations -->
             <ul id="card-navs">
                 <a href="./AVI/AVI businesses.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
                                     <h5 class="card-title">Businesses - 41</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
+                                    <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
                                                 Male owned - 23
@@ -78,7 +78,7 @@
                     </li>
                 </a>
                 <a href="./AVI/AVI modules.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -92,7 +92,7 @@
                     </li>
                 </a>
                 <a href="./AVI/AVI fellows.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">

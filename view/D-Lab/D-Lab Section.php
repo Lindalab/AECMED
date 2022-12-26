@@ -57,7 +57,7 @@
             </section>
             <ul id="card-navs">
                 <a href="D-Lab Subsec.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -71,7 +71,7 @@
                     </li>
                 </a>
                 <a href="">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">

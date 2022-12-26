@@ -54,7 +54,7 @@
             <!-- Card Navigations -->
             <ul id="card-navs">
                 <a href="./TAC/TAC courses.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -68,7 +68,7 @@
                     </li>
                 </a>
                 <a href="./TAC/TAC businesses.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -82,12 +82,12 @@
                     </li>
                 </a>
                 <a href="./TAC/TAC grants.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
                                     <h5 class="card-title">Student grants - 21</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
+                                    <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
                                                 Internal Grants - $213
@@ -106,7 +106,7 @@
                     </li>
                 </a>
                 <a href="./TAC/TAC clubs.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -120,7 +120,7 @@
                     </li>
                 </a>
                 <a href="./TAC/TAC events.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
