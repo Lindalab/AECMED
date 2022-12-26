@@ -54,12 +54,12 @@
             <!-- Card Navigations -->
             <ul id="card-navs">
                 <a href="./D-Lab/D-Lab Section.php">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
                                     <h5 class="card-title">Projects - 41</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
+                                    <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
                                                 Platform projects - 23
@@ -78,7 +78,7 @@
                     </li>
                 </a>
                 <a href="">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
@@ -92,12 +92,12 @@
                     </li>
                 </a>
                 <a href="">
-                    <li class="card" style="width: 22rem;">
+                    <li class="card">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
                                     <h5 class="card-title">Grants - $1289</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">
+                                    <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
                                                 Internal Grants - $213

@@ -66,18 +66,39 @@
             </header>
             <br>
             <!-- Course Heads -->
-            <ul>
-                <h5>Course Heads</h5>
-                <li>
-                    Gordon Adomza
-                </li>
-                <li>
-                    Justina Kwawina Morris
-                </li>
-                <li>
-                    David Quarshie
-                </li>
-            </ul>
+            <h5>Course Heads</h5>
+            <div class="view-sec">
+                <section class="view">
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                </section>
+            </div>
             <!-- Project Description -->
             <h5>
                 Course Description

@@ -66,18 +66,39 @@
             </header>
             <br>
             <!-- Project Members -->
-            <ul>
-                <h5>Project Members</h5>
-                <li>
-                    Dave King (Team Lead)
-                </li>
-                <li>
-                    Dhaku
-                </li>
-                <li>
-                    David 
-                </li>
-            </ul>
+            <h5>Project Members</h5>
+            <div class="view-sec">
+                <section class="view">
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                </section>
+            </div>
             <!-- Project Description -->
             <h5>
                 Project Description

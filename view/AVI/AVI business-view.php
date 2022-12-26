@@ -71,14 +71,38 @@
             <h5>
                 Business Owners
             </h5>
-            <ul>
-                <li>
-                    Richida Gymiah
-                </li>
-                <li>
-                    Naa Korlikie Gyan
-                </li>
-            </ul>
+            <div class="view-sec">
+                <section class="view">
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                    <figure class="img-frame">
+                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <figcaption>
+                            Gupta Sanchez <br>
+                            <sub class="text-muted">gupta@gmail.com</sub>
+                        </figcaption>
+                    </figure>
+                </section>
+            </div><br>
             <h5>
                 Business Description
             </h5>

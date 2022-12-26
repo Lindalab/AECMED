@@ -125,31 +125,107 @@ nav {
     justify-content: space-between;
     padding-block: 10px;
 }
+.card {
+    width: 350px;
+    height: 250px;
+}
 
 .custom-popover {
     --bs-popover-max-width: 195px;
   }
 
-#card-navs {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding-left: 0px;
-    list-style-type: none;
+
+@media screen and (max-width: 1024px) {
+    /* Navigation bar */
+    .links {
+        font-size: 12px;
+        font-weight: 700;
+        height: 75px;
+        width: 250px;
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all ease-in-out 0.25s;
+    }
+    
+    .link {
+        font-size: 14px;
+        font-weight: normal;
+    }
+    
+    .links:hover {
+        background-color: var(--Ash-lightred);
+    }
+    
+    .nav-logo {
+        width: 35px;
+        height: 35px;
+        margin-right: 10px;
+    }
+    /* Navigation end */
+    #main {
+        margin-left: 300px;
+        padding-right: 80px;
+        padding-bottom: 25px;
+    }
+
+    .sub-sum-item {
+        font-size: 14px
+    }
+    .card {
+        padding-inline: 10px;
+        width: 200px;
+    }
+    
 }
-#card-navs a {
-    margin-right: 28px;
-    margin-bottom: 24px;
-    text-decoration: none;
-    color: #D60B0B;
-    transition: all ease-in-out 0.3s;
-}
-#card-navs a:hover {
-    background-color: #950808;
-    color: white;
-    border-radius: 24px;
-    transform: scale(1.075);
-}
-#card-navs ul {
-    list-style-type: none;
-    padding-left: 16px;
+
+@media screen and (max-width: 768px) {
+    /* Navigation bar */
+    nav {
+        height: 120vh;
+    }
+    .links {
+        font-size: 12px;
+        font-weight: 700;
+        height: 75px;
+        width: 220px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: all ease-in-out 0.25s;
+    }
+    
+    .link {
+        font-size: 12px;
+        font-weight: normal;
+    }
+    
+    .links:hover {
+        background-color: var(--Ash-lightred);
+    }
+    
+    .nav-logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+    /* Navigation end */
+    #main {
+        margin-left: 250px;
+        padding-right: 80px;
+        padding-bottom: 25px;
+    }
+    h5 {
+        font-size: 16px;
+    }
+    .sub-sum-item {
+        font-size: 12px
+    }
+    .card {
+        padding-inline: 10px;
+        width: 200px;
+    }
+    
 }
