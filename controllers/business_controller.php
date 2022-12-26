@@ -141,4 +141,9 @@
         $business = new Business;
         return $business->update_stakeholder_business($stakeholder_id, $business_id);
     }
+
+    function business_data($department_name){
+        $business= new Business;
+        return $business->business_data($department_name);
+    }
 ?>
