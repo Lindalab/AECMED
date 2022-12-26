@@ -42,6 +42,11 @@
         return $event->event_for_department($department_id);
     }
 
+    function count_event_for_department_ctr($department_id){
+        $event = new event;
+        return $event->count_event_for_department_ctr($department_id);
+    }
+
     function event_for_department_a_year_ctr($department_id, $year){
         $event = new event;
         return $event->event_for_department_a_year($department_id, $year);

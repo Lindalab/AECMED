@@ -46,7 +46,7 @@ class Grant extends db_connection
     // sum grant for a department
     function sum_grant_for_dpt($department_id)
     {
-        $sql = "SELECT SUM(amount) FROM `grants` WHERE department_id= '$department_id'";
+        $sql = "SELECT SUM(amount) as amount FROM `grants` WHERE department_id= '$department_id'";
 
         return $this->db_fetch_one($sql);
     }
@@ -74,6 +74,11 @@ class Grant extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function grant_department_and_type($department_id,$type){
+        $sql = "SELECT  SUM(amount) as amount FROM `grants` WHERE department_id= '$department_id' and  grant_type = $type";
+
+        return $this->db_fetch_one($sql);
+    }
 
 
     // PROJECTS

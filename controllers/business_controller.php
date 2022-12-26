@@ -112,6 +112,11 @@
         return $business->number_of_businesses();
     }
 
+    function number_of_businesses_department_ctr($department){
+        $business = new Business;
+        return $business->number_of_businesses_department($department);
+    }
+
     function number_of_business_in_year_ctr($year){
         $business = new Business;
         return $business->number_of_business_in_year($year);

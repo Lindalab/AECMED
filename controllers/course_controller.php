@@ -32,6 +32,11 @@
         return $course->select_course_under_dpt($department);
     }
 
+    function count_course_under_dpt_ctr($department){
+        $course = new course;
+        return $course->count_course_under_dpt_ctr($department);
+    }
+
     function insert_course_student_ctr($course_id, $females, $males, $year){
         $course = new course;
         return $course->insert_course_student($course_id, $females, $males, $year);
@@ -83,4 +88,5 @@
         return $course->delete_stakeholder_modules($stakeholder_id, $module_id);
     }
 
+    // echo count_course_under_dpt_ctr("3");
 ?>

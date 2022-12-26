@@ -100,6 +100,14 @@
             return $this->db_count();
         }
 
+        function number_of_businesses_department($department){
+            $sql = "SELECT * FROM `business` where department_id = '$department'";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
         /**
          * businesses started in a particular year
          */

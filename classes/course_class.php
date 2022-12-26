@@ -39,6 +39,13 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_course_under_dpt_ctr($department){
+            $sql = " SELECT * FROM `course` WHERE `department_id`='$department' ";
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
 
         // course student
 
