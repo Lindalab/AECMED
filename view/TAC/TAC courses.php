@@ -1,13 +1,10 @@
 <?php 
-  //  require_once("../../controllers/project_controller.php");
-
     require_once dirname(__FILE__)."/../../controllers/project_controller.php";
     require_once dirname(__FILE__)."/../../functions/tac_courses.php";
-    // $department = 3;
+  
     $projects = count_project_under_dpt(TAC)['number'];
     $data_for_courses_and_students = list_of_courses_and_student();
     $data_for_course_project = graph_course_project();
-    
 
 ?>
 

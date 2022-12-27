@@ -94,7 +94,7 @@ class Grant extends db_connection
 
     // list funds for a project
     function grant_for_project($project_id){
-        $sql = "SELECT * FROM `grants`,project_grants WHERE project_grants.grant_id=grants.grant_id and project_grants.project_id='$project_id'";
+        $sql = "SELECT *, project_grants.amount as project_amount FROM `grants`,project_grants WHERE project_grants.grant_id=grants.grant_id and project_grants.project_id='$project_id'";
 
         return $this->db_fetch_all($sql);
     }
@@ -105,6 +105,7 @@ class Grant extends db_connection
 
         return $this->db_fetch_all($sql);
     }
+
 
     // BUSINESS
 

@@ -25,12 +25,12 @@
             $date = $project['date_started'];
             $status = project_status($project['project_status']);
             $number_of_student = count_project_stakeholders_ctr($project_id)['count'];
-            student_projects_row($project_name, $number_of_student, $date, $status);
+            student_projects_row($project_id,$project_name, $number_of_student, $date, $status);
         }
     }
 
 
-    function student_projects_row($project_name, $number_of_student, $date, $status){
+    function student_projects_row($project_id, $project_name, $number_of_student, $date, $status){
         echo "
         <tr>
         <td>
@@ -46,7 +46,7 @@
         $status
     </td>
     <td>
-        <a href='TAC course-project view.php'>
+        <a href='TAC course-project view.php?project_id=$project_id'>
             <img src='./../../assets/read-more.svg' alt='View icon'>
         </a>
     </td>
