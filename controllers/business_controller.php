@@ -112,9 +112,15 @@
         return $business->number_of_businesses();
     }
 
+<<<<<<< HEAD
     function  number_of_businesses_by_gender_ctr($gender){
         $business =new Business;
         return $business->number_of_businesses_by_gender($gender);
+=======
+    function number_of_businesses_department_ctr($department){
+        $business = new Business;
+        return $business->number_of_businesses_department($department);
+>>>>>>> f0b6f1a28d91bcd1da941e63c32f16a13917e148
     }
 
     function number_of_business_in_year_ctr($year){

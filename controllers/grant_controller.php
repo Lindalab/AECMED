@@ -52,6 +52,11 @@
         return $grant->grant_department_in_year($department_id,$year);
     }
 
+    function grant_department_and_type_ctr($department_id,$type){
+        $grant = new Grant;
+        return $grant->grant_department_and_type($department_id,$type);
+    }
+
     function sum_grant_for_project_ctr($project_id){
         $grant = new Grant;
         return $grant-> sum_grant_for_project($project_id);

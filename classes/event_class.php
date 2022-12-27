@@ -47,6 +47,12 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_event_for_department_ctr($department_id){
+            $sql = "SELECT * FROM `events`WHERE `department_id`='$department_id'";
+            $this->db_fetch_all($sql);
+            return $this->db_count();
+        }
+
 
         //list of event organised by department in a given year
         function event_for_department_a_year($department_id, $year){
