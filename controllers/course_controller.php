@@ -93,5 +93,15 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         return $course->delete_stakeholder_modules($stakeholder_id, $module_id);
     }
 
+    function count_course_project_ctr($course_id){
+        $course = new course;
+        return $course->count_course_project($course_id);
+    }
+
+    function count_course_project_graph_ctr(){
+        $course = new course;
+        return $course->count_course_project_graph();
+    }
+
     // echo count_course_under_dpt_ctr("3");
 ?>

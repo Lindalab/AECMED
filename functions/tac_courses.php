@@ -12,6 +12,16 @@
         return json_encode($dataPoints, JSON_NUMERIC_CHECK);
     }
 
+    function graph_course_project(){
+        $list = count_course_project_graph_ctr();
+        $dataPoints = array();
+        foreach ($list as $course) {
+            array_push($dataPoints, array("y" => $course['count'], "label" => $course['course_name']));
+        }
+
+        return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+    }
+
 
     function display_student_project(){
         $department = 3;
@@ -20,8 +30,9 @@
             $course_id = $course['course_id'];
             $course_name = $course['course_name'];
             $number_of_students = selet_a_course_student_ctr($course_id)['count'];
-            $number_of_projects = 5;
+            $number_of_projects = count_course_project_ctr($course_id)['count'];
             $grant_received = 100;
+            
             // student_project_row($course)
             student_project_row($course_name, $number_of_students, $number_of_projects, $grant_received);
         }

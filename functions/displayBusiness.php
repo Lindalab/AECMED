@@ -12,9 +12,6 @@ function showAllBusiness_fnc($department_name)
             $productPrice = $product['product_price'];
             $productImage = $product['product_image'];
             showSingleBusiness($product_id,$productName,$productPrice,$productImage);
-            
-
-            
         }
    
 }

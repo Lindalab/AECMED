@@ -53,8 +53,6 @@
             return $this->db_fetch_all($sql);
         }
 
-    
-
         function select_project_status($status){
             $sql = "SELECT * FROM `project` WHERE `project_status`='$status'";
 

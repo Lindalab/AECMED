@@ -113,6 +113,26 @@ class course extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function count_course_project($course_id){
+        $sql = "SELECT count(course_project.project_id) as count FROM `course_project` WHERE course_id = $course_id";
+
+        return $this->db_fetch_one($sql);
+    }
+
+    function count_course_project_graph(){
+        $sql = "SELECT course.course_name, count(course_project.course_id) as count FROM `course_project`, course, project where course.course_id = course_project.project_id and project.project_id = course_project.project_id GROUP BY course_project.course_id;";
+
+        return $this->db_fetch_all($sql);
+    }
+
+    function select_course_project(){
+        $sql = "SELECT * FROM `course_project`, course, project where course.course_id = course_project.project_id and project.project_id = course_project.project_id";
+
+        return $this->db_fetch_all($sql);
+    }
+
+
+
     /**
      * stakeholder modules
      */
