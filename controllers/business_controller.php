@@ -112,6 +112,11 @@
         return $business->number_of_businesses();
     }
 
+    function  number_of_businesses_by_gender_ctr($gender){
+        $business =new Business;
+        return $business->number_of_businesses_by_gender($gender);
+    }
+
     function number_of_business_in_year_ctr($year){
         $business = new Business;
         return $business->number_of_business_in_year($year);
@@ -142,7 +147,7 @@
         return $business->update_stakeholder_business($stakeholder_id, $business_id);
     }
 
-    function business_data($department_name){
+    function business_data_ctr($department_name){
         $business= new Business;
         return $business->business_data($department_name);
     }

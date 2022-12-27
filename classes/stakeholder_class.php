@@ -37,6 +37,14 @@
             $sql="INSERT INTO `stakeholder_modules`(`stakeholder_id`, `module_id`) VALUES ('$stakeholder_id','$module_id')";
             return $this->db_query($sql);
         }
+
+        function number_of_avi_fellows(){
+            $sql = "SELECT * FROM `module` ";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
     }
 
 ?>
