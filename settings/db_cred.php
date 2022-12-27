@@ -1,6 +1,6 @@
 <?php
 //Database credentials
-define('DATABASE', 'new_aecdb_with_data');
+define('DATABASE', 'aecdb');
 define('PASSWD', '');
 define('USERNAME', 'root');
 define('SERVER', 'localhost');

@@ -62,6 +62,11 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         return $course->selet_a_course_student($course_id);
     }
 
+    function list_course_student_ctr(){
+        $course = new course;
+        return $course->list_course_student();
+    }
+
     function select_a_course_ctr($course_id){
         $course = new course;
         return $course->select_a_course($course_id);

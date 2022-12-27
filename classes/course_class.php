@@ -79,13 +79,18 @@ class course extends db_connection
 
     function selet_all_course_student()
     {
-        $sql = "SELECT SUM(numberoffemaleStudent and numberofmaleStudent)  FROM `course_student`";
+        $sql = "SELECT SUM(numberoffemaleStudent + numberofmaleStudent)  FROM `course_student`";
         return $this->db_fetch_all($sql);
     }
 
     function selet_a_course_student($course_id)
     {
-        $sql = "SELECT SUM(numberoffemaleStudent and numberofmaleStudent)  FROM `course_student` WHERE `course_id`='$course_id'";
+        $sql = "SELECT SUM(numberoffemaleStudent + numberofmaleStudent) as count FROM `course_student` WHERE `course_id`='$course_id'";
+        return $this->db_fetch_one($sql);
+    }
+
+    function list_course_student(){
+        $sql = "SELECT course.course_id, course.course_name, SUM(numberoffemaleStudent + numberofmaleStudent) as count FROM `course_student`, course where course_student.course_id = course.course_id GROUP BY course.course_id";
         return $this->db_fetch_all($sql);
     }
     /**

@@ -2,8 +2,10 @@
   //  require_once("../../controllers/project_controller.php");
 
     require_once dirname(__FILE__)."/../../controllers/project_controller.php";
+    require_once dirname(__FILE__)."/../../functions/tac_courses.php";
     $department = 3;
     $projects = count_project_under_dpt($department)['number'];
+    $data_for_courses_and_students = list_of_courses_and_student();
     
 
 ?>
@@ -126,7 +128,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php display_student_project()?>;
+                    <!-- <tr>
                         <td>
                             Foundation for Design and Entrepreneurship
                         </td>
@@ -334,7 +337,7 @@
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!--		Start Pagination -->
@@ -355,22 +358,9 @@
         <!-- Data visualization -->
         <section class="data-viz mt-5">
             <figure>
-                <?php
-
-                $conn = mysqli_connect('localhost', "root", "", "shoppn");
-                $sql = "SELECT * FROM `products`";
-                $res = mysqli_query($conn, $sql);
-                $res2 = mysqli_fetch_all($res, MYSQLI_ASSOC);
-                $dataPoints = array();
-                foreach ($res2 as $item) {
-                    array_push($dataPoints, array("y" => $item['product_price'], "label" => $item['product_title']));
-                }
-                ?>
-
-
-                <!--Bar Graph -->
+                  <!--Bar Graph -->
                 <div class="bgraph" id="graph_1">
-                    Bar graph for platform projects for past four years
+                    <!-- Bar graph for platform projects for past four years -->
                 </div>
                 <figcaption class="text-center">
                     Platform Projects for the past four(4) years
@@ -391,7 +381,7 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("column", "graph_1", "fun", "ylabel", "xlabel", <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>);
+        draw("column", "graph_1", "fun", "number of students", "courses", <?php echo $data_for_courses_and_students ?>);
     </script>
 </body>
 
