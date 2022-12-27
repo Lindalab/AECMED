@@ -62,6 +62,12 @@
         return $project->select_project_stakeholders($project_id);
     }
 
+    function count_project_stakeholders_ctr($project_id){
+        $project = new Project;
+
+        return $project->count_project_stakeholders($project_id);
+    }
+
     function insert_stakeholder_project($stakeholder_id, $project_id){
         $project = new Project;
 
@@ -92,4 +98,10 @@
         return $project->select_one_stakeholder_project($stakeholder_id, $project_id);
     }
 
+    function count_projects_in_year_ctr($department_id){
+        $project = new Project;
+        return $project->count_projects_in_year($department_id);
+    }
+
+    
 ?>

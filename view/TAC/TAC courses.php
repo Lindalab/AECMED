@@ -3,8 +3,8 @@
 
     require_once dirname(__FILE__)."/../../controllers/project_controller.php";
     require_once dirname(__FILE__)."/../../functions/tac_courses.php";
-    $department = 3;
-    $projects = count_project_under_dpt($department)['number'];
+    // $department = 3;
+    $projects = count_project_under_dpt(TAC)['number'];
     $data_for_courses_and_students = list_of_courses_and_student();
     $data_for_course_project = graph_course_project();
     
@@ -361,7 +361,7 @@
             <figure>
                   <!--Bar Graph -->
                 <div class="bgraph" id="graph_1">
-                    <!-- Bar graph for platform projects for past four years -->
+                    Bar graph for platform projects for past four years
                 </div>
                 <figcaption class="text-center">
                     <!-- Courses and Number of Students -->
@@ -370,7 +370,7 @@
             <figure>
                 <!-- Bar Graph -->
                 <div class="bgraph" id="graph_2">
-                    <!-- Bar graph for fellow projects for past four years -->
+                    Bar graph for fellow projects for past four years
                 </div>
                 
             </figure>
