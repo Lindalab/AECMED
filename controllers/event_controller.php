@@ -1,5 +1,5 @@
 <?php 
-    require_once("../classes/event_class.php");
+  require_once dirname(__FILE__)."/../classes/event_class.php";
 
     function create_event_ctr($event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id){
         $event = new event;

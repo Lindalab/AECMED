@@ -1,6 +1,6 @@
 <?php 
-
-    require_once("../classes/project_class.php");
+    require_once dirname(__FILE__)."/../classes/project_class.php";
+    //require_once("../classes/project_class.php");
 
     function create_project_ctr($project_name, $desc, $status, $date_Started, $sdg_goals, $department_id, $sector,$project_image){
         $project = new Project;
@@ -36,6 +36,12 @@
         $project = new Project;
 
         return $project->select_project_under_dpt($department_id);
+    }
+
+    function count_project_under_dpt($department_id){
+        $project = new Project;
+
+        return $project->count_project_under_dpt($department_id);
     }
 
     function select_project_under_dpt_in_year_ctr($department, $year){

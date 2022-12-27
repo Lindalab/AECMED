@@ -1,3 +1,13 @@
+<?php 
+  //  require_once("../../controllers/project_controller.php");
+
+    require_once dirname(__FILE__)."/../../controllers/project_controller.php";
+    $department = 3;
+    $projects = count_project_under_dpt($department)['number'];
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +74,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Student Projects - 15</h5>
+                                    <h5 class="card-title">Student Projects - <?php echo $projects ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/projects-icon.svg" alt="Student projects image">

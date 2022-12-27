@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/business_class.php");
+require_once dirname(__FILE__)."/../classes/business_class.php";
 
     function create_business_ctr($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
         $business = new Business;
@@ -78,6 +78,11 @@
     function total_business_revenue_for_a_year_ctr($business_id, $year){
         $business = new Business;
         return $business->total_business_revenue_for_a_year($business_id, $year);
+    }
+
+    function total_business_revenue_for_a_department($department){
+        $business = new Business;
+        return $business->total_business_revenue_for_a_department($department);
     }
 
     function report_business_revenue_ctr($business_id, $amount, $year){

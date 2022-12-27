@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/course_class.php");
+require_once dirname(__FILE__)."/../classes/course_class.php";
 
     function create_course_ctr($course_name, $date_started, $desc, $status, $department){
         $business = new course;

@@ -1,5 +1,6 @@
 <?php 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
+    // require_once("../settings/db_class.php");
 
     class Project extends db_connection{
 
@@ -38,6 +39,13 @@
             $sql = "SELECT * FROM `project` WHERE `department_id`='$department_id'";
             return $this->db_fetch_all($sql);
         }
+
+        function count_project_under_dpt($department_id){
+            $sql = "SELECT COUNT(department_id) as number FROM `project` WHERE `department_id`='$department_id'";
+            return $this->db_fetch_one($sql);
+        }
+
+        // function count_project_under_depat
 
         function select_project_under_dpt_in_year($department, $year){
             $sql = "SELECT * FROM `project` WHERE `department_id`='$department' and EXTRACT(YEAR FROM date_started)= '$year' ";

@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/grant_class.php");
+require_once dirname(__FILE__)."/../classes/grant_class.php";
 
     function create_grant_ctr($grant_name, $grant_type, $date_received, $grant_desc, $image, $department_id, $amount){
         $grant = new Grant;
