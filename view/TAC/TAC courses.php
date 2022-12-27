@@ -381,7 +381,7 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("column", "graph_1", "fun", "number of students", "courses", <?php echo $data_for_courses_and_students ?>);
+        draw("bar", "graph_1", "", "number of students", "courses", <?php echo $data_for_courses_and_students ?>);
     </script>
 </body>
 
