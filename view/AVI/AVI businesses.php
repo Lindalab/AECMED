@@ -1,3 +1,6 @@
+<?php
+require_once("../../controllers/business_controller.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +65,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Hybrid businesses - $35000</h5>
+                                    <h5 class="card-title">Hybrid businesses - $<?php  total_business_revenue_by_type_ctr(3);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="Hybrid businesses image">
@@ -76,7 +79,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">NGOs</h5>
+                                    <h5 class="card-title">NGOs - $<?php total_business_revenue_by_type_ctr(2);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="NGOs image">
@@ -90,7 +93,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Profit businesses - $25000</h5>
+                                    <h5 class="card-title">Profit businesses - $<?php total_business_revenue_by_type_ctr(1);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="For profit businesses image">

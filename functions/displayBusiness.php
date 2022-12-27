@@ -3,15 +3,13 @@ require_once("../controllers/business_controller.php");
 
 function showAllBusiness_fnc($department_name)
 {
-
     $data = business_data_ctr($department_name);
-   foreach($data as $product) {
-
-            $product_id = $product['product_id'];
-            $productName = $product['product_name'];
-            $productPrice = $product['product_price'];
-            $productImage = $product['product_image'];
-            showSingleBusiness($product_id,$productName,$productPrice,$productImage);
+    foreach($data as $product) {
+        $product_id = $product['product_id'];
+        $productName = $product['product_name'];
+        $productPrice = $product['product_price'];
+        $productImage = $product['product_image'];
+        showSingleBusiness($product_id,$productName,$productPrice,$productImage);
             
 
             
