@@ -26,5 +26,8 @@ require_once dirname(__FILE__)."/../classes/module_class.php";
         $module = new Module;
         return $module->select_one_module($module_id);
     }
-
+    function number_of_modules_ctr(){
+        $module = new Module;
+        return $module->number_of_modules();
+    }
 ?>

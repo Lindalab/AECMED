@@ -1,3 +1,8 @@
+<?php
+require_once("../controllers/business_controller.php");
+require_once("../controllers/module_controller.php");
+require_once("../controllers/stakeholder_controller.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,14 +64,14 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Businesses - 41</h5>
+                                    <h5 class="card-title">Businesses - <?php echo number_of_businesses_ctr(); ?></h5>
                                     <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
-                                                Male owned - 23
+                                                Male owned - <?php echo number_of_businesses_by_gender_ctr(2);?>
                                             </li>
                                             <li>
-                                                Female owned - 41
+                                                Female owned -  <?php echo number_of_businesses_by_gender_ctr(1);?>
                                             </li>
                                         </ul>
                                     </h6>
@@ -83,7 +88,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Modules - 21</h5>
+                                    <h5 class="card-title">Modules - <?php echo number_of_modules_ctr(); ?> </h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/modules-icon.svg" alt="Modules image">
@@ -97,7 +102,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Fellows - 1289</h5>
+                                    <h5 class="card-title">Fellows - <?php echo number_of_avi_fellows(); ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/fellows-icon.svg" alt="Fellows image">

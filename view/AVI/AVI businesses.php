@@ -90,7 +90,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">For profit businesses - $25000</h5>
+                                    <h5 class="card-title">Profit businesses - $25000</h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="For profit businesses image">

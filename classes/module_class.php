@@ -28,6 +28,14 @@
             $sql = "SELECT * FROM `module` WHERE `module_id`='$module_id'";
             return $this->db_fetch_one($sql);
         }
+
+        function number_of_modules(){
+            $sql = "SELECT * FROM `module` ";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
     }
 
 
