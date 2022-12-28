@@ -1,3 +1,7 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac_grant_view.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,29 +65,17 @@
         </header>
         <section>
             <header>
-                <h3>Company: Coca Cola</h3>
-                <p>Amount donated: $14200</p>
-                <p>Number of beneficiaries: 25</p>
-                <p>Date donated: 2022-09-15</p>
+                <h3>Company: <?php echo $grant_name ?></h3>
+                <p>Amount donated: <?php echo $total_amount?></p>
+                <p>Number of beneficiaries: NaN</p>
+                <p>Date donated: <?php echo  $date ?></p>
             </header>
             <br>
             <h5>
                 Grant Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+            <?php echo  $description ?>
             </p>
             <br>
         </section>
