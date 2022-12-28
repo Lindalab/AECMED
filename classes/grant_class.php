@@ -119,7 +119,7 @@ class Grant extends db_connection
 
 
     function grant_for_a_business($business_id){
-        $sql = "SELECT * FROM `grants`,business_grants,business WHERE business.business_id=business_grants.business_id and  grants.grant_id=business_grants.grant_id  and business_grants.business_id='$business_id' ";
+        $sql = "SELECT *, business_grants.amount as amount_received FROM `grants`,business_grants,business WHERE business.business_id=business_grants.business_id and  grants.grant_id=business_grants.grant_id  and business_grants.business_id='$business_id' ";
 
         return $this->db_fetch_all($sql);
     }
