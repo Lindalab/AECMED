@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/module_class.php");
+require_once dirname(__FILE__)."/../classes/module_class.php";
 
     function create_module_ctr($module_name, $desc, $department_id){
         $module = new Module;
@@ -26,5 +26,8 @@
         $module = new Module;
         return $module->select_one_module($module_id);
     }
-
+    function number_of_modules_ctr(){
+        $module = new Module;
+        return $module->number_of_modules();
+    }
 ?>

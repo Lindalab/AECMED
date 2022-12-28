@@ -35,4 +35,8 @@
         $user= new Stakeholder;
         return $user->insert_stakeholder_module($stakeholder_id,$module_id);
     }
+    function number_of_avi_fellows(){
+        $user= new Stakeholder;
+        return $user->number_of_avi_fellows();
+    }
 ?>

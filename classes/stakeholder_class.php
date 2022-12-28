@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
 
     class Stakeholder extends db_connection{
         
@@ -36,6 +36,14 @@
         function insert_stakeholder_module($stakeholder_id,$module_id){
             $sql="INSERT INTO `stakeholder_modules`(`stakeholder_id`, `module_id`) VALUES ('$stakeholder_id','$module_id')";
             return $this->db_query($sql);
+        }
+
+        function number_of_avi_fellows(){
+            $sql = "SELECT * FROM `module` ";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
         }
     }
 

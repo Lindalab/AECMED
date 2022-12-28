@@ -1,3 +1,13 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/project_controller.php";
+    require_once dirname(__FILE__)."/../../functions/tac_courses.php";
+  
+    $projects = count_project_under_dpt(TAC)['number'];
+    $data_for_courses_and_students = list_of_courses_and_student();
+    $data_for_course_project = graph_course_project();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,7 +74,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Student Projects - 15</h5>
+                                    <h5 class="card-title">Student Projects - <?php echo $projects ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/projects-icon.svg" alt="Student projects image">
@@ -116,7 +126,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php display_student_project()?>;
+                    <!-- <tr>
                         <td>
                             Foundation for Design and Entrepreneurship
                         </td>
@@ -324,7 +335,7 @@
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!--		Start Pagination -->
@@ -345,35 +356,20 @@
         <!-- Data visualization -->
         <section class="data-viz mt-5">
             <figure>
-                <?php
-
-                $conn = mysqli_connect('localhost', "root", "", "shoppn");
-                $sql = "SELECT * FROM `products`";
-                $res = mysqli_query($conn, $sql);
-                $res2 = mysqli_fetch_all($res, MYSQLI_ASSOC);
-                $dataPoints = array();
-                foreach ($res2 as $item) {
-                    array_push($dataPoints, array("y" => $item['product_price'], "label" => $item['product_title']));
-                }
-                ?>
-
-
-                <!--Bar Graph -->
+                  <!--Bar Graph -->
                 <div class="bgraph" id="graph_1">
                     Bar graph for platform projects for past four years
                 </div>
                 <figcaption class="text-center">
-                    Platform Projects for the past four(4) years
+                    <!-- Courses and Number of Students -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <div class="bgraph">
+                <div class="bgraph" id="graph_2">
                     Bar graph for fellow projects for past four years
                 </div>
-                <figcaption class="text-center">
-                    Fellow Projects for the past four(4) years
-                </figcaption>
+                
             </figure>
         </section>
         <!-- <div id="container2" style="height: 370px; width: 50%;">Hello</div> -->
@@ -381,7 +377,9 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("column", "graph_1", "fun", "ylabel", "xlabel", <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>);
+        draw("bar", "graph_1", "Courses And Student Number", "number of students", "courses", <?php echo $data_for_courses_and_students ?>);
+
+        draw("pie", "graph_2", "Courses And Projects", "number of students", "courses", <?php echo  $data_for_course_project ?>);
     </script>
 </body>
 

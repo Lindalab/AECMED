@@ -1,3 +1,22 @@
+<?php 
+    require_once("../controllers/course_controller.php");
+    require_once("../controllers/event_controller.php");
+    require_once("../controllers/business_controller.php");
+    require_once("../controllers/grant_controller.php");
+    // require_once("../controllers/business_controller.php")
+
+    $department = 3;
+    
+    $courses = count_course_under_dpt_ctr($department);
+    $events = count_event_for_department_ctr($department);
+    $student_businesses = number_of_businesses_department_ctr($department);
+    $grants = sum_grant_for_dpt_ctr($department)['amount'];
+    $internal_grants = grant_department_and_type_ctr($department,INTERNAL)['amount'];
+    $external_grants = grant_department_and_type_ctr($department,EXTERNAL)['amount'];
+    $clubs = 21;
+    $business_revenue = total_business_revenue_for_a_department($department)['amount'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +77,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Courses - 5</h5>
+                                    <h5 class="card-title">Courses - <?php echo $courses;?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/courses-icon.svg" alt="Courses image">
@@ -72,7 +91,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Student businesses - $1289</h5>
+                                    <h5 class="card-title">Student businesses - <?php echo $student_businesses ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/business-icon.svg" alt="Student businesses image">
@@ -86,14 +105,14 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Student grants - 21</h5>
+                                    <h5 class="card-title">Student grants - $<?php echo $grants ?></h5>
                                     <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
-                                                Internal Grants - $213
+                                                Internal Grants - $<?php echo $internal_grants ?>
                                             </li>
                                             <li>
-                                                External Grants - $413
+                                                External Grants - $<?php echo $external_grants ?>
                                             </li>
                                         </ul>
                                     </h6>
@@ -110,7 +129,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Campus clubs - 21</h5>
+                                    <h5 class="card-title">Campus clubs - <?php echo $clubs; ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/clubs-icon.svg" alt="Campus clubs image">
@@ -124,7 +143,21 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Events - 21</h5>
+                                    <h5 class="card-title">Events - <?php echo $events; ?></h5>
+                                </div>
+                                <div class="col-3">
+                                    <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                </a>
+                <a href="./TAC/TAC events.php">
+                    <li class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="card-title">Student Business Revenue - $<?php echo $business_revenue ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">

@@ -1,5 +1,5 @@
 <?php 
-    require_once("../classes/department_class.php");
+    require_once dirname(__FILE__)."/../classes/department_class.php";
 
     function create_department_ctr($department_name){
         $dpt = new Department;

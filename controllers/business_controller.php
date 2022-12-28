@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/business_class.php");
+require_once dirname(__FILE__)."/../classes/business_class.php";
 
     function create_business_ctr($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
         $business = new Business;
@@ -80,6 +80,11 @@
         return $business->total_business_revenue_for_a_year($business_id, $year);
     }
 
+    function total_business_revenue_for_a_department($department){
+        $business = new Business;
+        return $business->total_business_revenue_for_a_department($department);
+    }
+
     function report_business_revenue_ctr($business_id, $amount, $year){
         $business = new Business;
         return $business->report_business_revenue($business_id, $amount, $year);
@@ -112,9 +117,19 @@
         return $business->number_of_businesses();
     }
 
+    function number_of_businesses_department_ctr($department){
+        $business = new Business;
+        return $business->number_of_businesses_department($department);
+    }
+
     function number_of_business_in_year_ctr($year){
         $business = new Business;
         return $business->number_of_business_in_year($year);
+    }
+
+    function business_revenue_last_four_years_ctr($department,$year){
+        $business = new Business;
+        return $business->business_revenue_last_four_years($department, $year);
     }
 
     function stakeholder_business($business_id){
@@ -141,4 +156,16 @@
         $business = new Business;
         return $business->update_stakeholder_business($stakeholder_id, $business_id);
     }
+
+    function business_data_ctr($department_name){
+        $business= new Business;
+        return $business->business_data($department_name);
+    }
+
+    function business_employment_created_ctr($business_id){
+        $business= new Business;
+        return $business->business_employment_created($business_id);
+    }
+
+    
 ?>

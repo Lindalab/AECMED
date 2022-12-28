@@ -1,3 +1,9 @@
+<?php 
+ require_once dirname(__FILE__)."/../../functions/tac_businesses.php";
+
+ $graph_1_data = business_revenue_in_last_four_years();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +67,7 @@
                 <h3>
                     Student Businesses
                 </h3>
+                
                 <section>
                     <label for="maxRows" class="d-inline">Rows to display</label>
                     <select class="form-control d-inline" name="state" id="maxRows" style="width: 5rem;">
@@ -103,7 +110,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php $total_grant = student_business(); ?>
+                    <!-- <tr>
                         <td>
                             EasyGo
                         </td>
@@ -127,7 +135,7 @@
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!--		Start Pagination -->
@@ -144,29 +152,34 @@
 				  </ul>
 				</div>
 			</div>
-            <h6>Total Grants Received: $12000</h6>
+            <h6>Total Grants Received: $<?php echo $total_grant ?></h6>
         </section>
         <!-- Data visualization -->
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_1">
                     Bar graph for platform projects for past four years
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Total Business Revenue Generated over the past four(4) years
+                    <!-- Total Business Revenue Generated over the past four(4) years -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" >
                     Bar graph for fellow projects for past four years
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Total Employment Created over the years
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Total Business Revenue Generated over the past four(4) years", "$amount in dollars", "years", <?php echo $graph_1_data ?>);
+    </script>
 </body>
 </html>

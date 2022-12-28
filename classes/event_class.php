@@ -1,5 +1,5 @@
 <?php 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
     
     class event extends db_connection{
 
@@ -45,6 +45,12 @@
         function event_for_department($department_id){
             $sql = "SELECT * FROM `events`WHERE `department_id`='$department_id'";
             return $this->db_fetch_all($sql);
+        }
+
+        function count_event_for_department_ctr($department_id){
+            $sql = "SELECT * FROM `events`WHERE `department_id`='$department_id'";
+            $this->db_fetch_all($sql);
+            return $this->db_count();
         }
 
 

@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/course_class.php");
+require_once dirname(__FILE__)."/../classes/course_class.php";
 
     function create_course_ctr($course_name, $date_started, $desc, $status, $department){
         $business = new course;
@@ -32,6 +32,11 @@
         return $course->select_course_under_dpt($department);
     }
 
+    function count_course_under_dpt_ctr($department){
+        $course = new course;
+        return $course->count_course_under_dpt_ctr($department);
+    }
+
     function insert_course_student_ctr($course_id, $females, $males, $year){
         $course = new course;
         return $course->insert_course_student($course_id, $females, $males, $year);
@@ -55,6 +60,11 @@
     function selet_a_course_student_ctr($course_id){
         $course = new course;
         return $course->selet_a_course_student($course_id);
+    }
+
+    function list_course_student_ctr(){
+        $course = new course;
+        return $course->list_course_student();
     }
 
     function select_a_course_ctr($course_id){
@@ -83,4 +93,15 @@
         return $course->delete_stakeholder_modules($stakeholder_id, $module_id);
     }
 
+    function count_course_project_ctr($course_id){
+        $course = new course;
+        return $course->count_course_project($course_id);
+    }
+
+    function count_course_project_graph_ctr(){
+        $course = new course;
+        return $course->count_course_project_graph();
+    }
+
+    // echo count_course_under_dpt_ctr("3");
 ?>

@@ -66,10 +66,11 @@
                 <p>Employment Created: 5</p>
                 <p>Date created: 2019-11-15</p>
                 <p>Business Type: For-profit</p>
+                <p>Business Type: For-profit</p>
             </header>
             <br>
             <h5>
-                Business Owners
+                Business Logo
             </h5>
             <div class="view-sec">
                 <section class="view">
@@ -80,27 +81,7 @@
                             <sub class="text-muted">gupta@gmail.com</sub>
                         </figcaption>
                     </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
+                    
                 </section>
             </div><br>
             <h5>

@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../classes/grant_class.php");
+require_once dirname(__FILE__)."/../classes/grant_class.php";
 
     function create_grant_ctr($grant_name, $grant_type, $date_received, $grant_desc, $image, $department_id, $amount){
         $grant = new Grant;
@@ -52,6 +52,11 @@
         return $grant->grant_department_in_year($department_id,$year);
     }
 
+    function grant_department_and_type_ctr($department_id,$type){
+        $grant = new Grant;
+        return $grant->grant_department_and_type($department_id,$type);
+    }
+
     function sum_grant_for_project_ctr($project_id){
         $grant = new Grant;
         return $grant-> sum_grant_for_project($project_id);
@@ -75,6 +80,11 @@
     function grant_for_a_business_ctr($business_id){
         $grant = new Grant;
         return $grant->grant_for_a_business($business_id);
+    }
+
+    function total_grant_for_a_business_ctr($business_id){
+        $grant = new Grant;
+        return $grant->total_grant_for_a_business($business_id);
     }
 
     function grant_for_a_business_per_year_ctr($business_id, $year){

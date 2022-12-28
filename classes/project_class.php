@@ -1,5 +1,6 @@
 <?php 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
+    // require_once("../settings/db_class.php");
 
     class Project extends db_connection{
 
@@ -39,13 +40,18 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_project_under_dpt($department_id){
+            $sql = "SELECT COUNT(department_id) as number FROM `project` WHERE `department_id`='$department_id'";
+            return $this->db_fetch_one($sql);
+        }
+
+        // function count_project_under_depat
+
         function select_project_under_dpt_in_year($department, $year){
             $sql = "SELECT * FROM `project` WHERE `department_id`='$department' and EXTRACT(YEAR FROM date_started)= '$year' ";
 
             return $this->db_fetch_all($sql);
         }
-
-    
 
         function select_project_status($status){
             $sql = "SELECT * FROM `project` WHERE `project_status`='$status'";
@@ -59,6 +65,11 @@
         function select_project_stakeholders($project_id){
             $sql = "SELECT * FROM stakeholder,stakeholder_project,project WHERE stakeholder.stakeholder_id=stakeholder_project.stakeholder_id and stakeholder_project.project_id=project.project_id and stakeholder_project.project_id= '$project_id'";
             return $this->db_fetch_all($sql);
+        }
+
+        function count_project_stakeholders($project_id){
+            $sql = "SELECT count(stakeholder_id) as count FROM `stakeholder_project` where project_id = $project_id";
+            return $this->db_fetch_one($sql);
         }
 
 
@@ -86,6 +97,12 @@
         function select_one_stakeholder_project($stakeholder_id, $project_id){
             $sql = "SELECT * FROM stakeholder,stakeholder_project,project WHERE stakeholder.stakeholder_id=stakeholder_project.stakeholder_id and stakeholder_project.project_id=project.project_id and project.project_id ='$stakeholder_id' and stakeholder.stakeholder_id='$project_id' ";
             return $this->db_fetch_one($sql);
+        }
+
+        function count_projects_in_year($department_id){
+            $sql = "SELECT EXTRACT(YEAR FROM date_started) as year, count(project_id) as count FROM project where department_id = $department_id GROUP BY year;";
+
+            return $this->db_fetch_all($sql);
         }
 
     

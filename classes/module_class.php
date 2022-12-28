@@ -1,6 +1,6 @@
 <?php 
 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
 
     class Module extends db_connection{
 
@@ -27,6 +27,14 @@
         function select_one_module($module_id){
             $sql = "SELECT * FROM `module` WHERE `module_id`='$module_id'";
             return $this->db_fetch_one($sql);
+        }
+
+        function number_of_modules(){
+            $sql = "SELECT * FROM `module` ";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
         }
     }
 
