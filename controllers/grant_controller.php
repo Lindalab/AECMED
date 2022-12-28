@@ -82,6 +82,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->grant_for_a_business($business_id);
     }
 
+    function total_grant_for_a_business_ctr($business_id){
+        $grant = new Grant;
+        return $grant->total_grant_for_a_business($business_id);
+    }
+
     function grant_for_a_business_per_year_ctr($business_id, $year){
         $grant = new Grant;
         return $grant->grant_for_a_business_per_year($business_id, $year);

@@ -127,6 +127,11 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->number_of_business_in_year($year);
     }
 
+    function business_revenue_last_four_years_ctr($department,$year){
+        $business = new Business;
+        return $business->business_revenue_last_four_years($department, $year);
+    }
+
     function stakeholder_business($business_id){
         $business = new Business;
         return $business->stakeholder_business($business_id);
@@ -155,6 +160,11 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
     function business_data_ctr($department_name){
         $business= new Business;
         return $business->business_data($department_name);
+    }
+
+    function business_employment_created_ctr($business_id){
+        $business= new Business;
+        return $business->business_employment_created($business_id);
     }
 
     

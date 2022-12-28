@@ -17,13 +17,12 @@
             
             $sql = "INSERT INTO `business_details`(`business_id`, `number_of_employees`,`formalised_structure`, `sdg_alignment`) VALUES ('$business_id','$number_of_employees','$formalised_structure','$sdg_alignment')";
 
-            
-            
             return $this->db_query($sql);
         }
 
         function add_business_grant($grant_id,$business_id, $amount){
             $sql = "INSERT INTO `business_grants`(`grant_id`, `business_id`, `amount`) VALUES ('$grant_id','$business_id','$amount')";
+
             return $this->db_query($sql);
         }
 
@@ -119,6 +118,12 @@
             return $this->db_count();
         }
 
+        function business_revenue_last_four_years($department, $year){
+            $sql = "SELECT business_revenue.revenue_year as year, SUM(business_revenue.revenue_amount) as revenue FROM business_revenue, business where business.business_id = business_revenue.business_id and business_revenue.revenue_year >= $year and business.department_id = $department GROUP BY business_revenue.revenue_year;";
+
+            return $this->db_fetch_all($sql);
+        }
+
 
 
         // BUSINESS REVENUE
@@ -142,7 +147,7 @@
          */
 
         function total_one_business_revenue($business_id){
-            $sql = "SELECT SUM(revenue_amount) FROM `business_revenue` WHERE `business_id`= '$business_id'";
+            $sql = "SELECT SUM(revenue_amount) as amount FROM `business_revenue` WHERE `business_id`= '$business_id'";
 
             return $this->db_fetch_one($sql);
         }
@@ -168,7 +173,7 @@
         }
 
         function total_business_revenue_for_a_department($department){
-            $sql = "SELECT SUM(revenue_amount) as amount FROM `business_revenue`, business WHERE business.business_id = business_revenue.business_id and business.department_id = $department;";
+            $sql = "SELECT busines_name, SUM(revenue_amount) as amount FROM `business_revenue`, business WHERE business.business_id = business_revenue.business_id and business.department_id = $department;";
 
             return $this->db_fetch_one($sql);
         }
@@ -247,6 +252,16 @@
             and department.department_name='$department_name' ";
             return $this->db_query($sql);
         }
+
+
+        function business_employment_created($business_id){
+            $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business_details where business_id=$business_id GROUP BY business_details.business_id;";
+
+            return $this->db_fetch_one($sql);
+        }
+
+        
+        
 
        
     }
