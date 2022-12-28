@@ -1,3 +1,10 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac.php";
+    require_once dirname(__FILE__)."/../../functions/tac_grant.php";
+
+    $graph_1_data = graphing_data_for_years_and_business();
+    $graph_2_data = graphing_data_busines_type();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +69,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Internal Grants - $1500</h5>
+                                    <h5 class="card-title">Internal Grants - $<?php echo  $internal_grants ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/grants-icon.svg" alt="Internal Grants image">
@@ -76,7 +83,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">External Grants - $2500</h5>
+                                    <h5 class="card-title">External Grants - $<?php echo  $external_grants ?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/grants-icon.svg" alt="External Grants image">
@@ -131,28 +138,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            Coca Cola 
-                        </td>
-                        <td>
-                            25
-                        </td>
-                        <td>
-                            $14200
-                        </td>
-                        <td>
-                            2022-09-15
-                        </td>
-                        <td>
-                            External Grant
-                        </td>
-                        <td>
-                            <a href="TAC grant-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
+                    <?php 
+                        show_grants();
+                    ?>
                 </tbody>
             </table>
             <!-- Start Pagination -->
@@ -174,23 +162,30 @@
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_1">
                     Line graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Grants received over the past four(4) years
+                    <!-- Grants received over the past four(4) years -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_2">
                     Bar graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Grant Type over the past four(4) years
+                    <!-- Grant Type over the past four(4) years -->
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php echo $graph_1_data ?>);
+
+        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+    </script>
 </body>
 </html>
