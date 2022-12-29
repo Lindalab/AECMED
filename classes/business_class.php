@@ -116,6 +116,15 @@
             return $this->db_count();
         }
 
+        function number_of_businesses_by_gender($department_id, $gender){
+            $sql = "SELECT DISTINCT(stakeholder_business.stakeholder_id) FROM stakeholder_business,stakeholder,business WHERE business.business_id=stakeholder_business.business_id and stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder.gender='$gender' and business.department_id = $department_id ";
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
+    
+
         /**
          * businesses started in a particular year
          */

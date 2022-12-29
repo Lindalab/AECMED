@@ -126,6 +126,13 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->number_of_businesses_department($department);
     }
 
+    function  number_of_businesses_by_gender_ctr($department_id, $gender){
+        $business =new Business;
+        return $business->number_of_businesses_by_gender($department_id,$gender);
+    }
+
+
+
     function number_of_business_in_year_ctr($year){
         $business = new Business;
         return $business->number_of_business_in_year($year);

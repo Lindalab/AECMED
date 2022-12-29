@@ -64,14 +64,14 @@ require_once("../controllers/stakeholder_controller.php");
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Businesses - <?php echo number_of_businesses_ctr(); ?></h5>
+                                    <h5 class="card-title">Businesses - <?php echo number_of_businesses_department_ctr(AVI); ?></h5>
                                     <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
-                                                Male owned - <?php echo number_of_businesses_by_gender_ctr(2);?>
+                                                Male owners - <?php echo  number_of_businesses_by_gender_ctr(AVI, MALE);?>
                                             </li>
                                             <li>
-                                                Female owned -  <?php echo number_of_businesses_by_gender_ctr(1);?>
+                                                Female owners -  <?php echo number_of_businesses_by_gender_ctr(AVI, FEMALE);?>
                                             </li>
                                         </ul>
                                     </h6>
