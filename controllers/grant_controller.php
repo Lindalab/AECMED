@@ -52,10 +52,21 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->grant_department_in_year($department_id,$year);
     }
 
+    function grant_department_over_years_ctr($department_id,$year){
+        $grant = new Grant;
+        return $grant->grant_department_over_years($department_id,$year);
+    }
+
     function grant_department_and_type_ctr($department_id,$type){
         $grant = new Grant;
         return $grant->grant_department_and_type($department_id,$type);
     }
+
+    function grant_type_for_department_ctr($department){
+        $grant = new Grant;
+        return $grant->grant_type_for_department($department);
+    }
+
 
     function sum_grant_for_project_ctr($project_id){
         $grant = new Grant;
@@ -65,6 +76,12 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
     function grant_for_project_ctr($project_id){
         $grant = new Grant;
         return $grant->grant_for_project($project_id);
+    }
+
+    function count_grant_for_project_ctr($grant_id){
+        $grant = new Grant;
+        $count = $grant->count_grant_for_project($grant_id);
+        return $count;
     }
 
     function grant_for_project_per_year_ctr($project_id, $year){
@@ -80,6 +97,17 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
     function grant_for_a_business_ctr($business_id){
         $grant = new Grant;
         return $grant->grant_for_a_business($business_id);
+    }
+
+    function count_business_received_grant_ctr($grant){
+        $grant = new Grant;
+        $count = $grant->count_business_received_grant($grant);
+        return $count;
+    }
+
+    function total_grant_for_a_business_ctr($business_id){
+        $grant = new Grant;
+        return $grant->total_grant_for_a_business($business_id);
     }
 
     function grant_for_a_business_per_year_ctr($business_id, $year){

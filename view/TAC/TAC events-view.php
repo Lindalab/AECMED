@@ -1,3 +1,8 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac_event_view.php";
+
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,31 +66,38 @@
         </header>
         <section>
             <header>
-                <h3>Event Name: Make an Impact 2.0</h3>
-                <p>Number of attendees: 40</p>
-                <p>Event date: 2022-09-15</p>
+                <h3>Event Name: <?php echo $event_name ?></h3>
+                <p>Number of attendees: <?php echo $attendance ?></p>
+                <p>Event date: <?php echo $event_date ?></p>
             </header>
             <br>
             <h5>
                 Event Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+               <?php echo $event_description ?>
             </p>
             <br>
         </section>
+        <!-- Data visualization -->
+        <section class="data-viz mt-5">
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id="graph_1">
+                    Bar graph
+                </div>
+                <figcaption class="text-center">
+                    <!-- Events hosted over the past four(4) years -->
+                </figcaption>
+            </figure>
+        </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("pie", "graph_1", "Attendance based on gender", "attendance", "gender", <?php echo $dataPoint ?>);
+
+        // draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php //echo  $graph_2_data ?>);
+    </script>
 </body>
 </html>

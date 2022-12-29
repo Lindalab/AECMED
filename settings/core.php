@@ -13,6 +13,12 @@ ob_start();
 
 //function to check for role (admin, customer, etc)
 
+// basic statics
+define("INTERNAL", "1");
+define("EXTERNAL", "2");
+define("TAC", "3");
+define("D-Lab", "2");
+define("AVI", "1");
 
 
 ?>

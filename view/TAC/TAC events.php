@@ -1,3 +1,9 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac_events.php";
+
+    $graph_1_data = graph_event_attendance_year();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,22 +100,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            Make an Impact 2.0
-                        </td>
-                        <td>
-                            40
-                        </td>
-                        <td>
-                            2022-09-15
-                        </td>
-                        <td>
-                            <a href="TAC events-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
+                    <?php list_tac_events(); ?>
                 </tbody>
             </table>
             <!-- Start Pagination -->
@@ -131,14 +122,21 @@
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_1">
                     Bar graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Events hosted over the past four(4) years
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("column", "graph_1", "Events hosted over the past four(4) years", "attendance", "year", <?php echo $graph_1_data ?>);
+
+        // draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php //echo  $graph_2_data ?>);
+    </script>
 </body>
 </html>

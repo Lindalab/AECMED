@@ -1,18 +1,20 @@
 <?php
-require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+require_once dirname(__FILE__)."/../controllers/business_controller.php";
 
 function showAllBusiness_fnc($department_name)
 {
     $data = business_data_ctr($department_name);
-    foreach($data as $business) {
-    $business_id = $business['business_id'];
-    $businessName = $business['busines_name'];
-    $number_of_employees = $business['number_of_employees'];
-    $revenue_amount = $business['revenue_amount'];
-    $year_started = $business['year_started'];
-    $business_type = $business['business_type'];
-    }
-    showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$business_type);
+   foreach($data as $business) {
+
+            $business_id = $business['business_id'];
+            $businessName = $business['product_name'];
+            $number_of_employees = $business['number_of_employees'];
+            $revenue_amount = $business['revenue_amount'];
+            $year_started = $business['year_started'];
+            $business_type = $business['business_type'];
+           
+            showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$business_type);
+        }
    
 }
 

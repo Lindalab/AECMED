@@ -1,3 +1,6 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac_business_view.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,45 +64,21 @@
         </header>
         <section>
             <header>
-                <h3>Student Business: EasyGo</h3>
-                <p>Date Commenced: 2021-10-22</p>
-                <p>Business Sector: Tourism</p>
-                <p>Employment Created: 15</p>
-                <p>Revenue Generated: $1200</p>
+                <h3>Student Business: <?php echo $business_name ?></h3>
+                <p>Date Commenced: <?php echo $date ?> </p>
+                <p>Business Sector: <?php echo $business_sector ?></p>
+                <p>Employment Created: <?php echo $employment_created ?></p>
+                <p>Revenue Generated: $<?php echo $revenue_generated ?></p>
             </header>
             <br>
             <!-- Course Heads -->
             <h5>Student Business Owners</h5>
             <div class="view-sec">
                 <section class="view">
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
+                    <?php 
+                        show_business_owners($business_id);
+                    ?>
+                    
                 </section>
             </div>
             <!-- Project Description -->
@@ -107,24 +86,16 @@
                 Student Business Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+                <?php 
+                    echo $description;
+                ?>
             </p>
             <br>
             <h5>Grants Received</h5>
             <p>
-                Coca Cola Fund ($500)
+                <?php 
+                    business_grant_received($business_id);
+                ?>
             </p>
             <br>
         </section>

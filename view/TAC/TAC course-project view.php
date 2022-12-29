@@ -1,3 +1,19 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/project_controller.php";
+    require_once dirname(__FILE__)."/../../functions/tac_student_course_project_view.php";
+    
+
+    $project_id = $_GET['project_id'];
+    $project_details = select_one_project_ctr($project_id);
+
+    $project_name = $project_details['project_name'];
+    $date_started = $project_details['date_started'];
+    $desc = $project_details['project_description'];
+
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,46 +78,30 @@
         </header>
         <section>
             <header>
-                <h3>Course Project: Smart Bins</h3>
-                <p>Date Commenced: 2018-12-12</p>
+                <h3><small>Course Project: </small><?php echo $project_name;?></h3>
+                <p>Date Commenced: <?php echo $date_started ?></p>
             </header>
             <br>
             <!-- Course Heads -->
             <ul>
                 <h5>Course Project Members</h5>
-                <li>
-                    Minini manono
-                </li>
-                <li>
-                    Lorema Ipsuma
-                </li>
-                <li>
-                    David Quarshie
-                </li>
+                 <?php 
+                    project_stakeholder($project_id);
+                 ?>
             </ul>
             <!-- Project Description -->
             <h5>
                 Course Project Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+                <?php echo $desc ?>
             </p>
             <br>
             <h5>Grants Received</h5>
             <p>
-                Coca Cola Fund ($100)
+              <?php 
+                show_project_grant($project_id);
+              ?>
             </p>
             <br>
         </section>

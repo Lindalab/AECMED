@@ -149,7 +149,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                     </tr>
                 </thead>
 
-                <?php showAllBusiness_fnc("Ashesi Venture Incubator");?>
+                <?php showAllBusiness_fnc(1);?>
                 <!-- <tbody>
                     <tr>
                         <td>
