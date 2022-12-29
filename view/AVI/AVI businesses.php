@@ -1,5 +1,6 @@
 <?php
-require_once("../../controllers/business_controller.php");
+require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +66,7 @@ require_once("../../controllers/business_controller.php");
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Hybrid businesses - $<?php  total_business_revenue_by_type_ctr(3);?></h5>
+                                    <h5 class="card-title">Hybrid businesses - $<?php total_business_revenue_by_type_ctr(3);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="Hybrid businesses image">
@@ -147,7 +148,9 @@ require_once("../../controllers/business_controller.php");
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+
+                <?php showAllBusiness_fnc("Ashesi Venture Incubator");?>
+                <!-- <tbody>
                     <tr>
                         <td>
                             Fruits on Wheels
@@ -170,7 +173,7 @@ require_once("../../controllers/business_controller.php");
                             </a>
                         </td>
                     </tr>
-                </tbody>
+                </tbody> -->
             </table>
             <!-- Start Pagination -->
 			<div class='pagination-container' >

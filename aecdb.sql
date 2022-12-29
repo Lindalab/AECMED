@@ -38,7 +38,7 @@ CREATE TABLE `business` (
   `department_id` int(11) NOT NULL,
   `business_type` int(3) DEFAULT 0,
   `sector` varchar(50) NOT NULL,
-  `business_description` varchar(300) NOT NULL
+  `business_description` varchar(300) NOT NUL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

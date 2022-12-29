@@ -1,5 +1,5 @@
 <?php 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
     
     class event extends db_connection{
 

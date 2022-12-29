@@ -1,5 +1,5 @@
 <?php 
-    require_once("../settings/db_class.php");
+    require_once dirname(__FILE__)."/../settings/db_class.php";
 
     class Business extends db_connection{
 
@@ -179,6 +179,12 @@
          */
         function total_business_revenue_for_a_year($business_id, $year){
             $sql = "SELECT SUM(revenue_amount) FROM `business_revenue` WHERE `business_id`= '$business_id' and `revenue_year`= '$year'";
+
+            return $this->db_fetch_one($sql);
+        }
+
+        function total_business_revenue_for_a_department($department){
+            $sql = "SELECT SUM(revenue_amount) as amount FROM `business_revenue`, business WHERE business.business_id = business_revenue.business_id and business.department_id = $department;";
 
             return $this->db_fetch_one($sql);
         }
