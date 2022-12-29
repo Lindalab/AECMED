@@ -51,4 +51,9 @@
         $event = new event;
         return $event->event_for_department_a_year($department_id, $year);
     }
+
+    function event_for_department_over_years_ctr($department, $year){
+        $event = new event;
+        return $event->event_for_department_over_years($department, $year);
+    }
 ?>

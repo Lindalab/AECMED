@@ -60,7 +60,12 @@
             return $this->db_fetch_all($sql);
         }
 
-    
+        
+        function event_for_department_over_years($department, $year){
+            $sql = "SELECT EXTRACT(Year FROM date_organized) as year, SUM(female_attendace + male_attendance) as attendance FROM `events` WHERE EXTRACT(Year FROM date_organized) >= $year and department_id = $department GROUP BY EXTRACT(Year FROM date_organized);";
+
+            return $this->db_fetch_all($sql);
+        }
 
     }
 
