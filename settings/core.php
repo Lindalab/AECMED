@@ -19,6 +19,8 @@ define("EXTERNAL", "2");
 define("TAC", "3");
 define("D_Lab", "2");
 define("AVI", "1");
+define("MALE", "2");
+define("FEMALE", "1");
 
 
 ?>
