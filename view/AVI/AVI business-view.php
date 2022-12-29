@@ -1,3 +1,18 @@
+<?php
+require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+
+$businessid=$_GET['businessid'];
+$data=abusiness_data($businessid);
+$businessName = $data['business_name'];
+$business_description = $data['business_description'];
+$business_logo = $data['business_logo'];
+$business_email = $data['business_email'];
+$sector = $data['sector'];
+$business_contact = $data['business_contact'];
+$formalised_structure = $data['formalised_structure'];
+$sdg_alignment = $data['sdg_alignment'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,12 +76,12 @@
         </header>
         <section>
             <header>
-                <h3>Business Name: Fruits on Wheels</h3>
-                <p>Revenue Generated: $1000</p>
-                <p>Employment Created: 5</p>
-                <p>Date created: 2019-11-15</p>
-                <p>Business Type: For-profit</p>
-                <p>Business Type: For-profit</p>
+                <h3>Business Name: <?php echo $businessName;?></h3>
+                <p>Business Email: <?php echo $business_email;?></p>
+                <p>Business Sector: <?php echo $sector;?></p>
+                <p>Business Contact: <?php echo $business_contact; ?></p>
+                <p>Business Formalised structure:<?php echo $formalised_structure;?></p>
+                <p>SD Goals : <?php echo $sdg_alignment; ?></p>
             </header>
             <br>
             <h5>
@@ -75,10 +90,10 @@
             <div class="view-sec">
                 <section class="view">
                     <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
+                        <img class="img-view" src="../<?php echo $business_logo;?>" alt="img name">
                         <figcaption>
                             Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
+                            <sub class="text-muted"><?php echo $business_email;?></sub>
                         </figcaption>
                     </figure>
                     
@@ -88,19 +103,13 @@
                 Business Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
+               <?php echo $business_description;?>
+                <!-- <br><br>
                 Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                 luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
                 mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
                 nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+                Etiam nec pulvinar mauris, et ultrices ipsum. -->
             </p>
             <br>
         </section>

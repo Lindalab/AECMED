@@ -36,6 +36,11 @@
 
             return $this->db_count();
         }
+
+        function module_data(){
+            $sql="select module.module_id,module.module_name,COUNT(stakeholder_modules.stakeholder_id) FROM module,stakeholder_modules WHERE module.module_id=stakeholder_modules.module_id order by module.module_name";
+            return $this->db_fetch_all($sql);
+        }
     }
 
 

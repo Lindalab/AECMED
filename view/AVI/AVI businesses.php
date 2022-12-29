@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+require_once dirname(__FILE__)."/../../controllers/grant_controller.php";
 require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
 ?>
 <!DOCTYPE html>
@@ -66,7 +67,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Hybrid businesses - $<?php total_business_revenue_by_type_ctr(3);?></h5>
+                                    <h5 class="card-title">Hybrid businesses - $<?php echo total_business_revenue_by_type_ctr(3)['amount'];?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="Hybrid businesses image">
@@ -80,7 +81,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">NGOs - $<?php total_business_revenue_by_type_ctr(2);?></h5>
+                                    <h5 class="card-title">NGOs - $<?php  echo total_business_revenue_by_type_ctr(2)['amount'];?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="NGOs image">
@@ -94,7 +95,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Profit businesses - $<?php total_business_revenue_by_type_ctr(1);?></h5>
+                                    <h5 class="card-title">Profit businesses - $<?php echo total_business_revenue_by_type_ctr(1)['amount'];?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="For profit businesses image">
@@ -189,9 +190,9 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
 				  </ul>
 				</div>
 			</div>
-            <h6>Total grants received: $35000</h6>
-            <h6>Total revenue generated: $5000</h6>
-            <h6>Total employment created: 1000</h6>
+            <h6>Total grants received: $<?php echo sum_grant_for_dpt_ctr(AVI)['amount'];?></h6>
+            <h6>Total revenue generated: $<?php echo select_all_business_revenue_ctr(AVI)['amount'];?></h6>
+            <h6>Total employment created: <?php echo business_employment_created_by_dpt_ctr(AVI)['numbers'];?></h6>
         </section>
         <!-- Data visualization -->
         <section class="data-viz mt-5">

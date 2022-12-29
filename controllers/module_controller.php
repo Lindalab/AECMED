@@ -30,4 +30,8 @@ require_once dirname(__FILE__)."/../classes/module_class.php";
         $module = new Module;
         return $module->number_of_modules();
     }
+    function module_data_ctr(){
+        $module = new Module;
+        return $module->module_data();
+    }
 ?>

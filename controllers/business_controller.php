@@ -117,10 +117,7 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->number_of_businesses();
     }
 
-    function  number_of_businesses_by_gender_ctr($gender){
-        $business =new Business;
-        return $business->number_of_businesses_by_gender($gender);
-    }
+   
     function number_of_businesses_department_ctr($department){
         $business = new Business;
         return $business->number_of_businesses_department($department);
@@ -182,5 +179,18 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->business_employment_created($business_id);
     }
 
+    function select_all_business_revenue_ctr($department_id){
+        $business=new Business;
+        return $business->select_all_business_revenue($department_id);
+    }
+
+    function  business_employment_created_by_dpt_ctr($department_id){
+        $business = new Business;
+        return $business->business_employment_created_by_dpt($department_id);
+    }
+    function abusiness_data($business_id){
+        $business=new Business;
+        return $business->abusiness_data($business_id);
+    }
     
 ?>
