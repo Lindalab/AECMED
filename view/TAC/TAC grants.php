@@ -2,7 +2,7 @@
     require_once dirname(__FILE__)."/../../functions/tac.php";
     require_once dirname(__FILE__)."/../../functions/tac_grant.php";
 
-    $graph_1_data = graphing_data_for_years_and_business();
+    $graph_1_data = graphing_data_for_years_and_business(TAC);
     $graph_2_data = graphing_data_busines_type();
 ?>
 <!DOCTYPE html>
