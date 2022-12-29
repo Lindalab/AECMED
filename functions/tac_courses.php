@@ -2,6 +2,8 @@
     require_once dirname(__FILE__)."/../controllers/project_controller.php";
     require_once dirname(__FILE__)."/../controllers/course_controller.php";
     
+        
+    
     function list_of_courses_and_student(){
         $list = list_course_student_ctr();
         $dataPoints = array();
@@ -31,15 +33,15 @@
             $course_name = $course['course_name'];
             $number_of_students = selet_a_course_student_ctr($course_id)['count'];
             $number_of_projects = count_course_project_ctr($course_id)['count'];
-            $grant_received = 100;
+            $grant_received = "not yet";
             
             // student_project_row($course)
-            student_project_row($course_name, $number_of_students, $number_of_projects, $grant_received);
+            student_project_row($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received);
         }
     }
 
 
-    function student_project_row($course_name, $number_of_students, $number_of_projects, $grant_received){
+    function student_project_row($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received){
         echo "<tr>
         <td>
             $course_name
@@ -54,11 +56,45 @@
             $$grant_received
         </td>
         <td>
-            <a href='TAC Section-view.php'>
+            <a href='TAC Section-view.php?course_id=$course_id'>
                 <img src='./../../assets/read-more.svg' alt='View icon'>
             </a>
         </td>
     </tr>";
+    }
+
+
+    function display_course_project(){
+        $course_id = $_GET['course_id'];
+        $list = select_course_project($course_id);
+        foreach ($list as $value) {
+            course_projects($value['project_id'], $value['project_name'], "not yet", $value['date_started'], "active");
+        }
+    }
+
+
+    function course_projects($project_id, $project_name, $number_of_students, $date, $status){
+        echo "
+        <tr>
+        <td>
+            $project_name
+        </td>
+        <td>
+            $number_of_students
+        </td>
+        <td>
+            $date
+        </td>
+        <td>
+            $status
+        </td>
+        <td>
+            <a href='TAC course-project view.php?project_id=$project_id'>
+                <img src='./../../assets/read-more.svg' alt='View icon'>
+            </a>
+        </td>
+    </tr>
+        ";
     }
 
 ?>

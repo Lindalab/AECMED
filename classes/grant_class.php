@@ -97,7 +97,7 @@ class Grant extends db_connection
     // Sum of funds for a project
     function sum_grant_for_project($project_id)
     {
-        $sql = "SELECT  SUM(amount) FROM `project_grants` WHERE `project_id`='$project_id' ";
+        $sql = "SELECT  SUM(amount) as amount FROM `project_grants` WHERE `project_id`='$project_id' ";
 
         return $this->db_fetch_one($sql);
     }

@@ -17,7 +17,7 @@ ob_start();
 define("INTERNAL", "1");
 define("EXTERNAL", "2");
 define("TAC", "3");
-define("D-Lab", "2");
+define("D_Lab", "2");
 define("AVI", "1");
 
 
