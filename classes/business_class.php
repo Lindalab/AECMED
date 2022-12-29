@@ -257,15 +257,14 @@
             return $this->db_query($sql);
         }
 
-        function business_data($department_name){
-            $sql="SELECT * FROM business_revenue,business_grants,business_details,business,stakeholder_business,stakeholder,department 
+        function business_data(){
+            $sql="SELECT business.business_id,business.busines_name,business.year_started,SUM(business_revenue.revenue_amount),business_details.number_of_employees 
+            FROM business,business_revenue,business_details 
             where business.business_id=business_revenue.business_id 
-            and business.business_id= business_grants.grant_id 
             and business.business_id=business_details.business_id
-            and business.business_id=stakeholder_business.business_id
-            and stakeholder.stakeholder_id=stakeholder_business.stakeholder_id
-            and business.department_id= department.department_id
-            and department.department_id='$department_name' ";
+            and business.department_id= 1
+            GROUP BY business.business_id
+             ";
             return $this->db_fetch_all($sql);
         }
 

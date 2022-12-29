@@ -161,9 +161,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->update_stakeholder_business($stakeholder_id, $business_id);
     }
 
-    function business_data_ctr($department_name){
+    function business_data_ctr(){
         $business= new Business;
-        return $business->business_data($department_name);
+        return $business->business_data();
     }
 
     function total_business_revenue_by_type_ctr($busines_type){
