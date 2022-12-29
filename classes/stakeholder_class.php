@@ -39,7 +39,7 @@
         }
 
         function number_of_avi_fellows(){
-            $sql = "SELECT * FROM `module` ";
+            $sql = "SELECT DISTINCT(stakeholder_business.stakeholder_id) FROM stakeholder_business,stakeholder,business WHERE business.business_id=stakeholder_business.business_id and stakeholder_business.stakeholder_id=stakeholder.stakeholder_id ";
 
             $this->db_fetch_all($sql);
 

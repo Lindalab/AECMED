@@ -1,44 +1,50 @@
 <?php
-require_once("../controllers/business_controller.php");
+require_once dirname(__FILE__)."/../controllers/business_controller.php";
 
-function showAllBusiness_fnc($department_name)
+function showAllBusiness_fnc()
 {
+    $data = business_data_ctr();
+   foreach($data as $business) {
 
-    $data = business_data_ctr($department_name);
-   foreach($data as $product) {
-
-            $product_id = $product['product_id'];
-            $productName = $product['product_name'];
-            $productPrice = $product['product_price'];
-            $productImage = $product['product_image'];
-            showSingleBusiness($product_id,$productName,$productPrice,$productImage);
+            $business_id = $business['business_id'];
+            $businessName = $business['product_name'];
+            $number_of_employees = $business['number_of_employees'];
+            $revenue_amount = $business['revenue_amount'];
+            $year_started = $business['year_started'];
+            $business_type = $business['business_type'];
+           
+            showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$business_type);
         }
    
 }
 
-
-
-function showSingleBusiness($product_id,$productName,$productPrice,$productImage)
+function showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$business_type)
 {
 
     echo "
-                <div class='col-lg-4 col-md-6 text-center strawberry'>
-					<div class='single-product-item'>
-						<div class='product-image'>
-							<a href='single-product.php'><img src='$productImage' alt=''></a>
-						</div>
-						<h3>$productName</h3>
-						<p class='product-price'><span>Per Kg</span> $productPrice GHC </p>";
-
-                        if(isset($_SESSION['userLogin'])){
-						    echo "<a href='cart.php?pid=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Add to Cart</a>";
-                        }else{
-                            echo "<a href='cart.php?pid=$product_id' class='cart-btn'><i class='fas fa-shopping-cart'></i> Login to Add to Cart</a>";
-                        }
-					
-                    echo"    </div>
-				</div>
+    <tbody>
+                    <tr>
+                        <td>
+                        $businessName
+                        </td>
+                        <td>
+                        $number_of_employees
+                        </td>
+                        <td>
+                            $ $revenue_amount
+                        </td>
+                        <td>
+                        $year_started
+                        </td>
+                        <td>
+                        $business_type
+                        </td>
+                        <td>
+                            <a href='AVI business-view.php?business=$business_id'>
+                                <img src='./../../assets/read-more.svg' alt='View icon'>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
     ";
 }
-
-?>
