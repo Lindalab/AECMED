@@ -1,3 +1,13 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac_courses.php";
+    $course_id = $_GET['course_id'];
+    $course =  select_one_course_ctr($course_id);
+    $course_name = $course['course_name'];
+    $course_description = $course['course_description'];
+    $date = $course['date_started'];
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,8 +71,8 @@
         </header>
         <section>
             <header>
-                <h3>Course: Foundation for Design and Entrepreneurship</h3>
-                <p>Date Commenced: 2018-12-12</p>
+                <h3>Course: <?php echo  $course_name?></h3>
+                <p>Date Commenced: <?php echo $date ?></p>
             </header>
             <br>
             <!-- Course Heads -->
@@ -104,19 +114,7 @@
                 Course Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+                <?php echo $course_description ?>
             </p>
             <br>
             <h5>Grants Received</h5>
@@ -147,7 +145,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php display_course_project() ?>
+                    <!-- <tr>
                         <td>
                             Smart Bins
                         </td>
@@ -165,7 +164,7 @@
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </section>

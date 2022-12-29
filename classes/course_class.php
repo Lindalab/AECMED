@@ -125,11 +125,13 @@ class course extends db_connection
         return $this->db_fetch_all($sql);
     }
 
-    function select_course_project(){
-        $sql = "SELECT * FROM `course_project`, course, project where course.course_id = course_project.project_id and project.project_id = course_project.project_id";
+    function select_course_project($course_id){
+        $sql = "SELECT * FROM `course_project`, course, project where course.course_id = course_project.project_id and project.project_id = course_project.project_id and course.course_id = $course_id";
 
         return $this->db_fetch_all($sql);
     }
+
+    
 
 
 

@@ -103,5 +103,10 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         return $course->count_course_project_graph();
     }
 
+    function select_course_project($course_id){
+        $course = new course;
+        return $course->select_course_project($course_id);
+    }
+
     // echo count_course_under_dpt_ctr("3");
 ?>

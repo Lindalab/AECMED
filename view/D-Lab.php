@@ -1,3 +1,8 @@
+<?php 
+    require_once dirname(__FILE__)."/../controllers/project_controller.php";
+    require_once dirname(__FILE__)."/../controllers/event_controller.php";
+    require_once dirname(__FILE__)."/../controllers/grant_controller.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +63,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Projects - 41</h5>
+                                    <h5 class="card-title">Projects - <?php echo count_project_under_dpt(D_Lab)['number'] ?></h5>
                                     <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
@@ -82,7 +87,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Events - 21</h5>
+                                    <h5 class="card-title">Events - <?php echo count_event_for_department_ctr(D_Lab);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">
@@ -96,14 +101,14 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Grants - $1289</h5>
+                                    <h5 class="card-title">Grants - $<?php echo sum_grant_for_dpt_ctr(D_Lab)['amount'] ?></h5>
                                     <h6 class="card-subtitle mb-2">
                                         <ul>
                                             <li>
-                                                Internal Grants - $213
+                                                Internal Grants - $<?php echo grant_department_and_type_ctr(D_Lab,INTERNAL)['amount']?>
                                             </li>
                                             <li>
-                                                External Grants - $413
+                                                External Grants - $<?php echo grant_department_and_type_ctr(D_Lab,EXTERNAL)['amount'] ?>
                                             </li>
                                         </ul>
                                     </h6>

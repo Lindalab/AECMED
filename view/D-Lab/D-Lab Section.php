@@ -1,3 +1,7 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/d_lab_project.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,6 +131,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php list_project() ?>
                     <tr>
                         <td>
                             Make a Change
