@@ -242,7 +242,7 @@
                                 <li class="sub-sum-item">
                                     Teaching Across Curriculum Businesses Established
                                     <p class="sum-detail">
-                                        <?php echo $tac_businesses?>
+                                        <?php echo $tac_businesses                   ?>
                                     </p>
                                 </li>
                             </ul>

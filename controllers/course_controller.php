@@ -108,5 +108,14 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         return $course->select_course_project($course_id);
     }
 
-    // echo count_course_under_dpt_ctr("3");
-?>
+    function count_course_student_gender_ctr($course_id){
+        $course = new course;
+        return $course->count_course_student_gender($course_id);
+    }
+
+    function count_course_student_year_ctr($course_id, $year){
+        $course = new course;
+        return $course->count_course_student_year($course_id, $year);
+    }
+    
+    ?>

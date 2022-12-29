@@ -5,6 +5,8 @@
     $course_name = $course['course_name'];
     $course_description = $course['course_description'];
     $date = $course['date_started'];
+    $year = date("Y") - 4;
+    $graph_2_data = data_for_course_student_year($course_id, $year);
     
 ?>
 
@@ -168,6 +170,34 @@
                 </tbody>
             </table>
         </section>
+         <!-- Data visualization -->
+         <section class="data-viz mt-5">
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id="graph_1">
+                    Line graph
+                </div>
+                <figcaption class="text-center">
+                    <!-- Grants received over the past four(4) years -->
+                </figcaption>
+            </figure>
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id="graph_2">
+                 gender division of course students divided by gender
+                </div>
+                <figcaption class="text-center">
+                    <!-- Grant Type over the past four(4) years -->
+                </figcaption>
+            </figure>
+        </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("pie", "graph_1", "Gender Division Of Students", "number of students", "courses", <?php echo data_for_course_student_gender_graph($course_id) ?>);
+
+        draw("line", "graph_2", "<?php echo $course_name?> Student Enrolment", "number of students", "years", <?php echo $graph_2_data ?>);
+    </script>
 </body>
 </html>
