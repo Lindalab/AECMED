@@ -30,6 +30,14 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_all_project(){
+            $sql = "SELECT * FROM `project`";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
         function select_one_project($project_id){
             $sql = "SELECT * FROM `project` WHERE `project_id`='$project_id'";
             return $this->db_fetch_one($sql);

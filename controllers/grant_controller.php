@@ -37,6 +37,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->sum_grant_for_dpt($department_id);
     }
 
+    function sum_all_grant_ctr(){
+        $grant = new Grant;
+        return $grant->sum_all_grant();
+    }
+
     function select_grant_per_year_ctr($year){
         $grant = new Grant;
         return $grant->select_grant_per_year($year);

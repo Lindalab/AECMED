@@ -23,6 +23,12 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_all_event(){
+            $sql = "SELECT * FROM `events`";
+            $this->db_fetch_all($sql);
+            return $this->db_count();
+        }
+
         // selecting one event
         function select_one_event($event_id){
             $sql = "SELECT * FROM `events` WHERE `event_id`='$event_id'";

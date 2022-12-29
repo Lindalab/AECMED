@@ -116,12 +116,12 @@
             return $this->db_count();
         }
 
-        function number_of_businesses_by_gender($department_id, $gender){
-            $sql = "SELECT DISTINCT(stakeholder_business.stakeholder_id) FROM stakeholder_business,stakeholder,business WHERE business.business_id=stakeholder_business.business_id and stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder.gender='$gender' and business.department_id = $department_id ";
-            $this->db_fetch_all($sql);
+        // function number_of_businesses_by_gender($department_id, $gender){
+        //     $sql = "SELECT DISTINCT(stakeholder_business.stakeholder_id) FROM stakeholder_business,stakeholder,business WHERE business.business_id=stakeholder_business.business_id and stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder.gender='$gender' and business.department_id = $department_id ";
+        //     $this->db_fetch_all($sql);
 
-            return $this->db_count();
-        }
+        //     return $this->db_count();
+        // }
 
     
 
@@ -175,13 +175,13 @@
          * all years
          */
         function total_business_revenue(){
-            $sql = "SELECT SUM(revenue_amount) FROM `business_revenue`";
+            $sql = "SELECT SUM(revenue_amount) as amount FROM `business_revenue`";
 
             return $this->db_fetch_one($sql);
         }
 
         function total_business_revenue_by_type($busines_type){
-            $sql = "SELECT SUM(business_revenue.revenue_amount) FROM `business_revenue`,`business` WHERE business.business_id=business_revenue.business_id and
+            $sql = "SELECT SUM(business_revenue.revenue_amount) as amount FROM `business_revenue`,`business` WHERE business.business_id=business_revenue.business_id and
             business.business_type='$busines_type';";
 
             return $this->db_fetch_one($sql);
@@ -292,6 +292,12 @@
 
         function business_employment_created($business_id){
             $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business_details where business_id=$business_id GROUP BY business_details.business_id;";
+
+            return $this->db_fetch_one($sql);
+        }
+
+        function total_business_employment_created(){
+            $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business_details GROUP BY business_details.business_id;";
 
             return $this->db_fetch_one($sql);
         }
