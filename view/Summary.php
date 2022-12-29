@@ -1,3 +1,6 @@
+<?php 
+    require_once dirname(__FILE__)."/../functions/summary.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,16 +64,26 @@
                             <h5 class="card-title d-flex justify-content-between">
                                 Total Projects
                                 <p class="sum-detail">
-                                    55
+                                    <?php 
+                                        echo $total_projects;
+                                    ?>
                                 </p>
                             </h5>
                             <ul class="sub-sum">
+                            <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
+                                data-bs-trigger="hover focus" data-bs-custom-class="custom-popover"
+                                data-bs-content="Student projects: 52 Course projects: 25">
+                                    AVI Projects
+                                    <p class="sum-detail">
+                                        <?php echo $avi_projects ?>
+                                    </p>
+                                </li>
                                 <li class="sub-sum-item" tabindex="0" data-bs-toggle="popover" 
                                 data-bs-trigger="hover focus" data-bs-custom-class="custom-popover"
                                 data-bs-content="Platform projects: 52 Fellow projects: 25">
                                     Design Lab Projects
                                     <p class="sum-detail">
-                                        54
+                                        <?php echo $d_lab_projects ?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
@@ -78,9 +91,10 @@
                                 data-bs-content="Student projects: 52 Course projects: 25">
                                     Teaching Across Curriculum Projects
                                     <p class="sum-detail">
-                                        65
+                                        <?php echo $tac_projects ?>
                                     </p>
                                 </li>
+    
                             </ul>
                         </div>
                     </section>
@@ -91,7 +105,7 @@
                             <h5 class="card-title d-flex justify-content-between">
                                 Total Grants
                                 <p class="sum-detail">
-                                    $108000
+                                    $<?php echo $total_grants ?>
                                 </p>
                             </h5>
                             <ul class="sub-sum">
@@ -100,7 +114,7 @@
                                 data-bs-content="Internal Grants: $28000 External Grants: $8000">
                                     Ashesi Venture Incubator Grants
                                     <p class="sum-detail">
-                                        $36000
+                                       $<?php echo $avi_grants ?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
@@ -108,7 +122,7 @@
                                 data-bs-content="Internal Grants: $28000 External Grants: $8000">
                                     Design Lab Grants
                                     <p class="sum-detail">
-                                        $36000
+                                        $<?php echo $d_lab_grants?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
@@ -116,7 +130,7 @@
                                 data-bs-content="Internal Grants: $28000 External Grants: $8000">
                                     Teaching Across Curriculum Grants
                                     <p class="sum-detail">
-                                        $36000
+                                        $<?php echo $tac_grants ?>
                                     </p>
                                 </li>
                             </ul>
@@ -129,26 +143,26 @@
                             <h5 class="card-title d-flex justify-content-between">
                                 Total Events
                                 <p class="sum-detail">
-                                    55
+                                    <?php echo $total_events ?>
                                 </p>
                             </h5>
                             <ul class="sub-sum">
                                 <li class="sub-sum-item">
                                     Ashesi Venture Incubator Events
                                     <p class="sum-detail">
-                                        54
+                                        <?php echo $avi_events ?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
                                     Design Lab Events
                                     <p class="sum-detail">
-                                        65
+                                        <?php echo $d_lab_event ?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
                                     Teaching Across Curriculum Events
                                     <p class="sum-detail">
-                                        65
+                                        <?php echo  $tac_events?>
                                     </p>
                                 </li>
                             </ul>
@@ -163,20 +177,20 @@
                             <h5 class="card-title d-flex justify-content-between">
                                 Total Business Revenue
                                 <p class="sum-detail">
-                                    $28000
+                                    $<?php echo  $total_business_revenue ?>
                                 </p>
                             </h5>
                             <ul class="sub-sum">
                                 <li class="sub-sum-item">
                                     Ashesi Venture Incubator Business Revenue
                                     <p class="sum-detail">
-                                        $20000
+                                        $<?php echo $avi_business_revenure?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
                                     Teaching Across Curriculum Business Revenue
                                     <p class="sum-detail">
-                                        $8000
+                                        $<?php echo $tac_business_revenure ?>
                                     </p>
                                 </li>
                             </ul>
@@ -189,20 +203,20 @@
                             <h5 class="card-title d-flex justify-content-between">
                                 Total Employment Created
                                 <p class="sum-detail">
-                                    500
+                                    <?php echo $total_employment_created?>
                                 </p>
                             </h5>
                             <ul class="sub-sum">
                                 <li class="sub-sum-item">
                                     Ashesi Venture Incubator Employment Created
                                     <p class="sum-detail">
-                                        400
+                                        <?php echo $avi_employment_created ?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
                                     Teaching Across Curriculum Employment Created
                                     <p class="sum-detail">
-                                        100
+                                        <?php echo $tac_employment_created?>
                                     </p>
                                 </li>
                             </ul>
@@ -215,20 +229,20 @@
                             <h5 class="card-title d-flex justify-content-between">
                                 Total Businesses Established
                                 <p class="sum-detail">
-                                    150
+                                    <?php echo $total_businesses?>
                                 </p>
                             </h5>
                             <ul class="sub-sum">
                                 <li class="sub-sum-item">
                                     Ashesi Venture Incubator Businesses Established
                                     <p class="sum-detail">
-                                        125
+                                        <?php echo $avi_businesses?>
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
                                     Teaching Across Curriculum Businesses Established
                                     <p class="sum-detail">
-                                        25
+                                        <?php echo $tac_businesses?>
                                     </p>
                                 </li>
                             </ul>

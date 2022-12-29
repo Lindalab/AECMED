@@ -51,6 +51,13 @@ class Grant extends db_connection
         return $this->db_fetch_one($sql);
     }
 
+    function sum_all_grant(){
+        $sql = "SELECT SUM(amount) as amount FROM `grants`";
+
+        return $this->db_fetch_one($sql);
+    }
+
+
     // list grant for a particular year
     function select_grant_per_year($year)
     {
@@ -59,6 +66,7 @@ class Grant extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+ 
     // sum of grant for a particular year
     function sum_grant_for_year($year)
     {

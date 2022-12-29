@@ -171,7 +171,7 @@
          * all years
          */
         function total_business_revenue(){
-            $sql = "SELECT SUM(revenue_amount) FROM `business_revenue`";
+            $sql = "SELECT SUM(revenue_amount) as amount FROM `business_revenue`";
 
             return $this->db_fetch_one($sql);
         }
@@ -309,6 +309,12 @@
 
             return $this->db_fetch_one($sql);
         }
+        function total_business_employment_created(){
+            $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business_details GROUP BY business_details.business_id;";
+
+            return $this->db_fetch_one($sql);
+        }
+
         
         
 

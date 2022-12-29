@@ -198,23 +198,30 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_1">
                     Line graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Grants received over the past four(4) years
+                    <!-- Grants received over the past four(4) years -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id = "graph_2">
                     Bar graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Grant Type over the past four(4) years
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("pie", "graph_1", "Division of business by gender", "Number of owners", "Gender", <?php echo  $dataPoints ?>);
+
+        draw("column", "graph_2", " Grant Received over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+    </script>
 </body>
 </html>

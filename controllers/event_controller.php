@@ -22,6 +22,11 @@
         return $event->select_all_event();
     }
 
+    function count_all_event_ctr(){
+        $event = new event;
+        return $event->count_all_event();
+    }
+
     function select_one_event_ctr($event_id){
         $event = new event;
         return $event->select_one_event($event_id);
@@ -46,6 +51,8 @@
         $event = new event;
         return $event->count_event_for_department_ctr($department_id);
     }
+
+
 
     function event_for_department_a_year_ctr($department_id, $year){
         $event = new event;

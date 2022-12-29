@@ -50,11 +50,11 @@ function count_grant_beneficiaries($grant_id)
     return $count_projects;
 }
 
-function graphing_data_for_years_and_business()
+function graphing_data_for_years_and_business($department)
 {
     $year = date("Y");
     $year = $year - 4;
-    $data = grant_department_over_years_ctr(TAC, $year);
+    $data = grant_department_over_years_ctr($department, $year);
     $dataPoints = array();
     foreach ($data as $grant) {
         array_push($dataPoints, array("y" => $grant['amount'], "label" => $grant['year']));
@@ -70,7 +70,6 @@ function graphing_data_busines_type(){
     }
     return json_encode($dataPoints, JSON_NUMERIC_CHECK);
 }
-
 
 
 

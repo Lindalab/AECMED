@@ -26,6 +26,12 @@
         return $project->select_all_project();
     }
 
+    function count_all_project_ctr(){
+        $project = new Project;
+
+        return $project->count_all_project();
+    }
+
     function select_one_project_ctr($project_id){
         $project = new Project;
 
