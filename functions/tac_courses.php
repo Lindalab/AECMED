@@ -97,4 +97,30 @@
         ";
     }
 
+
+    function data_for_course_student_gender_graph($course_id){
+        $course = count_course_student_gender_ctr($course_id);
+        $dataPoints = array();
+        $males = $course['males'];
+        $females = $course['females'];
+        if($males === NULL){
+            $males = 0;
+        }
+        if($females === NULL){
+            $females = 0;
+        }
+        array_push($dataPoints, array("y" => $males, "label" => 'males'), array("y" => $females, "label" => 'females'));
+        return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+    }
+
+    function data_for_course_student_year($course_id, $year){
+        $list = count_course_student_year_ctr($course_id, $year);
+        $dataPoints = array();
+        foreach ($list as $course) {
+            array_push($dataPoints, array("y" => $course['students'], "label" => $course['course_year']));
+        }
+
+        return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+    }
+
 ?>

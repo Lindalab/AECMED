@@ -131,6 +131,18 @@ class course extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function count_course_student_gender($course_id){
+        $sql = "SELECT SUM(numberoffemaleStudent) as females, SUM(numberofmaleStudent) as males FROM `course_student` where course_id = $course_id;";
+
+        return $this->db_fetch_one($sql);
+    }
+
+    function count_course_student_year($course_id, $year){
+        $sql = "SELECT course_year, SUM(numberoffemaleStudent + numberofmaleStudent) as students FROM `course_student` where course_year >= $year and course_id=$course_id  GROUP BY course_year";
+
+        return $this->db_fetch_all($sql);
+    }
+
     
 
 
