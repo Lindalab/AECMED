@@ -6,9 +6,9 @@
         /**
          * create new business 
          */
-        function create_business($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
+        function create_business($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $sector, $business_description){
             
-            $sql = "INSERT INTO `business`(`year_started`, `busines_name`, `business_logo`, `business_location`, `business_contact`, `business_email`, `department_id`, `business_type`, `sector`, `business_description`) VALUES ('$year_started',' $business_name','$business_logo','$business_location',' $business_contact','$business_email','$department','$business_type','$sector','$business_description')";
+            $sql = "INSERT INTO `business`(`year_started`, `busines_name`, `business_logo`, `business_location`, `business_contact`, `business_email`, `department_id`,  `sector`, `business_description`) VALUES ('$year_started',' $business_name','$business_logo','$business_location',' $business_contact','$business_email','$department','$sector','$business_description')";
 
             return $this->db_query($sql);
         }
@@ -29,8 +29,8 @@
         /**
          * updates details of the business
          */
-        function update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description){
-            $sql = "UPDATE `business` SET `year_started`='$year_started',`busines_name`='$business_name',`business_location`='$business_location',`business_contact`='$business_contact',`business_email`='$business_email',`department_id`='$department',`business_type`='$business_type',`sector`='$sector',`business_description`='$business_description' WHERE `business_id`='$business_id'";
+        function update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description){
+            $sql = "UPDATE `business` SET `year_started`='$year_started',`busines_name`='$business_name',`business_location`='$business_location',`business_contact`='$business_contact',`business_email`='$business_email',`department_id`='$department',`sector`='$sector',`business_description`='$business_description' WHERE `business_id`='$business_id'";
 
             return $this->db_query($sql);
         }
@@ -268,7 +268,7 @@
         }
 
         function business_data(){
-            $sql="SELECT business.business_id as business_id,business.busines_name as business_name,business.year_started as year_started ,SUM(business_revenue.revenue_amount) as total_revenue,business_details.number_of_employees as number_of_employees,business.business_type,
+            $sql="SELECT business.business_id as business_id,business.busines_name as business_name,business.year_started as year_started ,SUM(business_revenue.revenue_amount) as total_revenue,business_details.number_of_employees as number_of_employees,
             business.business_description as business_description,
             business.business_logo as business_logo ,
             business.business_email as business_email,

@@ -1,3 +1,6 @@
+<?php
+require_once dirname(__FILE__)."/../../functions/displayModule.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +97,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php showAllModule_fnc(); ?>
+                    <!-- <tr>
                         <td>
                             Expanding your market
                         </td>
@@ -109,7 +113,7 @@
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!-- Start Pagination -->

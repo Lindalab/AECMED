@@ -239,8 +239,33 @@ CREATE TABLE course_faculty (
 ) ;
 
 
+CREATE TABLE Cohort(
+  cohort_id int(11) NOT NULL,
+  cohort_name varchar(50) NOT NULL,
+  cohort_year year NOT NULL
+)
+
+CREATE TABLE cohort_business(
+  business_id int(11) NOT NULL,
+ cohort_id int(11) NOT NULl
+)
+
+CREATE TABLE cohort_business(
+  course_id int(11) NOT NULL,
+ grant_id int(11) NOT NUL
+)
 
 
+Course grant table
+Cohort table
+cohort id
+cohot name
+cohort year
+
+
+ cohort business Table
+ business_id
+ cohort _id
 
 
 

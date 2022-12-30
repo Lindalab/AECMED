@@ -36,9 +36,8 @@ CREATE TABLE `business` (
   `business_contact` varchar(15) NOT NULL,
   `business_email` varchar(30) NOT NULL,
   `department_id` int(11) NOT NULL,
-  `business_type` int(3) DEFAULT 0,
   `sector` varchar(50) NOT NULL,
-  `business_description` varchar(300) NOT NUL
+  `business_description` varchar(1000) NOT NUL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -88,7 +87,7 @@ CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `course_name` varchar(50) NOT NULL,
   `date_started` date NOT NULL,
-  `course_description` varchar(300) NOT NULL,
+  `course_description` varchar(1000) NOT NULL,
   `course_status` int(3) NOT NULL,
   `department_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -139,7 +138,7 @@ CREATE TABLE `events` (
   `event_name` varchar(60) NOT NULL,
   `date_organized` date NOT NULL,
   `target_group` varchar(20) NOT NULL,
-  `event_description` varchar(300) NOT NULL,
+  `event_description` varchar(1000) NOT NULL,
   `male_attendance` int(11) NOT NULL,
   `female_attendace` int(11) NOT NULL,
   `event_type` varchar(20) NOT NULL,
@@ -169,7 +168,7 @@ CREATE TABLE `grants` (
   `grant_name` varchar(50) NOT NULL,
   `grant_type` int(3) NOT NULL,
   `date_received` date NOT NULL,
-  `grant_description` varchar(600) DEFAULT NULL,
+  `grant_description` varchar(1000) DEFAULT NULL,
   `grant_company_image` varchar(100) NOT NULL,
   `department_id` int(11) NOT NULL,
   `amount` double NOT NULL
@@ -184,7 +183,7 @@ CREATE TABLE `grants` (
 CREATE TABLE `module` (
   `module_id` int(11) NOT NULL,
   `module_name` varchar(50) NOT NULL,
-  `module_description` varchar(100) NOT NULL,
+  `module_description` varchar(1000) NOT NULL,
   `department_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -197,7 +196,7 @@ CREATE TABLE `module` (
 CREATE TABLE `project` (
   `project_id` int(11) NOT NULL,
   `project_name` varchar(50) NOT NULL,
-  `project_description` varchar(300) NOT NULL,
+  `project_description` varchar(1000) NOT NULL,
   `project_status` int(3) NOT NULL,
   `date_started` date NOT NULL,
   `sdg_goals` varchar(15) NOT NULL,
