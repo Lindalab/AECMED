@@ -94,6 +94,12 @@ class Grant extends db_connection
         return $this->db_fetch_one($sql);
     }
 
+    function list_grant_type_and_department($department_id, $type){
+        $sql = "SELECT  * FROM `grants` WHERE department_id= '$department_id' and  grant_type = $type";
+
+        return $this->db_fetch_all($sql);
+    }
+
     function grant_type_for_department($department){
         $sql = "SELECT  grant_type, SUM(amount) as amount FROM `grants` WHERE department_id= '$department' GROUP BY grant_type";
         return $this->db_fetch_all($sql);

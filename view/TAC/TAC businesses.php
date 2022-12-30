@@ -2,6 +2,7 @@
  require_once dirname(__FILE__)."/../../functions/tac_businesses.php";
 
  $graph_1_data = business_revenue_in_last_four_years();
+ $graph_2_data = business_owners_gender(TAC);
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous" defer></script>
-    <script src="./../../js/pagination.js" async defer></script>
+    <script src="./../../js/pagination.js" async defer></script>    
 </head>
 <body>
     <nav>
@@ -110,7 +111,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $total_grant = student_business(); ?>
+            <?php $total_grant = student_business(); ?>
                     <!-- <tr>
                         <td>
                             EasyGo
@@ -167,11 +168,11 @@
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <div class="bgraph" >
+                <div class="bgraph" id="graph_2">
                     Bar graph for fellow projects for past four years
                 </div>
                 <figcaption class="text-center">
-                    Total Employment Created over the years
+                    <!-- Total Employment Created over the years -->
                 </figcaption>
             </figure>
         </section>
@@ -180,6 +181,8 @@
     <script src="../../javascript/charts.js"></script>
     <script>
         draw("line", "graph_1", "Total Business Revenue Generated over the past four(4) years", "$amount in dollars", "years", <?php echo $graph_1_data ?>);
+
+        draw("pie", "graph_2", "Business Owners Categorized By Gender", "number", "gender", <?php echo $graph_2_data ?>);
     </script>
 </body>
 </html>

@@ -151,6 +151,20 @@
                         </div> 
                     </li>
                 </a>
+                <a href="./TAC/TAC businesses.php">
+                    <li class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="card-title">Employment Created - <?php echo $business_employment ?></h5>
+                                </div>
+                                <div class="col-3">
+                                    <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                </a>
             </ul>
         </header>
     </main>

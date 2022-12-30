@@ -309,12 +309,16 @@
 
             return $this->db_fetch_one($sql);
         }
+
         function total_business_employment_created(){
             $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business_details GROUP BY business_details.business_id;";
 
             return $this->db_fetch_one($sql);
         }
 
+        function business_employment_created_by_dpt_ctr($department_id){
+            
+        }
         
         
 

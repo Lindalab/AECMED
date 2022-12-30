@@ -64,7 +64,7 @@
             </section>
             <!-- Card Navigations -->
             <ul id="card-navs">
-                <a href="TAC grants-section.php">
+                <a href="TAC grants-section.php?grant_type=<?php echo INTERNAL?>">
                     <li class="card">
                         <div class="card-body">
                             <div class="row">
@@ -78,7 +78,7 @@
                         </div> 
                     </li>
                 </a>
-                <a href="TAC grants-section.php">
+                <a href="TAC grants-section.php?grant_type=<?php echo EXTERNAL?>">
                     <li class="card">
                         <div class="card-body">
                             <div class="row">

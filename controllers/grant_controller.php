@@ -67,6 +67,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->grant_department_and_type($department_id,$type);
     }
 
+    function list_grant_type_and_department_ctr($department_id, $type){
+        $grant = new Grant;
+        return $grant->list_grant_type_and_department($department_id, $type);
+    }
+
     function grant_type_for_department_ctr($department){
         $grant = new Grant;
         return $grant->grant_type_for_department($department);
