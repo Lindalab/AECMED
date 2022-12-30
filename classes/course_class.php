@@ -126,7 +126,7 @@ class course extends db_connection
     }
 
     function select_course_project($course_id){
-        $sql = "SELECT * FROM `course_project`, course, project where course.course_id = course_project.project_id and project.project_id = course_project.project_id and course.course_id = $course_id";
+        $sql = "SELECT * FROM `course_project`, project where project.project_id = course_project.project_id and course_project.course_id = $course_id";
 
         return $this->db_fetch_all($sql);
     }
@@ -139,6 +139,12 @@ class course extends db_connection
 
     function count_course_student_year($course_id, $year){
         $sql = "SELECT course_year, SUM(numberoffemaleStudent + numberofmaleStudent) as students FROM `course_student` where course_year >= $year and course_id=$course_id  GROUP BY course_year";
+
+        return $this->db_fetch_all($sql);
+    }
+
+    function course_grant($course_id){
+        $sql = "SELECT grants.*,course_grant.grant_id, sum(course_grant.amount_given) as amount FROM course_grant, grants where grants.grant_id = course_grant.grant_id and grants.grant_id = $course_id GROUP BY course_grant.grant_id;";
 
         return $this->db_fetch_all($sql);
     }
