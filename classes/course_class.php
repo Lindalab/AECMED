@@ -149,6 +149,11 @@ class course extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function grant_for_course($course_id){
+        $sql = "SELECT SUM(amount_given) as amount FROM course_grant where course_id = $course_id;";
+
+        return $this->db_fetch_one($sql);
+    }
     
 
 

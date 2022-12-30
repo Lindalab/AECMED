@@ -132,7 +132,7 @@ $graph_data = graphing_years_and_projects(TAC);
                     Bar graph for student projects for past four years
                 </div>
                 <figcaption>
-                    Student Projects for the past four(4) years
+                    <!-- Student Projects for the past four(4) years -->
                 </figcaption>
             </figure>
 
@@ -141,7 +141,7 @@ $graph_data = graphing_years_and_projects(TAC);
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("column", "graph_1", "Courses And Student Number", "number of students", "courses", <?php echo $graph_data ?>);
+        draw("column", "graph_1", "Student Projects Per Yeah", "number of projects", "year", <?php echo $graph_data ?>);
     </script>
 </body>
 
