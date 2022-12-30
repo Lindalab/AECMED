@@ -1,3 +1,12 @@
+<?php
+require_once dirname(__FILE__)."/../../controllers/module_controller.php";
+
+$moduleid=$_GET['moduleid'];
+$moduleName=$_GET['moduleName'];
+$totalstudent=$_GET['totalstudent'];
+$description=$_GET['des'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,8 +70,8 @@
         </header>
         <section>
             <header>
-                <h3>Module Name: Expanding your market</h3>
-                <p>Number of participants: 56</p>
+                <h3>Module Name: <?php echo $moduleName;?></h3>
+                <p>Number of participants: <?php echo $totalstudent;?></p>
                 <p>Date created: 2019-11-15</p>
             </header>
             <br>
@@ -70,13 +79,7 @@
                 Module Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
+                <?php echo $description;?>
                 <br><br>
                 Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                 luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 

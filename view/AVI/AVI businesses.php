@@ -142,7 +142,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                             <strong>Date created</strong>
                         </th>
                         <th>
-                            <strong>Business Type</strong>
+                            <strong>Business Sector</strong>
                         </th>
                         <th>
 

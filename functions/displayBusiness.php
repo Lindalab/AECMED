@@ -11,21 +11,14 @@ function showAllBusiness_fnc()
             $number_of_employees = $business['number_of_employees'];
             $revenue_amount = $business['total_revenue'];
             $year_started = $business['year_started'];
-            $business_type = $business['business_type'];
-            $business_description = $business['business_description'];
-            $business_logo = $business['business_logo'];
-            $business_email = $business['business_email'];
             $sector = $business['sector'];
-            $business_contact = $business['business_contact'];
-            $formalised_structure = $business['formalised_structure'];
-            $sdg_alignment = $business['sdg_alignment'];
            
-            showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$business_type,$business_description,$business_logo,$business_email,$sector,$business_contact,$formalised_structure, $sdg_alignment);
+            showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$sector);
         }
    
 }
 
-function showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$business_type,$business_description,$business_logo,$business_email,$sector,$business_contact,$formalised_structure, $sdg_alignment)
+function showSingleBusiness($business_id,$businessName,$number_of_employees,$revenue_amount,$year_started,$sector)
 {
 
     echo "
@@ -44,7 +37,7 @@ function showSingleBusiness($business_id,$businessName,$number_of_employees,$rev
                         $year_started
                         </td>
                         <td>
-                        $business_type
+                        $sector
                         </td>
                         <td>
                             <a href='AVI business-view.php?businessid=$business_id' >
