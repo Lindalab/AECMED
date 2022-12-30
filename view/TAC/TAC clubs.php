@@ -1,3 +1,6 @@
+<?php 
+        require_once dirname(__FILE__)."/../../functions/tac_clubs.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,7 +97,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php display_clubs() ?>
+                    <!-- <tr>
                         <td>
                             Project Management Club
                         </td>
@@ -109,7 +113,7 @@
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!-- Start Pagination -->
