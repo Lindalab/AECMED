@@ -9,4 +9,12 @@ function grant_type($type){
         return "external";
     }
 }
+
+function project_status($status){
+    if($status == 1){
+        return "active";
+    }else{
+        return "inactive";
+    }
+}
 ?>

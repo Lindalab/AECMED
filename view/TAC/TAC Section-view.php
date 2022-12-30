@@ -121,8 +121,8 @@
             <br>
             <h5>Grants Received</h5>
             <p>
-                Coca Cola Fund ($5000) <br>
-                MTN ChangeMaker ($2000)
+            <?php course_count_list($course_id)?>
+                
             </p>
             <br>
             <h5>Course Projects</h5>

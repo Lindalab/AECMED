@@ -1,6 +1,7 @@
 <?php 
     require_once dirname(__FILE__)."/../controllers/project_controller.php";
     require_once dirname(__FILE__)."/../controllers/course_controller.php";
+    require_once dirname(__FILE__)."/../controllers/general_controller.php";
     
         
     
@@ -68,7 +69,7 @@
         $course_id = $_GET['course_id'];
         $list = select_course_project($course_id);
         foreach ($list as $value) {
-            course_projects($value['project_id'], $value['project_name'], "not yet", $value['date_started'], "active");
+            course_projects($value['project_id'], $value['project_name'], count_project_stakeholders_ctr($value['project_id'])['count'], $value['date_started'], project_status($value['project_status']));
         }
     }
 
@@ -123,4 +124,19 @@
         return json_encode($dataPoints, JSON_NUMERIC_CHECK);
     }
 
+
+    function course_count_list($course_id){
+        $list = course_grant_ctr($course_id);
+        foreach($list as $course){
+            show_single_course($course['grant_name'], $course['amount']);
+        }
+    }
+
+    function show_single_course($name, $amount){
+        echo "$name ($$amount)<br>";
+    }
+
+
+
+    // print_r(select_course_project(2));
 ?>

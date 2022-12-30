@@ -117,5 +117,10 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         $course = new course;
         return $course->count_course_student_year($course_id, $year);
     }
+
+    function course_grant_ctr($course_id){
+        $course = new course;
+        return $course->course_grant($course_id);
+    }
     
     ?>
