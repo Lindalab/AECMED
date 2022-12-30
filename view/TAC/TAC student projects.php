@@ -141,7 +141,7 @@ $graph_data = graphing_years_and_projects(TAC);
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("column", "graph_1", "Student Projects Per Yeah", "number of projects", "year", <?php echo $graph_data ?>);
+        draw("column", "graph_1", "Student Projects Per Year", "number of projects", "year", <?php echo $graph_data ?>);
     </script>
 </body>
 

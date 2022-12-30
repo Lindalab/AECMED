@@ -15,9 +15,7 @@
         <td>
             $grant_name
         </td>
-        <td>
-            $beneficiaries
-        </td>
+      
         <td>
             $$amount
         </td>

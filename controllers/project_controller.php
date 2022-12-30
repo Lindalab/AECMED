@@ -56,6 +56,11 @@
         return $project->select_project_under_dpt_in_year($department, $year);
     }
 
+    function count_project_under_dpt_in_year_ctr($department, $year){
+        $project = new Project;
+        return $project->count_project_under_dpt_in_year($department, $year);
+    }
+
     function select_project_status_ctr($status){
         $project = new Project;
 

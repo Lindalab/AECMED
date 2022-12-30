@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../functions/tac.php";
+    
 ?>
 
 <!DOCTYPE html>
@@ -180,7 +181,51 @@
                     </li>
                 </a>
             </ul>
+
         </header>
+        <table class="table summary-table">
+			<thead>
+				<tr class="table-heads thead">
+					<th scope="col">
+						Summary Statistics In <?php echo $year?>
+					</th>
+					<th scope="col">
+
+					</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr>
+					<td>Total Projects Started</td>
+					<td><?php echo count_project_under_dpt_in_year_ctr(TAC, $year) ?></td>
+
+
+				</tr>
+				<tr>
+					<td>Number Of Business Started</td>
+					<td><?php echo number_of_business_in_year_under_dpt_ctr(TAC,$year) ?></td>
+
+
+				</tr>
+
+				<tr>
+					<td>Jobs created by student entrepreneurship businesses</td>
+					<td><?php echo $employment_created;?></td>
+				</tr>
+				<!-- <tr>
+					<td>Grants for student projects and businesses</td>
+					<td><span>$</span> </td>
+				</tr> -->
+				<tr>
+					<td>Revenue from student entrepreneurship businesses</td>
+					<td><span>$</span> <?php echo $revenue_year ?></td>
+				</tr>
+
+
+
+
+			</tbody>
+		</table>
     </main>
 </body>
 </html>

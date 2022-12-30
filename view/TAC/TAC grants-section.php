@@ -91,9 +91,9 @@
                         <th>
                             <strong>Company</strong>
                         </th>
-                        <th>
+                        <!-- <th>
                             <strong>Number of Beneficiaries</strong>
-                        </th>
+                        </th> -->
                         <th>
                             <strong>Amount donated</strong>
                         </th>
