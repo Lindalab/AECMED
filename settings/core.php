@@ -21,6 +21,8 @@ define("D_Lab", "2");
 define("AVI", "1");
 define("MALE", "2");
 define("FEMALE", "1");
+define("INACTIVE", "2");
+define("ACTIVE", "1");
 
 
 ?>

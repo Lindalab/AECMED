@@ -2,8 +2,8 @@
      require_once dirname(__FILE__)."/../controllers/project_controller.php";
 
 
-    function graphing_years_and_projects(){
-        $list = count_projects_in_year_ctr(TAC);
+    function graphing_years_and_projects($department){
+        $list = count_projects_in_year_ctr($department);
         $dataPoints = array();
         foreach ($list as $year) {
             array_push($dataPoints, array("y" => $year['count'], "label" => $year['year']));
@@ -58,7 +58,7 @@
         if($status == 1){
             return "active";
         }else{
-            return "inactive";
+            return "completed";
         }
     }
 

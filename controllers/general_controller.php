@@ -14,7 +14,7 @@ function project_status($status){
     if($status == 1){
         return "active";
     }else{
-        return "inactive";
+        return "completed";
     }
 }
 ?>

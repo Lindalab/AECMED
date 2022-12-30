@@ -67,6 +67,14 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_project_status($department, $status){
+            $sql = "SELECT * FROM `project` WHERE `project_status`='$status' and department_id = $department";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
 
         // Srakeholder project
 

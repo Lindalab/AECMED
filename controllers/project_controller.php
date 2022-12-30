@@ -62,6 +62,12 @@
         return $project->select_project_status($status);
     }
 
+    function count_project_status_ctr($department, $status){
+        $project = new Project;
+
+        return $project->count_project_status($department, $status);
+    }
+
     function select_project_stakeholders_ctr($project_id){
         $project = new Project;
 

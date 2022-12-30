@@ -1,6 +1,6 @@
 <?php
 require_once dirname(__FILE__) . "/../../functions/tac_student_project.php";
-$graph_data = graphing_years_and_projects();
+$graph_data = graphing_years_and_projects(TAC);
 ?>
 
 <!DOCTYPE html>

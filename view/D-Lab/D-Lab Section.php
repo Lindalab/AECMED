@@ -1,5 +1,12 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/d_lab_project.php";
+    require_once dirname(__FILE__) . "/../../functions/tac_student_project.php";
+
+    $graph_data = graphing_years_and_projects(D_Lab);
+    // print_r($graph_data);
+    $graph_2 = graph_project_status(D_Lab);
+
+    // print_r($graph_2);
 ?>
 
 <!DOCTYPE html>
@@ -126,6 +133,9 @@
                             <strong>Grant Received</strong>
                         </th>
                         <th>
+                            <strong>Status</strong>
+                        </th>
+                        <th>
 
                         </th>
                     </tr>
@@ -154,23 +164,29 @@
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_1">
                     Bar graph for platform projects for past four years
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Platform Projects for the past four(4) years
+                    <!-- Platform Projects for the past four(4) years -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_2">
                     Bar graph for fellow projects for past four years
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Fellow Projects for the past four(4) years
+                    <!-- Fellow Projects for the past four(4) years -->
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Number Of Prohect Per Year", "number of students", "courses", <?php echo $graph_data; ?>);
+        draw("pie", "graph_2", "Number Of Prohect Per Year", "number of students", "courses", <?php echo $graph_2; ?>);
+    </script>
 </body>
 </html>
