@@ -64,42 +64,16 @@
         </header>
         <section>
             <header>
-                <h3>Project: Make a Change</h3>
-                <p>Date Commenced: 2022-302-12</p>
+                <h3>Project: <?php echo $project_name ?></h3>
+                <p>Date Commenced: <?php echo $date?></p>
             </header>
             <br>
             <!-- Project Members -->
             <h5>Project Members</h5>
             <div class="view-sec">
                 <section class="view">
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
-                    <figure class="img-frame">
-                        <img class="img-view" src="../../assets/dummy.png" alt="img name">
-                        <figcaption>
-                            Gupta Sanchez <br>
-                            <sub class="text-muted">gupta@gmail.com</sub>
-                        </figcaption>
-                    </figure>
+                    <?php stakeholder_list($project_stakeholders)?>
+                    
                 </section>
             </div>
             <!-- Project Description -->
@@ -107,19 +81,7 @@
                 Project Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+                <?php echo $description ?>
             </p>
             <br>
             <h5>Project Grant</h5>
