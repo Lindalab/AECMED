@@ -184,7 +184,7 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->select_all_business_revenue($department_id);
     }
 
-    function  business_employment_created_by_dpt_ctr($department_id){
+    function business_employment_created_by_dpt_ctr($department_id){
         $business = new Business;
         return $business->business_employment_created_by_dpt($department_id);
     }

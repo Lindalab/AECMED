@@ -2,7 +2,7 @@
 require_once("core.php");
 
 //Database credentials
-define('DATABASE', 'aecdb_new_data');
+define('DATABASE', 'aecdb');
 define('PASSWD', '');
 define('USERNAME', 'root');
 define('SERVER', 'localhost');

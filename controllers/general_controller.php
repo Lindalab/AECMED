@@ -4,9 +4,9 @@
 
 function grant_type($type){
     if($type === INTERNAL){
-        return "internal";
+        return "Internal";
     }else{
-        return "external";
+        return "External";
     }
 }
 

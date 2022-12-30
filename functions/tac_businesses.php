@@ -74,3 +74,16 @@ function student_business_row($business_id, $business_name, $employment_created,
         ";
 }
 
+
+function business_owners_gender($department){
+    $males = number_of_businesses_by_gender_ctr($department, MALE);
+    $females = number_of_businesses_by_gender_ctr($department, FEMALE);
+
+    $dataPoints = array();
+
+    array_push($dataPoints,array("y"=>$males, "label"=>"males"), array("y"=>$females, "label"=>"females"));
+
+    return json_encode($dataPoints, JSON_NUMERIC_CHECK);    
+}
+
+

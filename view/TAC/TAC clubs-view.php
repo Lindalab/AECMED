@@ -1,3 +1,21 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/clubs_controller.php";
+
+    $club = select_one_club_ctr($_GET['club_id']);
+    $club_name = $club['name'];
+    $club_date = $club['date_registered'];
+    $club_members = $club['number_of_members'];
+    $description = $club['description'];
+    $males =  $club['number_of_males'];
+    $females = $club['number_of_females'];
+
+    $dataPoints = array();
+
+    array_push($dataPoints, array("y"=>$males, "label"=>"males"), array("y"=>$females, "label"=>"females"));
+
+    $dataPoints = json_encode($dataPoints, JSON_NUMERIC_CHECK);
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,31 +79,37 @@
         </header>
         <section>
             <header>
-                <h3>Club Name: Project Management Club</h3>
-                <p>Number of members: 45</p>
-                <p>Club Registration date: 2022-09-15</p>
+                <h3>Club Name: <?php echo $club_name ?></h3>
+                <p>Number of members: <?php echo $club_members ?></p>
+                <p>Club Registration date: <?php echo $club_date ?></p>
             </header>
             <br>
             <h5>
                 Club Description
             </h5>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean cursus ex in erat condimentum, 
-                a rhoncus urna suscipit. Sed lorem arcu, blandit ac sapien at, consectetur fermentum ipsum. Aenean 
-                dolor augue, fringilla vel mollis non, facilisis non tellus. Proin eu feugiat metus. Pellentesque 
-                ultricies a magna sit amet aliquet. Maecenas felis nibh, sollicitudin id rhoncus ac, consectetur id 
-                nulla. Phasellus augue augue, porttitor id odio ac, blandit lobortis lacus. Maecenas eget pellentesque 
-                diam, ac molestie est. Duis ullamcorper, eros non mollis interdum, odio magna imperdiet lorem, id faucibus
-                lacus ligula ut turpis.
-                <br><br>
-                Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                Etiam nec pulvinar mauris, et ultrices ipsum.
+                <?php echo $description ?>
             </p>
             <br>
         </section>
+         <!-- Data visualization -->
+         <section class="data-viz mt-5">
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id="graph_1">
+                    Bar graph for student projects for past four years
+                </div>
+                <figcaption>
+                    <!-- Student Projects for the past four(4) years -->
+                </figcaption>
+            </figure>
+
+        </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("pie", "graph_1", "Gender Division For Club Members", "number of students", "Gender", <?php print_r($dataPoints) ?>);
+    </script>
 </body>
 </html>

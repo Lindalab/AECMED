@@ -1,3 +1,11 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/tac_grant_section.php";
+    
+    $type = $_GET['grant_type'];
+    $graph_data = graph_data_for_business($type, TAC, date("Y")-4);
+    $graph_2_data = number_of_project_with_type(TAC, $type);
+   // print_r($graph_2_data);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,7 +61,7 @@
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="../TAC.php">..</a></li>
                   <li class="breadcrumb-item"><a href="TAC grants.php">Grants</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">External Grants</li>
+                  <li class="breadcrumb-item active" aria-current="page"><?php echo grant_type($type) ?> Grants</li>
                 </ol>
             </section>
         </header>
@@ -67,7 +75,7 @@
             </select>
             <div class="d-flex justify-content-between align-items-center">
                 <h3>
-                    Grants
+                    <?php echo grant_type($type) ?> Grants
                 </h3>
                 <section>
                     <select name="date-order" id="">
@@ -98,25 +106,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            Coca Cola 
-                        </td>
-                        <td>
-                            25
-                        </td>
-                        <td>
-                            $14200
-                        </td>
-                        <td>
-                            2022-09-15
-                        </td>
-                        <td>
-                            <a href="TAC grant-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
+                    <?php list_grant_type(TAC, $type)?>
                 </tbody>
             </table>
             <!-- Start Pagination -->
@@ -138,23 +128,30 @@
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
-                    Line graph
-                </canvas>
+                <div class="bgraph" id="graph_1">
+                    Line Graph Of Internal Grant Over Time
+                </div>
                 <figcaption class="text-center">
-                    Grants received over the past four(4) years
+                    Line Graph Of Internal Grant Over Time
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_2">
                     Bar graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Grant Type over the past four(4) years
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("column", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php  echo $graph_data ?>);
+
+        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+    </script>
 </body>
 </html>
