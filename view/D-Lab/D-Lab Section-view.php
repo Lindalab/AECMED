@@ -86,7 +86,7 @@
             <br>
             <h5>Project Grant</h5>
             <p>
-                Coca Cola Fund ($5000)
+               <?php show_project_grant($_GET['project_id']); ?>
             </p>
         </section>
     </main>
