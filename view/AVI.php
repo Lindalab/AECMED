@@ -1,7 +1,10 @@
 <?php
-require_once("../controllers/business_controller.php");
-require_once("../controllers/module_controller.php");
-require_once("../controllers/stakeholder_controller.php");
+
+require_once dirname(__FILE__)."/../controllers/module_controller.php";
+require_once dirname(__FILE__)."/../controllers/stakeholder_controller.php";
+require_once dirname(__FILE__)."/../controllers/business_controller.php";
+require_once dirname(__FILE__)."/../controllers/grant_controller.php";
+require_once dirname(__FILE__)."/../functions/displayBusiness.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,6 +106,48 @@ require_once("../controllers/stakeholder_controller.php");
                             <div class="row">
                                 <div class="col-9">
                                     <h5 class="card-title">Fellows - <?php echo number_of_avi_fellows(); ?></h5>
+                                </div>
+                                <div class="col-3">
+                                    <img class="card-icons" src="../assets/fellows-icon.svg" alt="Fellows image">
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                </a>
+                <a href="./AVI/AVI fellows.php">
+                    <li class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="card-title">Total Grant - $<?php echo sum_grant_for_dpt_ctr(AVI)['amount'];?></h5>
+                                </div>
+                                <div class="col-3">
+                                    <img class="card-icons" src="../assets/grants-icon.svg" alt="Student grants image">
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                </a>
+                <a href="./AVI/AVI fellows.php">
+                    <li class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="card-title"> Total Revenue Generated - $<?php echo select_all_business_revenue_ctr(AVI)['amount'];?></h5>
+                                </div>
+                                <div class="col-3">
+                                    <img class="card-icons" src="../assets/grants-icon.svg" alt="Student grants image">
+                                </div>
+                            </div>
+                        </div> 
+                    </li>
+                </a>
+                <a href="./AVI/AVI fellows.php">
+                    <li class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-9">
+                                    <h5 class="card-title">Total Employment Created - <?php echo business_employment_created_by_dpt_ctr(AVI)['numbers'];?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/fellows-icon.svg" alt="Fellows image">
