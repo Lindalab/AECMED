@@ -243,17 +243,17 @@ CREATE TABLE Cohort(
   cohort_id int(11) NOT NULL,
   cohort_name varchar(50) NOT NULL,
   cohort_year year NOT NULL
-)
+);
 
 CREATE TABLE cohort_business(
   business_id int(11) NOT NULL,
- cohort_id int(11) NOT NULl
-)
+ cohort_id int(11) NOT NULL
+);
 
-CREATE TABLE cohort_business(
+CREATE TABLE course_grant(
   course_id int(11) NOT NULL,
- grant_id int(11) NOT NUL
-)
+ grant_id int(11) NOT NULL
+);
 
 
 Course grant table
@@ -275,4 +275,4 @@ cohort year
 
 
 
-
+SELECT stakeholder.stakeholder_id,stakeholder.first_name,stakeholder.last_name,stakeholder.gender,stakeholder.email,stakeholder.stakeholder_image;

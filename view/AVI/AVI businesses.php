@@ -67,7 +67,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Hybrid businesses - $<?php echo total_business_revenue_by_type_ctr(3)['amount'];?></h5>
+                                    <h5 class="card-title">Female Owner - <?php echo number_of_businesses_by_gender_ctr(AVI, FEMALE);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="Hybrid businesses image">
@@ -81,7 +81,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">NGOs - $<?php  echo total_business_revenue_by_type_ctr(2)['amount'];?></h5>
+                                    <h5 class="card-title">Male Owners -<?php echo  number_of_businesses_by_gender_ctr(AVI, MALE);?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="NGOs image">
