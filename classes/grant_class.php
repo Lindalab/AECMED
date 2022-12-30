@@ -88,6 +88,12 @@ class Grant extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function sum_grant_type_department_over_years($type, $department_id, $year){
+        $sql = "SELECT EXTRACT(YEAR FROM date_received) as year, SUM(amount) as amount FROM `grants` WHERE department_id= '$department_id' and grant_type = $type and EXTRACT(YEAR FROM date_received) >= '$year' GROUP BY EXTRACT(YEAR FROM date_received)";
+
+        return $this->db_fetch_all($sql);
+    }
+
     function grant_department_and_type($department_id,$type){
         $sql = "SELECT  SUM(amount) as amount FROM `grants` WHERE department_id= '$department_id' and  grant_type = $type";
 
@@ -189,6 +195,16 @@ class Grant extends db_connection
     function sum_of_business_grant_per_year($business_id,$year){
         $sql = "SELECT SUM(amount) FROM `business_grants` WHERE business_id='$business_id' and EXTRACT(YEAR FROM grants.date_received)= '$year' ";
         return $this->db_fetch_one($sql);
+    }
+
+    function number_of_project_grant($department, $type){
+        $sql = "SELECT COUNT(project_id) as number FROM `project_grants`, grants WHERE project_grants.grant_id = grants.grant_id and grants.department_id = $department and grants.grant_type = $type;";
+        
+        return $this->db_fetch_one($sql);
+    }
+
+    function number_of_business_grants($department, $type){
+        $sql = "SELECT COUNT(business_grants.grant_id) as number FROM `business_grants`, grants WHERE business_grants.grant_id=grants.grant_id and grants.department_id = $department and grants.grant_type = $type";
     }
 
     /**

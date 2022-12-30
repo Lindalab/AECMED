@@ -62,6 +62,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->grant_department_over_years($department_id,$year);
     }
 
+    function sum_grant_type_department_over_years_ctr($type, $department_id, $year){
+        $grant = new Grant;
+        return $grant->sum_grant_type_department_over_years($type, $department_id, $year);
+    }
+
     function grant_department_and_type_ctr($department_id,$type){
         $grant = new Grant;
         return $grant->grant_department_and_type($department_id,$type);
@@ -133,5 +138,16 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
     function sum_of_business_grant_per_year_ctr($business_id,$year){
         $grant = new Grant;
         return $grant->sum_of_business_grant_per_year($business_id,$year);
+    }
+
+    
+    function number_of_project_grant_type($department, $type){
+        $grant = new Grant;
+        return $grant->number_of_project_grant($department, $type);
+    }
+
+    function number_of_business_grants_ctr($department, $type){
+        $grant = new Grant;
+        return $grant->number_of_business_grants($department, $type);
     }
 ?>

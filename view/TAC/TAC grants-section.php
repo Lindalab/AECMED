@@ -2,6 +2,9 @@
     require_once dirname(__FILE__)."/../../functions/tac_grant_section.php";
     
     $type = $_GET['grant_type'];
+    $graph_data = graph_data_for_business($type, TAC, date("Y")-4);
+    $graph_2_data = number_of_project_with_type(TAC, $type);
+   // print_r($graph_2_data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,18 +128,18 @@
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
-                Line Graph Of Internal Grant Over Time
-                </canvas>
+                <div class="bgraph" id="graph_1">
+                    Line Graph Of Internal Grant Over Time
+                </div>
                 <figcaption class="text-center">
-                    <!-- Line Graph Of Internal Grant Over Time -->
+                    Line Graph Of Internal Grant Over Time
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="graph_2">
                     Bar graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
                     Grant Type over the past four(4) years
                 </figcaption>
@@ -146,7 +149,7 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("line", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php // echo $graph_1_data ?>);
+        draw("column", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php  echo $graph_data ?>);
 
         draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
     </script>
