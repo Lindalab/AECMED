@@ -29,16 +29,19 @@ function  showSingleFellow($stakeholder_id,$name,$gender,$email,$stakeholder_ima
     echo "
     <tr>
         <td>
-           
+            $cohort_name
         </td>
         <td>
-            
+            $name
         </td>
         <td>
-            2019-11-15
+           $business_name
         </td>
         <td>
-            <a href='AVI module-view.php?'>
+            $gender
+        </td>
+        <td>
+            <a href='AVI fellow-view.php?Id=$stakeholder_id&email=$email&stakeholderImage=$stakeholder_image&cohortyear=$cohort_year&businessName=$business_name'>
             <img src='./../../assets/read-more.svg' alt='View icon'>
             </a>
         </td>

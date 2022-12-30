@@ -66,7 +66,7 @@
             </select>
             <div class="d-flex justify-content-between align-items-center">
                 <h3>
-                    Alumni Businesses
+                    Fellows Details
                 </h3>
                 <section>
                     <select name="date-order" id="">
@@ -80,19 +80,16 @@
                 <thead>
                     <tr>
                         <th>
+                            <strong>Fellow Cohort</strong>
+                        </th>
+                        <th>
+                            <strong>Fellow Name</strong>
+                        </th>
+                        <th>
                             <strong>Business Name</strong>
                         </th>
                         <th>
-                            <strong>Employment Created</strong>
-                        </th>
-                        <th>
-                            <strong>Revenue Generated</strong>
-                        </th>
-                        <th>
-                            <strong>Date created</strong>
-                        </th>
-                        <th>
-                            <strong>Business Type</strong>
+                            <strong>Gender</strong>
                         </th>
                         <th>
 
@@ -100,28 +97,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <?php showAllAviFellows_fnc();?>
+                    <!-- <tr>
                         <td>
-                            Fruits on Wheels
+                            Fellow Cohort
                         </td>
                         <td>
-                            5
+                            Fellow Name
                         </td>
                         <td>
-                            $1000
+                            Business Name
                         </td>
                         <td>
-                            2019-11-15
+                            Gender
                         </td>
                         <td>
-                            For-profit
-                        </td>
-                        <td>
-                            <a href="AVI business-view.php">
+                            <a href="AVI fellow-view.php">
                                 <img src="./../../assets/read-more.svg" alt="View icon">
                             </a>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <!-- Start Pagination -->

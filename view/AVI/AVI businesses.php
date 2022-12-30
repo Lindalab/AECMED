@@ -214,6 +214,33 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                     Grant Type over the past four(4) years
                 </figcaption>
             </figure>
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id = "graph_2">
+                    Pie Char
+                </div>
+                <figcaption class="text-center">
+                    Show business that has graduated from AVI and those that have not
+                </figcaption>
+            </figure>
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id = "graph_2">
+                    Line Graph 
+                </div>
+                <figcaption class="text-center">
+                 Line Graph to show the progression of revenue generated from business
+                </figcaption>
+            </figure>
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id = "graph_2">
+                    Pie Chart
+                </div>
+                <figcaption class="text-center">
+                    Pie chart to show the gender division of Business owners
+                </figcaption>
+            </figure>
         </section>
     </main>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
