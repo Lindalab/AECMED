@@ -39,4 +39,9 @@
         $user= new Stakeholder;
         return $user->number_of_avi_fellows();
     }
+
+    function get_avi_fellows_ctr(){
+        $user = new Stakeholder;
+        return $user->get_avi_fellows();
+    }
 ?>
