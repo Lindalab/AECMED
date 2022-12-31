@@ -1,3 +1,9 @@
+<?php 
+        require_once dirname(__FILE__)."/../../functions/summary.php";
+
+        $dlab_project_grants = sum_grant_for_project_under_dpt_ctr(D_Lab);
+        
+?>
 <!doctype html>
 <html lang="en">
  
@@ -190,7 +196,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total Projects</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1"><?php echo $d_lab_projects ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -220,7 +226,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Project Grants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$500</h1>
+                                            <h1 class="mb-1">$<?php echo  $dlab_project_grants ?></h1>
                                         </div>
                                     </div>
                                 </div>

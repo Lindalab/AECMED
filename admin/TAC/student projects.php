@@ -196,7 +196,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total student projects</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1"><?php echo $tac_projects ?></h1>
+                                            <h1 class="mb-1"><?php echo $d_lab_projects ?></h1>
                                         </div>
                                     </div>
                                 </div>
