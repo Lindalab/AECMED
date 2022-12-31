@@ -39,6 +39,7 @@
 
         function module_data(){
             $sql="SELECT module.module_id as module_id ,module.module_name as module_name,module.module_description as module_description,COUNT(stakeholder_modules.stakeholder_id) as numbers FROM module,stakeholder_modules WHERE module.module_id=stakeholder_modules.module_id order by module.module_name";
+            
             return $this->db_fetch_all($sql);
         }
     }

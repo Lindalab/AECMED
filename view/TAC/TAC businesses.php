@@ -1,8 +1,9 @@
 <?php 
  require_once dirname(__FILE__)."/../../functions/tac_businesses.php";
-
- $graph_1_data = business_revenue_in_last_four_years();
+    
+ $graph_1_data = business_revenue_in_last_four_years(TAC);
  $graph_2_data = business_owners_gender(TAC);
+
 
 ?>
 <!DOCTYPE html>

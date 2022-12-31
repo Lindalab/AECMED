@@ -3,10 +3,10 @@ require_once dirname(__FILE__) . "/../controllers/business_controller.php";
 require_once dirname(__FILE__) . "/../controllers/grant_controller.php";
 
 
-function business_revenue_in_last_four_years(){
+function business_revenue_in_last_four_years($department){
     $year = date("Y");
     $previousyear = $year - 4;
-    $revenueList = business_revenue_last_four_years_ctr(TAC, $previousyear);
+    $revenueList = business_revenue_last_four_years_ctr($department, $previousyear);
     $dataPoints = array();
     foreach ($revenueList as $revenue) {
         array_push($dataPoints, array("y" => $revenue['revenue'], "label" => $revenue['year']));

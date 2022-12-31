@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__FILE__) . "/../controllers/module_controller.php";
 
+// print_r(showAllModule_fnc());
+
 function showAllModule_fnc()
 {
     $data = module_data_ctr();

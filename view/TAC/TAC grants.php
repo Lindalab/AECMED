@@ -3,7 +3,7 @@
     require_once dirname(__FILE__)."/../../functions/tac_grant.php";
 
     $graph_1_data = graphing_data_for_years_and_business(TAC);
-    $graph_2_data = graphing_data_busines_type();
+    $graph_2_data = graphing_data_busines_type(TAC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -185,7 +185,7 @@
     <script>
         draw("line", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php echo $graph_1_data ?>);
 
-        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
     </script>
 </body>
 </html>
