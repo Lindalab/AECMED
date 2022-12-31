@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/summary.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -224,8 +225,8 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Hybrid businesses</h5>
-                                        <a href='#BusinessModal' data-toggle='modal' class="btn btn-primary">Add business+</a>
-                                        <!-- <button class="btn btn-primary">Add business +</button> -->
+                                        <a href='#businessModal' data-toggle='modal' class="btn btn-primary">Add business+</a>
+                                        
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -281,7 +282,7 @@
     </div>
 
     <!-- Add Business -->
-	<div id="BusinessModal" class="modal fade">
+	<div id="businessModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form action="../admin/addproduct.php" method="POST" style="margin:5% 10%;" enctype="multipart/form-data">
@@ -292,31 +293,48 @@
 					<div class="modal-body"></div>
 					<div class="form-outline mb-4">
 						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;">Business Name</label>
-						<input type="text" id="ptitle" name="bname" class="form-control" required />
+						<input type="text" id="ptitle" name="busines_name" class="form-control" required />
 					</div>
 					<div class="form-outline mb-4">
-						<label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Product Category</label>
+						<label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Year started</label>
+                        <input type="text" id="ptitle" name="year_started" class="form-control" required />
 						
 					</div>
 					<div class="form-outline mb-4">
-						<label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Product Price</label>
-						<input type="number" name="pprice" id="pprice" class="form-control" placeholder="Price" required />
+						<label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Business address</label>
+						<input type="number" name="business_location" id="pprice" class="form-control" placeholder="Price" required />
 					</div>
 					<div class="form-outline mb-4">
-						<label class="form-label" for="pdesc" style="color: #051922;font-weight: bold;">Product Description</label>
-						<input type="text" name="pdesc" id="pdesc" class="form-control" required />
+						<label class="form-label" for="pdesc" style="color: #051922;font-weight: bold;">Business Contact</label>
+						<input type="text" name="business_contact" id="pdesc" class="form-control" required />
 					</div>
 					<div class="form-outline mb-4">
-						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Product Keywords</label>
-						<input type="text" name="pkeyword" id="pkeyword" class="form-control" placeholder="Keyword" />
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Email</label>
+						<input type="text" name="business_email" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Sector</label>
+						<input type="text" name="sector" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="department_id" style="color: #051922;font-weight: bold;">Business Department</label>
+						<?php getDepartmentDropdown_fnc();?>
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Description</label>
+						<input type="text" name="department_id" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Status</label>
+						<input type="text" name="business_status" id="pkeyword" class="form-control" placeholder="Keyword" />
 					</div>
 					<div class="form-outline mb-4">
-						<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Product Imgae</label>
-						<input type="file" name="pImage" id="pImage" class="form-control" accept="image/*" required />
+						<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Business Logo</label>
+						<input type="file" name="pImage" id="business_logo" class="form-control" accept="image/*" required />
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
-						<input type="submit" class="btnAdd btn-primary" name="submit" value="Add Product">
+						<input type="submit" class="btnAdd btn-primary" name="submit" value="Register">
 					</div>
 				</form>
 			</div>

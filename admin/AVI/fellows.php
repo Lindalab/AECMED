@@ -188,7 +188,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Revenue generated</h5>
+                                        <h5 class="text-muted">Total Fellows</h5>
                                         <div class="metric-value d-inline-block">
                                             <h1 class="mb-1">$78</h1>
                                         </div>
@@ -198,7 +198,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Employment Created</h5>
+                                        <h5 class="text-muted">Female Fellows</h5>
                                         <div class="metric-value d-inline-block">
                                             <h1 class="mb-1">55</h1>
                                         </div>
@@ -208,7 +208,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Grants received</h5>
+                                        <h5 class="text-muted">Male Fellows</h5>
                                         <div class="metric-value d-inline-block">
                                             <h1 class="mb-1">$500</h1>
                                         </div>
@@ -216,12 +216,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div>
+                        <button class="btn btn-primary">Create New Cohort +</button><br>
+                        </div>
+                       
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Alumni businesses</h5>
-                                        <button class="btn btn-primary">Add business +</button>
+                                        <button class="btn btn-primary">Add Fellows +</button>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
