@@ -19,9 +19,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
 
 
 
-    function update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description){
+    function update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description,$business_status){
         $business = new Business;
-        return $business->update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description);
+        return $business->update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description,$business_status);
     }
 
     function update_business_details_ctr($business_id,$number_of_employees, $formalised_structure, $sdg_alignment){

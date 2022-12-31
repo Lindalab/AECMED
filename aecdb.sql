@@ -30,14 +30,15 @@ SET time_zone = "+00:00";
 CREATE TABLE `business` (
   `business_id` int(11) NOT NULL,
   `year_started` year NOT NULL,
-  `busines_name` varchar(50) DEFAULT NULL,
+  `busines_name` varchar(50) ,
   `business_logo` varchar(100) NOT NULL,
   `business_location` varchar(50) DEFAULT NULL,
   `business_contact` varchar(15) NOT NULL,
   `business_email` varchar(30) NOT NULL,
   `department_id` int(11) NOT NULL,
   `sector` varchar(50) NOT NULL,
-  `business_description` varchar(1000) NOT NUL
+  `business_description` varchar(1000) NOT NULL,
+  `business_status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
