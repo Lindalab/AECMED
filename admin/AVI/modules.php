@@ -28,7 +28,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="../summary.html">AEC</a>
+                <a class="navbar-brand" href="../index.php">AEC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -62,35 +62,19 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.html"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Businesses</a>
-                                <div id="submenu-2" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business-overview.html">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business for-profit.html">For-profit businesses</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business ngos.html">NGOs</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business hybrid.html">Hybrid businesses</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="business hybrid.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="fellows.html"><i class="fa fa-fw fa-user-circle"></i>Fellows</a>
+                                <a class="nav-link" href="fellows.php"><i class="fa fa-fw fa-user-circle"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="modules.html"><i class="fa fa-fw fa-user-circle"></i>Modules</a>
+                                <a class="nav-link" href="modules.php"><i class="fa fa-fw fa-user-circle"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
                                 Design Lab
@@ -101,72 +85,75 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="../D-Lab/projects overview.html">Overview</a>
+                                                <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                             </li>
-                                            <a class="nav-link" href="../D-Lab/projects students.html">Student projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/projects fellows.html">Fellow projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../D-Lab/events.html"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants overview.html">Overview</a>
+                                            <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants internal.html">Internal grants</a>
+                                            <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants external.html">External grants</a>
+                                            <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-divider">
-                                Teaching Across Curriculum
+                                Undergraduate Programs
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/businesses.html"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                                <a class="nav-link" href="../TAC/businesses.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/community entrepreneurship.php"><i class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Courses</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/businesses.html">Overview</a>
+                                            <a class="nav-link" href="../TAC/courses.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/businesses.html">Student projects</a>
+                                            <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/clubs.html"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
+                                <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/events.html"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants overview.html">Overview</a>
+                                            <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants internal.html">Internal grants</a>
+                                            <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants external.html">External grants</a>
+                                            <a class="nav-link" href="../TAC/grants external.php">External grants</a>
                                         </li>
                                     </ul>
                                 </div>

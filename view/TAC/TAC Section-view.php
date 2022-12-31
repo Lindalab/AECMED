@@ -54,15 +54,15 @@
             </a>
             <a href="../TAC.php" class="links" id='active'>
                 <li class="link">
-                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
     </nav>
     <main id="main">
         <header>
-            <h1 class="heading mb-4">Teaching Across Curriculum</h1>
+            <h1 class="heading mb-4">Undergraduate Programs</h1>
             <section aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="../TAC.php">..</a></li>

@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEC - Teaching Across Curriculum</title>
+    <title>AEC - Undergraduate Programs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="./../../css/main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
@@ -51,15 +51,15 @@
             </a>
             <a href="../TAC.php" class="links" id='active'>
                 <li class="link">
-                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
     </nav>
     <main id="main">
         <header>
-            <h1 class="heading mb-4">Teaching Across Curriculum</h1>
+            <h1 class="heading mb-4">Undergraduate Programs</h1>
             <!-- Breadcrumb -->
             <section aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -127,215 +127,6 @@
                 </thead>
                 <tbody>
                 <?php display_student_project()?>;
-                    <!-- <tr>
-                        <td>
-                            Foundation for Design and Entrepreneurship
-                        </td>
-                        <td>
-                            150
-                        </td>
-                        <td>
-                            7
-                        </td>
-                        <td>
-                            $14200
-                        </td>
-                        <td>
-                            <a href="TAC Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Building the horizon
-                        </td>
-                        <td>
-                            John Doe
-                        </td>
-                        <td>
-                            2021-10-11
-                        </td>
-                        <td>
-                            $1200
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Catching the Sun
-                        </td>
-                        <td>
-                            Lewandoski Barnabas
-                        </td>
-                        <td>
-                            2022-04-21
-                        </td>
-                        <td>
-                            $2000
-                        </td>
-                        <td>
-                            <a href="D-Lab Section-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr> -->
                 </tbody>
             </table>
             <!--		Start Pagination -->

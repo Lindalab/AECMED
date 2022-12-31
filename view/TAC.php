@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../functions/tac.php";
+    
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEC - Teaching Across Curriculum</title>
+    <title>AEC - Undergraduate Programs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
@@ -46,15 +47,15 @@
             </a>
             <a href="TAC.php" class="links" id='active'>
                 <li class="link">
-                    <img class="nav-logo" src="../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
     </nav>
     <main id="main">
         <header>
-            <h1 class="heading mb-4">Teaching Across Curriculum</h1>
+            <h1 class="heading mb-4">Undergraduate Programs</h1>
             <!-- Card Navigations -->
             <ul id="card-navs">
                 <a href="./TAC/TAC courses.php">
@@ -165,7 +166,7 @@
                         </div> 
                     </li>
                 </a>
-                <a href="./TAC/TAC courses.php">
+                <a href="./TAC/TAC student projects.php">
                     <li class="card">
                         <div class="card-body">
                             <div class="row">
@@ -180,7 +181,47 @@
                     </li>
                 </a>
             </ul>
+            
         </header>
+        <table class="table summary-table">
+			<thead>
+				<tr class="table-heads thead">
+					<th scope="col">
+						Summary Statistics In <?php echo $year?>
+					</th>
+					<th scope="col">
+
+					</th>
+				</tr>
+			</thead>
+			<tbody class="tbody">
+				<tr>
+					<td>Total Projects Started</td>
+					<td><?php echo count_project_under_dpt_in_year_ctr(TAC, $year) ?></td>
+
+
+				</tr>
+				<tr>
+					<td>Number Of Business Started</td>
+					<td><?php echo number_of_business_in_year_under_dpt_ctr(TAC,$year) ?></td>
+
+
+				</tr>
+
+				<tr>
+					<td>Jobs created by student entrepreneurship businesses</td>
+					<td><?php echo $employment_created;?></td>
+				</tr>
+				<!-- <tr>
+					<td>Grants for student projects and businesses</td>
+					<td><span>$</span> </td>
+				</tr> -->
+				<tr>
+					<td>Revenue from student entrepreneurship businesses</td>
+					<td><span>$</span> <?php echo $revenue_year ?></td>
+				</tr>
+			</tbody>
+		</table>
     </main>
 </body>
 </html>

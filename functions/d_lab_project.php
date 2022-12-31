@@ -13,11 +13,11 @@
             if($grant_received === NULL){
                 $grant_received = 0;
             }
-            show_d_lab_project($project_id, $project['project_name'], $project['date_started'], $grant_received);
+            show_d_lab_project($project_id, $project['project_name'], $project['date_started'], $grant_received, project_status($project['project_status']));
         }
     }
 
-    function show_d_lab_project($project_id, $project_name, $project_date, $grant_received){
+    function show_d_lab_project($project_id, $project_name, $project_date, $grant_received, $status){
         echo "
         <tr>
         <td>
@@ -31,6 +31,9 @@
             $$grant_received
         </td>
         <td>
+            $status
+        </td>
+        <td>
             <a href='D-Lab Section-view.php?project_id=$project_id'>
                 <img src='./../../assets/read-more.svg' alt='View icon'>
             </a>
@@ -39,5 +42,14 @@
         ";
     }
 
+    function graph_project_status($department){
+        $active = count_project_status_ctr($department, ACTIVE);
+        $completed = count_project_status_ctr($department, INACTIVE);
+        $dataPoints = array();
+        array_push($dataPoints, array("y"=>$completed, "label"=>"activated"), array("y"=>$active, "label"=>"completed"));
+        return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+    }
+
+    // print_r(count_project_status_ctr(TAC, ACTIVE));
     // list_project();
 ?>

@@ -1,9 +1,10 @@
 <?php 
      require_once dirname(__FILE__)."/../controllers/project_controller.php";
+     require_once dirname(__FILE__)."/../controllers/general_controller.php";
 
 
-    function graphing_years_and_projects(){
-        $list = count_projects_in_year_ctr(TAC);
+    function graphing_years_and_projects($department){
+        $list = count_projects_in_year_ctr($department);
         $dataPoints = array();
         foreach ($list as $year) {
             array_push($dataPoints, array("y" => $year['count'], "label" => $year['year']));
@@ -54,13 +55,13 @@
         
     }
 
-    function project_status($status){
-        if($status == 1){
-            return "active";
-        }else{
-            return "inactive";
-        }
-    }
+    // function project_status($status){
+    //     if($status == 1){
+    //         return "active";
+    //     }else{
+    //         return "completed";
+    //     }
+    // }
 
 
 ?>

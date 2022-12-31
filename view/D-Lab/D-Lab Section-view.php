@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/d_lab_project_view.php";
+    require_once dirname(__FILE__)."/../../functions/tac_student_course_project_view.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,8 +46,8 @@
             </a>
             <a href="../TAC.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
@@ -86,7 +87,7 @@
             <br>
             <h5>Project Grant</h5>
             <p>
-                Coca Cola Fund ($5000)
+               <?php show_project_grant($_GET['project_id']); ?>
             </p>
         </section>
     </main>

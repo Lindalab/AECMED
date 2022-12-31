@@ -1,5 +1,5 @@
 <?php 
-    require_once("../classes/stakeholder_class.php");
+    require_once dirname(__FILE__)."/../classes/stakeholder_class.php";
 
     function create_stakeholder_ctr($fname, $lname, $role, $gender, $email, $phone_number,$stakeholder_image){
         $user = new Stakeholder;

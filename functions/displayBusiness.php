@@ -22,7 +22,7 @@ function showSingleBusiness($business_id,$businessName,$number_of_employees,$rev
 {
 
     echo "
-    <tbody>
+  
                     <tr>
                         <td>
                         $businessName
@@ -45,6 +45,6 @@ function showSingleBusiness($business_id,$businessName,$number_of_employees,$rev
                             </a>
                         </td>
                     </tr>
-                </tbody>
+              
     ";
 }

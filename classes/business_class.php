@@ -132,10 +132,24 @@
             return $this->db_count();
         }
 
+        function number_of_business_in_year_under_dpt($department,$year){
+            $sql = "SELECT * FROM `business` WHERE `year_started` = '$year' and department_id = $department";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
         function business_revenue_last_four_years($department, $year){
             $sql = "SELECT business_revenue.revenue_year as year, SUM(business_revenue.revenue_amount) as revenue FROM business_revenue, business where business.business_id = business_revenue.business_id and business_revenue.revenue_year >= $year and business.department_id = $department GROUP BY business_revenue.revenue_year;";
 
             return $this->db_fetch_all($sql);
+        }
+
+        function business_revenue_in_a_years($department, $year){
+            $sql = "SELECT business_revenue.revenue_year as year, SUM(business_revenue.revenue_amount) as revenue FROM business_revenue, business where business.business_id = business_revenue.business_id and business_revenue.revenue_year = $year and business.department_id = $department";
+
+            return $this->db_fetch_one($sql);
         }
 
 
@@ -316,8 +330,10 @@
             return $this->db_fetch_one($sql);
         }
 
-        function business_employment_created_by_dpt_ctr($department_id){
-            
+        function business_employment_created_in_year($department_id, $year){
+            $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business, business_details where business.business_id = business_details.business_id and business.department_id = $department_id and business.year_started = $year";
+
+            return $this->db_fetch_one($sql);
         }
         
         

@@ -123,4 +123,8 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         return $course->course_grant($course_id);
     }
     
-    ?>
+    function grant_for_course_ctr($course_id){
+        $course = new course;
+        return $course->grant_for_course($course_id);
+    }
+?>

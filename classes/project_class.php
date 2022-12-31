@@ -61,10 +61,26 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_project_under_dpt_in_year($department, $year){
+            $sql = "SELECT * FROM `project` WHERE `department_id`='$department' and EXTRACT(YEAR FROM date_started)= '$year' ";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+        }
+
         function select_project_status($status){
             $sql = "SELECT * FROM `project` WHERE `project_status`='$status'";
 
             return $this->db_fetch_all($sql);
+        }
+
+        function count_project_status($department, $status){
+            $sql = "SELECT * FROM `project` WHERE `project_status`='$status' and department_id = $department";
+
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
         }
 
 

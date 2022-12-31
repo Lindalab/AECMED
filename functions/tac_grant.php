@@ -62,8 +62,8 @@ function graphing_data_for_years_and_business($department)
     return json_encode($dataPoints, JSON_NUMERIC_CHECK);
 }
 
-function graphing_data_busines_type(){
-   $data = grant_type_for_department_ctr(TAC);
+function graphing_data_busines_type($department){
+   $data = grant_type_for_department_ctr($department);
    $dataPoints = array();
     foreach ($data as $grant) {
         array_push($dataPoints, array("y" => $grant['amount'], "label" => grant_type($grant['grant_type'])));

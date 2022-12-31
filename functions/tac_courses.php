@@ -34,7 +34,10 @@
             $course_name = $course['course_name'];
             $number_of_students = selet_a_course_student_ctr($course_id)['count'];
             $number_of_projects = count_course_project_ctr($course_id)['count'];
-            $grant_received = "not yet";
+            $grant_received = grant_for_course_ctr($course_id)['amount'];
+            if($grant_received == NULL){
+                $grant_received = 0;
+            }
             
             // student_project_row($course)
             student_project_row($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received);

@@ -45,8 +45,8 @@
             </a>
             <a href="TAC.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
@@ -89,7 +89,7 @@
                                 <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
                                 data-bs-trigger="hover focus" data-bs-custom-class="custom-popover"
                                 data-bs-content="Student projects: 52 Course projects: 25">
-                                    Teaching Across Curriculum Projects
+                                    Undergraduate Programs Projects
                                     <p class="sum-detail">
                                         <?php echo $tac_projects ?>
                                     </p>
@@ -128,7 +128,7 @@
                                 <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
                                 data-bs-trigger="hover focus" data-bs-custom-class="custom-popover"
                                 data-bs-content="Internal Grants: $28000 External Grants: $8000">
-                                    Teaching Across Curriculum Grants
+                                    Undergraduate Programs Grants
                                     <p class="sum-detail">
                                         $<?php echo $tac_grants ?>
                                     </p>
@@ -160,7 +160,7 @@
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
-                                    Teaching Across Curriculum Events
+                                    Undergraduate Programs Events
                                     <p class="sum-detail">
                                         <?php echo  $tac_events?>
                                     </p>
@@ -188,7 +188,7 @@
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
-                                    Teaching Across Curriculum Business Revenue
+                                    Undergraduate Programs Business Revenue
                                     <p class="sum-detail">
                                         $<?php echo $tac_business_revenure ?>
                                     </p>
@@ -214,7 +214,7 @@
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
-                                    Teaching Across Curriculum Employment Created
+                                    Undergraduate Programs Employment Created
                                     <p class="sum-detail">
                                         <?php echo $tac_employment_created?>
                                     </p>
@@ -240,7 +240,7 @@
                                     </p>
                                 </li>
                                 <li class="sub-sum-item">
-                                    Teaching Across Curriculum Businesses Established
+                                    Undergraduate Programs Businesses Established
                                     <p class="sum-detail">
                                         <?php echo $tac_businesses                   ?>
                                     </p>

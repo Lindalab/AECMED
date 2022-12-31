@@ -42,8 +42,8 @@ require_once dirname(__FILE__)."/../../functions/displayModule.php";
             </a>
             <a href="../TAC.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
@@ -130,9 +130,6 @@ require_once dirname(__FILE__)."/../../functions/displayModule.php";
 				  </ul>
 				</div>
 			</div>
-            <h6>Total grants received: $35000</h6>
-            <h6>Total revenue generated: $5000</h6>
-            <h6>Total employment created: 1000</h6>
         </section>
         <!-- Data visualization -->
         <section class="data-viz mt-5">

@@ -2,6 +2,14 @@
 require_once dirname(__FILE__)."/../../controllers/business_controller.php";
 require_once dirname(__FILE__)."/../../controllers/grant_controller.php";
 require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
+require_once dirname(__FILE__)."/../../functions/avi_businesses.php";
+require_once dirname(__FILE__)."/../../functions/tac_grant.php";
+require_once dirname(__FILE__)."/../../functions/tac_businesses.php";
+
+$graph_2_data = graphing_data_for_years_and_business(AVI);
+$graph_grant_type = graphing_data_busines_type(AVI);
+$business_revenue = business_revenue_in_last_four_years(AVI);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,8 +52,8 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
             </a>
             <a href="../TAC.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
@@ -85,20 +93,6 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="NGOs image">
-                                </div>
-                            </div>
-                        </div> 
-                    </li>
-                </a>
-                <a href="AVI business section.php">
-                    <li class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-9">
-                                    <h5 class="card-title">Profit businesses - $<?php echo total_business_revenue_by_type_ctr(1)['amount'];?></h5>
-                                </div>
-                                <div class="col-3">
-                                    <img class="card-icons" src="../../assets/business-icon.svg" alt="For profit businesses image">
                                 </div>
                             </div>
                         </div> 
@@ -150,31 +144,10 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                     </tr>
                 </thead>
 
-                <?php showAllBusiness_fnc();?>
-                <!-- <tbody>
-                    <tr>
-                        <td>
-                            Fruits on Wheels
-                        </td>
-                        <td>
-                            5
-                        </td>
-                        <td>
-                            $1000
-                        </td>
-                        <td>
-                            2019-11-15
-                        </td>
-                        <td>
-                            For-profit
-                        </td>
-                        <td>
-                            <a href="AVI business-view.php">
-                                <img src="./../../assets/read-more.svg" alt="View icon">
-                            </a>
-                        </td>
-                    </tr>
-                </tbody> -->
+               
+               <tbody>
+               <?php showAllBusiness_fnc();?>
+                </tbody> 
             </table>
             <!-- Start Pagination -->
 			<div class='pagination-container' >
@@ -198,7 +171,7 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <div class="bgraph" id="graph_1">
+                <div class="bgraph" id="gender_graph">
                     Line graph
                 </div>
                 <figcaption class="text-center">
@@ -207,29 +180,29 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <div class="bgraph" id = "graph_2">
+                <div class="bgraph" id = "grant_received">
                     Bar graph
                 </div>
                 <figcaption class="text-center">
-                    Grant Type over the past four(4) years
+                    <!-- Grant Type over the past four(4) years -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <div class="bgraph" id = "graph_2">
+                <div class="bgraph" id = "grant_type">
                     Pie Char
                 </div>
                 <figcaption class="text-center">
-                    Show business that has graduated from AVI and those that have not
+                    <!-- Show business that has graduated from AVI and those that have not -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <div class="bgraph" id = "graph_2">
+                <div class="bgraph" id = "revenue_generated">
                     Line Graph 
                 </div>
                 <figcaption class="text-center">
-                 Line Graph to show the progression of revenue generated from business
+                 <!-- Line Graph to show the progression of revenue generated from business -->
                 </figcaption>
             </figure>
             <figure>
@@ -246,9 +219,13 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("pie", "graph_1", "Division of business by gender", "Number of owners", "Gender", <?php echo  $dataPoints ?>);
+        draw("pie", "gender_graph", "Division of business owners by gender", "Number of owners", "Gender", <?php echo  $dataPoints ?>);
 
-        draw("column", "graph_2", " Grant Received over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+       draw("column", "grant_received", " Grant Received over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+
+       draw("pie", "grant_type", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo $graph_grant_type ?>);
+
+       draw("line", "revenue_generated", "Total Business Revenue Generated over the past four(4) years", "$amount in dollars", "years", <?php echo $business_revenue ?>);
     </script>
 </body>
 </html>

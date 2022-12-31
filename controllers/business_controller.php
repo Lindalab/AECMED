@@ -135,9 +135,19 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->number_of_business_in_year($year);
     }
 
+    function number_of_business_in_year_under_dpt_ctr($department,$year){
+        $business = new Business;
+        return $business->number_of_business_in_year_under_dpt($department,$year);
+    }
+
     function business_revenue_last_four_years_ctr($department,$year){
         $business = new Business;
         return $business->business_revenue_last_four_years($department, $year);
+    }
+
+    function business_revenue_in_a_year_ctr($department,$year){
+        $business = new Business;
+        return $business->business_revenue_in_a_years($department, $year);
     }
 
     function stakeholder_business($business_id){
@@ -196,5 +206,12 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         $business= new Business;
         return $business->total_business_employment_created();
     }
+
+    function  business_employment_created_in_year_ctr($department_id, $year){
+        $business = new Business;
+        return $business-> business_employment_created_in_year($department_id, $year);
+    }
+
+  
     
 ?>
