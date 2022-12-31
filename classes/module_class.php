@@ -42,6 +42,16 @@
             
             return $this->db_fetch_all($sql);
         }
+
+        function count_module_stakeholders(){
+            $sql = "SELECT * FROM stakeholder_modules";
+            
+            $this->db_fetch_all($sql);
+
+            return $this->db_count();
+
+            
+        }
     }
 
 

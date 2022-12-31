@@ -1,3 +1,10 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/module_controller.php";
+
+    $modules = number_of_modules_ctr();
+    $module_participants = count_module_stakeholders_ctr();
+?>
+
 <!doctype html>
 <html lang="en">
  
@@ -190,7 +197,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Modules created</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1"><?php echo $modules ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +207,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total participants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">55</h1>
+                                            <h1 class="mb-1"><?php echo $module_participants ?></h1>
                                         </div>
                                     </div>
                                 </div>
