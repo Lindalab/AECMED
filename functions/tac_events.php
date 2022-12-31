@@ -51,7 +51,7 @@ function event_dlab_row($event_id,$name, $type, $male_attendance, $female_attend
             $date
         </td>
         <td>
-            <a href='TAC events-view.php?event_id=$event_id'>
+            <a href='D-Lab events-view.php?event_id=$event_id'>
                 <img src='./../../assets/read-more.svg' alt='View icon'>
             </a>
         </td>

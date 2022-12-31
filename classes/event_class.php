@@ -59,6 +59,18 @@
             return $this->db_count();
         }
 
+        function number_of_male_attendance($department){
+            $sql = "SELECT SUM(male_attendance) as males FROM events where events.department_id = $department";
+
+            return $this->db_fetch_one($sql);
+        }
+
+        function number_of_female_attendance($department){
+            $sql = "SELECT SUM(female_attendace) as females FROM events where events.department_id = $department";
+
+            return $this->db_fetch_one($sql);
+        }
+
 
         //list of event organised by department in a given year
         function event_for_department_a_year($department_id, $year){

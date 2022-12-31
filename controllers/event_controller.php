@@ -52,7 +52,15 @@
         return $event->count_event_for_department_ctr($department_id);
     }
 
+    function number_of_male_attendance_ctr($department){
+        $event = new event;
+        return $event->number_of_male_attendance($department);
+    }
 
+    function number_of_female_attendance_ctr($department){
+        $event = new event;
+        return $event->number_of_female_attendance($department);
+    }
 
     function event_for_department_a_year_ctr($department_id, $year){
         $event = new event;
