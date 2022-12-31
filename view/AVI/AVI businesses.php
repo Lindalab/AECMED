@@ -44,8 +44,8 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
             </a>
             <a href="../TAC.php" class="links">
                 <li class="link">
-                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Teaching Across Curriculum Icon">
-                    <p>Teaching Across Curriculum</p>
+                    <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
+                    <p>Undergraduate Programs</p>
                 </li>
             </a>
         </ul>
@@ -85,20 +85,6 @@ require_once dirname(__FILE__)."/../../functions/displayBusiness.php";
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../../assets/business-icon.svg" alt="NGOs image">
-                                </div>
-                            </div>
-                        </div> 
-                    </li>
-                </a>
-                <a href="AVI business section.php">
-                    <li class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-9">
-                                    <h5 class="card-title">Profit businesses - $<?php echo total_business_revenue_by_type_ctr(1)['amount'];?></h5>
-                                </div>
-                                <div class="col-3">
-                                    <img class="card-icons" src="../../assets/business-icon.svg" alt="For profit businesses image">
                                 </div>
                             </div>
                         </div> 
