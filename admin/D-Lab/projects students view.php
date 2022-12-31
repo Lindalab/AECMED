@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - AVI Business</title>
+    <title>AEC - D-Lab Student Projects</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="business hybrid.php"><i
+                                <a class="nav-link" href="business hybrid.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
@@ -87,16 +87,16 @@
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-3" aria-controls="submenu-3"><i
                                         class="fa fa-fw fa-rocket"></i>Projects</a>
-                                <div id="submenu-3" class="collapse submenu" style="">
+                                <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                         <li class="nav-item">
                                             <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                         </li>
-                                        <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
+                                        <a class="nav-link active" href="../D-Lab/projects students.php">Student projects</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
@@ -112,7 +112,7 @@
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-4" aria-controls="submenu-4"><i
                                 class="fa fa-fw fa-rocket"></i>Grants</a>
-                        <div id="submenu-4" class="collapse submenu" style="">
+                        <div id="submenu-4" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
@@ -141,7 +141,7 @@
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-5" aria-controls="submenu-5"><i
                                 class="fa fa-fw fa-rocket"></i>Courses</a>
-                        <div id="submenu-5" class="collapse submenu" style="">
+                        <div id="submenu-5" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="../TAC/courses.php">Overview</a>
@@ -163,7 +163,7 @@
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-6" aria-controls="submenu-6"><i
                                 class="fa fa-fw fa-rocket"></i>Grants</a>
-                        <div id="submenu-6" class="collapse submenu" style="">
+                        <div id="submenu-6" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
@@ -194,15 +194,15 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <!-- Title -->
-                            <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
+                            <h2 class="pageheader-title">Design Lab</h2>
                             <!-- Breadcrumb -->
-                            <h5>Hybrid businesses</h5>
+                            <h5>Student Projects</h5>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="business hybrid.php"
-                                                class="breadcrumb-link">Businesses</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Businesses (View)</li>
+                                        <li class="breadcrumb-item"><a href="projects students.php"
+                                                class="breadcrumb-link">Student Projects</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Student Projects (View)</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -216,9 +216,10 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Business Name</h3>
+                                    <h3 class="">Student Project Name</h3>
+                                    <h4 class="text-center">Project Members</h4>
                                     <div class="view-sec">
-                                        <section class="view">
+                                        <section class="d-flex justify-content-around">
                                             <figure class="img-frame">
                                                 <img class="img-view" src="../<?php echo $business_logo;?>"
                                                     alt="img name">
@@ -229,21 +230,23 @@
                                                     </sub>
                                                 </figcaption>
                                             </figure>
-
+                                            <figure class="img-frame">
+                                                <img class="img-view" src="../<?php echo $business_logo;?>"
+                                                    alt="img name">
+                                                <figcaption>
+                                                    Gupta Sanchez <br>
+                                                    <sub class="text-muted">
+                                                        <?php echo $business_email;?>
+                                                    </sub>
+                                                </figcaption>
+                                            </figure>
                                         </section>
                                     </div><br>
-
-                                    <h5>Business Email:</h5> <p>lala@gmail.com</p>
-                                    <h5>Business Contact: </h5> <p>02124012124</p>
-                                    <h5>Business Sector: </h5> <p>Cooking</p>
-                                    <h5>Business Formalised structure: </h5> <p>  <?php echo $formalised_structure;?>   </p>
-                                    <h5>SDG Goals: </h5> <p><?php echo $sdg_alignment; ?></p>
-                                    <br>                                   
+                                   
                                     <h5>
-                                        Business Description
+                                        Project Description
                                     </h5>
                                     <p>
-                                        <?php echo $business_description;?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
@@ -252,33 +255,8 @@
                                         Etiam nec pulvinar mauris, et ultrices ipsum. -->
                                     </p>
                                     <br>
-                                    <h5>
-                                        Business Revenue 
-                                        <button class="btn btn-outline-primary">Add Revenue +</button>
-                                    </h5>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Date Created</th>
-                                                        <th class="border-0">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div> <br>
                                         <h5>
-                                            Business Grants 
+                                            Project Grants 
                                             <button class="btn btn-outline-primary">Add Grant +</button>
                                         </h5>
                                             <div class="table-responsive">
@@ -313,25 +291,25 @@
         </div>
     </div>
     </div>
-    <script src="../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
-    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <!-- slimscroll js -->
-    <script src="../../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <!-- main js -->
-    <script src="../../assets/libs/js/main-js.js"></script>
+    <script src="../assets/libs/js/main-js.js"></script>
     <!-- chart chartist js -->
-    <script src="../../assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="../assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
     <!-- sparkline js -->
-    <script src="../../assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="../assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
     <!-- morris js -->
-    <script src="../../assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-    <script src="../../assets/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="../assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="../assets/vendor/charts/morris-bundle/morris.js"></script>
     <!-- chart c3 js -->
-    <script src="../../assets/vendor/charts/c3charts/c3.min.js"></script>
-    <script src="../../assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-    <script src="../../assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="../../assets/libs/js/dashboard-ecommerce.js"></script>
+    <script src="../assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="../assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="../assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="../assets/libs/js/dashboard-ecommerce.js"></script>
 </body>
 
 </html>
