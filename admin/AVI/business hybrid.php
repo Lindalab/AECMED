@@ -225,7 +225,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Hybrid businesses</h5>
-                                        <a href='#businessModal' data-toggle='modal' class="btn btn-primary">Add business+</a>
+                                        <a href='../../forms/add/add-business.php' data-toggle='modal' class="btn btn-primary">Add business+</a>
                                         
                                     </div>
                                     <div class="card-body p-0">

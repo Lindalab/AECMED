@@ -192,18 +192,18 @@
                         <div class="card">
                             <h5 class="card-header">Add a business</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../insertions/add_business.php">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business Name"
+                                            <input type="text" name="business_name" required="" placeholder="Business Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
+                                            <select name="department_id" id="" class="form-control">
                                                 <option value="">Ashesi Venture Incubator</option>
                                                 <option value="">Undergraduate Programs</option>
                                             </select>
@@ -212,53 +212,53 @@
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business E-Mail</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="email" required="" data-parsley-type="email"
+                                            <input type="email" required="" data-parsley-type="email" name="business_email"
                                                 placeholder="Enter a valid e-mail" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Contact</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input data-parsley-type="number" type="number" required=""
+                                            <input data-parsley-type="number" type="number" required="" name="business_contact"
                                                 placeholder="Enter only numbers" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Location</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business location"
+                                            <input type="text" required="" name="business_location" placeholder="Business location"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Sector</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business sector"
+                                            <input type="text" required="" name="sector" placeholder="Business sector"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Year started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Year started"
+                                            <input type="date" required="" name="year_started" placeholder="Year started"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="business_description" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Logo</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="file" accept="image/*">
+                                            <input type="file" name="business_logo" class="form-control" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">
                                         <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
-                                            <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                            <button type="submit" name="submit" value="Register" class="btn btn-space btn-primary">Submit</button>
                                         </div>
                                     </div>
                                 </form>
