@@ -96,10 +96,10 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                         </li>
-                                        <a class="nav-link active" href="../D-Lab/projects students.php">Student projects</a>
+                                        <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
+                                <a class="nav-link active" href="../D-Lab/projects fellows.php">Fellow projects</a>
                             </li>
                         </ul>
                     </div>
@@ -196,13 +196,13 @@
                             <!-- Title -->
                             <h2 class="pageheader-title">Design Lab</h2>
                             <!-- Breadcrumb -->
-                            <h5>Student Projects</h5>
+                            <h5>Fellow Projects</h5>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="projects students.php"
-                                                class="breadcrumb-link">Student Projects</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Student Projects (View)</li>
+                                                class="breadcrumb-link">Fellow Projects</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Fellow Projects (View)</li>
                                     </ol>
                                 </nav>
                             </div>

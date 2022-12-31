@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="../../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/libs/css/style.css">
-    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="../../assets/vendor/charts/chartist-bundle/chartist.css">
-    <link rel="stylesheet" href="../../assets/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="../../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../assets/vendor/charts/c3charts/c3.css">
-    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - D-Lab Student Projects</title>
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/libs/css/style.css">
+    <link rel="stylesheet" href="../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>AEC - D-Lab Events</title>
 </head>
 
 <body>
@@ -87,7 +87,7 @@
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                                     data-target="#submenu-3" aria-controls="submenu-3"><i
                                         class="fa fa-fw fa-rocket"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu">
@@ -96,7 +96,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                         </li>
-                                        <a class="nav-link active" href="../D-Lab/projects students.php">Student projects</a>
+                                        <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
@@ -105,7 +105,7 @@
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
+                        <a class="nav-link active" href="../D-Lab/events.php"><i
                                 class="fa fa-fw fa-user-circle"></i>Events</a>
                     </li>
                     <li class="nav-item">
@@ -196,13 +196,13 @@
                             <!-- Title -->
                             <h2 class="pageheader-title">Design Lab</h2>
                             <!-- Breadcrumb -->
-                            <h5>Student Projects</h5>
+                            <h5>Events</h5>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="projects students.php"
-                                                class="breadcrumb-link">Student Projects</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Student Projects (View)</li>
+                                        <li class="breadcrumb-item"><a href="events.php"
+                                                class="breadcrumb-link">Events</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Events (View)</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -216,35 +216,11 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Student Project Name</h3>
-                                    <h4 class="text-center">Project Members</h4>
-                                    <div class="view-sec">
-                                        <section class="d-flex justify-content-around">
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        <?php echo $business_email;?>
-                                                    </sub>
-                                                </figcaption>
-                                            </figure>
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        <?php echo $business_email;?>
-                                                    </sub>
-                                                </figcaption>
-                                            </figure>
-                                        </section>
-                                    </div><br>
-                                   
+                                    <h3 class="">Event Name</h3>
+                                    <h5>Event Date</h5> <p>2021-32-87</p>
+                                    <h5>Event attendance</h5> <p>12</p>
                                     <h5>
-                                        Project Description
+                                        Event Description
                                     </h5>
                                     <p>
                                         <!-- <br><br>
@@ -255,33 +231,6 @@
                                         Etiam nec pulvinar mauris, et ultrices ipsum. -->
                                     </p>
                                     <br>
-                                        <h5>
-                                            Project Grants 
-                                            <button class="btn btn-outline-primary">Add Grant +</button>
-                                        </h5>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead class="bg-light">
-                                                        <tr class="border-0">
-                                                            <th class="border-0">Company Name</th>
-                                                            <th class="border-0">Grant Received</th>
-                                                            <th class="border-0">Date Received</th>
-                                                            <th class="border-0">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Coco-cola</td>
-                                                            <td>$80.00</td>
-                                                            <td>27-08-2018</td>
-                                                            <td>
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                                <button class="btn btn-outline-danger">Remove</button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <br>
                                 </div>
                             </div>
                         </div>
@@ -291,25 +240,25 @@
         </div>
     </div>
     </div>
-    <script src="../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
-    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
     <!-- slimscroll js -->
-    <script src="../../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
     <!-- main js -->
-    <script src="../../assets/libs/js/main-js.js"></script>
+    <script src="../assets/libs/js/main-js.js"></script>
     <!-- chart chartist js -->
-    <script src="../../assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="../assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
     <!-- sparkline js -->
-    <script src="../../assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="../assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
     <!-- morris js -->
-    <script src="../../assets/vendor/charts/morris-bundle/raphael.min.js"></script>
-    <script src="../../assets/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="../assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="../assets/vendor/charts/morris-bundle/morris.js"></script>
     <!-- chart c3 js -->
-    <script src="../../assets/vendor/charts/c3charts/c3.min.js"></script>
-    <script src="../../assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
-    <script src="../../assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="../../assets/libs/js/dashboard-ecommerce.js"></script>
+    <script src="../assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="../assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="../assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="../assets/libs/js/dashboard-ecommerce.js"></script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - D-Lab Student Projects</title>
+    <title>AEC - Undergraduate Programs Student Projects</title>
 </head>
 
 <body>
@@ -96,7 +96,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                         </li>
-                                        <a class="nav-link active" href="../D-Lab/projects students.php">Student projects</a>
+                                        <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
@@ -138,7 +138,7 @@
                                 class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
                             data-target="#submenu-5" aria-controls="submenu-5"><i
                                 class="fa fa-fw fa-rocket"></i>Courses</a>
                         <div id="submenu-5" class="collapse submenu">
@@ -147,7 +147,7 @@
                                     <a class="nav-link" href="../TAC/courses.php">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
+                                    <a class="nav-link active" href="../TAC/student projects.php">Student projects</a>
                                 </li>
                             </ul>
                         </div>
@@ -194,7 +194,7 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <!-- Title -->
-                            <h2 class="pageheader-title">Design Lab</h2>
+                            <h2 class="pageheader-title">Undergraduate Programs</h2>
                             <!-- Breadcrumb -->
                             <h5>Student Projects</h5>
                             <div class="page-breadcrumb">

@@ -281,7 +281,9 @@
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
                                                         <td>
-                                                            <button class="btn btn-outline-info">View</button>
+                                                            <a href="events view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
                                                             <button class="btn btn-outline-warning">Edit</button>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>

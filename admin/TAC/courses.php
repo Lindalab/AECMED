@@ -251,8 +251,35 @@
                                                     <tr>
                                                         <td>Course #1 </td>
                                                         <td>67</td>
-                                                        <td>2</td>
-                                                        <td>$400</td>
+                                                        <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Project Name</th>
+                                                        <th class="border-0">Date Commenced</th>
+                                                        <th class="border-0">Grant Received</th>
+                                                        <th class="border-0">Project Status</th>
+                                                        <th class="border-0">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Company #1 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <a href="projects students view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Company #2 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
                                                         <td>
                                                             <button class="btn btn-outline-info">View</button>
                                                             <button class="btn btn-outline-warning">Edit</button>
@@ -260,8 +287,79 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td>Company #3 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info">View</button>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                                        <td>2</td>
+                                                        <td>$400</td>
+                                                        <td>
+                                                            <a href="courses view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Course #2 </td>
                                                         <td>67</td>
+                                                        <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Project Name</th>
+                                                        <th class="border-0">Date Commenced</th>
+                                                        <th class="border-0">Grant Received</th>
+                                                        <th class="border-0">Project Status</th>
+                                                        <th class="border-0">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Company #1 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <a href="projects students view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Company #2 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info">View</button>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Company #3 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info">View</button>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                                         <td>2</td>
                                                         <td>$400</td>
                                                         <td>
@@ -273,6 +371,54 @@
                                                     <tr>
                                                         <td>Course #3 </td>
                                                         <td>67</td>
+                                                        <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Project Name</th>
+                                                        <th class="border-0">Date Commenced</th>
+                                                        <th class="border-0">Grant Received</th>
+                                                        <th class="border-0">Project Status</th>
+                                                        <th class="border-0">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Company #1 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <a href="projects students view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Company #2 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info">View</button>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Company #3 </td>
+                                                        <td>67 </td>
+                                                        <td>27-08-2018</td>
+                                                        <td>Active</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info">View</button>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                                         <td>2</td>
                                                         <td>$400</td>
                                                         <td>
