@@ -1,9 +1,10 @@
 <?php 
-    require_once dirname(__FILE__)."/../../functions/tac.php";
-    require_once dirname(__FILE__)."/../../functions/tac_grant.php";
-
-    $graph_1_data = graphing_data_for_years_and_business(AVI);
-    $graph_2_data = graphing_data_busines_type(AVI);
+    require_once dirname(__FILE__)."/../../functions/tac_grant_section.php";
+    
+    $type = $_GET['grant_type'];
+    $graph_data = graph_data_for_business($type, D_Lab, date("Y")-4);
+    $graph_2_data = number_of_project_with_type(D_Lab, $type);
+   // print_r($graph_2_data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +39,13 @@
                     <p>Ashesi Venture Incubator</p>
                 </li>
             </a>
-            <a href="../D-Lab.php" class="links"  id='active'>
+            <a href="../D-Lab.php" class="links" id='active'>
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/dlab-icon.svg" alt="Design Lab Icon">
                     <p>Design Lab</p>
                 </li>
             </a>
-            <a href="../TAC.php" class="links">
+            <a href="../TAC.php" class="links" >
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
                     <p>Undergraduate Programs</p>
@@ -59,40 +60,10 @@
             <section aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="../TAC.php">..</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Grants</li>
+                  <li class="breadcrumb-item"><a href="TAC grants.php">Grants</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><?php echo grant_type($type) ?> Grants</li>
                 </ol>
             </section>
-            <!-- Card Navigations -->
-            <ul id="card-navs">
-                <a href="D_Lab grants-section.php?grant_type=<?php echo INTERNAL?>">
-                    <li class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-9">
-                                    <h5 class="card-title">Internal Grants - $<?php echo  $internal_grants ?></h5>
-                                </div>
-                                <div class="col-3">
-                                    <img class="card-icons" src="../../assets/grants-icon.svg" alt="Internal Grants image">
-                                </div>
-                            </div>
-                        </div> 
-                    </li>
-                </a>
-                <a href="D_Lab grants-section.php?grant_type=<?php echo EXTERNAL?>">
-                    <li class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-9">
-                                    <h5 class="card-title">External Grants - $<?php echo  $external_grants ?></h5>
-                                </div>
-                                <div class="col-3">
-                                    <img class="card-icons" src="../../assets/grants-icon.svg" alt="External Grants image">
-                                </div>
-                            </div>
-                        </div> 
-                    </li>
-                </a>
-            </ul>
         </header>
         <section>
             <label for="maxRows" class="d-inline">Rows to display</label>
@@ -104,7 +75,7 @@
             </select>
             <div class="d-flex justify-content-between align-items-center">
                 <h3>
-                    Grants
+                    <?php echo grant_type($type) ?> Grants
                 </h3>
                 <section>
                     <select name="date-order" id="">
@@ -120,9 +91,9 @@
                         <th>
                             <strong>Company</strong>
                         </th>
-                        <th>
+                        <!-- <th>
                             <strong>Number of Beneficiaries</strong>
-                        </th>
+                        </th> -->
                         <th>
                             <strong>Amount donated</strong>
                         </th>
@@ -130,17 +101,12 @@
                             <strong>Date donated</strong>
                         </th>
                         <th>
-                            <strong>Grant Type</strong>
-                        </th>
-                        <th>
 
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
-                        show_grants(D_Lab);
-                    ?>
+                    <?php list_grant_type(D_Lab, $type)?>
                 </tbody>
             </table>
             <!-- Start Pagination -->
@@ -163,10 +129,10 @@
             <figure>
                 <!-- Bar Graph -->
                 <div class="bgraph" id="graph_1">
-                    Line graph
+                    Line Graph Of Internal Grant Over Time
                 </div>
                 <figcaption class="text-center">
-                    <!-- Grants received over the past four(4) years -->
+                    Line Graph Of Internal Grant Over Time
                 </figcaption>
             </figure>
             <figure>
@@ -175,7 +141,7 @@
                     Bar graph
                 </div>
                 <figcaption class="text-center">
-                    <!-- Grant Type over the past four(4) years -->
+                    Grant Type over the past four(4) years
                 </figcaption>
             </figure>
         </section>
@@ -183,9 +149,9 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("line", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php echo $graph_1_data ?>);
+        draw("column", "graph_1", "Grants received over the past four(4) years", "amount_receieved", "year", <?php  echo $graph_data ?>);
 
-        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
+        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
     </script>
 </body>
 </html>

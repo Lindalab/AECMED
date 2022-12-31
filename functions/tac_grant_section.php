@@ -6,6 +6,10 @@
     function list_grant_type($department, $type){
         $list = list_grant_type_and_department_ctr($department, $type);
         foreach($list as $grant){
+            if($department === D_Lab){
+                grant_type_row_dlab($grant['grant_id'], $grant['grant_name'], "not yet", $grant['amount'], $grant['date_received']);
+                continue;
+            }
             grant_type_row($grant['grant_id'], $grant['grant_name'], "not yet", $grant['amount'], $grant['date_received']);
         }
     }
@@ -30,6 +34,25 @@
     </tr>";
     }
 
+
+    function grant_type_row_dlab($grant_id, $grant_name, $beneficiaries, $amount, $date){
+        echo "<tr>
+        <td>
+            $grant_name
+        </td>
+        <td>
+            $$amount
+        </td>
+        <td>
+            $date
+        </td>
+        <td>
+            <a href='D_Lab grant-view.php?grant_id=$grant_id'>
+                <img src='./../../assets/read-more.svg' alt='View icon'>
+            </a>
+        </td>
+    </tr>";
+    }
 
     function graph_data_for_business($type, $department_id, $year){
         $result = sum_grant_type_department_over_years_ctr($type, $department_id, $year);
