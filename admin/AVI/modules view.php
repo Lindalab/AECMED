@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - AVI Business</title>
+    <title>AEC - AVI Modules</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="../summary.php">AEC</a>
+                <a class="navbar-brand" href="../summary.html">AEC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -65,22 +65,22 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../index.php"><i
+                                <a class="nav-link" href="../summary.html"><i
                                         class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="business hybrid.php"><i
+                                <a class="nav-link" href="business hybrid.html"><i
                                         class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="fellows.php"><i
+                                <a class="nav-link" href="fellows.html"><i
                                         class="fa fa-fw fa-user-circle"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="modules.php"><i
+                                <a class="nav-link active" href="modules.html"><i
                                         class="fa fa-fw fa-user-circle"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
@@ -94,18 +94,18 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
+                                            <a class="nav-link" href="../D-Lab/projects overview.html">Overview</a>
                                         </li>
-                                        <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
+                                        <a class="nav-link" href="../D-Lab/projects students.html">Student projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
+                                <a class="nav-link" href="../D-Lab/projects fellows.html">Fellow projects</a>
                             </li>
                         </ul>
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
+                        <a class="nav-link" href="../D-Lab/events.html"><i
                                 class="fa fa-fw fa-user-circle"></i>Events</a>
                     </li>
                     <li class="nav-item">
@@ -115,13 +115,13 @@
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
+                                    <a class="nav-link" href="../D-Lab/grants overview.html">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
+                                    <a class="nav-link" href="../D-Lab/grants internal.html">Internal grants</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
+                                    <a class="nav-link" href="../D-Lab/grants external.html">External grants</a>
                                 </li>
                             </ul>
                         </div>
@@ -130,11 +130,11 @@
                         Undergraduate Programs
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/businesses.php"><i
+                        <a class="nav-link" href="../TAC/businesses.html"><i
                                 class="fa fa-fw fa-user-circle"></i>Businesses</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/community entrepreneurship.php"><i
+                        <a class="nav-link" href="../TAC/community entrepreneurship.html"><i
                                 class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
                     </li>
                     <li class="nav-item">
@@ -144,20 +144,20 @@
                         <div id="submenu-5" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/courses.php">Overview</a>
+                                    <a class="nav-link" href="../TAC/courses.html">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
+                                    <a class="nav-link" href="../TAC/student projects.html">Student projects</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus
+                        <a class="nav-link" href="../TAC/clubs.html"><i class="fa fa-fw fa-user-circle"></i>Campus
                             Clubs</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                        <a class="nav-link" href="../TAC/events.html"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
@@ -166,13 +166,13 @@
                         <div id="submenu-6" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
+                                    <a class="nav-link" href="../TAC/grants overview.html">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
+                                    <a class="nav-link" href="../TAC/grants internal.html">Internal grants</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants external.php">External grants</a>
+                                    <a class="nav-link" href="../TAC/grants external.html">External grants</a>
                                 </li>
                             </ul>
                         </div>
@@ -196,13 +196,13 @@
                             <!-- Title -->
                             <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
                             <!-- Breadcrumb -->
-                            <h5>Hybrid businesses</h5>
+                            <h5>Modules</h5>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="business hybrid.php"
-                                                class="breadcrumb-link">Businesses</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Businesses (View)</li>
+                                        <li class="breadcrumb-item"><a href="modules.html"
+                                                class="breadcrumb-link">Modules</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Modules (View)</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -216,34 +216,15 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Business Name</h3>
-                                    <div class="view-sec">
-                                        <section class="view">
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        <?php echo $business_email;?>
-                                                    </sub>
-                                                </figcaption>
-                                            </figure>
+                                    <h3 class="">Module Name</h3>
 
-                                        </section>
-                                    </div><br>
-
-                                    <h5>Business Email:</h5> <p>lala@gmail.com</p>
-                                    <h5>Business Contact: </h5> <p>02124012124</p>
-                                    <h5>Business Sector: </h5> <p>Cooking</p>
-                                    <h5>Business Formalised structure: </h5> <p>  <?php echo $formalised_structure;?>   </p>
-                                    <h5>SDG Goals: </h5> <p><?php echo $sdg_alignment; ?></p>
+                                    <h5>Number of participants:</h5> <p>52</p>
+                                    <h5>Date Created: </h5> <p>20-21-12</p>
                                     <br>                                   
                                     <h5>
-                                        Business Description
+                                        Module Description
                                     </h5>
                                     <p>
-                                        <?php echo $business_description;?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
@@ -252,58 +233,7 @@
                                         Etiam nec pulvinar mauris, et ultrices ipsum. -->
                                     </p>
                                     <br>
-                                    <h5>
-                                        Business Revenue 
-                                        <button class="btn btn-outline-primary">Add Revenue +</button>
-                                    </h5>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Date Created</th>
-                                                        <th class="border-0">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div> <br>
-                                        <h5>
-                                            Business Grants 
-                                            <button class="btn btn-outline-primary">Add Grant +</button>
-                                        </h5>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead class="bg-light">
-                                                        <tr class="border-0">
-                                                            <th class="border-0">Company Name</th>
-                                                            <th class="border-0">Grant Received</th>
-                                                            <th class="border-0">Date Received</th>
-                                                            <th class="border-0">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Coco-cola</td>
-                                                            <td>$80.00</td>
-                                                            <td>27-08-2018</td>
-                                                            <td>
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                                <button class="btn btn-outline-danger">Remove</button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <br>
+                                    
                                 </div>
                             </div>
                         </div>

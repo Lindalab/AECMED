@@ -72,11 +72,11 @@
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="business hybrid.php"><i
+                                <a class="nav-link" href="business hybrid.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="fellows.php"><i
+                                <a class="nav-link active" href="fellows.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
@@ -196,13 +196,13 @@
                             <!-- Title -->
                             <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
                             <!-- Breadcrumb -->
-                            <h5>Hybrid businesses</h5>
+                            <h5>Fellows</h5>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="business hybrid.php"
-                                                class="breadcrumb-link">Businesses</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Businesses (View)</li>
+                                        <li class="breadcrumb-item"><a href="fellows.php"
+                                                class="breadcrumb-link">Fellows</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Fellows (View)</li>
                                     </ol>
                                 </nav>
                             </div>

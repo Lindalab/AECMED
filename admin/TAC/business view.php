@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - AVI Business</title>
+    <title>AEC - Undergraduate Programs Business</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link active" href="business hybrid.php"><i
+                                <a class="nav-link" href="business hybrid.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
@@ -130,7 +130,7 @@
                         Undergraduate Programs
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/businesses.php"><i
+                        <a class="nav-link active" href="../TAC/businesses.php"><i
                                 class="fa fa-fw fa-user-circle"></i>Businesses</a>
                     </li>
                     <li class="nav-item ">
@@ -194,13 +194,13 @@
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <!-- Title -->
-                            <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
+                            <h2 class="pageheader-title">Undergraduate Programs</h2>
                             <!-- Breadcrumb -->
-                            <h5>Hybrid businesses</h5>
+                            <h5>Businesses</h5>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="business hybrid.php"
+                                        <li class="breadcrumb-item"><a href="businesses.php"
                                                 class="breadcrumb-link">Businesses</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Businesses (View)</li>
                                     </ol>
