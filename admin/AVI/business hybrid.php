@@ -28,7 +28,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="../summary.html">AEC</a>
+                <a class="navbar-brand" href="../index.php">AEC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -62,35 +62,19 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.html"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Businesses</a>
-                                <div id="submenu-2" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="business-overview.html">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business for-profit.html">For-profit businesses</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business ngos.html">NGOs</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="business hybrid.html">Hybrid businesses</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="business hybrid.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="fellows.html"><i class="fa fa-fw fa-user-circle"></i>Fellows</a>
+                                <a class="nav-link" href="fellows.php"><i class="fa fa-fw fa-user-circle"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="modules.html"><i class="fa fa-fw fa-user-circle"></i>Modules</a>
+                                <a class="nav-link" href="modules.php"><i class="fa fa-fw fa-user-circle"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
                                 Design Lab
@@ -101,72 +85,75 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="../D-Lab/projects overview.html">Overview</a>
+                                                <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                             </li>
-                                            <a class="nav-link" href="../D-Lab/projects students.html">Student projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/projects fellows.html">Fellow projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../D-Lab/events.html"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants overview.html">Overview</a>
+                                            <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants internal.html">Internal grants</a>
+                                            <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants external.html">External grants</a>
+                                            <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-divider">
-                                Teaching Across Curriculum
+                                Undergraduate Programs
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/businesses.html"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                                <a class="nav-link" href="../TAC/businesses.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/community entrepreneurship.php"><i class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Courses</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/businesses.html">Overview</a>
+                                            <a class="nav-link" href="../TAC/courses.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/businesses.html">Student projects</a>
+                                            <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/clubs.html"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
+                                <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/events.html"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants overview.html">Overview</a>
+                                            <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants internal.html">Internal grants</a>
+                                            <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants external.html">External grants</a>
+                                            <a class="nav-link" href="../TAC/grants external.php">External grants</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -190,7 +177,7 @@
                                 <!-- Title -->
                                 <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
                                 <!-- Breadcrumb -->
-                                <h5>Businesss Overview</h5>
+                                <h5>Hybrid businesses</h5>
                             </div>
                         </div>
                     </div>
@@ -201,9 +188,9 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">For-profit businesses</h5>
+                                        <h5 class="text-muted">Revenue generated</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1">$78</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -211,7 +198,7 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">NGOs</h5>
+                                        <h5 class="text-muted">Employment Created</h5>
                                         <div class="metric-value d-inline-block">
                                             <h1 class="mb-1">55</h1>
                                         </div>
@@ -221,85 +208,9 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Hybrid businesses</h5>
+                                        <h5 class="text-muted">Grants received</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">500</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Business revenue over the past four years</h5>
-                                    <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
-                                            <!-- Line graph here -->
-                                        </canvas>
-                                    </div>
-                                    <div class="card-body border-top">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3"><span>$12000</span></h2>
-                                                <div class="mb-0 mt-3 legend-item">
-                                                    <span class="fa-xs text-primary mr-1 legend-title "><i class="fa fa-fw fa-square-full"></i></span>
-                                                    <span class="legend-text">For-profit businesses</span></div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>$4500</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> <span class="fa-xs text-secondary mr-1 legend-title">
-                                                    <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">NGOs</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>$10000</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> 
-                                                    <span class="fa-xs text-success mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span>
-                                                    <span class="legend-text">Hybrid businesses</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Business grants over the past four years</h5>
-                                    <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
-                                            <!-- Line graph here -->
-                                        </canvas>
-                                    </div>
-                                    <div class="card-body border-top">
-                                        <div class="row">
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3"><span>$12000</span></h2>
-                                                <div class="mb-0 mt-3 legend-item">
-                                                    <span class="fa-xs text-primary mr-1 legend-title "><i class="fa fa-fw fa-square-full"></i></span>
-                                                    <span class="legend-text">For-profit businesses</span></div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>$4500</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> <span class="fa-xs text-secondary mr-1 legend-title">
-                                                    <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">NGOs</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>$10000</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> 
-                                                    <span class="fa-xs text-success mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span>
-                                                    <span class="legend-text">Hybrid businesses</span>
-                                                </div>
-                                            </div>
+                                            <h1 class="mb-1">$500</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -308,52 +219,10 @@
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Top three businesses with <em>most revenue</em></h5>
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Business Name</th>
-                                                        <th class="border-0">Employment Created</th>
-                                                        <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Business Type</th>
-                                                        <th class="border-0">Date Created</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Hybrid business</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Hybrid business</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Hybrid business</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-header">Hybrid businesses</h5>
+                                        <button class="btn btn-primary">Add business +</button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Top three businesses with <em>most employment created</em></h5>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
                                             <table class="table">
@@ -362,8 +231,9 @@
                                                         <th class="border-0">Business Name</th>
                                                         <th class="border-0">Employment Created</th>
                                                         <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Business Type</th>
+                                                        <th class="border-0">Business Sector</th>
                                                         <th class="border-0">Date Created</th>
+                                                        <th class="border-0">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -371,21 +241,26 @@
                                                         <td>Business #1 </td>
                                                         <td>67 </td>
                                                         <td>$80.00</td>
-                                                        <td>Hybrid business</td>
+                                                        <td>Cooking</td>
                                                         <td>27-08-2018</td>
+                                                        <td>
+                                                            <button class="btn btn-outline-info">View</button>
+                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <button class="btn btn-outline-danger">Remove</button>
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td>Business #2 </td>
                                                         <td>67 </td>
                                                         <td>$80.00</td>
-                                                        <td>Hybrid business</td>
+                                                        <td>Cooking</td>
                                                         <td>27-08-2018</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Business #3 </td>
                                                         <td>67 </td>
                                                         <td>$80.00</td>
-                                                        <td>Hybrid business</td>
+                                                        <td>Cooking</td>
                                                         <td>27-08-2018</td>
                                                     </tr>
                                                 </tbody>
