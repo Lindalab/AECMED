@@ -1,3 +1,9 @@
+<?php 
+    require_once dirname(__FILE__)."/../../functions/summary.php";
+
+    
+
+?>
 <!doctype html>
 <html lang="en">
  
@@ -190,7 +196,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total events</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1"><?php echo $tac_events ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +206,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total participants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">55</h1>
+                                            <h1 class="mb-1"><?php echo $total_participants ?></h1>
                                         </div>
                                     </div>
                                 </div>

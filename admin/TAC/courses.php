@@ -1,3 +1,13 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/course_controller.php";
+
+
+    $course_year = $year - 10;
+    $number_of_courses = count_course_under_dpt_ctr(TAC);
+    $course_participants = total_course_students_ctr($course_year);
+
+
+?>
 <!doctype html>
 <html lang="en">
  
@@ -190,7 +200,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total courses</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1"><?php echo $number_of_courses ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +210,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total course participants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">55</h1>
+                                            <h1 class="mb-1"><?php echo $course_participants ?></h1>
                                         </div>
                                     </div>
                                 </div>

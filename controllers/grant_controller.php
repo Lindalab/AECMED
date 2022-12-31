@@ -76,7 +76,10 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         $grant = new Grant;
         return $grant->list_grant_type_and_department($department_id, $type);
     }
-
+    function count_grant_type_and_department_ctr($department_id, $type){
+        $grant = new Grant;
+        return $grant->count_grant_type_and_department($department_id, $type);
+    }
     function grant_type_for_department_ctr($department){
         $grant = new Grant;
         return $grant->grant_type_for_department($department);
@@ -85,7 +88,12 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
 
     function sum_grant_for_project_ctr($project_id){
         $grant = new Grant;
-        return $grant-> sum_grant_for_project($project_id);
+        return $grant->sum_grant_for_project($project_id);
+    }
+
+    function sum_grant_for_project_under_dpt_ctr($department){
+        $grant = new Grant;
+        return $grant->sum_grant_for_project_under_dpt($department)['amount'];
     }
 
     function grant_for_project_ctr($project_id){

@@ -1,3 +1,7 @@
+<?php 
+        require_once dirname(__FILE__)."/../../functions/summary.php";
+        
+?>
 <!doctype html>
 <html lang="en">
  
@@ -190,7 +194,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total Grants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1">$<?php echo $d_lab_grants?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +204,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Internal Grants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">55</h1>
+                                            <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(D_Lab,INTERNAL)['amount'] ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -210,7 +214,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">External Grants</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">500</h1>
+                                            <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(D_Lab,EXTERNAL)['amount'] ?></h1>
                                         </div>
                                     </div>
                                 </div>

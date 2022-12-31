@@ -8,6 +8,10 @@ function show_grants($department)
     foreach ($grantList as $grant) {
         $grant_id = $grant['grant_id'];
         $type = grant_type($grant['grant_type']);
+        if($department === D_Lab){
+            display_grants_dlab($grant_id, $grant['grant_name'], "not yet", $grant['amount'], $grant['date_received'], $type);
+            continue;
+        }
         // $beneficiaries = count_grant_beneficiaries($grant_id);
         display_grants($grant_id, $grant['grant_name'], "not yet", $grant['amount'], $grant['date_received'], $type);
     }
@@ -35,6 +39,34 @@ function display_grants($id, $grant_name, $beneficiaries, $amount, $date, $type)
         </td>
         <td>
             <a href='TAC grant-view.php?grant_id=$id'>
+                <img src='./../../assets/read-more.svg' alt='View icon'>
+            </a>
+        </td>
+    </tr>
+        ";
+}
+
+function display_grants_dlab($id, $grant_name, $beneficiaries, $amount, $date, $type)
+{
+    echo "
+        <tr>
+        <td>
+            $grant_name
+        </td>
+        <td>
+            $beneficiaries
+        </td>
+        <td>
+            $$amount
+        </td>
+        <td>
+            $date
+        </td>
+        <td>
+            $type
+        </td>
+        <td>
+            <a href='D_Lab grant-view.php?grant_id=$id'>
                 <img src='./../../assets/read-more.svg' alt='View icon'>
             </a>
         </td>
