@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/d_lab_project_view.php";
+    require_once dirname(__FILE__)."/../../functions/tac_student_course_project_view.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
