@@ -11,8 +11,9 @@
   $business_type=$_POST['business_type'];
   $sector=$_POST['sector'];
   $business_description=$_POST['business_description'];
+  $business_status=$_POST['business_status'];
 
-    $updated = update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description);
+    $updated = update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description,$business_status);
 
     if($updated){
         header("location: ../view/index.php?message=1");

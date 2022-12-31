@@ -16,6 +16,9 @@ CREATE TABLE department (
 -- 0 - other
 -- 1 - Female
 -- 2 - Male
+-- business_status
+-- 0 - Graduated
+-- 1 - Not Graduated
 CREATE TABLE stakeholder (
   stakeholder_id int(11) NOT NULL,
   first_name varchar(20) DEFAULT NULL,
