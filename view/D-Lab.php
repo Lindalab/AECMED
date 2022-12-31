@@ -88,7 +88,7 @@ $projects = graphing_years_and_projects(D_Lab);
                         </div>
                     </li>
                 </a>
-                <a href="">
+                <a href="./D-Lab/D_Lab_Events.php">
                     <li class="card">
                         <div class="card-body">
                             <div class="row">
@@ -178,7 +178,7 @@ $projects = graphing_years_and_projects(D_Lab);
 
             draw("column", "events", "Events hosted over the past four(4) years", "attendance", "year", <?php echo $events ?>);
 
-            draw("line", "projects", "Student Projects Per Year", "number of projects", "year", <?php echo $projects ?>);
+            draw("doughnut", "projects", "Student Projects Per Year", "number of projects", "year", <?php echo $projects ?>);
         </script>
     </main>
 </body>
