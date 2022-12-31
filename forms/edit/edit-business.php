@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Form Validation</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/libs/css/style.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/libs/css/style.css">
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 </head>
 
 <body>
@@ -167,7 +167,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Add a project </h2>
+                            <h2 class="pageheader-title">Edit a business </h2>
                             <!-- <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -190,18 +190,18 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Add a project</h5>
+                            <h5 class="card-header">Edit a business</h5>
                             <div class="card-body">
                                 <form id="validationform" data-parsley-validate="" novalidate="">
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Name</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Project Name"
+                                            <input type="text" required="" placeholder="Business Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Department</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
                                                 <option value="">Ashesi Venture Incubator</option>
@@ -210,75 +210,48 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">SDG Goals</label>
-                                        <div class="custom-controls-stacked">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 1</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 2</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 3</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 4</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 5</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 6</span>
-                                                    </label>
-                                                </div>
-                                                <div class="col">
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 7</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 8</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 9</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 10</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 11</span>
-                                                    </label>
-                                                    <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 12</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div id="error-container1"></div>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business E-Mail</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="email" required="" data-parsley-type="email"
+                                                placeholder="Enter a valid e-mail" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Sector</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Contact</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Project sector"
+                                            <input data-parsley-type="number" type="number" required=""
+                                                placeholder="Enter only numbers" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Location</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="text" required="" placeholder="Business location"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Date started</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Sector</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date started"
+                                            <input type="text" required="" placeholder="Business sector"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Description</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Year started</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="date" required="" placeholder="Year started"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <textarea required="" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Image</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Logo</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="file" accept="image/*">
                                         </div>
@@ -327,11 +300,11 @@
     <!-- end main wrapper -->
     <!-- ============================================================== -->
     <!-- Optional JavaScript -->
-    <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="../assets/vendor/parsley/parsley.js"></script>
-    <script src="../assets/libs/js/main-js.js"></script>
+    <script src="../../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="../../assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../assets/vendor/parsley/parsley.js"></script>
+    <script src="../../assets/libs/js/main-js.js"></script>
     <script>
         $('#form').parsley();
     </script>
