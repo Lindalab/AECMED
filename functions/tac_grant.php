@@ -2,14 +2,14 @@
 require_once dirname(__FILE__) . "/../controllers/grant_controller.php";
 require_once dirname(__FILE__) . "/../controllers/general_controller.php";
 
-function show_grants()
+function show_grants($department)
 {
-    $grantList = select_grant_for_dpt_ctr(TAC);
+    $grantList = select_grant_for_dpt_ctr($department);
     foreach ($grantList as $grant) {
         $grant_id = $grant['grant_id'];
         $type = grant_type($grant['grant_type']);
         // $beneficiaries = count_grant_beneficiaries($grant_id);
-        display_grants($grant['grant_id'], $grant['grant_name'], "not yet", $grant['amount'], $grant['date_received'], $type);
+        display_grants($grant_id, $grant['grant_name'], "not yet", $grant['amount'], $grant['date_received'], $type);
     }
 }
 

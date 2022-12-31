@@ -139,7 +139,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                        show_grants();
+                        show_grants(TAC);
                     ?>
                 </tbody>
             </table>

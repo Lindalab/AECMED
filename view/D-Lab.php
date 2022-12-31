@@ -102,7 +102,7 @@ $projects = graphing_years_and_projects(D_Lab);
                         </div>
                     </li>
                 </a>
-                <a href="">
+                <a href="./D-Lab/D-Lab_Grants.php">
                     <li class="card">
                         <div class="card-body">
                             <div class="row">

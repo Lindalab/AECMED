@@ -38,13 +38,13 @@
                     <p>Ashesi Venture Incubator</p>
                 </li>
             </a>
-            <a href="../D-Lab.php" class="links">
+            <a href="../D-Lab.php" class="links"  id='active'>
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/dlab-icon.svg" alt="Design Lab Icon">
                     <p>Design Lab</p>
                 </li>
             </a>
-            <a href="../TAC.php" class="links" id='active'>
+            <a href="../TAC.php" class="links">
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/tac-icon.svg" alt="Undergraduate Programs Icon">
                     <p>Undergraduate Programs</p>
@@ -54,7 +54,7 @@
     </nav>
     <main id="main">
         <header>
-            <h1 class="heading mb-4">Undergraduate Programs</h1>
+            <h1 class="heading mb-4">Design Lab</h1>
             <!-- Breadcrumb -->
             <section aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -139,7 +139,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                        show_grants();
+                        show_grants(D_Lab);
                     ?>
                 </tbody>
             </table>
