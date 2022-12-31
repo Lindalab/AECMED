@@ -1,7 +1,7 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/tac_events.php";
 
-    $graph_1_data = graph_event_attendance_year();
+    $graph_1_data = graph_event_attendance_year(TAC);
 ?>
 
 <!DOCTYPE html>

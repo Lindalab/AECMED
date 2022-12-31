@@ -2,11 +2,11 @@
 require_once dirname(__FILE__) . "/../controllers/event_controller.php";
 
 
-function graph_event_attendance_year()
+function graph_event_attendance_year($department)
 {
     $year = date("Y");
     $year = $year - 4;
-    $event_year = event_for_department_over_years_ctr(TAC, $year);
+    $event_year = event_for_department_over_years_ctr($department, $year);
     $dataPoints = array();
     foreach ($event_year as $event) {
         array_push($dataPoints, array("y" => $event['attendance'], "label" => $event['year']));

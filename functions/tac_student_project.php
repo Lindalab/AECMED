@@ -1,5 +1,6 @@
 <?php 
      require_once dirname(__FILE__)."/../controllers/project_controller.php";
+     require_once dirname(__FILE__)."/../controllers/general_controller.php";
 
 
     function graphing_years_and_projects($department){
@@ -54,13 +55,13 @@
         
     }
 
-    function project_status($status){
-        if($status == 1){
-            return "active";
-        }else{
-            return "completed";
-        }
-    }
+    // function project_status($status){
+    //     if($status == 1){
+    //         return "active";
+    //     }else{
+    //         return "completed";
+    //     }
+    // }
 
 
 ?>

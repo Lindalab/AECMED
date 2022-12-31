@@ -181,7 +181,7 @@
                     </li>
                 </a>
             </ul>
-
+            
         </header>
         <table class="table summary-table">
 			<thead>
@@ -220,10 +220,6 @@
 					<td>Revenue from student entrepreneurship businesses</td>
 					<td><span>$</span> <?php echo $revenue_year ?></td>
 				</tr>
-
-
-
-
 			</tbody>
 		</table>
     </main>
