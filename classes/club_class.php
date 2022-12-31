@@ -39,6 +39,11 @@
             return $this->db_count();
         }
 
+        function total_club_members(){
+            $sql = "SELECT SUM(number_of_members) as number FROM clubs";
+            return $this->db_fetch_one($sql);
+        }
+
         
 
     }

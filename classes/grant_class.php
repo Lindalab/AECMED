@@ -106,6 +106,14 @@ class Grant extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function count_grant_type_and_department($department_id, $type){
+        $sql = "SELECT  * FROM `grants` WHERE department_id= '$department_id' and  grant_type = $type";
+
+         $this->db_fetch_all($sql);
+
+         return $this->db_count();
+    }
+
     function grant_type_for_department($department){
         $sql = "SELECT  grant_type, SUM(amount) as amount FROM `grants` WHERE department_id= '$department' GROUP BY grant_type";
         return $this->db_fetch_all($sql);
@@ -118,6 +126,12 @@ class Grant extends db_connection
     function sum_grant_for_project($project_id)
     {
         $sql = "SELECT  SUM(amount) as amount FROM `project_grants` WHERE `project_id`='$project_id' ";
+
+        return $this->db_fetch_one($sql);
+    }
+
+    function sum_grant_for_project_under_dpt($department){
+        $sql = "SELECT  SUM(amount) as amount FROM `project_grants`, project WHERE project.department_id = $department ";
 
         return $this->db_fetch_one($sql);
     }

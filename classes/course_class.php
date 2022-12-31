@@ -155,6 +155,11 @@ class course extends db_connection
         return $this->db_fetch_one($sql);
     }
     
+    function total_course_students($course_year){
+        $sql = "SELECT SUM(numberoffemaleStudent+numberofmaleStudent) as number FROM `course_student` WHERE course_year >= $course_year;";
+
+        return $this->db_fetch_one($sql);
+    }
 
 
 

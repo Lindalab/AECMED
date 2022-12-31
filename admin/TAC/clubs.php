@@ -1,3 +1,9 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/clubs_controller.php";
+    $club_members = total_club_members_ctr();
+
+?>
+
 <!doctype html>
 <html lang="en">
  
@@ -190,7 +196,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Clubs created</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">78</h1>
+                                            <h1 class="mb-1"><?php echo count_clubs_ctr()?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -200,7 +206,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total members</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">55</h1>
+                                            <h1 class="mb-1"><?php echo $club_members?></h1>
                                         </div>
                                     </div>
                                 </div>

@@ -39,4 +39,10 @@
         
         return $club->count_clubs();
      }
+
+     function total_club_members_ctr(){
+      $club = new Club;
+        
+      return $club->total_club_members()['number'];
+     }
 ?>

@@ -28,4 +28,8 @@
     $total_businesses = number_of_businesses_ctr();
     $avi_businesses = number_of_businesses_department_ctr(AVI);
     $tac_businesses = number_of_businesses_department_ctr(TAC);
+
+    $males = number_of_male_attendance_ctr(TAC)['males'];
+    $females = number_of_male_attendance_ctr(TAC)['females'];
+    $total_participants = $males + $females;
 ?>
