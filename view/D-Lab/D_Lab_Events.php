@@ -36,7 +36,7 @@
             <a href="../AVI.php" class="links">
                 <li class="link">
                     <img class="nav-logo" src="./../../assets/avi-icon.svg" alt="Ashesi Venture Incubator Icon">
-                    <p>Design Lab</p>
+                    <p>Ashesi Venture Incubator</p>
                 </li>
             </a>
             <a href="../D-Lab.php" class="links" id='active'>
@@ -150,7 +150,7 @@
     <script>
         draw("column", "graph_1", "Events hosted over the past four(4) years", "attendance", "year", <?php echo $graph_1_data ?>);
         
-        draw("pie", "graph_2", "Event Attendance", "", "", <?php echo $graph_2 ?>);
+        draw("doughnut", "graph_2", "Event Attendance", "", "", <?php echo $graph_2 ?>);
 
         // draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php //echo  $graph_2_data ?>);
     </script>
