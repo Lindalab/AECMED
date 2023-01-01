@@ -22,4 +22,27 @@ function departRow($departmentId, $departmentName)
     
     ";
 }
+
+
+function getCohortDropdown_fnc()
+{
+    $data = select_all_cohort_ctr();
+    echo "
+    <select class='custom-select' name='cohort_id' id='cohort_id' >
+    ";
+    foreach ($data as $cohort) {
+        $cohortId = $cohort['cohort_id'];
+        $cohortName = $cohort['cohort_name'];
+        cohortRow($cohortId, $cohortName);
+    }
+    echo "</select>";
+}
+
+function cohortRow($cohortId, $cohortName)
+{
+    echo "
+    <option value='$cohortId'>$cohortName</option>
+    
+    ";
+}
 ?>
