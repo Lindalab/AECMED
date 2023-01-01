@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Edit a course</title>
+    <title>Edit a club</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../admin/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../../admin/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
@@ -167,7 +167,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Edit a course </h2>
+                            <h2 class="pageheader-title">Edit a club </h2>
                             <!-- <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -190,23 +190,14 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Edit a course</h5>
+                            <h5 class="card-header">Edit a club</h5>
                             <div class="card-body">
                                 <form id="validationform" data-parsley-validate="" novalidate="">
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Name</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Club Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business Name"
+                                            <input type="text" required="" placeholder="Club Name"
                                                 class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Department</label>
-                                        <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -217,9 +208,15 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Description</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Club Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <textarea required="" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Club Logo</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="file" name="club_logo" class="form-control" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

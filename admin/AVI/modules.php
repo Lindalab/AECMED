@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - AVI Business</title>
+    <title>AEC - AVI modules</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
@@ -218,7 +218,9 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Modules</h5>
-                                        <button class="btn btn-primary">Add module +</button>
+                                        <a href="../../forms/add/add-module.php">
+                                            <button class="btn btn-primary">Add module +</button>
+                                        </a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -240,7 +242,9 @@
                                                             <a href="modules view.php">
                                                                 <button class="btn btn-outline-info">View</button>
                                                             </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="../../forms/edit/edit-module.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

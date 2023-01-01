@@ -65,7 +65,7 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
@@ -262,7 +262,9 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Events</h5>
-                                        <button class="btn btn-primary">Add event +</button>
+                                        <a href="../../forms/add/add-event.php">
+                                            <button class="btn btn-primary">Add event +</button>
+                                        </a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -284,7 +286,9 @@
                                                             <a href="events view.php">
                                                                 <button class="btn btn-outline-info">View</button>
                                                             </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="../../forms/edit/edit-event.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

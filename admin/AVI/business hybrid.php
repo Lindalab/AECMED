@@ -252,7 +252,9 @@
                                                             <a href="business view.php">
                                                                 <button class="btn btn-outline-info">View</button>
                                                             </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="../../forms/edit/edit-business.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

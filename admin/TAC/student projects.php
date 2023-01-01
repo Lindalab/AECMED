@@ -68,7 +68,7 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
@@ -91,31 +91,31 @@
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="projects overview.php">Overview</a>
+                                                <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                             </li>
-                                            <a class="nav-link" href="projects students.php">Student projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="projects fellows.php">Fellow projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="grants overview.php">Overview</a>
+                                            <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="grants internal.php">Internal grants</a>
+                                            <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="grants external.php">External grants</a>
+                                            <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -217,7 +217,9 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Student Projects</h5>
-                                        <button class="btn btn-primary">Add project +</button>
+                                        <a href="../../forms/add/add-project.php">
+                                            <button class="btn btn-primary">Add project +</button>
+                                        </a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -238,8 +240,12 @@
                                                         <td>27-08-2018</td>
                                                         <td>Active</td>
                                                         <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="student projects view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <a href="../../forms/edit/edit-project.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

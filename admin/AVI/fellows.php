@@ -225,7 +225,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Alumni businesses</h5>
-                                        <a href='#businessModal' data-toggle='modal' class="btn btn-primary">Add Fellows +</a>
+                                        <a href='../../forms/add/add-business.php' data-toggle='modal' class="btn btn-primary">Add Fellows +</a>
                                         
                                     </div>
                                     <div class="card-body p-0">
@@ -252,7 +252,9 @@
                                                             <a href="fellows view.php">
                                                                 <button class="btn btn-outline-info">View</button>
                                                             </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="../../forms/edit/edit-business.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>
