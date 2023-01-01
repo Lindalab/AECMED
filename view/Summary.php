@@ -70,14 +70,6 @@
                                 </p>
                             </h5>
                             <ul class="sub-sum">
-                            <li class="sub-sum-item" tabindex="1" data-bs-toggle="popover" 
-                                data-bs-trigger="hover focus" data-bs-custom-class="custom-popover"
-                                data-bs-content="Student projects: 52 Course projects: 25">
-                                    AVI Projects
-                                    <p class="sum-detail">
-                                        <?php echo $avi_projects ?>
-                                    </p>
-                                </li>
                                 <li class="sub-sum-item" tabindex="0" data-bs-toggle="popover" 
                                 data-bs-trigger="hover focus" data-bs-custom-class="custom-popover"
                                 data-bs-content="Platform projects: 52 Fellow projects: 25">
