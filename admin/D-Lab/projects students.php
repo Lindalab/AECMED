@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - D-Lab Internal Grants</title>
+    <title>AEC - D-Lab Student Projects</title>
 </head>
 
 <body>
