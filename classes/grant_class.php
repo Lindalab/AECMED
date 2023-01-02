@@ -43,6 +43,12 @@ class Grant extends db_connection
         return $this->db_fetch_all($sql);
     }
 
+    function select_grant_for_dpt_ordered_by_amount($department){
+        $sql = "SELECT * FROM `grants` WHERE `department_id`=' $department' ORDER BY amount DESC ";
+
+        return $this->db_fetch_all($sql);
+    }
+
     // sum grant for a department
     function sum_grant_for_dpt($department_id)
     {
@@ -102,6 +108,12 @@ class Grant extends db_connection
 
     function list_grant_type_and_department($department_id, $type){
         $sql = "SELECT  * FROM `grants` WHERE department_id= '$department_id' and  grant_type = $type";
+
+        return $this->db_fetch_all($sql);
+    }
+
+    function list_grant_type_and_department_by_amount($department_id, $type){
+        $sql = "SELECT  * FROM `grants` WHERE department_id= '$department_id' and  grant_type = $type  ORDER BY amount DESC";
 
         return $this->db_fetch_all($sql);
     }

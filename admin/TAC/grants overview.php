@@ -1,5 +1,7 @@
 <?php 
         require_once dirname(__FILE__)."/../../functions/summary.php";
+        require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
+        
         
 ?>
 <!doctype html>
@@ -326,24 +328,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>$80.00</td>
-                                                        <td>External Grant</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>$80.00</td>
-                                                        <td>External Grant</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>$80.00</td>
-                                                        <td>External Grant</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
+
+                                                <?php display_grants(TAC)?>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -366,21 +353,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
+                                                    <?php display_grant_types(TAC, INTERNAL) ?>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -403,21 +376,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
+                                                <?php display_grant_types(TAC, EXTERNAL) ?>
                                                 </tbody>
                                             </table>
                                         </div>

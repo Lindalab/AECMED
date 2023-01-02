@@ -32,6 +32,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->select_grant_for_dpt($department_id);
     }
 
+    function select_grant_for_dpt_ordered_by_amount_ctr($department_id){
+        $grant = new Grant;
+        return $grant->select_grant_for_dpt_ordered_by_amount($department_id);
+    }
+
     function sum_grant_for_dpt_ctr($department_id){
         $grant = new Grant;
         return $grant->sum_grant_for_dpt($department_id);
@@ -76,6 +81,12 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         $grant = new Grant;
         return $grant->list_grant_type_and_department($department_id, $type);
     }
+
+    function list_grant_type_and_department_by_amount_ctr($department_id, $type){
+        $grant = new Grant;
+        return $grant->list_grant_type_and_department_by_amount($department_id, $type);
+    }
+
     function count_grant_type_and_department_ctr($department_id, $type){
         $grant = new Grant;
         return $grant->count_grant_type_and_department($department_id, $type);
