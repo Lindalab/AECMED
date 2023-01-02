@@ -221,7 +221,9 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Community Entrepreneurship</h5>
-                                        <button class="btn btn-primary">Add business +</button>
+                                        <a href="../../forms/add/add-business.php">
+                                            <button class="btn btn-primary">Add business +</button>
+                                        </a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -244,8 +246,11 @@
                                                         <td>Cooking</td>
                                                         <td>27-08-2018</td>
                                                         <td>
+                                                            <a href="community entreprenuership view.php"></a>
                                                             <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="../../forms/edit/edit-business.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

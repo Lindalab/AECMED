@@ -72,15 +72,15 @@
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="business hybrid.php"><i
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="fellows.php"><i
+                                <a class="nav-link" href="../AVI/fellows.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="modules.php"><i
+                                <a class="nav-link" href="../AVI/modules.php"><i
                                         class="fa fa-fw fa-user-circle"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
@@ -130,11 +130,11 @@
                         Undergraduate Programs
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" href="../TAC/businesses.php"><i
+                        <a class="nav-link active" href="businesses.php"><i
                                 class="fa fa-fw fa-user-circle"></i>Businesses</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/community entrepreneurship.php"><i
+                        <a class="nav-link" href="community entrepreneurship.php"><i
                                 class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
                     </li>
                     <li class="nav-item">
@@ -144,20 +144,20 @@
                         <div id="submenu-5" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/courses.php">Overview</a>
+                                    <a class="nav-link" href="courses.php">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
+                                    <a class="nav-link" href="student projects.php">Student projects</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus
+                        <a class="nav-link" href="clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus
                             Clubs</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                        <a class="nav-link" href="events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
@@ -166,13 +166,13 @@
                         <div id="submenu-6" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
+                                    <a class="nav-link" href="grants overview.php">Overview</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
+                                    <a class="nav-link" href="grants internal.php">Internal grants</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants external.php">External grants</a>
+                                    <a class="nav-link" href="grants external.php">External grants</a>
                                 </li>
                             </ul>
                         </div>

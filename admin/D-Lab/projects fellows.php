@@ -232,8 +232,12 @@
                                                         <td>27-08-2018</td>
                                                         <td>Active</td>
                                                         <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="projects fellows view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <a href="../../forms/edit/edit-project.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

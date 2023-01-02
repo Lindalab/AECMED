@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - TAC clubs</title>
+    <title>AEC - Undergraduate Programs courses</title>
 </head>
 
 <body>
@@ -72,7 +72,7 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
@@ -233,7 +233,9 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Courses</h5>
-                                        <button class="btn btn-primary">Add course +</button>
+                                        <a href="../../forms/add/add-course.php">
+                                            <button class="btn btn-primary">Add course +</button>
+                                        </a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -249,29 +251,17 @@
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>Course #1 </td>
-                                                        <td>67</td>
-                                                        <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Project Name</th>
-                                                        <th class="border-0">Date Commenced</th>
-                                                        <th class="border-0">Grant Received</th>
-                                                        <th class="border-0">Project Status</th>
-                                                        <th class="border-0">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
                                                         <td>Company #1 </td>
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
                                                         <td>Active</td>
                                                         <td>
-                                                            <a href="projects students view.php">
+                                                            <a href="courses view.php">
                                                                 <button class="btn btn-outline-info">View</button>
                                                             </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="../../forms/edit/edit-course.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

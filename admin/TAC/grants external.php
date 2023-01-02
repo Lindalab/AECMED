@@ -214,7 +214,9 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">External Grants</h5>
-                                        <button class="btn btn-primary">Add grant +</button>
+                                        <a href="../../forms/add/add-grant.php">
+                                            <button class="btn btn-primary">Add grant +</button>
+                                        </a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
@@ -233,8 +235,12 @@
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
                                                         <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="grants external view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <a href="../../forms/edit/edit-grant.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>

@@ -233,8 +233,12 @@
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
                                                         <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
+                                                            <a href="grants internal view.php">
+                                                                <button class="btn btn-outline-info">View</button>
+                                                            </a>
+                                                            <a href="../../forms/edit/edit-grant.php">
+                                                                <button class="btn btn-outline-warning">Edit</button>
+                                                            </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr>
