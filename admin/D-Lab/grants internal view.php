@@ -1,3 +1,6 @@
+<?php
+require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -216,22 +219,25 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="view-sec text-center">
+                                <div class="view-sec text-center">
+                                        
                                         <section class="d-flex justify-content-around">
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                <h3 class="">Company Name</h3>
-                                                </figcaption>
+                                            <figure class='img-frame'>
+                                                <img class='img-view' src='#' alt='grant_logo'>
+
                                             </figure>
                                         </section>
-                                    </div>
-                                    <h5>Date Received</h5> <p>2021-32-87</p>
+                                    </div><br>
+                                    <h3 class=""><?php echo $name ?></h3>
+                                    <h5>Date Received</h5>
+                                    <p><?php echo $date ?></p>
+                                    <h5>Amount</h5>
+                                    <p>$<?php echo $amount ?></p>
                                     <h5>
                                         Grant Description
                                     </h5>
                                     <p>
+                                    <?php echo $desc ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 

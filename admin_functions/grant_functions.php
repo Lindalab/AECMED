@@ -7,12 +7,18 @@
         $list = list_grant_type_and_department_ctr($department, $type);
 
         foreach($list as $grant){
-            grants_all_row($grant['grant_id'], $grant['grant_name'],$grant['amount'], $grant['date_received']);       
+            if($type== INTERNAL){
+                 grants_internal_row($grant['grant_id'], $grant['grant_name'],$grant['amount'], $grant['date_received']); 
+            }else{
+                grants_external_row($grant['grant_id'], $grant['grant_name'],$grant['amount'], $grant['date_received']); 
+            }      
         }
 
     }
 
-    function grants_all_row($grant_id, $name, $amount,$date){
+    
+
+    function grants_internal_row($grant_id, $name, $amount,$date){
         echo "
         <tr>
         <td>$name </td>
@@ -22,7 +28,26 @@
             <a href='grants internal view.php?grant_id=$grant_id'>
                 <button class='btn btn-outline-info'>View</button>
             </a>
-            <a href='../../forms/edit/edit-grant.php'>
+            <a href='../../forms/edit/edit-grant.php?grant_id=$grant_id'>
+                <button class='btn btn-outline-warning'>Edit</button>
+            </a>
+            <button class='btn btn-outline-danger'>Remove</button>
+        </td>
+    </tr>
+        ";
+    }
+
+    function grants_external_row($grant_id, $name, $amount,$date){
+        echo "
+        <tr>
+        <td>$name </td>
+        <td>$$amount </td>
+        <td>$date</td>
+        <td>
+            <a href='grants external view.php?grant_id=$grant_id'>
+                <button class='btn btn-outline-info'>View</button>
+            </a>
+            <a href='../../forms/edit/edit-grant.php?grant_id=$grant_id'>
                 <button class='btn btn-outline-warning'>Edit</button>
             </a>
             <button class='btn btn-outline-danger'>Remove</button>

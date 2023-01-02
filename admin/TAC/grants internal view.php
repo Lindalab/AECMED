@@ -1,3 +1,6 @@
+<?php
+require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -29,9 +32,7 @@
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <a class="navbar-brand" href="../index.php">AEC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
@@ -55,8 +56,7 @@
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -65,31 +65,25 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../index.php"><i
-                                        class="fa fa-fw fa-user-circle"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-user-circle"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fa fa-fw fa-user-circle"></i>Fellows</a>
+                                <a class="nav-link" href="../AVI/fellows.php"><i class="fa fa-fw fa-user-circle"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-user-circle"></i>Modules</a>
+                                <a class="nav-link" href="../AVI/modules.php"><i class="fa fa-fw fa-user-circle"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fa fa-fw fa-rocket"></i>Projects</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-rocket"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -105,13 +99,10 @@
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
-                                class="fa fa-fw fa-user-circle"></i>Events</a>
+                        <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-4" aria-controls="submenu-4"><i
-                                class="fa fa-fw fa-rocket"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                         <div id="submenu-4" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -130,17 +121,13 @@
                         Undergraduate Programs
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="businesses.php"><i
-                                class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                        <a class="nav-link" href="businesses.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="community entrepreneurship.php"><i
-                                class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
+                        <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-5" aria-controls="submenu-5"><i
-                                class="fa fa-fw fa-rocket"></i>Courses</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Courses</a>
                         <div id="submenu-5" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -160,9 +147,7 @@
                         <a class="nav-link" href="events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-6" aria-controls="submenu-6"><i
-                                class="fa fa-fw fa-rocket"></i>Grants</a>
+                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Grants</a>
                         <div id="submenu-6" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -200,8 +185,7 @@
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="grants internal.php"
-                                                class="breadcrumb-link">Internal Grants</a></li>
+                                        <li class="breadcrumb-item"><a href="grants internal.php" class="breadcrumb-link">Internal Grants</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Internal Grants (View)</li>
                                     </ol>
                                 </nav>
@@ -216,12 +200,26 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Company Name</h3>
-                                    <h5>Date Received</h5> <p>2021-32-87</p>
+                                    <div class="view-sec text-center">
+                                        
+                                        <section class="d-flex justify-content-around">
+                                            <figure class='img-frame'>
+                                                <img class='img-view' src='#' alt='grant_logo'>
+
+                                            </figure>
+                                        </section>
+                                    </div><br>
+                                    <h3 class=""><?php echo $name ?></h3>
+                                    <h5>Date Received</h5>
+                                    <p><?php echo $date ?></p>
+                                    <h5>Amount</h5>
+                                    <p>$<?php echo $amount ?></p>
+
                                     <h5>
                                         Grant Description
                                     </h5>
                                     <p>
+                                        <?php echo $desc ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 

@@ -204,7 +204,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total external grants amount</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(TAC,INTERNAL)['amount'] ?></h1>
+                                            <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(TAC,EXTERNAL)['amount'] ?></h1>
                                         </div>
                                     </div>
                                 </div>
