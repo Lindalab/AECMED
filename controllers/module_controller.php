@@ -39,4 +39,9 @@ require_once dirname(__FILE__)."/../classes/module_class.php";
         $module = new Module;
         return $module->count_module_stakeholders();  
     }
+
+    function count_one_module_stakeholders_ctr($module_id){
+        $module = new Module;
+        return $module->count_one_module_stakeholders($module_id);  
+    }
 ?>

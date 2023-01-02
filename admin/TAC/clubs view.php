@@ -1,3 +1,16 @@
+<?php 
+     require_once dirname(__FILE__)."/../../controllers/clubs_controller.php";
+
+     $club = select_one_club_ctr($_GET['club_id']);
+     $club_name = $club['name'];
+     $club_date = $club['date_registered'];
+     $club_members = $club['number_of_members'];
+     $description = $club['description'];
+     $males =  $club['number_of_males'];
+     $females = $club['number_of_females'];
+     $executives = $club['number_of_executives'];
+ 
+?>
 <!doctype html>
 <html lang="en">
 
@@ -216,15 +229,17 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Club Name</h3>
-
-                                    <h5>Number of members:</h5> <p>52</p>
-                                    <h5>Date Created: </h5> <p>20-21-12</p>
+                                <h3>Club Name: <?php echo $club_name ?></h3>
+                <h5>Number of male members: </h5> <ps><?php echo $males?></p>
+                <h5>Number of female members: </h5> <p> <?php echo $females?></p>
+                <h5>Number of Executive members: </h5><p> <?php print_r($executives) ?></p>
+                <h5>Club Registration date: </h5><p><?php echo $club_date ?></p>
                                     <br>                                   
                                     <h5>
                                         Club Description
                                     </h5>
                                     <p>
+                                    <?php echo $description ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 

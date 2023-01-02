@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../controllers/module_controller.php";
+    require_once dirname(__FILE__)."/../../admin_functions/module_functions.php";
 
     $modules = number_of_modules_ctr();
     $module_participants = count_module_stakeholders_ctr();
@@ -229,12 +230,13 @@
                                                     <tr class="border-0">
                                                         <th class="border-0">Module Name</th>
                                                         <th class="border-0">Number of participants</th>
-                                                        <th class="border-0">Date Created</th>
+                                                        <!-- <th class="border-0">Date Created</th> -->
                                                         <th class="border-0">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                <?php showAllModule_fnc()?>
+                                                    <!-- <tr>
                                                         <td>Module #1 </td>
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
@@ -247,27 +249,8 @@
                                                             </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Module #2 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Module #3 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
+                                                    </tr> -->
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
