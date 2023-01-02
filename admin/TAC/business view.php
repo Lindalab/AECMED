@@ -9,8 +9,11 @@
     $contact = $business['business_contact'];
     $sector = $business['sector'];
     $description = $business['business_description'];
+    $business_logo = $business['business_logo'];
+    $formalised_structure = $business['formalised_structure'];
+    $sdg_alignment = $business['sdg_alignment'];
+    $location = $business['business_location'];
     
-    $business_details = 0;
 
 ?>
 <!doctype html>
@@ -231,26 +234,19 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Business Name</h3>
-                                    <div class="view-sec">
-                                        <section class="view">
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        <?php echo $business_email;?>
-                                                    </sub>
-                                                </figcaption>
-                                            </figure>
-
+                                    <h3 class=""><?php echo $name ?></h3>
+                                    <div class="view-sec text-center">
+                                        <h4>Business Owners</h4>
+                                        <section class="d-flex justify-content-around">
+                                        <?php list_business_onwers($business_id)?>
+                                            
                                         </section>
                                     </div><br>
 
-                                    <h5>Business Email:</h5> <p>lala@gmail.com</p>
-                                    <h5>Business Contact: </h5> <p>02124012124</p>
-                                    <h5>Business Sector: </h5> <p>Cooking</p>
+                                    <h5>Business Email:</h5> <p><?php echo $email ?></p>
+                                    <h5>Business Contact: </h5> <p><?php echo $contact ?></p>
+                                    <h5>Business Location:</h5> <p><?php echo $location?></p>
+                                    <h5>Business Sector: </h5> <p><?php echo $sector ?></p>
                                     <h5>Business Formalised structure: </h5> <p>  <?php echo $formalised_structure;?>   </p>
                                     <h5>SDG Goals: </h5> <p><?php echo $sdg_alignment; ?></p>
                                     <br>                                   
@@ -258,7 +254,7 @@
                                         Business Description
                                     </h5>
                                     <p>
-                                        <?php echo $business_description;?>
+                                        <?php echo $description;?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
@@ -275,20 +271,21 @@
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Date Created</th>
+                                                        <th class="border-0">Year</th>
+                                                        <th class="border-0">Revenue</th>
                                                         <th class="border-0">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                    <?php display_business_revenue($business_id); ?>
+                                                    <!-- <tr>
+                                                        <td>2018</td>
                                                         <td>$80.00</td>
-                                                        <td>27-08-2018</td>
                                                         <td>
                                                             <button class="btn btn-outline-warning">Edit</button>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div> <br>
@@ -307,7 +304,8 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
+                                                        <?php display_business_grants($business_id) ?>
+                                                        <!-- <tr>
                                                             <td>Coco-cola</td>
                                                             <td>$80.00</td>
                                                             <td>27-08-2018</td>
@@ -315,7 +313,7 @@
                                                                 <button class="btn btn-outline-warning">Edit</button>
                                                                 <button class="btn btn-outline-danger">Remove</button>
                                                             </td>
-                                                        </tr>
+                                                        </tr> -->
                                                     </tbody>
                                                 </table>
                                             </div> <br>

@@ -1,5 +1,73 @@
 <?php
 require_once dirname(__FILE__) . "/../controllers/business_controller.php";
+require_once dirname(__FILE__) . "/../controllers/grant_controller.php";
+
+function display_business_grants($business_id){
+    $grant_list = grant_for_a_business_ctr($business_id);
+    foreach($grant_list as $grant){
+        business_grants($grant['grant_id'], $grant['grant_name'], $grant['amount_received'],"not covered");
+    }
+}
+
+function list_business_onwers($business_id){
+    $stakeholder = stakeholder_business($business_id);
+    foreach($stakeholder as $owner){
+        show_business_owner($owner['stakeholder_image'], $owner['first_name']." ".$owner['last_name'], $owner['stakeholder_email'], $owner['phone_number']);
+    }
+}
+
+
+
+function show_business_owner($image, $name, $email,$phone){
+    echo "
+    <figure class='img-frame'>
+    <img class='img-view' src='../$image'
+        alt='img name'>
+    <figcaption>
+        $name <br>
+        <sub class='text-muted'>
+         $email
+        </sub><br><br>
+        <sub class='text-muted'>
+         $phone
+        </sub>
+    </figcaption>
+</figure>
+    ";
+}
+
+
+function business_grants($grant_id, $name, $amount,$date){
+    echo "<tr>
+    <td>$name</td>
+    <td>$$amount</td>
+    <td>$date</td>
+    <td>
+        <button class='btn btn-outline-warning'>Edit</button>
+        <button class='btn btn-outline-danger'>Remove</button>
+    </td>
+</tr>";
+}
+
+function display_business_revenue($business_id){
+    $revenue_list = select_one_business_revenue($business_id);
+    foreach($revenue_list as $revenue){
+        show_business_revenue_row($revenue['revenue_amount'], $revenue['revenue_year']);
+    }
+}
+
+function show_business_revenue_row($revenue, $year){
+    echo "<tr>
+    <td>$year</td>
+    <td>$$revenue</td>
+    <td>
+        <button class='btn btn-outline-warning'>Edit</button>
+        <button class='btn btn-outline-danger'>Remove</button>
+    </td>
+</tr>";
+}
+
+
 
 function show_business($department)
 {

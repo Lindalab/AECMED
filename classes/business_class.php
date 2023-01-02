@@ -236,7 +236,7 @@
          * show one business revenue ordered by year
          */
         function select_one_business_revenue($business_id){
-            $sql = "SELECT `revenue_amount` FROM `business_revenue` WHERE `business_id`= '$business_id'";
+            $sql = "SELECT * FROM `business_revenue` WHERE `business_id`= '$business_id'";
             return $this->db_fetch_all($sql);
         }
 
@@ -257,7 +257,7 @@
          * stakeholder business
          */
         function stakeholder_business($business_id){
-            $sql = "SELECT * FROM stakeholder_business,stakeholder,business WHERE stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder_business.business_id=business.business_id and stakeholder_business.business_id= '$business_id' ";
+            $sql = "SELECT *, stakeholder.email as stakeholder_email FROM stakeholder_business,stakeholder,business WHERE stakeholder_business.stakeholder_id=stakeholder.stakeholder_id and stakeholder_business.business_id=business.business_id and stakeholder_business.business_id= '$business_id' ";
             return $this->db_fetch_all($sql);
         }
 
