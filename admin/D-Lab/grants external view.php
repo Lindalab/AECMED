@@ -216,7 +216,17 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Company Name</h3>
+                                    <div class="view-sec text-center">      
+                                        <section class="d-flex justify-content-around">
+                                            <figure class="img-frame">
+                                                <img class="img-view" src="../<?php echo $business_logo;?>"
+                                                    alt="img name">
+                                                <figcaption>
+                                                <h3 class="">Company Name</h3>
+                                                </figcaption>
+                                            </figure>
+                                        </section>
+                                    </div>
                                     <h5>Date Received</h5> <p>2021-32-87</p>
                                     <h5>
                                         Grant Description

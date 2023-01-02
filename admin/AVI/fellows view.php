@@ -217,8 +217,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="">Business Name</h3>
-                                    <div class="view-sec">
-                                        <section class="view">
+                                    <div class="view-sec text-center">
+                                        <h4>Business Owners</h4>
+                                        <section class="d-flex justify-content-around">
                                             <figure class="img-frame">
                                                 <img class="img-view" src="../<?php echo $business_logo;?>"
                                                     alt="img name">
@@ -229,12 +230,22 @@
                                                     </sub>
                                                 </figcaption>
                                             </figure>
-
+                                            <figure class="img-frame">
+                                                <img class="img-view" src="../<?php echo $business_logo;?>"
+                                                    alt="img name">
+                                                <figcaption>
+                                                    Gupta Sanchez <br>
+                                                    <sub class="text-muted">
+                                                        <?php echo $business_email;?>
+                                                    </sub>
+                                                </figcaption>
+                                            </figure>
                                         </section>
                                     </div><br>
 
                                     <h5>Business Email:</h5> <p>lala@gmail.com</p>
                                     <h5>Business Contact: </h5> <p>02124012124</p>
+                                    <h5>Business Location:</h5> <p>lala@gmail.com</p>
                                     <h5>Business Sector: </h5> <p>Cooking</p>
                                     <h5>Business Formalised structure: </h5> <p>  <?php echo $formalised_structure;?>   </p>
                                     <h5>SDG Goals: </h5> <p><?php echo $sdg_alignment; ?></p>

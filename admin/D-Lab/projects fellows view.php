@@ -218,7 +218,7 @@
                                 <div class="card-body">
                                     <h3 class="">Student Project Name</h3>
                                     <h4 class="text-center">Project Members</h4>
-                                    <div class="view-sec">
+                                    <div class="view-sec text-center">
                                         <section class="d-flex justify-content-around">
                                             <figure class="img-frame">
                                                 <img class="img-view" src="../<?php echo $business_logo;?>"
