@@ -1,3 +1,14 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/module_controller.php";
+
+    $module = select_one_module_ctr($_GET['module_id']);
+
+    $name = $module['module_name'];
+    $desc = $module['module_description'];
+    $students = count_one_module_stakeholders_ctr($_GET['module_id']);
+    
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -216,15 +227,16 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Module Name</h3>
+                                    <h3 class=""><?php echo $name ?></h3>
 
-                                    <h5>Number of participants:</h5> <p>52</p>
-                                    <h5>Date Created: </h5> <p>20-21-12</p>
+                                    <h5>Number of participants:</h5> <p><?php echo $students ?></p>
+                                    <!-- <h5>Date Created: </h5> <p>20-21-12</p> -->
                                     <br>                                   
                                     <h5>
                                         Module Description
                                     </h5>
                                     <p>
+                                        <?php echo $desc ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
