@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/summary.php";
+    require_once dirname(__FILE__)."/../../admin_functions/event_functions.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -272,46 +273,15 @@
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
                                                         <th class="border-0">Event Name</th>
+                                                        <th class="border-0">Event Type</th>
                                                         <th class="border-0">Number of attendees</th>
                                                         <th class="border-0">Event date</th>
                                                         <th class="border-0">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Event #1 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <a href="events view.php">
-                                                                <button class="btn btn-outline-info">View</button>
-                                                            </a>
-                                                            <a href="../../forms/edit/edit-event.php">
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Event #2 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Event #3 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
+                                                <?php display_all_events(D_Lab) ?>
+                                                   
                                                 </tbody>
                                             </table>
                                         </div>
