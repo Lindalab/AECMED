@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../controllers/clubs_controller.php";
+    require_once dirname(__FILE__)."/../../admin_functions/clubs_functions.php";
     $club_members = total_club_members_ctr();
 
 ?>
@@ -233,7 +234,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                    <?php display_clubs() ?>
+                                                    <!-- <tr>
                                                         <td>Club #1 </td>
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
@@ -246,27 +248,8 @@
                                                             </a>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Club #2 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Club #3 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
+                                                    </tr> -->
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
