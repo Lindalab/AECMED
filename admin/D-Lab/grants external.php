@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/summary.php";
+    require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -228,7 +229,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                <?php displa_all_grant_types(D_Lab, EXTERNAL) ?>
+
+                                                    <!-- <tr>
                                                         <td>Company #1 </td>
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
@@ -261,7 +264,7 @@
                                                             <button class="btn btn-outline-warning">Edit</button>
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                         </div>

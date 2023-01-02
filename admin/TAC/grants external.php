@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../controllers/grant_controller.php";
+    require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -198,7 +199,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="text-muted">Total external grants amount</h5>
@@ -230,40 +231,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Company #1 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <a href="grants external view.php">
-                                                                <button class="btn btn-outline-info">View</button>
-                                                            </a>
-                                                            <a href="../../forms/edit/edit-grant.php">
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Company #2 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Company #3 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
+                                                <?php displa_all_grant_types(TAC, EXTERNAL) ?>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
