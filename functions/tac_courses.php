@@ -27,7 +27,7 @@
 
 
     function display_student_project(){
-        $department = 3;
+        $department = TAC;
         $course_list = select_course_under_dpt_ctr($department);
         foreach($course_list as $course){
             $course_id = $course['course_id'];
