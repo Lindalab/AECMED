@@ -1,3 +1,7 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/event_view_functions.php";
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -216,13 +220,18 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Event Name</h3>
-                                    <h5>Event Date</h5> <p>2021-32-87</p>
-                                    <h5>Event attendance</h5> <p>12</p>
+                                <h3 class=""><?php echo $name ?></h3>
+                                    <h5>Event Date</h5> <p><?php echo $date ?></p>
+                                    <h5>Event Type</h5> <p><?php echo $type ?></p>
+                                    <h5>Target Group</h5> <p><?php echo $target_group ?></p>
+                                    <h5>Male attendance</h5> <p><?php echo $males?></p>
+                                    <h5>Female attendance</h5> <p><?php echo $females ?></p>
+
                                     <h5>
                                         Event Description
                                     </h5>
                                     <p>
+                                        <?php echo $desc ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 

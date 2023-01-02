@@ -45,7 +45,7 @@
 
     $dlab_males = number_of_male_attendance_ctr(D_Lab)['males'];
     $dlab_females = number_of_female_attendance_ctr(D_Lab)['females'];
-    $dlab_total_participants = $males + $females;
+    $dlab_total_participants = $dlab_males + $dlab_females;
 
 
   
