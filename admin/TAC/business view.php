@@ -1,3 +1,18 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
+
+    $business_id = $_GET['business_id'];
+
+    $business = select_one_business_ctr($business_id);
+    $name = $business['business_name'];
+    $email = $business['business_email'];
+    $contact = $business['business_contact'];
+    $sector = $business['sector'];
+    $description = $business['business_description'];
+    
+    $business_details = 0;
+
+?>
 <!doctype html>
 <html lang="en">
 

@@ -82,7 +82,7 @@
 
         
         function select_one_business($business_id){
-            $sql = "SELECT * FROM `business` WHERE `business_id`='$business_id' ";
+            $sql = "SELECT  business.*, business_details.formalised_structure as formalised_structure, business_details.sdg_alignment as sdg_alignment FROM business,business_details where  business.business_id=business_details.business_id and business.business_id = $business_id";
 
             return $this->db_fetch_one($sql);
         }
