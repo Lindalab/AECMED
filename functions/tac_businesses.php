@@ -15,9 +15,9 @@ function business_revenue_in_last_four_years($department){
 }
 
 
-function student_business()
+function student_business($department)
 {
-    $businesses = select_business_for_dpt_ctr(TAC);
+    $businesses = select_business_for_dpt_ctr($department);
     $business_id = "";
     $business_name = "";
     $employment_created = "";

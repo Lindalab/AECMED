@@ -3,7 +3,16 @@
     require_once dirname(__FILE__)."/../controllers/grant_controller.php";
     require_once dirname(__FILE__)."/../controllers/event_controller.php";
     require_once dirname(__FILE__)."/../controllers/business_controller.php";
-    
+   
+    function employment_numbers($department){
+        $result = business_employment_created_ctr($department);
+        if( $result != NULL){
+            return $result['number'];
+        }else{
+            return 0;
+        }
+    }
+
     // print_r(sum_grant_for_dpt_ctr(TAC)['amount']);
     $total_projects = count_all_project_ctr();
     $d_lab_projects = count_project_under_dpt(D_Lab)['number'];
@@ -21,8 +30,9 @@
     $avi_business_revenure = total_business_revenue_for_a_department(AVI)['amount'];
     $tac_business_revenure = total_business_revenue_for_a_department(TAC)['amount'];
 //    = total_business_employment_created_ctr()['number'];
-    $avi_employment_created = business_employment_created_ctr(AVI)['number'];
-    $tac_employment_created = business_employment_created_ctr(TAC)['number'];
+    $avi_employment_created = employment_numbers(AVI);
+    $tac_employment_created = employment_numbers(TAC);
+    
     $total_employment_created = $avi_employment_created+$tac_employment_created;
 
     $total_businesses = number_of_businesses_ctr();

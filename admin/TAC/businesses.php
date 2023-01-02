@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/summary.php";
+    require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
 
 ?>
 <!doctype html>
@@ -241,34 +242,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <a href="business view.php">
-                                                                <button class="btn btn-outline-info">View</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
+                                                    <?php show_business(TAC) ?>
                                                 </tbody>
                                             </table>
                                         </div>

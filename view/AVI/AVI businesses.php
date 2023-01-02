@@ -146,7 +146,7 @@ $business_revenue = business_revenue_in_last_four_years(AVI);
 
                
                <tbody>
-               <?php showAllBusiness_fnc();?>
+               <?php showAllBusiness_fnc(AVI);?>
                 </tbody> 
             </table>
             <!-- Start Pagination -->

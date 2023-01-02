@@ -17,8 +17,6 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->add_business_grant($grant_id,$business_id, $amount);
     }
 
-
-
     function update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description,$business_status){
         $business = new Business;
         return $business->update_business($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description,$business_status);
@@ -128,8 +126,6 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->number_of_businesses_by_gender($department_id,$gender);
     }
 
-
-
     function number_of_business_in_year_ctr($year){
         $business = new Business;
         return $business->number_of_business_in_year($year);
@@ -175,9 +171,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->update_stakeholder_business($stakeholder_id, $business_id);
     }
 
-    function business_data_ctr(){
+    function business_data_ctr($department){
         $business= new Business;
-        return $business->business_data();
+        return $business->business_data($department);
     }
 
     function total_business_revenue_by_type_ctr($busines_type){

@@ -112,7 +112,7 @@
                     </tr>
                 </thead>
                 <tbody>
-            <?php $total_grant = student_business(); ?>
+            <?php $total_grant = student_business(TAC); ?>
                     <!-- <tr>
                         <td>
                             EasyGo

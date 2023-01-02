@@ -281,7 +281,7 @@
             return $this->db_query($sql);
         }
 
-        function business_data(){
+        function business_data($department){
             $sql="SELECT business.business_id as business_id,business.busines_name as business_name,business.year_started as year_started ,SUM(business_revenue.revenue_amount) as total_revenue,business_details.number_of_employees as number_of_employees,
             business.business_description as business_description,
             business.business_logo as business_logo ,
@@ -289,7 +289,7 @@
             business.sector as sector,
             business.business_contact as business_contact,
             business_details.formalised_structure as formalised_structure, business_details.sdg_alignment as sdg_alignment
-            FROM business,business_revenue,business_details where business.business_id=business_revenue.business_id and business.business_id=business_details.business_id and business.department_id= 1 GROUP BY business.business_id;
+            FROM business,business_revenue,business_details where business.business_id=business_revenue.business_id and business.business_id=business_details.business_id and business.department_id= $department GROUP BY business.business_id;
              ";
             return $this->db_fetch_all($sql);
         }

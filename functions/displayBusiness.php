@@ -1,9 +1,9 @@
 <?php
 require_once dirname(__FILE__)."/../controllers/business_controller.php";
 
-function showAllBusiness_fnc()
+function showAllBusiness_fnc($department)
 {
-    $data = business_data_ctr();
+    $data = business_data_ctr($department);
    foreach($data as $business) {
 
             $business_id = $business['business_id'];
