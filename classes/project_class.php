@@ -129,6 +129,11 @@
             return $this->db_fetch_all($sql);
         }
 
+        function count_all_projects_per_year(){
+            $sql = "SELECT EXTRACT(YEAR FROM date_started) as year, count(project_id) as count FROM project GROUP BY year;";
+
+            return $this->db_fetch_all($sql);
+        }
     
 
     }

@@ -95,4 +95,15 @@
     }
 
 
+    function all_projects(){
+        $data = count_all_projects_per_year_ctr();
+        $dataPoints = array();
+        foreach ($data as $value) {
+            array_push($dataPoints, array("y"=>$value['count'], "label"=>$value['year']));
+        }
+
+        return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+    }
+
+
 ?>

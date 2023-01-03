@@ -3,10 +3,12 @@
     require_once dirname(__FILE__)."/../admin_functions/business_functions.php";
     require_once dirname(__FILE__)."/../admin_functions/grant_functions.php";
     require_once dirname(__FILE__)."/../admin_functions/event_functions.php";
+    require_once dirname(__FILE__)."/../admin_functions/course_functions.php";
 
     $graph_1_data = graph_business_revenue_years();
     $graph_2_data = grants_per_year();
     $graph_3_data = event_per_year();
+    $graph_4_data = all_projects();
     
 ?>
 <!doctype html>
@@ -336,16 +338,16 @@
                         <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">Projects</h5>
-                                <div class="card-body">
-                                    <div id="graph_4" width="400" height="150">
+                                <div class="card-body"  style="margin-bottom: 2.5%;" >
+                                    <div id="graph_4" width="400" height="150" >
                                         <!-- Line graph here -->
                                     </div>
                                 </div>
-                                <div class="card-body border-top">
+                                <div class="card-body border-top" style="margin-top: 74%;">
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-3">
                                             <h2 class="font-weight-normal mb-3">
-                                                <span>65</span>
+                                                <span><?php echo count_project_under_dpt(D_Lab)['number'] ?></span>
                                             </h2>
                                             <div class="text-muted mb-0 mt-3 legend-item"> <span class="fa-xs text-secondary mr-1 legend-title">
                                                     <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">Design Lab</span>
@@ -353,7 +355,7 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-3">
                                             <h2 class="font-weight-normal mb-3">
-                                                <span>45</span>
+                                                <span><?php echo count_project_under_dpt(TAC)['number'] ?></span>
                                             </h2>
                                             <div class="text-muted mb-0 mt-3 legend-item">
                                                 <span class="fa-xs text-success mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span>
@@ -376,10 +378,12 @@
         draw("line", "graph_1", "Revenue Generated Per Year", "amount($)", "year(s)", <?php echo $graph_1_data ?>);
 
 
-        draw("column", "graph_2", "Grant Received Per Year", "amount receieved($)", "year(s)", <?php echo $graph_2_data ?>);
+        draw("area", "graph_2", "Grant Received Per Year", "amount receieved($)", "year(s)", <?php echo $graph_2_data ?>);
 
         
-        draw("pie", "graph_3", "Number Of Event Per Year", "amount receieved($)", "year(s)", <?php echo $graph_3_data ?>);
+        draw("doughnut", "graph_3", "Number Of Event Per Year", "amount receieved($)", "year(s)", <?php echo $graph_3_data ?>);
+
+        draw("pie", "graph_4", "Number Of Project Per Year", "amount receieved($)", "year(s)", <?php echo $graph_4_data ?>);
 
       </script>
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>

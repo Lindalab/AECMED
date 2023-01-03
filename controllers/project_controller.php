@@ -120,5 +120,10 @@
         return $project->count_projects_in_year($department_id);
     }
 
+    function count_all_projects_per_year_ctr(){
+        $project = new Project;
+        return $project->count_all_projects_per_year();
+    }
+
     
 ?>
