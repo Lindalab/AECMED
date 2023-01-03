@@ -132,25 +132,25 @@ require_once dirname(__FILE__)."/../../functions/displayModule.php";
 			</div>
         </section>
         <!-- Data visualization -->
-        <section class="data-viz mt-5">
-            <figure>
+        <!-- <section class="data-viz mt-5">
+            <figure> -->
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <!-- <canvas class="bgraph">
                     Line graph
                 </canvas>
                 <figcaption class="text-center">
                     Grants received over the past four(4) years
                 </figcaption>
             </figure>
-            <figure>
+            <figure> -->
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <!-- <canvas class="bgraph">
                     Bar graph
                 </canvas>
                 <figcaption class="text-center">
                     Grant Type over the past four(4) years
                 </figcaption>
-            </figure>
+            </figure> -->
         </section>
     </main>
 </body>
