@@ -67,3 +67,13 @@ function show_events($event_id, $event_name, $event_type, $attendance,  $event_d
     </tr>
         ";
 }
+
+
+function event_per_year(){
+    $event_year = number_of_events_organised_per_year_ctr();
+    $dataPoints = array();
+    foreach ($event_year as $event) {
+        array_push($dataPoints, array("y" => $event['count'], "label" => $event['year']));
+    }
+    return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+}

@@ -4,7 +4,6 @@
     function create_event_ctr($event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id){
         $event = new event;
         return $event->create_event($event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id);
-
     }
 
     function update_event_ctr($event_id,$event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id){
@@ -76,4 +75,11 @@
         $event = new event;
         return $event->number_of_events_organised_by_departments_over_years($department);
     }
+
+    function number_of_events_organised_per_year_ctr(){
+        $event = new event;
+        return $event->number_of_events_organised_per_year();
+    }
+
+    
 ?>

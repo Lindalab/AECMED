@@ -169,4 +169,9 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         $grant = new Grant;
         return $grant->number_of_business_grants($department, $type);
     }
+
+    function list_sum_grant_per_year_ctr(){
+        $grant = new Grant;
+        return $grant->list_sum_grant_per_year();
+    }
 ?>

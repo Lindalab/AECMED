@@ -231,6 +231,16 @@ class Grant extends db_connection
 
     function number_of_business_grants($department, $type){
         $sql = "SELECT COUNT(business_grants.grant_id) as number FROM `business_grants`, grants WHERE business_grants.grant_id=grants.grant_id and grants.department_id = $department and grants.grant_type = $type";
+        
+        return $this->db_fetch_one($sql);
+    }
+
+    function list_sum_grant_per_year(){
+        $sql = "SELECT EXTRACT(YEAR FROM date_received) as year,SUM(amount) as amount FROM `grants` GROUP BY  EXTRACT(YEAR FROM date_received) ;";
+
+        return $this->db_fetch_all($sql);
+
+
     }
 
     /**

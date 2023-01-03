@@ -141,3 +141,14 @@ function graphing_data_busines_type($department){
 
     return json_encode($dataPoints, JSON_NUMERIC_CHECK);
  }
+
+
+ function grants_per_year(){
+    $data = list_sum_grant_per_year_ctr();
+    $dataPoint = array();
+    foreach($data as $value){
+        array_push($dataPoint, array("y"=>$value['amount'], "label"=>$value['year']));
+    }
+
+    return json_encode($dataPoint, JSON_NUMERIC_CHECK);
+ }

@@ -91,6 +91,12 @@
             return $this->db_fetch_all($sql);
         }
 
+        function number_of_events_organised_per_year(){
+            $sql = "SELECT EXTRACT(YEAR FROM date_organized) as year, COUNT(event_id)  as count FROM `events` GROUP BY EXTRACT(YEAR FROM date_organized);";
+
+            return $this->db_fetch_all($sql);
+        }
+
     }
 
 ?>

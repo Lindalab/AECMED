@@ -1,8 +1,12 @@
 <?php 
     require_once dirname(__FILE__)."/../functions/summary.php";
     require_once dirname(__FILE__)."/../admin_functions/business_functions.php";
+    require_once dirname(__FILE__)."/../admin_functions/grant_functions.php";
+    require_once dirname(__FILE__)."/../admin_functions/event_functions.php";
 
     $graph_1_data = graph_business_revenue_years();
+    $graph_2_data = grants_per_year();
+    $graph_3_data = event_per_year();
     
 ?>
 <!doctype html>
@@ -252,7 +256,7 @@
                                    <div id="graph_1" width="220" height="155" >
                                         <!-- Pie chart here -->
                                     </div>
-                                    <div class="chart-widget-list" style="margin-top: 80%;">
+                                    <div class="chart-widget-list" style="margin-top: 83%;">
                                         <p>
                                             <span class="fa-xs text-primary mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span><span class="legend-text"> Ashesi Venture Incubator</span>
                                             <span class="float-right">$<?php echo total_business_revenue_for_a_department(AVI)['amount']?></span>
@@ -269,21 +273,21 @@
                             <div class="card">
                                 <h5 class="card-header">Total Grants</h5>
                                 <div class="card-body">
-                                    <canvas id="total-sale" width="220" height="155">
+                                    <div id="graph_2" width="220" height="155" style="margin-bottom: 2.5%;">
                                         <!-- Pie chart here -->
-                                    </canvas>
-                                    <div class="chart-widget-list">
+                                    </div>
+                                    <div class="chart-widget-list" style="margin-top: 80%;">
                                         <p>
                                             <span class="fa-xs text-primary mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">Ashesi Venture Incubator</span>
-                                            <span class="float-right">$300.56</span>
+                                            <span class="float-right">$<?php echo sum_grant_for_dpt_ctr(AVI)['amount'] ?></span>
                                         </p>
                                         <p>
                                             <span class="fa-xs text-brand mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span> <span class="legend-text">Design Lab</span>
-                                            <span class="float-right">$48.96</span>
+                                            <span class="float-right">$<?php echo sum_grant_for_dpt_ctr(D_Lab)['amount'] ?></span>
                                         </p>
                                         <p class="mb-0">
                                             <span class="fa-xs text-info mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span> <span class="legend-text">Undergraduate Programs</span>
-                                            <span class="float-right">$154.02</span>
+                                            <span class="float-right">$<?php echo sum_grant_for_dpt_ctr(TAC)['amount'] ?></span>
                                         </p>
                                     </div>
                                 </div>
@@ -294,15 +298,15 @@
                         <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">Events</h5>
-                                <div class="card-body">
-                                    <canvas id="revenue" width="400" height="150">
+                                <div class="card-body" style="margin-bottom: 2.5%;">
+                                    <div id="graph_3" width="400" height="150">
                                         <!-- Line graph here -->
-                                    </canvas>
+                                    </div>
                                 </div>
-                                <div class="card-body border-top">
+                                <div class="card-body border-top" style="margin-top: 70%;">
                                     <div class="row">
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
-                                            <h2 class="font-weight-normal mb-3"><span>54</span></h2>
+                                            <h2 class="font-weight-normal mb-3"><span><?php echo count_event_for_department_ctr(AVI); ?></span></h2>
                                             <div class="mb-0 mt-3 legend-item">
                                                 <span class="fa-xs text-primary mr-1 legend-title "><i class="fa fa-fw fa-square-full"></i></span>
                                                 <span class="legend-text">Ashesi Venture Incubator</span>
@@ -310,7 +314,7 @@
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
                                             <h2 class="font-weight-normal mb-3">
-                                                <span>65</span>
+                                                <span><?php echo count_event_for_department_ctr(D_Lab); ?></span>
                                             </h2>
                                             <div class="text-muted mb-0 mt-3 legend-item"> <span class="fa-xs text-secondary mr-1 legend-title">
                                                     <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">Design Lab</span>
@@ -318,7 +322,7 @@
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 p-3">
                                             <h2 class="font-weight-normal mb-3">
-                                                <span>45</span>
+                                                <span><?php echo count_event_for_department_ctr(TAC); ?></span>
                                             </h2>
                                             <div class="text-muted mb-0 mt-3 legend-item">
                                                 <span class="fa-xs text-success mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span>
@@ -333,9 +337,9 @@
                             <div class="card">
                                 <h5 class="card-header">Projects</h5>
                                 <div class="card-body">
-                                    <canvas id="revenue" width="400" height="150">
+                                    <div id="graph_4" width="400" height="150">
                                         <!-- Line graph here -->
-                                    </canvas>
+                                    </div>
                                 </div>
                                 <div class="card-body border-top">
                                     <div class="row">
@@ -369,7 +373,13 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("line", "graph_1", "Revenue Gennerated Per Year", "amount_receieved", "year(s)", <?php echo $graph_1_data ?>);
+        draw("line", "graph_1", "Revenue Generated Per Year", "amount($)", "year(s)", <?php echo $graph_1_data ?>);
+
+
+        draw("column", "graph_2", "Grant Received Per Year", "amount receieved($)", "year(s)", <?php echo $graph_2_data ?>);
+
+        
+        draw("pie", "graph_3", "Number Of Event Per Year", "amount receieved($)", "year(s)", <?php echo $graph_3_data ?>);
 
       </script>
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
@@ -391,13 +401,13 @@
     <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="assets/vendor/charts/c3charts/C3chartjs.js"></script>
     <script src="assets/libs/js/dashboard-ecommerce.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <!-- <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../javascript/charts.js"></script>
     <script>
-        draw("line", "revenue", "", "amount_receieved", "year", <?php echo $graph_1_data ?>);
+        // draw("line", "revenue", "", "amount_receieved", "year", <?php // echo $graph_1_data ?>);
 
-        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
-    </script>
+        // draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php // echo $graph_2_data ?>);
+    </script> -->
 </body>
 
 </html>
