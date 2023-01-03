@@ -1,6 +1,10 @@
 <?php 
         require_once dirname(__FILE__)."/../../functions/summary.php";
         require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
+
+        $graph_1_data = graphing_data_for_years_and_business(D_Lab);
+        $graph_2_data = graphing_data_busines_type(D_Lab);
+        $graph_3_data = count_grant_type(D_Lab);
          
 ?>
 <!doctype html>
@@ -225,13 +229,13 @@
                             <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <h5 class="card-header">Number of grants over the past four years</h5>
-                                    <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
+                                    <div class="card-body" style="margin-bottom: 70%;">
+                                        <div id="graph_3" width="400" height="150">
                                             <!-- Pie graph here -->
-                                        </canvas>
+                                        </div>
                                     </div>
                                     <div class="card-body border-top">
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-3">
                                                 <h2 class="font-weight-normal mb-3">
                                                     <span>40</span>
@@ -247,21 +251,21 @@
                                                 <div class="text-muted mb-0 mt-3 legend-item"> <span class="fa-xs text-secondary mr-1 legend-title">
                                                     <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">External Grants</span>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </div> 
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <h5 class="card-header">Grants over the past four years</h5>
-                                    <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
+                                    <div class="card-body" style="margin-bottom: 70%;">
+                                        <div id="graph_2" width="400" height="150">
                                             <!-- Pie graph here -->
-                                        </canvas>
+                                        </div>
                                     </div>
                                     <div class="card-body border-top">
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-3">
                                                 <h2 class="font-weight-normal mb-3"><span>$12000</span></h2>
                                                 <div class="mb-0 mt-3 legend-item">
@@ -276,7 +280,7 @@
                                                     <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">External Grants</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -286,12 +290,12 @@
                                 <div class="card">
                                     <h5 class="card-header">Grants over the past four years</h5>
                                     <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
+                                        <div id="graph_1" width="400" height="150" style="margin-bottom: 30%;">
                                             <!-- Line graph here -->
-                                        </canvas>
+                                        </div>
                                     </div>
                                     <div class="card-body border-top">
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-3">
                                                 <h2 class="font-weight-normal mb-3"><span>56</span></h2>
                                                 <div class="mb-0 mt-3 legend-item">
@@ -306,7 +310,7 @@
                                                     <i class="fa fa-fw fa-square-full"></i></span><span class="legend-text">External Grants</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -389,6 +393,16 @@
             </div>
         </div>
     </div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Grants received over the past years", "amount_receieved", "year(s)", <?php echo $graph_1_data ?>);
+
+       draw("pie", "graph_2", "Number Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
+
+       draw("doughnut", "graph_3", "Amount Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_3_data ?>);
+
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
