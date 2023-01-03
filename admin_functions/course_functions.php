@@ -50,7 +50,7 @@
         
     }
 
-    function display_student_project($department){
+    function display_student_project_admin($department){
 
         $course_list = select_course_under_dpt_ctr($department);
         foreach($course_list as $course){
@@ -64,11 +64,11 @@
             }
             
             // student_project_row($course)
-            student_project_row($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received);
+            student_project_row_admin($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received);
         }
     }
 
-    function student_project_row($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received){
+    function student_project_row_admin($course_id,$course_name, $number_of_students, $number_of_projects, $grant_received){
         echo "<tr>
         <td>
             $course_name

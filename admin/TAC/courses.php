@@ -1,14 +1,18 @@
-<?php 
-    require_once dirname(__FILE__)."/../../controllers/course_controller.php";
-    require_once dirname(__FILE__)."/../../admin_functions/course_functions.php";
-    $course_year = $year - 10;
-    $number_of_courses = count_course_under_dpt_ctr(TAC);
-    $course_participants = total_course_students_ctr($course_year);
+<?php
+require_once dirname(__FILE__) . "/../../controllers/course_controller.php";
+require_once dirname(__FILE__) . "/../../admin_functions/course_functions.php";
+require_once dirname(__FILE__) . "/../../functions/tac_courses.php";
+
+$course_year = $year - 10;
+$number_of_courses = count_course_under_dpt_ctr(TAC);
+$course_participants = total_course_students_ctr($course_year);
+
+$data_for_courses_and_students = list_of_courses_and_student();
 
 ?>
 <!doctype html>
 <html lang="en">
- 
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -92,181 +96,183 @@
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
-                                            </li>
-                                            <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
-                                        </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
+                                            <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
                                         </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                        <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
-                                <div id="submenu-4" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
                             </li>
-                            <li class="nav-divider">
-                                Undergraduate Programs
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="businesses.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Courses</a>
-                                <div id="submenu-5" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="courses.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="student projects.php">Student projects</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Grants</a>
-                                <div id="submenu-6" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="grants overview.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="grants internal.php">Internal grants</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="grants external.php">External grants</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <br><br><br><br><br><br>
                         </ul>
                     </div>
-                </nav>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
+                        <div id="submenu-4" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-divider">
+                        Undergraduate Programs
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="businesses.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Courses</a>
+                        <div id="submenu-5" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="courses.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="student projects.php">Student projects</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Grants</a>
+                        <div id="submenu-6" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grants overview.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grants internal.php">Internal grants</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grants external.php">External grants</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <br><br><br><br><br><br>
+                    </ul>
             </div>
+            </nav>
         </div>
-        <!-- Main page -->
-        <div class="dashboard-wrapper">
-            <div class="dashboard-ecommerce">
-                <div class="container-fluid dashboard-content ">
-                    <!-- ============================================================== -->
-                    <!-- pageheader  -->
-                    <!-- ============================================================== -->
+    </div>
+    <!-- Main page -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <!-- Title -->
+                            <h2 class="pageheader-title">Undergraduate Programs</h2>
+                            <!-- Breadcrumb -->
+                            <h5>Courses</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ecommerce-widget">
+                    <!-- Top row cards -->
                     <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="page-header">
-                                <!-- Title -->
-                                <h2 class="pageheader-title">Undergraduate Programs</h2>
-                                <!-- Breadcrumb -->
-                                <h5>Courses</h5>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Total courses</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1"><?php echo $number_of_courses ?></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Total course participants</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1"><?php echo $course_participants ?></h1>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Courses over time</h5>
+                                <div class="card-body" >
+                                    <!-- id="graph_1" width="400" height="150" -->
+                                    <div id="graph_1" width = "400" height="150" style="margin-bottom: 40%;">
+                                        <!-- Line graph here -->
 
-                    <div class="ecommerce-widget">
-                        <!-- Top row cards -->
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Total courses</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1"><?php echo $number_of_courses ?></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Total course participants</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1"><?php echo $course_participants ?></h1>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="card">
-                                    <h5 class="card-header">Courses over time</h5>
-                                    <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
-                                            <!-- Line graph here -->
-                                        </canvas>
-                                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <div class="d-flex justify-content-between">
+                                    <h5 class="card-header">Courses</h5>
+                                    <a href="../../forms/add/add-course.php">
+                                        <button class="btn btn-primary">Add course +</button>
+                                    </a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="card-header">Courses</h5>
-                                        <a href="../../forms/add/add-course.php">
-                                            <button class="btn btn-primary">Add course +</button>
-                                        </a>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">Course Name</th>
+                                                    <th class="border-0">Number of students</th>
+                                                    <th class="border-0">Number of projects</th>
+                                                    <th class="border-0">Grant Received</th>
+                                                    <th class="border-0">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php display_student_project_admin(TAC) ?>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Course Name</th>
-                                                        <th class="border-0">Number of students</th>
-                                                        <th class="border-0">Number of projects</th>
-                                                        <th class="border-0">Grant Received</th>
-                                                        <th class="border-0">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                <?php display_student_project(TAC)?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                            <div class="table-responsive">
-                                             <br>
-                                                <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Project Name</th>
-                                                        <th class="border-0">Date Commenced</th>
-                                                        <th class="border-0">Grant Received</th>
-                                                        <th class="border-0">Project Status</th>
-                                                        <th class="border-0">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                <?php echo list_student_project_row()?>
-                                                    <!-- <tr>
+                                    <div class="table-responsive">
+                                        <br>
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">Project Name</th>
+                                                    <th class="border-0">Date Commenced</th>
+                                                    <th class="border-0">Grant Received</th>
+                                                    <th class="border-0">Project Status</th>
+                                                    <th class="border-0">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php echo list_student_project_row() ?>
+                                                <!-- <tr>
                                                         <td>Company #1 </td>
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
@@ -279,12 +285,12 @@
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr> -->
-                                                    
-                                                    
-                                                </tbody>
-                                            </table>
-                                                                                                        
-                                                    <!-- <tr>
+
+
+                                            </tbody>
+                                        </table>
+
+                                        <!-- <tr>
                                                         <td>Company #1 </td>
                                                         <td>67 </td>
                                                         <td>27-08-2018</td>
@@ -297,11 +303,10 @@
                                                             <button class="btn btn-outline-danger">Remove</button>
                                                         </td>
                                                     </tr> -->
-                                                    
-                
-                                                </tbody>
-                                            </table>
-                                        </div>
+
+
+                                        </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -311,6 +316,15 @@
             </div>
         </div>
     </div>
+    </div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Courses And Student Number", "number of students", "courses", <?php echo $data_for_courses_and_students ?>);
+
+        // draw("pie", "graph_2", "Courses And Projects", "number of students", "courses", <?php // echo  $data_for_course_project 
+                                                                                            ?>);
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
@@ -329,4 +343,7 @@
     <script src="../assets/vendor/charts/c3charts/c3.min.js"></script>
     <script src="../assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="../assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="../assets/libs/js/dashboard-ecommerce.js"></script></body></html>
+    <script src="../assets/libs/js/dashboard-ecommerce.js"></script>
+</body>
+
+</html>
