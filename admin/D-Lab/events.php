@@ -1,6 +1,9 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/summary.php";
     require_once dirname(__FILE__)."/../../admin_functions/event_functions.php";
+    require_once dirname(__FILE__)."/../../functions/tac_events.php";
+
+    $graph_1_data = number_of_event_organised_per_year(D_Lab);
 ?>
 <!doctype html>
 <html lang="en">
@@ -215,13 +218,15 @@
                                 <div class="card">
                                     <h5 class="card-header">Total number of events over the past four years</h5>
                                     <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
+                                        <div id="graph_1" width="400" height="150" style="margin-bottom: 35%;">
                                             <!-- Line graph here -->
-                                        </canvas>
+                                        </div>
                                     </div>
                                     <div class="card-body border-top">
+                                         <h4>Attendance Over The Years</h4>
                                         <div class="row">
-                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 p-3">
+                                               <?php event_attendance_per_year(D_Lab) ?>
+                                            <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 p-3">
                                                 <h2 class="font-weight-normal mb-3"><span>54</span></h2>
                                                 <div class="mb-0 mt-3 legend-item">
                                                     <span class="fa-xs text-primary mr-1 legend-title "></span>
@@ -251,7 +256,7 @@
                                                 <div class="text-muted mb-0 mt-3 legend-item"> 
                                                     <span class="fa-xs text-success mr-1 legend-title"></span>
                                                     <span class="legend-text">Year #4</span>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -294,6 +299,13 @@
             </div>
         </div>
     </div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("column", "graph_1", "Number Of Events Organised Per Year", "Number Of Events", "year", <?php echo $graph_1_data ?>);
+
+        // draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php //echo  $graph_2_data ?>);
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

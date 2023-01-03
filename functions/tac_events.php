@@ -2,6 +2,7 @@
 require_once dirname(__FILE__) . "/../controllers/event_controller.php";
 
 
+
 function graph_event_attendance_year($department)
 {
     $year = date("Y");

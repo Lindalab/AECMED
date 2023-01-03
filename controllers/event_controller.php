@@ -71,4 +71,9 @@
         $event = new event;
         return $event->event_for_department_over_years($department, $year);
     }
+
+    function number_of_events_organised_by_departments_over_years_ctr($department){
+        $event = new event;
+        return $event->number_of_events_organised_by_departments_over_years($department);
+    }
 ?>
