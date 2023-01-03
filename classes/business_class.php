@@ -335,6 +335,12 @@
 
             return $this->db_fetch_one($sql);
         }
+
+        function total_business_revenue_years(){
+            $sql = "SELECT revenue_year, SUM(revenue_amount) as amount FROM business_revenue GROUP BY revenue_year";
+
+            return $this->db_fetch_all($sql);
+        }
         
         
 

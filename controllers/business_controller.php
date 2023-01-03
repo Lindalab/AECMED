@@ -205,9 +205,13 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
 
     function  business_employment_created_in_year_ctr($department_id, $year){
         $business = new Business;
-        return $business-> business_employment_created_in_year($department_id, $year);
+        return $business->business_employment_created_in_year($department_id, $year);
     }
 
+    function total_business_revenue_years_ctr(){
+        $business = new Business;
+        return $business->total_business_revenue_years();
+    }
    
   
     

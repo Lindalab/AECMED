@@ -132,3 +132,14 @@ function show_business_row($id, $name, $employment, $revenue, $sector, $date)
     </tr>
         ";
 }
+
+function graph_business_revenue_years(){
+    $list = total_business_revenue_years_ctr();
+    $dataPoints = array();
+
+    foreach ($list as $value) {
+        array_push($dataPoints, array("y"=>$value['amount'], "label"=>$value['revenue_year']));
+    }
+
+    return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+}

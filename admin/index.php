@@ -1,5 +1,9 @@
 <?php 
     require_once dirname(__FILE__)."/../functions/summary.php";
+    require_once dirname(__FILE__)."/../admin_functions/business_functions.php";
+
+    $graph_1_data = graph_business_revenue_years();
+    
 ?>
 <!doctype html>
 <html lang="en">
@@ -244,18 +248,18 @@
                         <div class="col-xl-6 col-lg-12 col-md-6 col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">Total Revenue Generated</h5>
-                                <div class="card-body">
-                                    <canvas id="total-sale" width="220" height="155">
+                                <div class="card-body" style="margin-bottom: 2.5%;">
+                                   <div id="graph_1" width="220" height="155" >
                                         <!-- Pie chart here -->
-                                    </canvas>
-                                    <div class="chart-widget-list">
+                                    </div>
+                                    <div class="chart-widget-list" style="margin-top: 80%;">
                                         <p>
                                             <span class="fa-xs text-primary mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span><span class="legend-text"> Ashesi Venture Incubator</span>
-                                            <span class="float-right">$300.56</span>
+                                            <span class="float-right">$<?php echo total_business_revenue_for_a_department(AVI)['amount']?></span>
                                         </p>
                                         <p>
                                             <span class="fa-xs text-brand mr-1 legend-title"><i class="fa fa-fw fa-square-full"></i></span> <span class="legend-text">Undergraduate Programs</span>
-                                            <span class="float-right">$48.96</span>
+                                            <span class="float-right">$<?php echo total_business_revenue_for_a_department(TAC)['amount']?></span>
                                         </p>
                                     </div>
                                 </div>
@@ -362,6 +366,12 @@
         </div>
     </div>
     </div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Revenue Gennerated Per Year", "amount_receieved", "year(s)", <?php echo $graph_1_data ?>);
+
+      </script>
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
@@ -384,7 +394,7 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../javascript/charts.js"></script>
     <script>
-        draw("line", "revenue", "Grants received over the past four(4) years", "amount_receieved", "year", <?php echo $graph_1_data ?>);
+        draw("line", "revenue", "", "amount_receieved", "year", <?php echo $graph_1_data ?>);
 
         draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
     </script>

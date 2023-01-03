@@ -398,9 +398,9 @@
     <script>
         draw("line", "graph_1", "Grants received over the past years", "amount_receieved", "year(s)", <?php echo $graph_1_data ?>);
 
-       draw("pie", "graph_2", "Number Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
+       draw("pie", "graph_2", "Amount Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
 
-       draw("doughnut", "graph_3", "Amount Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_3_data ?>);
+       draw("doughnut", "graph_3", "Number Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_3_data ?>);
 
     </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
