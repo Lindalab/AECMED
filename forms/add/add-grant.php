@@ -195,7 +195,7 @@
                         <div class="card">
                             <h5 class="card-header">Add a grant</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../insertions/add_grant.php" method="POST" enctype="multipart/form-data">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_grant.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">

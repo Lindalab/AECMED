@@ -1,3 +1,7 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/grant_controller.php";
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -192,11 +196,11 @@
                         <div class="card">
                             <h5 class="card-header">Add an event</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_events.php" method="POST">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Event Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business Name"
+                                            <input type="text" name="event_name" required="" placeholder="Business Name"
                                                 class="form-control">
                                         </div>
                                     </div>
@@ -204,8 +208,8 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                            <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
                                             </select>
                                         </div>
                                     </div>
@@ -213,38 +217,38 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Attendance</label>
                                             <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
                                                 <input data-parsley-type="number" type="number" required=""
-                                                placeholder="Male attendance" class="form-control">
+                                                placeholder="Male attendance" name="male_attendance" class="form-control">
                                             </div>
                                             <div class="col-sm-4 col-lg-3">
                                                 <input data-parsley-type="number" type="number" required=""
-                                                placeholder="Female attendance" class="form-control">
+                                                placeholder="Female attendance" name="female_attendance" class="form-control">
                                             </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Target group</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Target group"
+                                            <input type="text" required="" name="target_group" placeholder="Target group"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Event type</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Event type"
+                                            <input type="text" required="" name="event_type" placeholder="Event type"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date organized</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date organized"
+                                            <input type="date" name="date_organized" required="" placeholder="Date organized"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Event Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="event_description" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">
