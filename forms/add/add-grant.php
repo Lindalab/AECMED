@@ -1,3 +1,6 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/grant_controller.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -192,11 +195,11 @@
                         <div class="card">
                             <h5 class="card-header">Add a grant</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../insertions/add_grant.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Grant Name"
+                                            <input type="text" required="" name="grant_name" placeholder="Grant Name"
                                                 class="form-control">
                                         </div>
                                     </div>
@@ -204,42 +207,47 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                                <option value="<?php echo D_Lab ?>">Design Lab</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Amount</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input data-parsley-type="number" type="number" required=""
+                                            <input data-parsley-type="number" name="amount" type="number" required=""
                                                 placeholder="Amount in $" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant type</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Grant type"
-                                                class="form-control">
+                                            <!-- <input type="text" required="" placeholder="Grant type"
+                                                class="form-control"> -->
+                                            <select name="grant_type" id="" class="form-control">
+                                                <option value="<?php echo INTERNAL ?>">Internal Grant</option>
+                                                <option value="<?php echo EXTERNAL ?>">External Grant</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date received</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date received"
+                                            <input type="date" required="" name="date_received" placeholder="Date received"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="grant_description" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Company Image</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="file" accept="image/*">
+                                            <input name="grant_company_image" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

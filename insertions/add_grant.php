@@ -1,11 +1,12 @@
 <?php
 require_once("../controllers/stakeholder_controller.php");
+require_once dirname(__FILE__)."/../controllers/grant_controller.php";
 
 $grant_name = $_POST['grant_name'];
 $grant_type = $_POST['grant_type'];
 $date_received = $_POST['date_received'];
 $grant_desc = $_POST['grant_description'];
-$department_id = $_POST['department_id'];
+$department_id = $_POST['department'];
 $amount = $_POST['amount'];
 
 
@@ -24,8 +25,10 @@ if ($move) {
     if ($insert) {
         header("location: ../view/index.php?message=1");
     } else {
-        header("location:../view/index.php?message=2");
+        // header("location:../view/index.php?message=2");
+        echo "error 2";
     }
 } else {
-    header("location: ../view/index.php?message=2");
+    // header("location: ../view/index.php?message=2");
+    echo "error";
 }
