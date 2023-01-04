@@ -1,7 +1,9 @@
 <?php 
         require_once dirname(__FILE__)."/../../functions/summary.php";
+        require_once dirname(__FILE__)."/../../functions/tac_student_project.php";
 
         $dlab_project_grants = sum_grant_for_project_under_dpt_ctr(D_Lab);
+        $graph_1_data = graphing_years_and_projects(D_Lab);
         
 ?>
 <!doctype html>
@@ -237,11 +239,11 @@
                                 <div class="card">
                                     <h5 class="card-header">Number of projects</h5>
                                     <div class="card-body">
-                                        <canvas id="revenue" width="400" height="150">
+                                        <div id="graph_1" width="400" height="150">
                                             <!-- Pie graph here -->
-                                        </canvas>
+                                        </div>
                                     </div>
-                                    <div class="card-body border-top">
+                                    <div class="card-body" style="margin-top: 70%;">
                                         <div class="row">
                                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-3">
                                                 <h2 class="font-weight-normal mb-3">
@@ -321,12 +323,17 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("line", "graph_1", "Projects Per Year", "Number Of Projects", "year(s)", <?php echo $graph_1_data ?>);
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

@@ -152,3 +152,7 @@ function graphing_data_busines_type($department){
 
     return json_encode($dataPoint, JSON_NUMERIC_CHECK);
  }
+
+ function display_grant_for_project($department){
+    
+ }
