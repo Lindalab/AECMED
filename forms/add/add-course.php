@@ -1,3 +1,9 @@
+<?php 
+        require_once dirname(__FILE__)."/../../controllers/course_controller.php";
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -192,34 +198,34 @@
                         <div class="card">
                             <h5 class="card-header">Add a course</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_course.php" method="POST">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business Name"
+                                            <input type="text" name="course_name" required="" placeholder="Course Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                            <select name="department" id="" class="form-control" name="department">
+                                                <!-- <option value="">Ashesi Venture Incubator</option> -->
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date started"
+                                            <input type="date" name = "date_started" required="" placeholder="Date started"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="desc" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

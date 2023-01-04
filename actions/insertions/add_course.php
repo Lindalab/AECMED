@@ -1,5 +1,5 @@
 <?php 
-    require_once("../controllers/course_controller.php");
+    require_once dirname(__FILE__)."/../../controllers/course_controller.php";
 
     $insert = create_course_ctr($_POST['course_name'], $_POST['date_started'], $_POST['desc'], $_POST['status'], $_POST['department']);
 
