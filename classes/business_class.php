@@ -8,7 +8,7 @@
          */
         function create_business($year_started, $business_name,$business_logo, $business_location, $business_contact, $business_email,$department, $sector, $business_description){
             
-            $sql = "INSERT INTO `business`(`year_started`, `busines_name`, `business_logo`, `business_location`, `business_contact`, `business_email`, `department_id`,  `sector`, `business_description`) VALUES ('$year_started',' $business_name','$business_logo','$business_location',' $business_contact','$business_email','$department','$sector','$business_description')";
+            $sql = "INSERT INTO `business`(`year_started`, `busines_name`, `business_logo`, `business_location`, `business_contact`, `business_email`, `department_id`,  `sector`, `business_description`) VALUES ('$year_started','$business_name','$business_logo','$business_location',' $business_contact','$business_email','$department','$sector','$business_description')";
 
             return $this->db_query($sql);
         }

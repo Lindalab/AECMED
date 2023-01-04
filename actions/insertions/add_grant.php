@@ -11,7 +11,7 @@ $amount = $_POST['amount'];
 
 
 
-$root_dir = "../images/grants";
+$root_dir = "../../images/grants";
 $upload_root_dir = "../images/grants/";
 $file = $_FILES["grant_company_image"];
 $file_dest = $root_dir . "/" . basename(str_replace(' ', '_', $file["name"]));

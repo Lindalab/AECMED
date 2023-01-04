@@ -1,3 +1,6 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -192,7 +195,7 @@
                         <div class="card">
                             <h5 class="card-header">Add a business</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../insertions/add_business.php">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_business.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
@@ -204,8 +207,17 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department_id" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <select name="business_type" id="" class="form-control">
+                                                <option value="1">1</option>
+                                                <!-- <option value="<?php // echo TAC ?>">Undergraduate Programs</option> -->
                                             </select>
                                         </div>
                                     </div>
