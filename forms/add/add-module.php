@@ -192,18 +192,18 @@
                         <div class="card">
                             <h5 class="card-header">Add a module</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_module.php" method="POST">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Module Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Grant Name"
+                                            <input type="text" name="module_name" required="" placeholder="Grant Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Module Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="module_description" class="form-control"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

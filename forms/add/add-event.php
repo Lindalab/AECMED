@@ -209,6 +209,7 @@
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
                                             <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php echo D_Lab ?>">Design Lab</option>
                                                 <option value="<?php echo TAC ?>">Undergraduate Programs</option>
                                             </select>
                                         </div>
