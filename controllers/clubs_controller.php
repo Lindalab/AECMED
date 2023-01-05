@@ -11,7 +11,7 @@
      function update_club_ctr($club_id, $name, $description, $executives_number, $total_numbers, $males, $females, $department, $date_registered, $lead_name){
         $club = new Club;
         
-        return $club->create_club($club_id, $name, $description, $executives_number, $total_numbers, $males, $females, $department, $date_registered, $lead_name);
+        return $club->update_club($club_id, $name, $description, $executives_number, $total_numbers, $males, $females, $department, $date_registered, $lead_name);
      }
 
 

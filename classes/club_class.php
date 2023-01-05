@@ -10,7 +10,7 @@
         }
 
         function update_club($club_id, $name, $description, $executives_number, $total_numbers, $males, $females, $department, $date_registered, $lead_name){
-            $sql = "UPDATE `clubs` SET `club_id`='$club_id',`name`='$name',`description`='$description',`number_of_excutives`='$executives_number',`number_of_members`='$total_numbers',`number_of_females`='$females',`number_of_males`='$males',`date_registered`='$date_registered',`department`='$department',`lead_name`='$lead_name'";
+            $sql = "UPDATE `clubs` SET `name`='$name',`description`='$description',`number_of_excutives`='$executives_number',`number_of_members`='$total_numbers',`number_of_females`='$females',`number_of_males`='$males',`date_registered`='$date_registered',`department`='$department',`lead_name`='$lead_name' WHERE `club_id`='$club_id'";
 
             return $this->db_query($sql);
         }

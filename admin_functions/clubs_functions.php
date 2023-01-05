@@ -26,7 +26,7 @@
          <a href='clubs view.php?club_id=$club_id'>
          <button class='btn btn-outline-info'>View</button>
      </a>
-     <a href='../../forms/edit/edit-club.php'>
+     <a href='../../forms/edit/edit-club.php?club_id=$club_id'>
          <button class='btn btn-outline-warning'>Edit</button>
      </a>
      <button class='btn btn-outline-danger'>Remove</button>
