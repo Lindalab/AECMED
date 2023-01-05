@@ -1,3 +1,18 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/event_controller.php";
+
+    $event = select_one_event_ctr($_GET['event_id']);
+    $event_id = $event['event_id'];
+    $event_name = $event['event_name'];
+    $date = $event['date_organized'];
+    $target_group = $event['target_group'];
+    $event_description = $event['event_description'];
+    $males = $event['male_attendance'];
+    $females = $event['female_attendace'];
+    $event_type = $event['event_type'];
+    
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -192,59 +207,63 @@
                         <div class="card">
                             <h5 class="card-header">Edit an event</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="./../../actions/updates/update_events.php" method="POST">
+                                <input type="hidden"  required="" name="event_id" value="<?php echo $event_id ?>" placeholder="Business Name"
+                                                class="form-control">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Event Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business Name"
+                                            <input type="text" name="event_name" value="<?php echo $event_name ?>" required="" placeholder="Business Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                            <select name="department_id" id="" class="form-control">
+                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php echo D_Lab ?>"> Design Lab</option>
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Attendance</label>
                                             <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
-                                                <input data-parsley-type="number" type="number" required=""
+                                                <input data-parsley-type="number" name="male_attendance" value="<?php echo $males ?>" type="number" required=""
                                                 placeholder="Male attendance" class="form-control">
                                             </div>
                                             <div class="col-sm-4 col-lg-3">
-                                                <input data-parsley-type="number" type="number" required=""
+                                                <input data-parsley-type="number" name="female_attendace" value="<?php echo $females ?>" type="number" required=""
                                                 placeholder="Female attendance" class="form-control">
                                             </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Target group</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Target group"
+                                            <input type="text" name="target_group" value="<?php echo $target_group ?>" required="" placeholder="Target group"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Event type</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Event type"
+                                            <input type="text" name="event_type" value="<?php echo $event_type ?>" required="" placeholder="Event type"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date organized</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date organized"
+                                            <input type="date" name="date_organized" value="<?php echo $date ?>" required="" placeholder="Date organized"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Event Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea name = "event_description" required="" class="form-control"><?php echo $event_description ?>
+                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">
