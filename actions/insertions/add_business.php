@@ -31,9 +31,9 @@
     $move = move_uploaded_file($file["tmp_name"], $file_dest);
 
     if($move){
-        $insert = create_business_ctr($year_started, $business_name,$upload_file_dest, $business_location, $business_contact, $business_email,$department, $business_type,$sector, $business_description);
+        $insert = create_business_ctr($year_started, $business_name,$upload_file_dest, $business_location, $business_contact, $business_email,$department, $sector, $business_description);
         if($insert){
-            // header("location: ../view/index.php?message=1");
+            header("location: ../../admin/index.php?message=1");
         }else{
             // header("location:../view/index.php?message=2");
         }

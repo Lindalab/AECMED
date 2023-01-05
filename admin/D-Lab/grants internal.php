@@ -215,7 +215,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Internal Grants</h5>
-                                        <button class="btn btn-primary">Add grant +</button>
+                                        <a href="../../forms/add/add-grant.php" class="btn btn-primary">Add grant +</a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">

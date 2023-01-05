@@ -1,3 +1,6 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/clubs_controller.php";
+?>
 <!doctype html>
 <html lang="en">
 
@@ -192,31 +195,69 @@
                         <div class="card">
                             <h5 class="card-header">Add a club</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" method="POST" action="./../../actions/insertions/add_club.php">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Club Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Club Name"
+                                            <input type="text" required="" name="club_name" placeholder="Club Name"
                                                 class="form-control">
                                         </div>
                                     </div>
+            
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date started"
+                                            <input type="date" name="date" required="" placeholder="Date started"
                                                 class="form-control">
                                         </div>
                                     </div>
+                                    
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Number Of Executives</label>
+                                        <div class="col-sm-4 col-lg-3">
+                                                <input data-parsley-type="number" type="number" required=""
+                                                placeholder="Executives" name="execs" class="form-control">
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Members</label>
+                                            <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
+                                                <input data-parsley-type="number" type="number" required=""
+                                                placeholder="Male" name="males" class="form-control">
+                                            </div>
+                                            <div class="col-sm-4 col-lg-3">
+                                                <input data-parsley-type="number" type="number" required=""
+                                                placeholder="Female" name="females" class="form-control">
+                                            </div>       
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Department</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <select name="department" id="" class="form-control">
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Club Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea name="desc" required="" class="form-control"></textarea>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Club Logo</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="file" name="club_logo" class="form-control" accept="image/*">
+                                        </div>
+                                    </div> -->
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Leader</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="text" required="" name="lead_name" placeholder="lead Name"
+                                                class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

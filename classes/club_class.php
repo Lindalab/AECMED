@@ -4,7 +4,7 @@
     class Club extends db_connection{
 
         function create_club($name, $description, $executives_number, $total_numbers, $males, $females, $department, $date_registered, $lead_name){
-            $sql = "INSERT INTO `clubs`(`name`, `description`, `number_of_excutives`, `number_of_members`, `number_of_females`, `number_of_males`, `date_registered`, `department`, `lead_name`) VALUES ('$name','$description','$executives_number','$total_numbers','$females','$males','$department','$date_registered','$lead_name')";
+            $sql = "INSERT INTO `clubs`(`name`, `description`, `number_of_excutives`, `number_of_members`, `number_of_females`, `number_of_males`, `date_registered`, `department`, `lead_name`) VALUES ('$name','$description','$executives_number','$total_numbers','$females','$males','$date_registered', '$department','$lead_name')";
 
             return $this->db_query($sql);
         }

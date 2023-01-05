@@ -213,7 +213,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Type</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="business_type" id="" class="form-control">
                                                 <option value="1">1</option>
@@ -232,7 +232,7 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Contact</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input data-parsley-type="number" type="number" required="" name="business_contact"
-                                                placeholder="Enter only numbers" class="form-control">
+                                                placeholder="Phone Number" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
