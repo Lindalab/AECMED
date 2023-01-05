@@ -1,3 +1,19 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/project_functions.php";
+
+    $project_id = $_GET['project_id'];
+    $project = select_one_project_ctr($project_id);
+    $projet_name = $project['project_name'];
+    $project_desc = $project['project_description'];
+    $project_status = $project['project_status'];
+    $date = $project['date_started'];
+    $sdg_goals = $project['sdg_goals'];
+    $project_status = project_status($project['project_status']);
+    $sector = $project['sector'];
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -216,37 +232,65 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Student Project Name</h3>
+                                    <h3 class=""><?php echo $projet_name ?></h3>
                                     <h4 class="text-center">Project Members</h4>
                                     <div class="view-sec">
                                         <section class="d-flex justify-content-around">
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
+                                            <?php 
+                                                show_project_stakeholders($project_id);
+                                            ?>
+                                            <!-- <figure class="img-frame">
+                                                <img class="img-view" src="../<?php // echo $business_logo;?>"
                                                     alt="img name">
                                                 <figcaption>
                                                     Gupta Sanchez <br>
                                                     <sub class="text-muted">
-                                                        <?php echo $business_email;?>
+                                                        <?php //echo // $business_email;?>
                                                     </sub>
                                                 </figcaption>
                                             </figure>
                                             <figure class="img-frame">
-                                                <img class="img-view" src="../<?php echo $business_logo;?>"
+                                                <img class="img-view" src="../<?php // echo $business_logo;?>"
                                                     alt="img name">
                                                 <figcaption>
                                                     Gupta Sanchez <br>
                                                     <sub class="text-muted">
-                                                        <?php echo $business_email;?>
+                                                        <?php // echo $business_email;?>
                                                     </sub>
                                                 </figcaption>
-                                            </figure>
+                                            </figure> -->
                                         </section>
                                     </div><br>
-                                   
+                                    <h5>
+                                        Date Started
+                                    </h5>
+                                    <p>
+                                        <?php echo $date ?>
+                                    </p>
+                                    <h5>
+                                        Project Status
+                                    </h5>
+                                    <p>
+                                        <?php echo $project_status ?>
+                                    </p>
+                                    <h5>
+                                        Sdg Goals
+                                    </h5>
+                                    <p>
+                                        <?php echo $sdg_goals ?>
+                                    </p>
+                                    <h5>
+                                        Sector
+                                    </h5>
+                                    <p>
+                                        <?php echo $sector ?>
+                                    </p>
+
                                     <h5>
                                         Project Description
                                     </h5>
                                     <p>
+                                        <?php echo $project_desc ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
@@ -262,6 +306,7 @@
                                             <div class="table-responsive">
                                                 <table class="table">
                                                     <thead class="bg-light">
+
                                                         <tr class="border-0">
                                                             <th class="border-0">Company Name</th>
                                                             <th class="border-0">Grant Received</th>
@@ -270,6 +315,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                       
                                                         <tr>
                                                             <td>Coco-cola</td>
                                                             <td>$80.00</td>

@@ -1,5 +1,6 @@
 <?php 
         require_once dirname(__FILE__)."/../../functions/summary.php";
+        require_once dirname(__FILE__)."/../../admin_functions/project_functions.php";
 
         $tac_project_grants = sum_grant_for_project_under_dpt_ctr(TAC);
         
@@ -234,43 +235,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Company #1 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>Active</td>
-                                                        <td>
-                                                            <a href="student projects view.php">
-                                                                <button class="btn btn-outline-info">View</button>
-                                                            </a>
-                                                            <a href="../../forms/edit/edit-project.php">
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Company #2 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>Active</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Company #3 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>Active</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
+                                                    <?php list_student_project_row(TAC) ?>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
