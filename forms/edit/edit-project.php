@@ -1,3 +1,17 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/project_functions.php";
+
+    $project_id = $_GET['project_id'];
+    $project = select_one_project_ctr($project_id);
+    $project_name = $project['project_name'];
+    $project_description = $project['project_description'];
+    $project_status = $project['project_status'];
+    $date_started = $project['date_started'];
+    $sdg_goals = $project['sdg_goals'];
+    $sector = $project['sector'];
+    $departmet = $project['department_id'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -192,11 +206,12 @@
                         <div class="card">
                             <h5 class="card-header">Edit a project</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/updates/update_project.php" method="POST">
+                                <input type="hidden" required="" name="project_id" placeholder="Project Name" class="form-control">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Project Name"
+                                            <input type="text" name="project_name" value="<?php echo $project_name ?>" required="" placeholder="Project Name"
                                                 class="form-control">
                                         </div>
                                     </div>
@@ -204,8 +219,17 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <select name="status" id="" class="form-control">
+                                                <option value="1" selected>Active</option>
+                                                <option value="2">Completed</option>
                                             </select>
                                         </div>
                                     </div>
@@ -215,42 +239,42 @@
                                             <div class="row">
                                                 <div class="col">
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 1</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="1" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 1</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 2</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 2</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 3</span>
+                                                        <input id="ck3" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 3</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 4</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="4" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 4</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 5</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="5" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 5</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 6</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="6" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 6</span>
                                                     </label>
                                                 </div>
                                                 <div class="col">
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 7</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="7" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 7</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 8</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="8" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 8</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 9</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="9" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 9</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck1" name="ck1" type="checkbox" data-parsley-multiple="groups" value="bar" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 10</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="10" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 10</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck2" name="ck2" type="checkbox" data-parsley-multiple="groups" value="bar2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 11</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="11" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 11</span>
                                                     </label>
                                                     <label class="custom-control custom-checkbox">
-                                                        <input id="ck3" name="ck3" type="checkbox" data-parsley-multiple="groups" value="bar3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 12</span>
+                                                        <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="12" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 12</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -260,29 +284,29 @@
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Sector</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Project sector"
+                                            <input type="text" name="sector" value="<?php echo $sector ?>" required="" placeholder="Project sector"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date started"
+                                            <input type="date" required="" name="date_started" value="<?php echo $date_started ?>" placeholder="Date started"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="description" class="form-control"><?php echo $project_description ?></textarea>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Image</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="file" accept="image/*">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group row text-right">
                                         <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                             <button type="submit" class="btn btn-space btn-primary">Submit</button>
