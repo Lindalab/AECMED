@@ -68,19 +68,22 @@
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i
+                                        class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i class="fa fa-fw fa-user-circle"></i>Fellows</a>
+                                <a class="nav-link" href="../AVI/fellows.php"><i
+                                        class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i class="fa fa-fw fa-user-circle"></i>Modules</a>
+                                <a class="nav-link" href="../AVI/modules.php"><i
+                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-rocket"></i>Projects</a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -96,10 +99,10 @@
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
+                                <a class="nav-link" href="events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fa fa-fw fa-rocket"></i>Grants</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -118,46 +121,53 @@
                                 Undergraduate Programs
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/businesses.php"><i class="fa fa-fw fa-user-circle"></i>Businesses</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/community entrepreneurship.php"><i class="fa fa-fw fa-user-circle"></i>Comm. Entrepreneurship</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Courses</a>
-                                <div id="submenu-5" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/courses.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fa-user-circle"></i>Campus Clubs</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-user-circle"></i>Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fa fa-fw fa-rocket"></i>Grants</a>
-                                <div id="submenu-6" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../TAC/grants external.php">External grants</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                        <a class="nav-link" href="../TAC/businesses.php"><i
+                                class="fab fa-black-tie"></i>Businesses</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../TAC/community entrepreneurship.php"><i
+                                class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                            data-target="#submenu-5" aria-controls="submenu-5"><i
+                                class="fa fa-fw fas fa-book"></i>Courses</a>
+                        <div id="submenu-5" class="collapse submenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../TAC/courses.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus
+                            Clubs</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
+                            data-target="#submenu-6" aria-controls="submenu-6"><i
+                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <div id="submenu-6" class="collapse submenu">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../TAC/grants external.php">External grants</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                             <br><br><br><br><br><br>
                         </ul>
                     </div>
