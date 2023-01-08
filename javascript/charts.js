@@ -5,6 +5,10 @@
 // );
 // document.head.appendChild(canvasJS);
 
+
+
+
+
 function draw(
   graph_type,
   container_name,
@@ -74,3 +78,4 @@ function draw(
   });
   chart.render();
 }
+

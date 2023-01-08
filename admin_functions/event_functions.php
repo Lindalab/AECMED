@@ -62,7 +62,7 @@ function show_events($event_id, $event_name, $event_type, $attendance,  $event_d
             <a href='../../forms/edit/edit-event.php?event_id=$event_id'>
                 <button class='btn btn-outline-warning'>Edit</button>
             </a>
-            <button class='btn btn-outline-danger'>Remove</button>
+            <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_events.php?event_id=$event_id')>Remove</button>
         </td>
     </tr>
         ";

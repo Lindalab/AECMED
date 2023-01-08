@@ -222,7 +222,7 @@
                                             </div>
                                             <div class="col-sm-4 col-lg-3">
                                                 <input data-parsley-type="number" type="number" required=""
-                                                placeholder="Female attendance" name="female_attendance" class="form-control">
+                                                placeholder="Female attendance" name="female_attendace" class="form-control">
                                             </div>
                                     </div>
                                     <div class="form-group row">
