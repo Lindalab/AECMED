@@ -1,18 +1,18 @@
 
 <?php 
-    require_once("../controllers/business_controller.php");
+    require_once dirname(__FILE__).("/../../controllers/business_controller.php");
 
-    $business_id=$_POST['business_id'];
-    $grant_id= $_POST['grant_id'];
-    $amount=$_POST['amount'];
+    $business_id=$_GET['business_id'];
+    $grant_id= $_GET['grant_id'];
+    $amount=$_GET['amount'];
     
 
     $insert =  add_business_grant_ctr($grant_id,$business_id, $amount);
 
     if($insert){
-        header("location: ../view/index.php?message=1");
+        echo 1;
     }else{
-        header("location:../view/index.php?message=2");
+        echo 2;
     }
 
 

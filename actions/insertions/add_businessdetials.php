@@ -1,6 +1,6 @@
 
 <?php 
-    require_once("../controllers/business_controller.php");
+    require_once dirname(__FILE__).("/../../controllers/business_controller.php");
 
     $business_id=$_POST['business_id'];
     $number_of_employees= $_POST['number_of_employees'];

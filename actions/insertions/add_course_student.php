@@ -1,5 +1,5 @@
 <?php 
-    require_once("../controllers/course_controller.php");
+    require_once dirname(__FILE__).("/../../controllers/course_controller.php");
 
     $insert = insert_course_student_ctr($_POST['course_id'], $_POST['females'], $_POST['males'], $_POST['year']);
 

@@ -1,6 +1,6 @@
 
 <?php 
-    require_once("../controllers/business_controller.php");
+    require_once dirname (__FILE__).("/../../controllers/business_controller.php");
 
     $business_id=$_POST['business_id'];
     $year= $_POST['year'];
@@ -10,9 +10,9 @@
     $insert =  report_business_revenue_ctr($business_id, $amount, $year);
 
     if($insert){
-        header("location: ../view/index.php?message=1");
+        echo 1;
     }else{
-        header("location:../view/index.php?message=2");
+        echo 2;
     }
 
 

@@ -1,6 +1,6 @@
 
 <?php 
-    require_once("../controllers/stakeholder_controller.php");
+    require_once dirname(__FILE__).("/../../controllers/stakeholder_controller.php");
 
     $stakeholder_id=$_POST['stakeholder_id'];
     $module_id= $_POST['module_id'];

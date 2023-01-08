@@ -43,7 +43,7 @@
     <a href='../../forms/edit/edit-project.php?project_id=$project_id'>
         <button class='btn btn-outline-warning'>Edit</button>
     </a>
-    <button class='btn btn-outline-danger'>Remove</button>
+    <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_project.php?project_id=$project_id')>Remove</button>
                                                        
     </td>
         </tr>";
