@@ -1,11 +1,9 @@
 <?php 
-        require_once dirname(__FILE__)."/../../functions/summary.php";
-        require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
+    require_once dirname(__FILE__)."/../../functions/summary.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 
-        $graph_1_data = graphing_data_for_years_and_business(D_Lab);
-        $graph_2_data = graphing_data_busines_type(D_Lab);
-        $graph_3_data = count_grant_type(D_Lab);
-         
+    require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
+    
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,7 +22,9 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - AVI Business</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../../javascript/delete.js"></script>
+    <title>AEC - AVI Grants</title>
 </head>
 
 <body>
@@ -68,54 +68,13 @@
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fab fa-black-tie"></i>Businesses</a>
+                                <a class="nav-link" href="business hybrid.php"><i class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fab fa-black-tie"></i>Fellows</a>
+                                <a class="nav-link" href="fellows.php"><i class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
-                                <div id="submenu-4" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../AVI/grants overview.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../AVI/grants internal.php">Internal grants</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="../AVI/grants external.php">External grants</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-divider">
-                                Design Lab
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
-                                <div id="submenu-3" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="projects overview.php">Overview</a>
-                                            </li>
-                                            <a class="nav-link" href="projects students.php">Student projects</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="projects fellows.php">Fellow projects</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                                <a class="nav-link" href="modules.php"><i class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
@@ -134,56 +93,87 @@
                                 </div>
                             </li>
                             <li class="nav-divider">
+                                Design Lab
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
+                                            </li>
+                                            <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-divider">
                                 Undergraduate Programs
                             </li>
                             <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/businesses.php"><i
-                                class="fab fa-black-tie"></i>Businesses</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/community entrepreneurship.php"><i
-                                class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-5" aria-controls="submenu-5"><i
-                                class="fa fa-fw fas fa-book"></i>Courses</a>
-                        <div id="submenu-5" class="collapse submenu">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/courses.php">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus
-                            Clubs</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-6" aria-controls="submenu-6"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-6" class="collapse submenu">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants external.php">External grants</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                                <a class="nav-link" href="../TAC/businesses.php"><i class="fab fa-black-tie"></i>Businesses</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/community entrepreneurship.php"><i class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/courses.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus Clubs</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/grants external.php">External grants</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                             <br><br><br><br><br><br>
                         </ul>
                     </div>
@@ -201,7 +191,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header">
                                 <!-- Title -->
-                                <h2 class="pageheader-title">Design Lab</h2>
+                                <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
                                 <!-- Breadcrumb -->
                                 <h5>Grants Overview</h5>
                             </div>
@@ -410,16 +400,66 @@
             </div>
         </div>
     </div>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="../../javascript/charts.js"></script>
-    <script>
-        draw("line", "graph_1", "Grants received over the past years", "amount_receieved", "year(s)", <?php echo $graph_1_data ?>);
 
-       draw("pie", "graph_2", "Amount Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
-
-       draw("doughnut", "graph_3", "Number Of Grant Type Received", "total amount($)", "grant type", <?php echo $graph_3_data ?>);
-
-    </script>
+    <!-- Add Business -->
+	<div id="businessModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="../admin/addproduct.php" method="POST" style="margin:5% 10%;" enctype="multipart/form-data">
+					<div class="modal-header">
+						<h4 class="modal-title" style="color: #051922; font-weight: bolder;">Register Business</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body"></div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="ptitle" style="color: #051922;font-weight: bold;">Business Name</label>
+						<input type="text" id="ptitle" name="busines_name" class="form-control" required />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="mycat" style="color: #051922;font-weight: bold;">Year started</label>
+                        <input type="text" id="ptitle" name="year_started" class="form-control" required />
+						
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="pprice" style="color: #051922;font-weight: bold;">Business address</label>
+						<input type="number" name="business_location" id="pprice" class="form-control" placeholder="Price" required />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="pdesc" style="color: #051922;font-weight: bold;">Business Contact</label>
+						<input type="text" name="business_contact" id="pdesc" class="form-control" required />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Email</label>
+						<input type="text" name="business_email" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Sector</label>
+						<input type="text" name="sector" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="department_id" style="color: #051922;font-weight: bold;">Business Department</label>
+						<?php getDepartmentDropdown_fnc();?>
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Description</label>
+						<input type="text" name="department_id" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+                    <div class="form-outline mb-4">
+						<label class="form-label" for="pkeyword" style="color: #051922;font-weight: bold;">Business Status</label>
+						<input type="text" name="business_status" id="pkeyword" class="form-control" placeholder="Keyword" />
+					</div>
+					<div class="form-outline mb-4">
+						<label class="form-label" for="pImage" style="color: #051922;font-weight: bold;">Business Logo</label>
+						<input type="file" name="pImage" id="business_logo" class="form-control" accept="image/*" required />
+					</div>
+					<div class="modal-footer">
+						<input type="button" class="btn btn-default" style="color: #051922;font-weight: bold;" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btnAdd btn-primary" name="submit" value="Register">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
