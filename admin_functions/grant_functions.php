@@ -14,7 +14,7 @@ function graphing_data_for_years_and_business($department)
     }
     return json_encode($dataPoints, JSON_NUMERIC_CHECK);
 }
-
+ 
 
 function displa_all_grant_types($department, $type)
 {
@@ -45,7 +45,7 @@ function grants_internal_row($grant_id, $name, $amount, $date)
             <a href='../../forms/edit/edit-grant.php?grant_id=$grant_id'>
                 <button class='btn btn-outline-warning'>Edit</button>
             </a>
-            <button class='btn btn-outline-danger'>Remove</button>
+            <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_grant.php?grant_id=$grant_id')>Remove</button>
         </td>
     </tr>
         ";
@@ -65,7 +65,7 @@ function grants_external_row($grant_id, $name, $amount, $date)
             <a href='../../forms/edit/edit-grant.php?grant_id=$grant_id'>
                 <button class='btn btn-outline-warning'>Edit</button>
             </a>
-            <button class='btn btn-outline-danger'>Remove</button>
+            <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_grant.php?grant_id=$grant_id')>Remove</button>
         </td>
     </tr>
         ";

@@ -19,12 +19,14 @@ function delete_action(link,value) {
                 //  alert(this.responseText);
                 
                 if (this.responseText == 1) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
+                    Swal.fire({
+                        title:'Deleted!',
+                        text: 'Your file has been deleted.',
+                        icon: 'success'
+                }).then(function(){
                     location.reload();
+                })
+                   
                 } else {
                     Swal.fire({
                         icon: 'error',

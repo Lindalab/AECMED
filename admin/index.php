@@ -364,7 +364,7 @@
     </div>
     </div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="../../javascript/charts.js"></script>
+    <script src="../javascript/charts.js"></script>
     <script>
         draw("line", "graph_1", "Revenue Generated Per Year", "amount($)", "year(s)", <?php echo $graph_1_data ?>);
 
