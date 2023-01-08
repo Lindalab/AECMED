@@ -264,8 +264,8 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Community Entrepreneurship</h5>
-                                        <a href="../../forms/add/add-business.php">
-                                            <button class="btn btn-primary">Add business +</button>
+                                        <a href="../../forms/add/add-project.php">
+                                            <button class="btn btn-primary">Add Project +</button>
                                         </a>
                                     </div>
                                     <div class="card-body p-0">
