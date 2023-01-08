@@ -3,6 +3,9 @@
     require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 
     require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
+
+    require_once dirname(__FILE__)."/../../admin_functions/grant_view_functions.php";
+
     
 ?>
 <!doctype html>

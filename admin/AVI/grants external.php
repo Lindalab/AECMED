@@ -1,7 +1,7 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/summary.php";
     require_once dirname(__FILE__)."/../../functions/dropdowns.php";
-
+    require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
     require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
     
 ?>
@@ -206,7 +206,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total number of external grants received</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1"><?php echo count_grant_type_and_department_ctr(D_Lab, EXTERNAL) ?></h1>
+                                            <h1 class="mb-1"><?php echo count_grant_type_and_department_ctr(AVI, EXTERNAL) ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -216,7 +216,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Total external grants amount</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(D_Lab,EXTERNAL)['amount'] ?></h1>
+                                            <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(AVI,EXTERNAL)['amount'] ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -241,7 +241,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                <?php displa_all_grant_types(D_Lab, EXTERNAL) ?>
+                                                <?php displa_all_grant_types(AVI, EXTERNAL) ?>
 
                                                     <!-- <tr>
                                                         <td>Company #1 </td>
