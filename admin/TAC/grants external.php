@@ -38,15 +38,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto navbar-right-top">
-                        <li class="nav-item">
-                            <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" type="text" placeholder="Search..">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
             </nav>
         </div>
         <!-- ============================================================== -->
@@ -68,7 +59,7 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../summary.php"><i class="fa fa-fw fa-sticky-note"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-sticky-note"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
@@ -84,6 +75,22 @@
                             <li class="nav-item ">
                                 <a class="nav-link" href="../AVI/modules.php"><i
                                         class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../AVI/grants overview.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../AVI/grants internal.php">Internal grants</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../AVI/grants external.php">External grants</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
                             <li class="nav-divider">
                                 Design Lab

@@ -1,9 +1,13 @@
-<?php
-require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.php";
+<?php 
+    require_once dirname(__FILE__)."/../../functions/summary.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
+
+    require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
+    
 ?>
 <!doctype html>
 <html lang="en">
-
+ 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,7 +22,9 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
-    <title>AEC - D-Lab External Grants</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../../javascript/delete.js"></script>
+    <title>AEC - AVI Grants</title>
 </head>
 
 <body>
@@ -32,9 +38,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <a class="navbar-brand" href="../index.php">AEC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
@@ -49,8 +53,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -59,36 +62,32 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../index.php"><i
-                                        class="fa fa-fw fa-sticky-note"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-sticky-note"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fab fa-black-tie"></i>Businesses</a>
+                                <a class="nav-link" href="business hybrid.php"><i class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fab fa-black-tie"></i>Fellows</a>
+                                <a class="nav-link" href="fellows.php"><i class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
+                                <a class="nav-link" href="modules.php"><i class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../AVI/grants overview.php">Overview</a>
+                                            <a class="nav-link" href="grants overview.php">Overview</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../AVI/grants internal.php">Internal grants</a>
+                                            <a class="nav-link" href="grants internal.php">Internal grants</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="../AVI/grants external.php">External grants</a>
+                                            <a class="nav-link active" href="grants external.php">External grants</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -97,104 +96,92 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fa fa-fw fa-clipboard"></i>Projects</a>
-                                <div id="submenu-3" class="collapse submenu">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="projects overview.php">Overview</a>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="../D-Lab/projects overview.php">Overview</a>
+                                            </li>
+                                            <a class="nav-link" href="../D-Lab/projects students.php">Student projects</a>
                                         </li>
-                                        <a class="nav-link" href="projects students.php">Student projects</a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/projects fellows.php">Fellow projects</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="projects fellows.php">Fellow projects</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/grants internal.php">Internal grants</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../D-Lab/grants external.php">External grants</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </li>
+                            <li class="nav-divider">
+                                Undergraduate Programs
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/businesses.php"><i class="fab fa-black-tie"></i>Businesses</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/community entrepreneurship.php"><i class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/courses.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus Clubs</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="../TAC/grants external.php">External grants</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <br><br><br><br><br><br>
                         </ul>
                     </div>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="events.php"><i
-                                class="fa fa-fw fa-calendar-alt"></i>Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-4" aria-controls="submenu-4"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-4" class="collapse submenu">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="grants overview.php">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="grants internal.php">Internal grants</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="grants external.php">External grants</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-divider">
-                        Undergraduate Programs
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/businesses.php"><i
-                                class="fab fa-black-tie"></i>Businesses</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/community entrepreneurship.php"><i
-                                class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-5" aria-controls="submenu-5"><i
-                                class="fa fa-fw fas fa-book"></i>Courses</a>
-                        <div id="submenu-5" class="collapse submenu">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/courses.php">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/student projects.php">Student projects</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus
-                            Clubs</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../TAC/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-6" aria-controls="submenu-6"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-6" class="collapse submenu">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants internal.php">Internal grants</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../TAC/grants external.php">External grants</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <br><br><br><br><br><br>
-                    </ul>
+                </nav>
             </div>
-            </nav>
         </div>
-    </div>
-    <!-- Main page -->
-    <div class="dashboard-wrapper">
+        <!-- Main page -->
+        <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
             <div class="container-fluid dashboard-content ">
                 <!-- ============================================================== -->
@@ -204,7 +191,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
                             <!-- Title -->
-                            <h2 class="pageheader-title">Design Lab</h2>
+                            <h2 class="pageheader-title">Ashesi Venture Incubator</h2>
                             <!-- Breadcrumb -->
                             <h5>External Grants</h5>
                             <div class="page-breadcrumb">
@@ -279,7 +266,4 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
     <script src="../assets/vendor/charts/c3charts/c3.min.js"></script>
     <script src="../assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
     <script src="../assets/vendor/charts/c3charts/C3chartjs.js"></script>
-    <script src="../assets/libs/js/dashboard-ecommerce.js"></script>
-</body>
-
-</html>
+    <script src="../assets/libs/js/dashboard-ecommerce.js"></script></body></html>
