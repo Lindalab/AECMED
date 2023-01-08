@@ -23,6 +23,9 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+   
+    
+
     <script src="../../javascript/delete.js"></script>
     <title>AEC - Undergraduate Programs Events</title>
 
@@ -69,24 +72,19 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fab fa-black-tie"></i>Businesses</a>
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fab fa-black-tie"></i>Fellows</a>
+                                <a class="nav-link" href="../AVI/fellows.php"><i class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
+                                <a class="nav-link" href="../AVI/modules.php"><i class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-divider">
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fa fa-fw fa-clipboard"></i>Projects</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -102,13 +100,10 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
-                                class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                        <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-4" aria-controls="submenu-4"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -123,73 +118,73 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                             </ul>
                         </div>
                     </li>
-                            <li class="nav-divider">
-                                Undergraduate Programs
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="businesses.php"><i class="fab fa-black-tie"></i>Businesses</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
-                                <div id="submenu-5" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="courses.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="student projects.php">Student projects</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus Clubs</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" href="events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
-                                <div id="submenu-6" class="collapse submenu" style="">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="grants overview.php">Overview</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="grants internal.php">Internal grants</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="grants external.php">External grants</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <br><br><br><br><br><br>
-                        </ul>
-                    </div>
-                </nav>
+                    <li class="nav-divider">
+                        Undergraduate Programs
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="businesses.php"><i class="fab fa-black-tie"></i>Businesses</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
+                        <div id="submenu-5" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="courses.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="student projects.php">Student projects</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="clubs.php"><i class="fa fa-fw fas fa-people-carry"></i>Campus Clubs</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
+                        <div id="submenu-6" class="collapse submenu" style="">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grants overview.php">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grants internal.php">Internal grants</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="grants external.php">External grants</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <br><br><br><br><br><br>
+                    </ul>
             </div>
+            </nav>
         </div>
-        <!-- Main page -->
-        <div class="dashboard-wrapper">
-            <div class="dashboard-ecommerce">
-                <div class="container-fluid dashboard-content ">
-                    <!-- ============================================================== -->
-                    <!-- pageheader  -->
-                    <!-- ============================================================== -->
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="page-header">
-                                <!-- Title -->
-                                <h2 class="pageheader-title">Undergraduate Programs</h2>
-                                <!-- Breadcrumb -->
-                                <h5>Events</h5>
-                            </div>
+    </div>
+    <!-- Main page -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content ">
+                <!-- ============================================================== -->
+                <!-- pageheader  -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <!-- Title -->
+                            <h2 class="pageheader-title">Undergraduate Programs</h2>
+                            <!-- Breadcrumb -->
+                            <h5>Events</h5>
                         </div>
                     </div>
+                </div>
 
                 <div class="ecommerce-widget">
                     <!-- Top row cards -->
@@ -287,7 +282,7 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                                                     <th class="border-0">Actions</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="tbody">
                                                 <?php display_all_events(TAC) ?>
                                                 <!-- <tr>
                                                         <td>Event #1 </td>
@@ -344,9 +339,7 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                                                                                                                 ?>);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script>
- 
-    </script>
+
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

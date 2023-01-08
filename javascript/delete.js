@@ -1,4 +1,4 @@
-function delete_action(link,value) {
+function delete_action(link) {
             
 
     Swal.fire({
