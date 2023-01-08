@@ -1,12 +1,12 @@
 <?php 
-    require_once("../controllers/business_controller.php");
-    $business_id=$_POST['business_id'];
+    require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+    $business_id=$_GET['business_id'];
     $delete = delete_business_ctr($business_id);
 
     if($delete){
-        header("location: ../view/index.php?message=1");
+        echo 1;
     }else{
-        header("location:../view/index.php?message=2");
+       echo 2;
     }
 
 

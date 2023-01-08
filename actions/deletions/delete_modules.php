@@ -1,12 +1,12 @@
 <?php 
-    require_once("../controllers/module_controller.php");
-    $module_id=$_POST['module_id'];
+    require_once dirname(__FILE__)."/../../controllers/module_controller.php";
+    $module_id=$_GET['module_id'];
     $delete = delete_module_ctr($module_id);
 
     if($delete){
-        header("location: ../view/index.php?message=1");
+        echo 1;
     }else{
-        header("location:../view/index.php?message=2");
+        echo 2;
     }
 
 

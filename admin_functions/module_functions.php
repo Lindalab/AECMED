@@ -31,7 +31,7 @@ function showSingleModule($module_id,$moduleName,$totalStudents)
     <a href='../../forms/edit/edit-module.php'>
         <button class='btn btn-outline-warning'>Edit</button>
     </a>
-    <button class='btn btn-outline-danger'>Remove</button>
+    <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_modules.php?module_id=$module_id')>Remove</button>
 
         </td>
     </tr>
