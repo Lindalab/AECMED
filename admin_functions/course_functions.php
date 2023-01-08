@@ -44,7 +44,7 @@
     <button class='btn btn-outline-info'>View</button>
 </a>
 <button class='btn btn-outline-warning'>Edit</button>
-<button class='btn btn-outline-danger'>Remove</button>
+<button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_project.php?project_id=$project_id')>Remove</button>
     </td>
         </tr>";
         
@@ -89,7 +89,7 @@
         <a href='../../forms/edit/edit-course.php'>
             <button class='btn btn-outline-warning'>Edit</button>
         </a>
-        <button class='btn btn-outline-danger'>Remove</button>
+        <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_course.php?course_id=$course_id')>Remove</button>
         </td>
     </tr>";
     }

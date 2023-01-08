@@ -1,13 +1,13 @@
 <?php 
 
-    require_once("../controllers/project_controller.php");
+    require_once dirname(__FILE__)."/../../controllers/project_controller.php";
 
-    $deleted = delete_project_ctr($_POST['project_id']);
+    $deleted = delete_project_ctr($_GET['project_id']);
 
     if($deleted){
-        header("location: ../view/index.php?message=1");
+        echo 1;
     }else{
-        header("location:../view/index.php?message=2");
+       echo 2;
     }
 
 ?>
