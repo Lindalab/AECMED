@@ -94,9 +94,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->update_business_revenue($business_id, $amount, $year);
     }
 
-    function delete_business_revenue_ctr($business_id){
+    function delete_business_revenue_ctr($business_id, $year){
         $business = new Business;
-        return $business->delete_business_revenue($business_id);
+        return $business->delete_business_revenue($business_id, $year);
     }
 
     function select_one_business_revenue($business_id){

@@ -227,8 +227,9 @@
             return $this->db_query($sql);
         }
 
-        function delete_business_revenue($business_id){
-            $sql = "DELETE FROM `business_revenue` WHERE `business_id`='$business_id' ";
+        function delete_business_revenue($business_id, $year){
+            $sql = "DELETE FROM `business_revenue` WHERE `business_id`='$business_id' and revenue_year = '$year' ";
+            
             return $this->db_query($sql);
         }
         

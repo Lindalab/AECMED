@@ -52,17 +52,17 @@ function business_grants($grant_id, $name, $amount,$date){
 function display_business_revenue($business_id){
     $revenue_list = select_one_business_revenue($business_id);
     foreach($revenue_list as $revenue){
-        show_business_revenue_row($revenue['revenue_amount'], $revenue['revenue_year']);
+        show_business_revenue_row($business_id, $revenue['revenue_amount'], $revenue['revenue_year']);
     }
 }
 
-function show_business_revenue_row($revenue, $year){
+function show_business_revenue_row($business_id,$revenue, $year){
     echo "<tr>
     <td>$year</td>
     <td>$$revenue</td>
     <td>
         <button class='btn btn-outline-warning'>Edit</button>
-        <button class='btn btn-outline-danger'>Remove</button>
+        <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_revenue.php?business_id=$business_id&year=$year')>Remove</button>
     </td>
 </tr>";
 }
