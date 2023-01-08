@@ -273,7 +273,9 @@ class Grant extends db_connection
 
      }
 
-     function delete_business_grant(){
-        
+     function delete_business_grant($business_id, $grant_id, $date_received){
+        $sql = "DELETE FROM `business_grants` WHERE grant_id = '$grant_id' and business_id = '$business_id' and date = '$date_received'";
+
+        return $this->db_query($sql);
      }
 }

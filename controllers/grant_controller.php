@@ -175,5 +175,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->list_sum_grant_per_year();
     }
 
+
+
+    function delete_business_grant_ctr($business_id, $grant_id, $date_received){
+        $grant = new Grant;
+        return $grant->delete_business_grant($business_id, $grant_id, $date_received);
+    }
    
 ?>

@@ -4,7 +4,7 @@
     $business_id = $_GET['business_id'];
 
     $business = select_one_business_ctr($business_id);
-    $name = $business['business_name'];
+    $name = $business['busines_name'];
     $email = $business['business_email'];
     $contact = $business['business_contact'];
     $sector = $business['sector'];
