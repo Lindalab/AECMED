@@ -1,3 +1,8 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/course_functions.php";
+    $course_id = $_GET['course_id'];
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -15,6 +20,8 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../../javascript/delete.js"></script>
     <title>AEC - Undergraudate Programs Courses</title>
 </head>
 
@@ -223,7 +230,7 @@
                                     <br>
                                     <h5>
                                             Course Projects 
-                                            <button class="btn btn-outline-primary">Add course +</button>
+                                            <button class="btn btn-outline-primary">Add Project +</button>
                                         </h5>
                                             <div class="table-responsive">
                                             <table class="table">
@@ -237,41 +244,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Company #1 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>Active</td>
-                                                        <td>
-                                                            <a href="projects students view.php">
-                                                                <button class="btn btn-outline-info">View</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Company #2 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>Active</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Company #3 </td>
-                                                        <td>67 </td>
-                                                        <td>27-08-2018</td>
-                                                        <td>Active</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
+                                                <?php display_course_projects($course_id)?>
+                                               
                                                 </tbody>
                                             </table>
                                             </div> <br>

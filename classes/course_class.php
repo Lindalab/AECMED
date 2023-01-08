@@ -38,6 +38,12 @@ class course extends db_connection
         return $this->db_fetch_one($sql);
     }
 
+    function select_one_course_name($course_name){
+        $sql = "SELECT * FROM `course` WHERE course_name LIKE '%$course_name%' ";
+
+        return $this->db_fetch_one($sql);
+    }
+
     function select_course_under_dpt($department)
     {
         $sql = " SELECT * FROM `course` WHERE `department_id`='$department' ";

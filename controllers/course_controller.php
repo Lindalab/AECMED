@@ -27,6 +27,11 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         return $course->select_one_course($course_id);
     }
 
+    function select_one_course_name_ctr($course_name){
+        $course = new course;
+        return $course->select_one_course_name($course_name);   
+    }
+
     function select_course_under_dpt_ctr($department){
         $course = new course;
         return $course->select_course_under_dpt($department);
@@ -107,6 +112,8 @@ require_once dirname(__FILE__)."/../classes/course_class.php";
         $course = new course;
         return $course->select_course_project($course_id);
     }
+
+    
 
     function count_course_student_gender_ctr($course_id){
         $course = new course;

@@ -5,6 +5,22 @@
     require_once dirname(__FILE__)."/../controllers/grant_controller.php";
     
 
+    function display_course_projects($course_id){
+        $projectList = select_course_project($course_id);
+        $project_name = "";
+        $grant_received = "";
+        $date = "";
+        $status = "";
+        foreach($projectList as $project){
+            $project_id = $project['project_id'];
+            $project_name = $project['project_name'];
+            $date = $project['date_started'];
+            $status = project_status($project['project_status']);
+            $grant_received = sum_grant_for_project_ctr($project_id)['amount'];
+            student_projects_row($project_id,$project_name, $grant_received, $date, $status);
+        }
+    }
+
     function list_student_project_row(){
         // $department = 3;
         $projectList = select_project_under_dpt_ctr(TAC);

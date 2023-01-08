@@ -1,3 +1,45 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/course_functions.php";
+    $course = select_one_course_name_ctr('Community Entrepreneurship');
+
+    if($course === NULL){
+        echo "<script> 
+            alert('There is no course as community Entrepreneurship. Kindly create One From The Courses Table');
+            window.location = './courses.php';
+        </script>";
+        return;
+    }
+    
+    
+
+    $course_id = $course['course_id'];
+
+    $project_numbers = count_course_project_ctr($course_id);
+    $count_projects = 0;
+
+    if($project_count != NULL){
+      $count_projects =  $project_numbers['count'];
+    }
+
+    $students = selet_a_course_student_ctr($course_id);
+    $count_students = 0;
+
+    if($students != NULL){
+        if($students['count'] != NULL)
+        $count_students = $students['count'];
+    }
+
+    $grant = grant_for_course_ctr($course_id);
+
+    $grant_sum = 0;
+    if($grant != NULL){
+        if ($grant['amount'] != NULL)
+        $grant_sum = $grant['amount'];
+    }
+    
+ 
+
+?>
 <!doctype html>
 <html lang="en">
  
@@ -187,9 +229,9 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Revenue generated</h5>
+                                        <h5 class="text-muted">Number Of Projects</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$78</h1>
+                                            <h1 class="mb-1"><?php echo  $count_projects?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -197,9 +239,9 @@
                             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="text-muted">Employment Created</h5>
+                                        <h5 class="text-muted">Students Number</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">55</h1>
+                                            <h1 class="mb-1"><?php echo $count_students ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +251,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Grants received</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$500</h1>
+                                            <h1 class="mb-1">$<?php echo $grant_sum ?></h1>
                                         </div>
                                     </div>
                                 </div>
@@ -229,44 +271,17 @@
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Business Name</th>
-                                                        <th class="border-0">Employment Created</th>
-                                                        <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Business Sector</th>
-                                                        <th class="border-0">Date Created</th>
+                                                        <th class="border-0">Project Name</th>
+                                                        <th class="border-0">Date Started</th>
+                                                        <th class="border-0">Grant Received</th>
+                                                        <th class="border-0">Status</th>
+                                    
                                                         <th class="border-0">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <a href="community entreprenuership view.php"></a>
-                                                            <button class="btn btn-outline-info">View</button>
-                                                            <a href="../../forms/edit/edit-business.php">
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
+                                                    <?php display_course_projects($course_id)?>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
