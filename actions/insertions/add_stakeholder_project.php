@@ -1,5 +1,5 @@
 <?php 
-    require_once("../controllers/project_controller.php");
+    require_once dirname(__FILE__).("/../../controllers/project_controller.php");
 
     if(!empty($_POST['stakeholders'])) {
         foreach($_POST['stakeholders'] as $selected){
