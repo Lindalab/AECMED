@@ -168,7 +168,7 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-        draw("pie", "gender_graph", "Division Of Fellow by gender", "Fellows", "Gender", <?php echo  $graph_1_data ?>);
+      draw("pie", "gender_graph", "Division Of Fellow by gender", "Fellows", "Gender", <?php echo  $graph_1_data ?>);
 
 
       draw("column", "bar", " Cohorts And Number Of Individualw", "", "", <?php  echo  $graph_2_data ?>);

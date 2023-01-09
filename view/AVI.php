@@ -5,6 +5,12 @@ require_once dirname(__FILE__)."/../controllers/stakeholder_controller.php";
 require_once dirname(__FILE__)."/../controllers/business_controller.php";
 require_once dirname(__FILE__)."/../controllers/grant_controller.php";
 require_once dirname(__FILE__)."/../functions/displayBusiness.php";
+require_once dirname(__FILE__)."/../functions/tac_businesses.php";
+require_once dirname(__FILE__)."/../functions/tac_grant.php";
+
+$business_revenue = business_revenue_in_last_four_years(AVI);
+$graph_2_data = graphing_data_for_years_and_business(AVI);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,6 +156,35 @@ require_once dirname(__FILE__)."/../functions/displayBusiness.php";
                 </a>
             </ul>
         </header>
+
+        <section class="data-viz mt-5">
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id="revenue_generated">
+                    <!-- Line graph -->
+                </div>
+                <figcaption class="text-center">
+                    <!-- Grants received over the past four(4) years -->
+                </figcaption>
+            </figure>
+            <figure>
+                <!-- Bar Graph -->
+                <div class="bgraph" id="grant_received">
+                    <!-- Line graph -->
+                </div>
+                <figcaption class="text-center">
+                    <!-- Grants received over the past four(4) years -->
+                </figcaption>
+            </figure>
+        </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+       draw("area", "revenue_generated", "Total Business Revenue Generated over the past four(4) years", "$amount in dollars", "years", <?php echo $business_revenue ?>);
+    
+       draw("line", "grant_received", " Grant Received over the past four(4) years", "total amount($)", "grant type", <?php echo  $graph_2_data ?>);
+
+    </script>
 </body>
 </html>
