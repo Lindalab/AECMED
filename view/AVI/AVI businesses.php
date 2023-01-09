@@ -205,15 +205,15 @@ $business_revenue = business_revenue_in_last_four_years(AVI);
                  <!-- Line Graph to show the progression of revenue generated from business -->
                 </figcaption>
             </figure>
-            <figure>
+            <!-- <figure> -->
                 <!-- Bar Graph -->
-                <div class="bgraph" id = "graph_2">
+                <!-- <div class="bgraph" id = "graph_2">
                     Pie Chart
                 </div>
                 <figcaption class="text-center">
                     Pie chart to show the gender division of Business owners
-                </figcaption>
-            </figure>
+                </figcaption> -->
+            <!-- </figure> -->
         </section>
     </main>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
