@@ -1,6 +1,7 @@
 <?php
 require_once dirname(__FILE__)."/../controllers/business_controller.php";
 
+
 function showAllBusiness_fnc($department)
 {
     $data = business_data_ctr($department);
@@ -48,3 +49,5 @@ function showSingleBusiness($business_id,$businessName,$number_of_employees,$rev
               
     ";
 }
+
+

@@ -58,6 +58,17 @@
              and business.department_id= '$department'";
             return $this->db_fetch_all($sql);
         }
+
+        function get_fellows_by_gender($department){
+            $sql = "SELECT stakeholder.gender, count(stakeholder.gender) as count
+            FROM stakeholder,cohort,cohort_business,business,stakeholder_business 
+            WHERE stakeholder.stakeholder_id=stakeholder_business.stakeholder_id 
+            and stakeholder_business.business_id=business.business_id 
+            and business.business_id=cohort_business.business_id 
+            and cohort_business.cohort_id=cohort.cohort_id
+            and business.department_id= $department GROUP BY stakeholder.gender;";
+            return $this->db_fetch_all($sql);
+        }
     }
 
 ?>

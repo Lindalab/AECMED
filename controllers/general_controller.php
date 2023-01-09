@@ -17,4 +17,12 @@ function project_status($status){
         return "completed";
     }
 }
+
+function get_gender($gender){
+    if($gender === 1){
+        return "male";
+    }else{
+        return "female";
+    }
+}
 ?>

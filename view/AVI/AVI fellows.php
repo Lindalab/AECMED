@@ -1,5 +1,8 @@
 <?php 
     require_once dirname(__FILE__)."/../../functions/displayStakeholders.php";
+    $graph_1_data = fellow_gender_data(AVI);
+    $graph_2_data = cohort_numbers();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,23 +147,32 @@
         <section class="data-viz mt-5">
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
-                    Line graph
-                </canvas>
+                <div class="bgraph" id="gender_graph">
+                    <!-- Line graph -->
+                </div>
                 <figcaption class="text-center">
-                    Grants received over the past four(4) years
+                    <!-- Grants received over the past four(4) years -->
                 </figcaption>
             </figure>
             <figure>
                 <!-- Bar Graph -->
-                <canvas class="bgraph">
+                <div class="bgraph" id="bar">
                     Bar graph
-                </canvas>
+                </div>
                 <figcaption class="text-center">
-                    Grant Type over the past four(4) years
+                    <!-- Grant Type over the past four(4) years -->
                 </figcaption>
             </figure>
         </section>
     </main>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../../javascript/charts.js"></script>
+    <script>
+        draw("pie", "gender_graph", "Division Of Fellow by gender", "Fellows", "Gender", <?php echo  $graph_1_data ?>);
+
+
+      draw("column", "bar", " Cohorts And Number Of Individualw", "", "", <?php  echo  $graph_2_data ?>);
+
+       </script>
 </body>
 </html>

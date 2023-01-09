@@ -1,5 +1,7 @@
 <?php
 require_once dirname(__FILE__) . "/../controllers/stakeholder_controller.php";
+require_once dirname(__FILE__)."/../controllers/general_controller.php";
+require_once dirname(__FILE__) . "/../controllers/cohort_controller.php";
 
 function showAllAviFellows_fnc($department)
 {
@@ -47,4 +49,25 @@ function  showSingleFellow($stakeholder_id,$name,$gender,$email,$stakeholder_ima
         </td>
     </tr>
     ";
+}
+
+function fellow_gender_data($department){
+    $data = get_fellows_by_gender_ctr($department);
+    $dataPoints = array();
+    foreach($data as $value){
+        array_push($dataPoints, array("y"=>$value['count'], "label"=>get_gender($value['gender'])));
+    }
+
+    return json_encode($dataPoints, JSON_NUMERIC_CHECK);
+}
+
+
+function cohort_numbers(){
+    $data = cohort_stakeholder_by_year_ctr();
+    $dataPoints = array();
+    foreach($data as $value){
+        array_push($dataPoints, array("y"=>$value['count'], "label"=>$value['cohort_year']));
+    }
+
+    return json_encode($dataPoints, JSON_NUMERIC_CHECK);
 }

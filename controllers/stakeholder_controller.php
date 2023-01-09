@@ -44,4 +44,9 @@
         $user = new Stakeholder;
         return $user->get_avi_fellows($department);
     }
+
+    function get_fellows_by_gender_ctr($department){
+        $user = new Stakeholder;
+        return $user->get_fellows_by_gender($department);
+    }
 ?>
