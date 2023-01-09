@@ -46,16 +46,16 @@
             return $this->db_count();
         }
 
-        function get_avi_fellows(){
-            $sql="SELECT stakeholder.stakeholder_id as stakeholder_id ,stakeholder.first_name as first_name,stakeholder.last_name as last_name,
-            stakeholder.gender as gender,stakeholder.email as email,stakeholder.stakeholder_image as stakeholder_image,cohort.cohort_name as cohort_name,
-            cohort.cohort_year as cohort_year,business.busines_name as business_name,business.busines_id as business_id,
+        function get_avi_fellows($department){
+            $sql="SELECT stakeholder.stakeholder_id as stakeholder_id ,stakeholder.first_name as first_name, stakeholder.last_name as last_name,
+            stakeholder.gender as gender, stakeholder.email as email, stakeholder.stakeholder_image as stakeholder_image,cohort.cohort_name as cohort_name,
+            cohort.cohort_year as cohort_year,business.busines_name as business_name,business.business_id as business_id, stakeholder.phone_number as phone
              FROM stakeholder,cohort,cohort_business,business,stakeholder_business 
              WHERE stakeholder.stakeholder_id=stakeholder_business.stakeholder_id 
              and stakeholder_business.business_id=business.business_id 
              and business.business_id=cohort_business.business_id 
              and cohort_business.cohort_id=cohort.cohort_id
-             and business.department_id= 1";
+             and business.department_id= '$department'";
             return $this->db_fetch_all($sql);
         }
     }

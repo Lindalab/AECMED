@@ -1,3 +1,8 @@
+<?php 
+    require_once dirname(__FILE__).("/../../admin_functions/stakeholder_functions.php");
+
+?>
+
 <!doctype html>
 <html lang="en">
  
@@ -15,6 +20,8 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../../javascript/delete.js"></script>
     <title>AEC - AVI Business</title>
 </head>
 
@@ -240,45 +247,20 @@
                                             <table class="table">
                                                 <thead class="bg-light">
                                                     <tr class="border-0">
-                                                        <th class="border-0">Business Name</th>
-                                                        <th class="border-0">Employment Created</th>
-                                                        <th class="border-0">Revenue generated</th>
-                                                        <th class="border-0">Business Sector</th>
-                                                        <th class="border-0">Date Created</th>
+                                                        <th class="border-0">First Name</th>
+                                                        <th class="border-0">Last Name</th>
+                                                        <th class="border-0">Gender</th>
+                                                        <th class="border-0">Email</th>
+                                                        <th class="border-0">Phone</th>
+                                                        <th class="border-0">Cohort</th>
                                                         <th class="border-0">Actions</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>Business #1 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <a href="fellows view.php">
-                                                                <button class="btn btn-outline-info">View</button>
-                                                            </a>
-                                                            <a href="../../forms/edit/edit-business.php">
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                            </a>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #2 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Business #3 </td>
-                                                        <td>67 </td>
-                                                        <td>$80.00</td>
-                                                        <td>Cooking</td>
-                                                        <td>27-08-2018</td>
-                                                    </tr>
+                                                    <?php 
+                                                        display_fellow(AVI);
+                                                    ?>
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>

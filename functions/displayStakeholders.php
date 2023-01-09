@@ -1,9 +1,9 @@
 <?php
 require_once dirname(__FILE__) . "/../controllers/stakeholder_controller.php";
 
-function showAllAviFellows_fnc()
+function showAllAviFellows_fnc($department)
 {
-    $data = get_avi_fellows_ctr();
+    $data = get_avi_fellows_ctr($department);
     foreach ($data as $module) {
 
         $stakeholder_id = $module['stakeholder_id'];

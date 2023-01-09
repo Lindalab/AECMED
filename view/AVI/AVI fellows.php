@@ -100,7 +100,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php showAllAviFellows_fnc();?>
+                    <?php showAllAviFellows_fnc(AVI);?>
                     <!-- <tr>
                         <td>
                             Fellow Cohort

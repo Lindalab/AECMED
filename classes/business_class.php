@@ -237,7 +237,7 @@
          * show one business revenue ordered by year
          */
         function select_one_business_revenue($business_id){
-            $sql = "SELECT * FROM `business_revenue` WHERE `business_id`= '$business_id'";
+            $sql = "SELECT * FROM `business_revenue` WHERE `business_id`= '$business_id' ORDER BY revenue_year DESC";
             return $this->db_fetch_all($sql);
         }
 
