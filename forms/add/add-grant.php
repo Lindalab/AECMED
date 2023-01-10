@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../controllers/grant_controller.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -207,9 +208,7 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
-                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
-                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
-                                                <option value="<?php echo D_Lab ?>">Design Lab</option>
+                                            <?php show_department_dropdown($_GET['department']) ?>
                                             </select>
                                         </div>
                                     </div>
@@ -226,8 +225,9 @@
                                             <!-- <input type="text" required="" placeholder="Grant type"
                                                 class="form-control"> -->
                                             <select name="grant_type" id="" class="form-control">
-                                                <option value="<?php echo INTERNAL ?>">Internal Grant</option>
-                                                <option value="<?php echo EXTERNAL ?>">External Grant</option>
+                                                <?php grant_type_dropdown($_GET['type']); ?>
+                                                <!-- <option value="<?php //echo INTERNAL ?>">Internal Grant</option>
+                                                <option value="<?php //echo EXTERNAL ?>">External Grant</option> -->
                                             </select>
                                         </div>
                                     </div>

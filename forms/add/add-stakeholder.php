@@ -1,3 +1,7 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/stakeholder_controller.php";
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -192,22 +196,22 @@
                         <div class="card">
                             <h5 class="card-header">Add a stakeholder</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_stakeholder.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Name</label>
                                         <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
-                                            <input id="name" type="text" required="" placeholder="First Name" class="form-control">
+                                            <input id="name" type="text" required="" placeholder="First Name" name="fname" class="form-control">
                                         </div>
                                         <div class="col-sm-4 col-lg-3">
-                                            <input type="text" required="" data-parsley-equalto="#name" placeholder="Last Name" class="form-control">
+                                            <input type="text" required=""  placeholder="Last Name" name="lname" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder role</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                            <select name="role" id="" class="form-control">
+                                                <option value="<?php echo STUDENT ?>">Student</option>
+                                                <option value="<?php echo LECTURER ?>">Lecturer</option>
                                             </select>
                                         </div>
                                     </div>
@@ -215,42 +219,42 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder gender</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="gender" id="" class="form-control">
-                                                <option value="">Male</option>
-                                                <option value="">Female</option>
+                                                <option value="<?php echo  MALE?>">Male</option>
+                                                <option value="<?php echo FEMALE ?>">Female</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder E-Mail</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="email" required="" data-parsley-type="email"
+                                            <input type="email" required="" data-parsley-type="email" name="email"
                                                 placeholder="Enter a valid e-mail" class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Contact</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input data-parsley-type="number" type="number" required=""
+                                            <input data-parsley-type="number" type="number" required="" name="phone_number"
                                                 placeholder="Enter only numbers" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="date" required="" placeholder="Date started"
                                                 class="form-control">
                                         </div>
-                                    </div>
-                                    <div class="form-group row">
+                                    </div> -->
+                                    <!-- <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <textarea required="" class="form-control"></textarea>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Image</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="file" accept="image/*">
+                                            <input name="stakeholder_image" type="file" accept="image/*">
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

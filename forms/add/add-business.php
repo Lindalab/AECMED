@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -207,8 +208,9 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department_id" id="" class="form-control">
-                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
-                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                                <?php show_department_dropdown($_GET['department']) ?>
+                                                <!-- <option value="<?php // echo AVI ?>">Ashesi Venture Incubator</option>
+                                                <option value="<?php // echo TAC ?>">Undergraduate Programs</option> -->
                                             </select>
                                         </div>
                                     </div>

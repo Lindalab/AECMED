@@ -23,6 +23,9 @@ define("MALE", "2");
 define("FEMALE", "1");
 define("INACTIVE", "2");
 define("ACTIVE", "1");
+define("STUDENT", "1");
+define("LECTURER", "2");
+
 
 
 ?>
