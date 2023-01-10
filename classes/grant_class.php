@@ -205,6 +205,12 @@ class Grant extends db_connection
         return $this->db_fetch_one($sql);
     }
 
+    function total_grant_for_business_in_dpt_ctr($department){
+        $sql = "SELECT SUM(business_grants.amount) as amount FROM `grants`,business_grants,business WHERE business.business_id=business_grants.business_id and  grants.grant_id=business_grants.grant_id  and business.department_id='$department'";
+
+        return $this->db_fetch_one($sql);
+    }
+
 
     function grant_for_a_business_per_year($business_id, $year){
         $sql = "SELECT * FROM `business_grants` WHERE business_id='$business_id' and EXTRACT(YEAR FROM grants.date_received)= '$year'  ";

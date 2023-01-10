@@ -145,7 +145,7 @@ $graph_2_data = graphing_data_for_years_and_business(AVI);
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-9">
-                                    <h5 class="card-title">Total Employment Created - <?php echo business_employment_created_by_dpt_ctr(AVI)['numbers'];?></h5>
+                                    <h5 class="card-title">Total Employment Created - <?php echo business_employment_created_by_dpt_ctr(AVI)['number'];?></h5>
                                 </div>
                                 <div class="col-3">
                                     <img class="card-icons" src="../assets/employment-icon.svg" alt="Employment created image">

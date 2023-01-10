@@ -224,7 +224,7 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Grants received</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">$<?php echo $tac_grants ?></h1>
+                                            <h1 class="mb-1">$<?php echo $tac_business_grant_received ?></h1>
                                         </div>
                                     </div>
                                 </div>

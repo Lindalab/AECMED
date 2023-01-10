@@ -19,7 +19,7 @@ $external_grants = grant_department_and_type_ctr($department, EXTERNAL)['amount'
 $clubs = count_clubs_ctr();
 $business_revenue = total_business_revenue_for_a_department($department)['amount'];
 
-$business_employment = business_employment_created_by_dpt_ctr($department)['numbers'];
+$business_employment = business_employment_created_by_dpt_ctr($department)['number'];
 
 $projects = count_project_under_dpt(TAC)['number'];
 

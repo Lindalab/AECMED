@@ -47,6 +47,7 @@
     $dlab_females = number_of_female_attendance_ctr(D_Lab)['females'];
     $dlab_total_participants = $dlab_males + $dlab_females;
 
-
+    $avi_business_grant_received = total_grant_for_business_in_dpt_ctr(AVI);
+    $tac_business_grant_received =  total_grant_for_business_in_dpt_ctr(TAC);
   
 ?>
