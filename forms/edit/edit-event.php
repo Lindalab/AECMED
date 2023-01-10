@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../controllers/event_controller.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 
     $event = select_one_event_ctr($_GET['event_id']);
     $event_id = $event['event_id'];
@@ -10,6 +11,7 @@
     $males = $event['male_attendance'];
     $females = $event['female_attendace'];
     $event_type = $event['event_type'];
+    $department = $event['department_id'];
     
 ?>
 
@@ -221,9 +223,7 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department_id" id="" class="form-control">
-                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
-                                                <option value="<?php echo D_Lab ?>"> Design Lab</option>
-                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                                <?php show_department_selected_dropdown($department)?>
                                             </select>
                                         </div>
                                     </div>

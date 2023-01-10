@@ -1,3 +1,21 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/business_controller.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
+
+    $business_id = $_GET['business_id'];
+    $business = select_one_business_ctr($business_id);
+    $business_name = $business['busines_name'];
+    $year = $business['year_started'];
+    $location = $business['business_location'];
+    $contact = $business['business_contact'];
+    $email = $business['business_email'];
+    $department = $business['department_id'];
+    $sector = $business['sector'];
+    $description = $business['business_description'];
+    $business_type = $business['business_type'];
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -192,20 +210,22 @@
                         <div class="card">
                             <h5 class="card-header">Edit a business</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/updates/update_business.php" method="POST">
+                                    <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="text" required="" placeholder="Business Name"
-                                                class="form-control">
+                                                class="form-control" name="busines_name" value="<?php echo $business_name ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                            <select name="department_id" id="" class="form-control">
+                                                <?php 
+                                                    show_department_selected_dropdown($department);
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -213,49 +233,49 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business E-Mail</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="email" required="" data-parsley-type="email"
-                                                placeholder="Enter a valid e-mail" class="form-control">
+                                                placeholder="Enter a valid e-mail" name="business_email" class="form-control" value="<?php echo $email ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Contact</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input data-parsley-type="number" type="number" required=""
-                                                placeholder="Enter only numbers" class="form-control">
+                                                placeholder="Enter only numbers" name="business_contact" class="form-control" value="<?php echo $contact ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Location</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="text" required="" placeholder="Business location"
-                                                class="form-control">
+                                                class="form-control" name="business_location" value="<?php echo $location ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Sector</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="text" required="" placeholder="Business sector"
-                                                class="form-control">
+                                                class="form-control" name="sector" value="<?php echo $sector ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Year started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Year started"
-                                                class="form-control">
+                                            <input type="number" required="" placeholder="Year started"
+                                                class="form-control" name="year_started" value="<?php echo $year ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="business_description" class="form-control"><?php echo $description ?></textarea>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <!-- <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Logo</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="file" accept="image/*">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group row text-right">
                                         <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                             <button type="submit" class="btn btn-space btn-primary">Submit</button>

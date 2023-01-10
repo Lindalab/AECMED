@@ -124,7 +124,7 @@ function show_business_row($id, $name, $employment, $revenue, $sector, $date)
             <a href='business view.php?business_id=$id'>
                 <button class='btn btn-outline-info'>View</button>
             </a>
-            <a href='../../forms/edit/edit-business.php'>
+            <a href='../../forms/edit/edit-business.php?business_id=$id'>
                 <button class='btn btn-outline-warning'>Edit</button>
             </a>
             <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business.php?business_id=$id')>Remove</button>

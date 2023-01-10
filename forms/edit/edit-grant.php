@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 
     $grant = select_one_grant_ctr($_GET['grant_id']);
     $name = $grant['grant_name'];
@@ -220,8 +221,7 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department_id" id="department" class="form-control">
-                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
-                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                            <?php show_department_selected_dropdown($department)?>
                                             </select>
                                         </div>
                                     </div>
@@ -236,8 +236,7 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant type</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                         <select name="type" id="department" class="form-control">
-                                                <option value="<?php echo INTERNAL?>">Internal Grant</option>
-                                                <option value="<?php echo EXTERNAL?>">External Grant</option>
+                                                <?php grant_type_dropdown_edit($grant_type) ?>
                                             </select>
                                         </div>
                                     </div>

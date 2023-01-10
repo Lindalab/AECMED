@@ -94,6 +94,16 @@ function grant_type_dropdown($type){
     }
 }
 
+function grant_type_dropdown_edit($type){
+    if($type === INTERNAL ){
+        echo "<option value='".INTERNAL."' selected>Internal Grant</option>";
+        echo "<option value='".EXTERNAL."'>External Grant</option>";
+    }elseif($type === EXTERNAL){
+        echo "<option value='".INTERNAL."'>Internal Grant</option>";
+        echo "<option value='".EXTERNAL."' selected>External Grant</option>";
+    }
+}
+
 
 function project_status_dropdown($status){
     if($status === ACTIVE){
