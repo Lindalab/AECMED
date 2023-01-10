@@ -1,3 +1,6 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/project_functions.php";
+?>
 <!doctype html>
 <html lang="en">
  
@@ -228,7 +231,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Fellow Projects</h5>
-                                        <button class="btn btn-primary">Add project +</button>
+                                        <a href="../../forms/add/add-project.php?department=<?php echo D_Lab ?>" class="btn btn-primary">Add Project +</a>
                                     </div>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">

@@ -287,7 +287,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Events</h5>
-                                        <a href="../../forms/add/add-event.php">
+                                        <a href="../../forms/add/add-event.php?department=<?php echo D_Lab ?>">
                                             <button class="btn btn-primary">Add event +</button>
                                         </a>
                                     </div>

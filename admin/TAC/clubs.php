@@ -235,7 +235,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Clubs</h5>
-                                        <a href="../../forms/add/add-club.php">
+                                        <a href="../../forms/add/add-club.php?department=<?php echo TAC ?>">
                                             <button class="btn btn-primary">Add clubs +</button>
                                         </a>
                                     </div>

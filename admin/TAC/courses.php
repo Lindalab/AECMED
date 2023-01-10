@@ -254,7 +254,7 @@ $data_for_courses_and_students = list_of_courses_and_student();
                             <div class="card">
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-header">Courses</h5>
-                                    <a href="../../forms/add/add-course.php">
+                                    <a href="../../forms/add/add-course.php?department=<?php echo TAC ?>">
                                         <button class="btn btn-primary">Add course +</button>
                                     </a>
                                 </div>

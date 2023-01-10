@@ -235,7 +235,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Student Projects</h5>
-                                        <a href="../../forms/add/add-project.php">
+                                        <a href="../../forms/add/add-project.php?department=<?php echo TAC ?>">
                                             <button class="btn btn-primary">Add project +</button>
                                         </a>
                                     </div>

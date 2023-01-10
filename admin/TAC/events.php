@@ -282,7 +282,7 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                             <div class="card">
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-header">Events</h5>
-                                    <a href="../../forms/add/add-event.php">
+                                    <a href="../../forms/add/add-event.php?department=<?php echo TAC ?>">
                                         <button class="btn btn-primary">Add event +</button>
                                     </a>
                                 </div>

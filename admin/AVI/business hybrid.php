@@ -237,7 +237,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Hybrid businesses</h5>
-                                        <a href='../../forms/add/add-business.php' class="btn btn-primary">Add business+</a>
+                                        <a href='../../forms/add/add-business.php?department=<?php echo AVI ?>' class="btn btn-primary">Add business+</a>
                                         
                                     </div>
                                     <div class="card-body p-0">

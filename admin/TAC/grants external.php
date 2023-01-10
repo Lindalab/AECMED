@@ -232,7 +232,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">External Grants</h5>
-                                        <a href="../../forms/add/add-grant.php">
+                                        <a href="../../forms/add/add-grant.php?department=<?php echo TAC ?>&type=<?php echo INTERNAL ?>">
                                             <button class="btn btn-primary">Add grant +</button>
                                         </a>
                                     </div>

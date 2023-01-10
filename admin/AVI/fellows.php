@@ -239,7 +239,7 @@
                                 <div class="card">
                                     <div class="d-flex justify-content-between">
                                         <h5 class="card-header">Alumni businesses</h5>
-                                        <a href='../../forms/add/add-business.php' data-toggle='modal' class="btn btn-primary">Add Fellows +</a>
+                                        <a href='../../forms/add/add-stakeholder.php?department=<?php echo AVI ?>' class="btn btn-primary">Add Fellows +</a>
                                         
                                     </div>
                                     <div class="card-body p-0">
