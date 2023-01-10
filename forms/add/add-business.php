@@ -254,7 +254,7 @@
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Year started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" name="year_started" placeholder="Year started"
+                                            <input type="number" required="" name="year_started" placeholder="Year started"
                                                 class="form-control">
                                         </div>
                                     </div>
@@ -268,6 +268,68 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Logo</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="file" name="business_logo" class="form-control" accept="image/*">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Number Of Employees</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="number" name="employees" placeholder="Enter A number Only"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Formalised Structures</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="text"  name="formalised_structures" placeholder="Formalised Structures (Separate with comma)"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">SDG Goals</label>
+                                        <div class="custom-controls-stacked">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck1" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="1" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 1</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck2" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="2" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 2</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck3" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="3" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 3</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck1" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="4" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 4</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck2" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="5" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 5</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck3" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="6" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 6</span>
+                                                    </label>
+                                                </div>
+                                                <div class="col">
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck1" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="7" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 7</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck2" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="8" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 8</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck3" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="9" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 9</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck1" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="10" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 10</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck2" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="11" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 11</span>
+                                                    </label>
+                                                    <label class="custom-control custom-checkbox">
+                                                        <input id="ck3" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="12" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 12</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div id="error-container1"></div>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

@@ -25,4 +25,17 @@ function get_gender($gender){
         return "female";
     }
 }
+
+function checkbox_data($data){
+    $sdgs = "";
+    foreach($data as $info){
+        $sdgs .=$info.",";
+    }
+
+    return $sdgs;
+}
+
+
+
+
 ?>

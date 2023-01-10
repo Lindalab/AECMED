@@ -5,7 +5,7 @@
     require_once dirname(__FILE__)."/../controllers/business_controller.php";
    
     function employment_numbers($department){
-        $result = business_employment_created_ctr($department);
+        $result = business_employment_created_by_dpt_ctr($department);
         if( $result != NULL){
             return $result['number'];
         }else{

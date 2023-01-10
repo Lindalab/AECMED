@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__).("/../../controllers/business_controller.php");
+    require_once dirname(__FILE__).("/../../controllers/general_controller.php");
 
     
   $year_started=$_POST['year_started'];
@@ -33,7 +34,13 @@
     if($move){
         $insert = create_business_ctr($year_started, $business_name,$upload_file_dest, $business_location, $business_contact, $business_email,$department, $sector, $business_description);
         if($insert){
-            header("location: ../../admin/index.php?message=1");
+            $business = select_one_business_email_ctr($business_email);
+            $business_id = $business['business_id'];
+            $employees = $_POST['employees'];
+            $structures = $_POST['formalised_structures'];
+            $sdgs = $_POST['sdg_goals'];
+            $sdg = checkbox_data($sdgs);
+            header("location: ./add_businessdetials.php?business_id=$business_id&employees=$employees&structures=$structures&sdg=$sdg");
         }else{
             // header("location:../view/index.php?message=2");
         }

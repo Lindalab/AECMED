@@ -4,6 +4,9 @@
 
     $business_id = $_GET['business_id'];
     $business = select_one_business_ctr($business_id);
+
+    print_r($business);
+
     $business_name = $business['busines_name'];
     $year = $business['year_started'];
     $location = $business['business_location'];

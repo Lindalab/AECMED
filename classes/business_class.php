@@ -320,7 +320,7 @@
         }
 
         function business_employment_created_by_dpt($department_id){
-            $sql = "SELECT SUM(business_details.number_of_employees) as numbers FROM business_details,business where business.department_id='$department_id' ";
+            $sql = "SELECT SUM(business_details.number_of_employees) as number FROM business_details,business where business.business_id = business_details.business_id and business.department_id='$department_id' ";
 
             return $this->db_fetch_one($sql);
         }
@@ -342,6 +342,7 @@
 
             return $this->db_fetch_all($sql);
         }
+        
         
         
 
