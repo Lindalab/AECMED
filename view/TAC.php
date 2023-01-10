@@ -146,7 +146,7 @@
                                     <h5 class="card-title">Student Business Revenue - $<?php echo $business_revenue ?></h5>
                                 </div>
                                 <div class="col-3">
-                                    <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">
+                                    <img class="card-icons" src="../assets/money-icon.svg" alt="Business Revenue icon">
                                 </div>
                             </div>
                         </div> 
@@ -160,7 +160,7 @@
                                     <h5 class="card-title">Employment Created - <?php echo $business_employment ?></h5>
                                 </div>
                                 <div class="col-3">
-                                    <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">
+                                    <img class="card-icons" src="../assets/employment-icon.svg" alt="Employment Created image">
                                 </div>
                             </div>
                         </div> 
@@ -174,7 +174,7 @@
                                     <h5 class="card-title">Student Projects - <?php echo $projects ?></h5>
                                 </div>
                                 <div class="col-3">
-                                    <img class="card-icons" src="../assets/events-icon.svg" alt="Events image">
+                                    <img class="card-icons" src="../assets/projects-icon.svg" alt="Student Projects image">
                                 </div>
                             </div>
                         </div> 
