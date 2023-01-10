@@ -134,7 +134,7 @@ $graph_2_data = graphing_data_for_years_and_business(AVI);
                                     <h5 class="card-title"> Total Revenue Generated - $<?php echo select_all_business_revenue_ctr(AVI)['amount'];?></h5>
                                 </div>
                                 <div class="col-3">
-                                    <img class="card-icons" src="../assets/grants-icon.svg" alt="Student grants image">
+                                    <img class="card-icons" src="../assets/money-icon.svg" alt="Revenue generated image">
                                 </div>
                             </div>
                         </div> 
@@ -148,7 +148,7 @@ $graph_2_data = graphing_data_for_years_and_business(AVI);
                                     <h5 class="card-title">Total Employment Created - <?php echo business_employment_created_by_dpt_ctr(AVI)['numbers'];?></h5>
                                 </div>
                                 <div class="col-3">
-                                    <img class="card-icons" src="../assets/fellows-icon.svg" alt="Fellows image">
+                                    <img class="card-icons" src="../assets/employment-icon.svg" alt="Employment created image">
                                 </div>
                             </div>
                         </div> 
