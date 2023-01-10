@@ -57,9 +57,31 @@ function show_department_dropdown($department_id){
     }   
 }
 
+function show_department_selected_dropdown($department_id){
+    $data = select_all_department_ctr();
+    foreach ($data as $department) {
+        $departmentId = $department['department_id'];
+        $departmentName = $department['department_name'];
+        if($departmentId === $department_id){
+            department_row_selected($departmentId, $departmentName);
+            continue;
+        }else{
+            department_row($departmentId, $departmentName);
+        }
+    
+ 
+    }   
+}
+
 function department_row($id, $name){
     echo "
     <option value='$id'>$name</option>
+    ";
+}
+
+function department_row_selected($id, $name){
+    echo "
+    <option value='$id' selected>$name</option>
     ";
 }
 
@@ -69,6 +91,18 @@ function grant_type_dropdown($type){
         echo "<option value='".INTERNAL."'>Internal Grant</option>";
     }elseif($type === EXTERNAL){
         echo "<option value='".EXTERNAL."'>External Grant</option>";
+    }
+}
+
+
+function project_status_dropdown($status){
+    if($status === ACTIVE){
+        echo "<option value='".ACTIVE."' selected>Active</option>";
+        echo "<option value='".INACTIVE."'>Completed</option>";
+    }else{
+        echo "<option value='".ACTIVE."'>Active</option>";
+        echo "<option value='".INACTIVE."' selected>Completed</option>";
+
     }
 }
 

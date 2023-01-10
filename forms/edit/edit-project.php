@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../admin_functions/project_functions.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 
     $project_id = $_GET['project_id'];
     $project = select_one_project_ctr($project_id);
@@ -9,7 +10,8 @@
     $date_started = $project['date_started'];
     $sdg_goals = $project['sdg_goals'];
     $sector = $project['sector'];
-    $departmet = $project['department_id'];
+    $department = $project['department_id'];
+
 ?>
 
 <!doctype html>
@@ -219,8 +221,7 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Project Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="department" id="" class="form-control">
-                                                <option value="<?php echo AVI ?>">Ashesi Venture Incubator</option>
-                                                <option value="<?php echo TAC ?>">Undergraduate Programs</option>
+                                                <?php show_department_selected_dropdown($department)?>
                                             </select>
                                         </div>
                                     </div>
@@ -228,8 +229,8 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Status</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="status" id="" class="form-control">
-                                                <option value="1" selected>Active</option>
-                                                <option value="2">Completed</option>
+                                                <?php project_status_dropdown($project_status) ?>
+                                                
                                             </select>
                                         </div>
                                     </div>
