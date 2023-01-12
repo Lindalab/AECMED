@@ -11,7 +11,7 @@
     if($insert){
         header("location: ../../admin/AVI/modules.php?message=1");
     }else{
-        header("location:../view/index.php?message=2");
+        header("location: ../../admin/AVI/modules.php?message=2");
     }
 
 

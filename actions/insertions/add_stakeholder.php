@@ -2,7 +2,8 @@
     require_once dirname(__FILE__).("/../../controllers/stakeholder_controller.php");
 
     // checking if the person exit using the email.
-    $person_exist = select_one_stakeholder_email_ctr($_POST['email']);
+    $person_exist = select_one_stakeholder_email_ctr($_POST['email'], $_POST["phone_number"]);
+    
     
     if($person_exist){
         header("location: ../../admin/index.php?message=3");

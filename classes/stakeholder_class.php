@@ -29,8 +29,8 @@
             return $this->db_fetch_one($sql);
         }
 
-        function select_one_stakeholder_email($email){
-            $sql = "SELECT * FROM `stakeholder` WHERE `email`='$email'";
+        function select_one_stakeholder_email($email, $number){
+            $sql = "SELECT * FROM `stakeholder` WHERE `email`='$email' OR phone_number=$number";
             return $this->db_fetch_one($sql);
         }
         function insert_stakeholder_module($stakeholder_id,$module_id){

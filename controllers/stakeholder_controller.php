@@ -26,9 +26,9 @@
         return $user->select_one_stakeholder($stakeholder_id);
     }
 
-    function select_one_stakeholder_email_ctr($email){
+    function select_one_stakeholder_email_ctr($email, $number){
         $user = new Stakeholder;
-        return $user->select_one_stakeholder_email($email);
+        return $user->select_one_stakeholder_email($email, $number);
     }
 
     function insert_stakeholder_module_ctr($stakeholder_id,$module_id){
