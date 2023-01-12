@@ -19,16 +19,29 @@
     if($move){
        
         $insert = create_project_ctr($_POST['project_name'], $_POST['desc'], $status, $_POST['date_started'], $sdg_goals, $_POST['department'], $_POST['sector'], $upload_file_dest);
+        $department_id = $_POST['department'];
 
         if($insert){
-            header("location: ../../admin/index.php?message=1");
+            if ($department_id === TAC) {
+                header("location: ../../admin/TAC/student projects.php?message=1");
+            } elseif ($department_id === D_Lab) {
+                header("location: ../../admin/D-Lab/projects overview.php?message=1");
+            }
     }else{
-        // header("location:../view/index.php?message=2");
+        if ($department_id === TAC) {
+                header("location: ../../admin/TAC/student projects.php?message=2");
+            } elseif ($department_id === D_Lab) {
+                header("location: ../../admin/D-Lab/projects overview.php?message=2");
+            }
     }
 
     }else{
-        // header("location:../view/index.php?message=2");
-        // return;
+        if ($department_id === TAC) {
+                header("location: ../../admin/TAC/student projects.php?message=2");
+            } elseif ($department_id === D_Lab) {
+                header("location: ../../admin/D-Lab/projects overview.php?message=2");
+            }
+        
     }
     
 ?>
