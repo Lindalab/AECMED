@@ -14,4 +14,10 @@
 
     $result = update_club_ctr($club_id, $name, $description, $executives_number, $total_numbers, $males, $females, $department, $date_registered, $lead_name);
 
+    if($result){
+        header("location: ../../admin/TAC/clubs.php?message=4");
+    }else{
+        header("location: ../../admin/TAC/clubs.php?message=2");
+    }
+
 ?>

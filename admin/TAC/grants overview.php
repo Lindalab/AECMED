@@ -409,7 +409,7 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
-       draw("line", "graph_1", "Grants received over the past years", "amount_receieved", "year(s)", <?php echo $graph_1_data ?>);
+       draw("line", "graph_1", "Grants received over the past years", "amount_receieved($)", "year(s)", <?php echo $graph_1_data ?>);
 
        draw("pie", "graph_2", " Grant Type over the past four(4) years", "total amount($)", "grant type", <?php echo $graph_2_data ?>);
 

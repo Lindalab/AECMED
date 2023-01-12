@@ -226,7 +226,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_functions.php";
                             <div class="card">
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-header">External Grants</h5>
-                                    <a href="../../forms/add/add-grant.php?department=<?php echo TAC ?>&type=<?php echo INTERNAL ?>">
+                                    <a href="../../forms/add/add-grant.php?department=<?php echo TAC ?>&type=<?php echo EXTERNAL ?>">
                                         <button class="btn btn-primary">Add grant +</button>
                                     </a>
                                 </div>
