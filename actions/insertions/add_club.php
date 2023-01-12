@@ -21,7 +21,7 @@
 
         // print_r($_POST['']);
     }else{
-        echo "error";
+        header("location: ../../admin/TAC/clubs.php?message=2");
     }
 
 ?>

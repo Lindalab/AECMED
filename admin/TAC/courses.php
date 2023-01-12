@@ -29,6 +29,9 @@ $data_for_courses_and_students = list_of_courses_and_student();
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../javascript/delete.js"></script>
+    <script src="../../javascript/alerts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <title>AEC - Undergraduate Programs courses</title>
 </head>
 
@@ -73,16 +76,13 @@ $data_for_courses_and_students = list_of_courses_and_student();
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fab fa-black-tie"></i>Businesses</a>
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fab fa-black-tie"></i>Fellows</a>
+                                <a class="nav-link" href="../AVI/fellows.php"><i class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
+                                <a class="nav-link" href="../AVI/modules.php"><i class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
@@ -104,9 +104,7 @@ $data_for_courses_and_students = list_of_courses_and_student();
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fa fa-fw fa-clipboard"></i>Projects</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -122,13 +120,10 @@ $data_for_courses_and_students = list_of_courses_and_student();
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
-                                class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                        <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-4" aria-controls="submenu-4"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -239,9 +234,9 @@ $data_for_courses_and_students = list_of_courses_and_student();
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <h5 class="card-header">Courses over time</h5>
-                                <div class="card-body" >
+                                <div class="card-body">
                                     <!-- id="graph_1" width="400" height="150" -->
-                                    <div id="graph_1" width = "400" height="150" style="margin-bottom: 40%;">
+                                    <div id="graph_1" width="400" height="150" style="margin-bottom: 40%;">
                                         <!-- Line graph here -->
 
                                     </div>
@@ -334,6 +329,14 @@ $data_for_courses_and_students = list_of_courses_and_student();
         </div>
     </div>
     </div>
+    <?php if (isset($_GET['message'])) : ?>
+
+        <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
+
+    <?php endif; ?>
+    <script>
+        sweetAlert("Course Added Successfully", "Operation Successfully executed");
+    </script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>
