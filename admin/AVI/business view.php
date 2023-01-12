@@ -13,6 +13,7 @@
     $formalised_structure = $business['formalised_structure'];
     $sdg_alignment = $business['sdg_alignment'];
     $location = $business['business_location'];
+    
 
 ?>
 <!doctype html>
@@ -231,30 +232,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class=""><?php echo $name ?></h3>
+                                    <div class="view-sec text-start">
+                                        <h4>Business Logo</h4>
+                                        <figure class='img-frame'>
+                                            <img class='img-view' src="../<?php echo $business_logo?>" alt="business_logo" width="20%" height="20%">
+                                        </figure>
+                                    </div><br>
                                     <div class="view-sec text-center">
                                         <h4>Business Owners</h4>
                                         <section class="d-flex justify-content-around">
                                            <?php list_business_onwers($business_id)?>
-                                            <!-- <figure class="img-frame">
-                                                <img class="img-view" src="../"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        
-                                                    </sub>
-                                                </figcaption>
-                                            </figure>
-                                            <figure class="img-frame">
-                                                <img class="img-view" src=".."
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        
-                                                    </sub>
-                                                </figcaption>
-                                            </figure> -->
+                                            
                                         </section>
                                     </div><br>
 
@@ -270,12 +258,7 @@
                                     </h5>
                                     <p>
                                         <?php echo $description;?>
-                                        <!-- <br><br>
-                                        Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                                        luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                                        mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                                        nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                                        Etiam nec pulvinar mauris, et ultrices ipsum. -->
+                                        
                                     </p>
                                     <br>
                                     <h5>
@@ -294,14 +277,7 @@
                                                 </thead>
                                                 <tbody>
                                                 <?php display_business_revenue($business_id); ?>
-                                                    <!-- <tr>
-                                                        <td>$80.00</td>
-                                                        <td>27-08-2018</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr> -->
+                                                    
                                                 </tbody>
                                             </table>
                                         </div> <br>
@@ -321,15 +297,7 @@
                                                     </thead>
                                                     <tbody>
                                                     <?php display_business_grants($business_id) ?>
-                                                        <!-- <tr>
-                                                            <td>Coco-cola</td>
-                                                            <td>$80.00</td>
-                                                            <td>27-08-2018</td>
-                                                            <td>
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                                <button class="btn btn-outline-danger">Remove</button>
-                                                            </td>
-                                                        </tr> -->
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div> <br>

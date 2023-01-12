@@ -244,7 +244,14 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class=""><?php echo $name ?></h3>
+                                    <div class="view-sec text-start">
+                                        <h4>Business Logo</h4>
+                                        <figure class='img-frame'>
+                                            <img class='img-view' src="../<?php echo $business_logo?>" alt="business_logo" width="20%" height="20%">
+                                        </figure>
+                                    </div><br>
                                     <div class="view-sec text-center">
+                                        
                                         <h4>Business Owners</h4>
                                         <section class="d-flex justify-content-around">
                                         <?php list_business_onwers($business_id)?>
