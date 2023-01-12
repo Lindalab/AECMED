@@ -238,7 +238,8 @@
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">SDG Goals</label>
                                         <div class="custom-controls-stacked">
                                             <div class="row">
-                                                <div class="col">
+                                            <?php display_checkbox($sdg_goals, "SDG") ?>
+                                                <!-- <div class="col">
                                                     <label class="custom-control custom-checkbox">
                                                         <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="1" data-parsley-mincheck="2" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 1</span>
                                                     </label>
@@ -277,7 +278,7 @@
                                                     <label class="custom-control custom-checkbox">
                                                         <input id="sdg_goals[]" name="sdg_goals[]" type="checkbox" data-parsley-multiple="groups" value="12" data-parsley-mincheck="2" required="" data-parsley-errors-container="#error-container1" class="custom-control-input"><span class="custom-control-label">SDG 12</span>
                                                     </label>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div id="error-container1"></div>
                                         </div>

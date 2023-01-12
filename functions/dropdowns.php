@@ -116,4 +116,40 @@ function project_status_dropdown($status){
     }
 }
 
+
+function display_checkbox($str, $name){
+    echo "<div class='col'>";
+    $data = explode(",", $str);
+    for ($i=1; $i <= 12; $i++) { 
+        if($i === 7 ){
+            echo "</div>";
+            echo "<div class='col'>";   
+        }
+        if(in_array($i, $data)){
+            selected_checkbox($i, $name." ".$i);
+            continue;
+        }
+        single_checkbox($i, $name." ".$i);
+    }
+    echo "</div>";
+}
+
+
+function selected_checkbox($value, $name){
+    echo "
+    <label class='custom-control custom-checkbox'>
+    <input id='' name='sdg_goals[]' type='checkbox' data-parsley-multiple='groups' value='$value' data-parsley-mincheck='2' required='' data-parsley-errors-container='#error-container1' class='custom-control-input' checked><span class='custom-control-label'>$name</span>
+    </label>
+    ";
+}
+
+function single_checkbox($value, $name){
+    echo "
+    <label class='custom-control custom-checkbox'>
+    <input id='' name='sdg_goals[]' type='checkbox' data-parsley-multiple='groups' value='$value' data-parsley-mincheck='2' required='' data-parsley-errors-container='#error-container1' class='custom-control-input'><span class='custom-control-label'>$name</span>
+    </label>
+    ";
+}
+
+
 ?>
