@@ -40,7 +40,7 @@
             $structures = $_POST['formalised_structures'];
             $sdgs = $_POST['sdg_goals'];
             $sdg = checkbox_data($sdgs);
-            header("location: ./add_businessdetials.php?business_id=$business_id&employees=$employees&structures=$structures&sdg=$sdg");
+            header("location: ./add_businessdetials.php?business_id=$business_id&employees=$employees&structures=$structures&sdg=$sdg&department=$department");
         }else{
             // header("location:../view/index.php?message=2");
         }
