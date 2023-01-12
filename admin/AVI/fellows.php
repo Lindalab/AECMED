@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../javascript/delete.js"></script>
+    <script src="../../javascript/alerts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <title>AEC - AVI Business</title>
 </head>
 
@@ -334,7 +337,14 @@
 		</div>
 	</div>
 
+    <?php if (isset($_GET['message'])) : ?>
 
+<div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
+
+<?php endif; ?>
+<script>
+        sweetAlert("Fellow Added Successfully", "Operation Successfully executed");
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

@@ -4,10 +4,13 @@
     // checking if the person exit using the email.
     $person_exist = select_one_stakeholder_email_ctr($_POST['email'], $_POST["phone_number"]);
     
+    $department = $_POST['department'];
     
     if($person_exist){
-        header("location: ../../admin/index.php?message=3");
-        return;
+        if($department = AVI){
+            header("location: ../../admin/AVI/fellows.php?message=3");
+            exit;
+        }
     }
 
     $root_dir = "../../images/stakeholders";
@@ -22,12 +25,21 @@
     if($move){
         $insert = create_stakeholder_ctr($_POST["fname"], $_POST["lname"], $_POST["role"], $_POST["gender"], $_POST["email"], $_POST["phone_number"],$upload_file_dest);
         if($insert){
-            header("location: ../../admin/index.php?message=1");
+            if($department = AVI){
+                header("location: ../../admin/AVI/fellows.php?message=1");
+                exit;
+            }
         }else{
-            header("location: ../../admin/index.php?message=2");
+            if($department = AVI){
+                header("location: ../../admin/AVI/fellows.php?message=2");
+                exit;
+            }
         }
     }else{
-        header("location: ../../admin/index.php?message=2");
+        if($department = AVI){
+            header("location: ../../admin/AVI/fellows.php?message=2");
+            exit;
+        }
     }
 
 ?>
