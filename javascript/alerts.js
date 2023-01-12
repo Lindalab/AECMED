@@ -5,7 +5,7 @@
             Swal.fire({
                 icon: 'success',
                 title: success_title,
-                text: success_text,
+                text: 'Operation Completed Successfully',
             });
         } else if (message == 2) {
             Swal.fire({
@@ -19,6 +19,12 @@
                 icon: 'info',
                 title: 'Item Exist Already',
                 text: 'Cannot Add An Existing Item. Check Data',
+            });
+        }else if (message == 4){
+            Swal.fire({
+                icon: 'success',
+                title: 'Update Successful',
+                text: '',
             });
         }
     }

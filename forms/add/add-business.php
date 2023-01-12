@@ -264,12 +264,14 @@
                                             <textarea required="" name="business_description" class="form-control"></textarea>
                                         </div>
                                     </div>
+
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Business Logo</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <input type="file" name="business_logo" class="form-control" accept="image/*">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Number Of Employees</label>
                                         <div class="col-12 col-sm-8 col-lg-6">

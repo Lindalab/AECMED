@@ -267,7 +267,7 @@ $tac_project_grants = sum_grant_for_project_under_dpt_ctr(TAC);
 
     <?php endif; ?>
     <script>
-        sweetAlert("Project Added Successfully", "Operation Successfully executed");
+        sweetAlert("Project Added Successfully", "Project Updated Successfully");
     </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->

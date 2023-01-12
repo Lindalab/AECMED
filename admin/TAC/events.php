@@ -23,10 +23,11 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-   
-    
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../javascript/delete.js"></script>
+    <script src="../../javascript/alerts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <title>AEC - Undergraduate Programs Events</title>
 
 </head>
@@ -346,6 +347,14 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
         </div>
     </div>
     </div>
+    <?php if (isset($_GET['message'])) : ?>
+
+        <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
+
+    <?php endif; ?>
+    <script>
+        sweetAlert("Event Added Successfully", "Event Updated Successfully");
+    </script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>
     <script>

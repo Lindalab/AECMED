@@ -280,7 +280,7 @@ $club_members = total_club_members_ctr();
 
     <?php endif; ?>
     <script>
-        sweetAlert("Club Added Successfully", "Operation Successfully executed");
+        sweetAlert("Club Added Successfully", "Update Successfully");
     </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->

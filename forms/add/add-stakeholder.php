@@ -213,6 +213,7 @@
                                         <div class="col-12 col-sm-8 col-lg-6">
                                             <select name="role" id="" class="form-control">
                                                 <option value="<?php echo STUDENT ?>">Student</option>
+                                                <option value="<?php echo ALUMNI ?>">Alumni</option>
                                                 <option value="<?php echo LECTURER ?>">Lecturer</option>
                                             </select>
                                         </div>

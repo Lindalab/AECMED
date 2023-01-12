@@ -275,7 +275,7 @@
 
 <?php endif; ?>
 <script>
-        sweetAlert("Business Added Successfully", "Operation Successfully executed");
+        sweetAlert("Business Added Successfully", "Update Successfully");
     </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->

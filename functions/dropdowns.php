@@ -151,5 +151,34 @@ function single_checkbox($value, $name){
     ";
 }
 
+function gender_dropdown($gender){
+    if($gender=== MALE){
+        echo "<option value='".MALE."' selected>Male</option>";
+        echo "<option value='".FEMALE."'>Female</option>";
+    }else if($gender === FEMALE){
+            echo "<option value='".MALE."'>Male</option>";
+            echo "<option value='".FEMALE."' selected>Female</option>";
+    }
+}
+
+function role_dropdown($role){
+    if($role === LECTURER){
+        department_row(STUDENT, "Student");
+        department_row(ALUMNI, "Alumni");
+        department_row_selected(LECTURER, "lecturer");
+    }else if($role === STUDENT){
+        department_row_selected(STUDENT, "Student");
+        department_row(ALUMNI, "Alumni");
+        department_row(LECTURER, "lecturer");
+    }else if($role === LECTURER){
+        department_row(STUDENT, "Student");
+        department_row_selected(ALUMNI, "Alumni");
+        department_row(LECTURER, "lecturer");
+    }else{
+        department_row(STUDENT, "Student");
+        department_row(ALUMNI, "Alumni");
+        department_row(LECTURER, "lecturer");
+    }
+}
 
 ?>

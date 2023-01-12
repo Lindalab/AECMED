@@ -262,7 +262,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_functions.php";
 
     <?php endif; ?>
     <script>
-        sweetAlert("Grant Added Successfully", "Operation Successfully executed");
+        sweetAlert("Grant Added Successfully", "Grant Updated Successfully");
     </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->

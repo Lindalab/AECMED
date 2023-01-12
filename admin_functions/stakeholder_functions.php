@@ -37,7 +37,7 @@
             <a href='fellows view.php?stakeholder_id=$id'>
                 <button class='btn btn-outline-info'>View</button>
             </a>
-            <a href='../../forms/edit/edit-business.php'>
+            <a href='../../forms/edit/edit-stakeholder.php?stakeholder_id=$id'>
                 <button class='btn btn-outline-warning'>Edit</button>
             </a>
             <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_stakeholder.php?stakeholder_id=$id')>Remove</button>

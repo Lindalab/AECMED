@@ -335,7 +335,7 @@ $data_for_courses_and_students = list_of_courses_and_student();
 
     <?php endif; ?>
     <script>
-        sweetAlert("Course Added Successfully", "Operation Successfully executed");
+        sweetAlert("Course Added Successfully", "Course Updated Successfully");
     </script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="../../javascript/charts.js"></script>

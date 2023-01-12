@@ -16,6 +16,9 @@
     $sector = $business['sector'];
     $description = $business['business_description'];
     $business_type = $business['business_type'];
+    $employess = $business['number_of_employees'];
+    $structures = $business['formalised_structure'];
+    $sdg_goals = $business['sdg_alignment'];
 
 ?>
 
@@ -279,6 +282,33 @@
                                             <input type="file" accept="image/*">
                                         </div>
                                     </div> -->
+
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Number Of Employees</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="number" value="<?php echo $employess ?>" name="employees" placeholder="Enter A number Only"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Formalised Structures</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <input type="text" value="<?php echo $structures ?>"  name="formalised_structures" placeholder="Formalised Structures (Separate with comma)"
+                                                class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">SDG Goals</label>
+                                        <div class="custom-controls-stacked">
+                                            <div class="row">
+                                            <?php display_checkbox($sdg_goals, "SDG") ?>
+                                                
+                                            </div>
+                                            <div id="error-container1"></div>
+                                        </div>
+                                    </div>
+
+
                                     <div class="form-group row text-right">
                                         <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
                                             <button type="submit" class="btn btn-space btn-primary">Submit</button>
