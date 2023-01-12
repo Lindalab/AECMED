@@ -9,8 +9,6 @@
     $desc = $grant['grant_description'];
     $amount = $grant['amount'];
     $grant_type = $grant['grant_type'];
-
-    
 ?>
 
 <!doctype html>

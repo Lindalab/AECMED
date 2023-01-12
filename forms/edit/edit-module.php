@@ -1,3 +1,13 @@
+<?php 
+    require_once dirname(__FILE__)."/../../controllers/module_controller.php";
+
+    $module_id = $_GET['module_id'];
+    $module = select_one_module_ctr($module_id);
+    $module_name = $module['module_name'];
+    $module_desc = $module['module_description'];
+    $department = $module['department_id'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -192,18 +202,20 @@
                         <div class="card">
                             <h5 class="card-header">Edit a module</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
-                                    <div class="form-group row">
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/updates/update_modules.php" method="POST">
+                                    <input type="hidden" name="department_id" value="<?php echo $department?>"> 
+                                    <input type="hidden" name="module_id" value="<?php echo $module_id?>">    
+                                <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Module Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Grant Name"
+                                            <input type="text" required="" name="module_name" value="<?php echo $module_name ?>" placeholder="Module Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Module Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="module_description" class="form-control"><?php echo $module_desc ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">
