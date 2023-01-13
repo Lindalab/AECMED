@@ -12,7 +12,8 @@ class Grant extends db_connection
 
     function update_grant($grant_id, $grant_name, $grant_type, $date_received, $grant_desc,  $department_id, $amount)
     {
-        $sql = "UPDATE `grants` SET`grant_name`='$grant_name',`grant_type`='$grant_type',`date_received`=' $date_received',`grant_description`='$grant_desc',`department_id`=' $department_id',`amount`='$amount' WHERE `grant_id`='$grant_id'";
+        $sql = "UPDATE `grants` SET`grant_name`='$grant_name',`grant_type`='$grant_type',`date_received`= '$date_received',`grant_description`='$grant_desc',`department_id`='$department_id',`amount`='$amount' WHERE `grant_id`='$grant_id'";
+        
         return $this->db_query($sql);
     }
 

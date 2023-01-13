@@ -12,6 +12,7 @@
 
     $updated = update_grant_ctr($grant_id, $grant_name, $grant_type, $date_received, $grant_desc,$department_id, $amount);
 
+
     if($updated){
         if ($grant_type === INTERNAL){
             if ($department_id === AVI) {

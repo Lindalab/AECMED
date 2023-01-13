@@ -2,7 +2,8 @@
     require_once dirname(__FILE__)."/../../admin_functions/grant_functions.php";
     require_once dirname(__FILE__)."/../../functions/dropdowns.php";
 
-    $grant = select_one_grant_ctr($_GET['grant_id']);
+    $grant_id = $_GET['grant_id'];
+    $grant = select_one_grant_ctr($grant_id);
     $name = $grant['grant_name'];
     $department = $grant['department_id'];
     $date_received = $grant['date_received'];
@@ -205,8 +206,8 @@
                         <div class="card">
                             <h5 class="card-header">Edit a grant</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/updates/update_grant.php" method="post">
-                                 <input type="hidden" name="grant_id" value="<?php echo $grant_id ?>" required="" placeholder="Grant Name"
+                                <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/updates/update_grant.php" method="POST">
+                                 <input type="hidden" name="grant_id" value="<?php echo $grant_id ?>"
                                                 class="form-control">    
                                 <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Name</label>
@@ -233,7 +234,7 @@
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant type</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                        <select name="type" id="department" class="form-control">
+                                        <select name="grant_type"  class="form-control">
                                                 <?php grant_type_dropdown_edit($grant_type) ?>
                                             </select>
                                         </div>
@@ -241,14 +242,14 @@
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date received</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" name="date" value="<?php echo $date_received ?>" placeholder="Date received"
+                                            <input type="date" required="" name="date_received" value="<?php echo $date_received ?>" placeholder="Date received"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" name="description" value="" class="form-control"><?php echo $desc ?></textarea>
+                                            <textarea required="" name="grant_description" value="" class="form-control"><?php echo $desc ?></textarea>
                                         </div>
                                     </div>
                                     <!-- <div class="form-group row">
