@@ -62,7 +62,7 @@ function show_business_revenue_row($business_id,$revenue, $year){
     <td>$$revenue</td>
     <td>
         <button class='btn btn-outline-warning'>Edit</button>
-        <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_revenue.php?business_id=$business_id&year=$year')>Remove</button>
+        <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_revenue.php?business_id=$business_id&year=$year&amount=$revenue')>Remove</button>
     </td>
 </tr>";
 }

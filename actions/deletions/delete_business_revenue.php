@@ -4,8 +4,9 @@
 
     $business_id = $_GET['business_id'];
     $year = $_GET['year'];
+    $amount = $_GET['amount'];
 
-    $deleted = delete_business_revenue_ctr($business_id, $year);  
+    $deleted = delete_business_revenue_ctr($business_id, $year, $amount);  
 
     if($deleted){
         echo 1;

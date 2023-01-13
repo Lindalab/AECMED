@@ -26,6 +26,23 @@
                 title: 'Update Successful',
                 text: '',
             });
+        }else if (message == 5){
+            Swal.fire({
+                icon: 'success',
+                title: 'Grant Given Successfully',
+                text: '',
+            });
+        }
+    }
+
+    function alert_subtables(success_title){
+        const message = $(".alert").data("id");
+        if (message == 1) {
+            Swal.fire({
+                icon: 'success',
+                title: success_title,
+                text: 'Operation Completed Successfully',
+            });
         }
     }
         

@@ -194,4 +194,20 @@ function course_status_dropdown($status){
         department_row(INACTIVE, "Inactive");
     }
 }
+
+function department_grant_dropdown($department){
+    $grantList = select_grant_for_dpt_ctr($department);
+    $grant_id = "";
+    $grant_name = "";
+    foreach($grantList as $grant){
+        $grant_id = $grant['grant_id'];
+        $grant_name = $grant['grant_name'];    
+        options($grant_id, $grant_name);
+    }
+}
+
+
+function options($id, $name){
+    echo "<option value='$id' selected>$name</option>";
+}
 ?>

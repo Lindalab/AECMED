@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
+    require_once dirname(__FILE__) . "/../../functions/dropdowns.php";
 
     $business_id = $_GET['business_id'];
 
@@ -13,6 +14,7 @@
     $formalised_structure = $business['formalised_structure'];
     $sdg_alignment = $business['sdg_alignment'];
     $location = $business['business_location'];
+    $department = $business['department_id'];
     
 
 ?>
@@ -35,6 +37,8 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../javascript/delete.js"></script>
+    <script src="../../javascript/alerts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>AEC - AVI Business</title>
 </head>
 
@@ -263,7 +267,7 @@
                                     <br>
                                     <h5>
                                         Business Revenue 
-                                        <button class="btn btn-outline-primary">Add Revenue +</button>
+                                        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter" >Add Revenue +</button>
                                     </h5>
                                         <div class="table-responsive">
                                             <table class="table">
@@ -283,7 +287,7 @@
                                         </div> <br>
                                         <h5>
                                             Business Grants 
-                                            <button class="btn btn-outline-primary">Add Grant +</button>
+                                            <button class="btn btn-outline-primary" data-toggle="modal" data-target="#business_grant">Add Grant +</button>
                                         </h5>
                                             <div class="table-responsive">
                                                 <table class="table">
@@ -310,6 +314,112 @@
         </div>
     </div>
     </div>
+    
+    <!-- Modal For Adding Revenue -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Business Revenue</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../actions/insertions/add_business_revenue.php" method="post">
+                        <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                        <input type="hidden" name="department" value="<?php echo $department ?>">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="business_name" placeholder="Business Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Revenue Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business year</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="<?php echo date("Y") ?>" required name="year" placeholder="Business Year" class="form-control">
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Revenue</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Grant -->
+    <!-- Modal -->
+    <div class="modal fade" id="business_grant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Business Grant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../actions/insertions/add_business_grant.php" method="post">
+                        <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                        <input type="hidden" name="department" value="<?php echo $department ?>">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="business_name" placeholder="Business Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Grants</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="grant_id" id="" class="form-control">
+                                   <?php department_grant_dropdown(AVI) ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Date</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="date" value="" required name="date" placeholder="Business Year" class="form-control">
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Give Grant</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <?php if (isset($_GET['message'])) : ?>
+
+        <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
+
+    <?php endif; ?>
+    <script>
+        sweetAlert("Revenue Added Successfully", "Update Successfully");
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

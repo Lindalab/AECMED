@@ -1,19 +1,21 @@
-<?php 
-    require_once dirname(__FILE__)."/../../admin_functions/business_functions.php";
+<?php
+require_once dirname(__FILE__) . "/../../admin_functions/business_functions.php";
+require_once dirname(__FILE__) . "/../../functions/dropdowns.php";
 
-    $business_id = $_GET['business_id'];
+$business_id = $_GET['business_id'];
 
-    $business = select_one_business_ctr($business_id);
-    $name = $business['busines_name'];
-    $email = $business['business_email'];
-    $contact = $business['business_contact'];
-    $sector = $business['sector'];
-    $description = $business['business_description'];
-    $business_logo = $business['business_logo'];
-    $formalised_structure = $business['formalised_structure'];
-    $sdg_alignment = $business['sdg_alignment'];
-    $location = $business['business_location'];
-    
+$business = select_one_business_ctr($business_id);
+$name = $business['busines_name'];
+$email = $business['business_email'];
+$contact = $business['business_contact'];
+$sector = $business['sector'];
+$description = $business['business_description'];
+$business_logo = $business['business_logo'];
+$formalised_structure = $business['formalised_structure'];
+$sdg_alignment = $business['sdg_alignment'];
+$location = $business['business_location'];
+$department = $business['department_id'];
+
 
 ?>
 <!doctype html>
@@ -35,6 +37,10 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../javascript/delete.js"></script>
+    <script src="../../javascript/alerts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
     <title>AEC - Undergraduate Programs Business</title>
 </head>
 
@@ -49,9 +55,7 @@
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <a class="navbar-brand" href="../summary.php">AEC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
@@ -66,8 +70,7 @@
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -76,23 +79,19 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../index.php"><i
-                                        class="fa fa-fw fa-sticky-note"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-sticky-note"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fab fa-black-tie"></i>Businesses</a>
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fab fa-black-tie"></i>Fellows</a>
+                                <a class="nav-link" href="../AVI/fellows.php"><i class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
+                                <a class="nav-link" href="../AVI/modules.php"><i class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
@@ -114,9 +113,7 @@
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fa fa-fw fa-clipboard"></i>Projects</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -132,13 +129,10 @@
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
-                                class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                        <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-4" aria-controls="submenu-4"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -157,17 +151,13 @@
                         Undergraduate Programs
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link active" href="businesses.php"><i
-                                class="fab fa-black-tie"></i>Businesses</a>
+                        <a class="nav-link active" href="businesses.php"><i class="fab fa-black-tie"></i>Businesses</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="community entrepreneurship.php"><i
-                                class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
+                        <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-5" aria-controls="submenu-5"><i
-                                class="fa fa-fw fas fa-book"></i>Courses</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
                         <div id="submenu-5" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -187,9 +177,7 @@
                         <a class="nav-link" href="events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-6" aria-controls="submenu-6"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
                         <div id="submenu-6" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -227,8 +215,7 @@
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="businesses.php"
-                                                class="breadcrumb-link">Businesses</a></li>
+                                        <li class="breadcrumb-item"><a href="businesses.php" class="breadcrumb-link">Businesses</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Businesses (View)</li>
                                     </ol>
                                 </nav>
@@ -247,92 +234,77 @@
                                     <div class="view-sec text-start">
                                         <h4>Business Logo</h4>
                                         <figure class='img-frame'>
-                                            <img class='img-view' src="../<?php echo $business_logo?>" alt="business_logo" width="20%" height="20%">
+                                            <img class='img-view' src="../<?php echo $business_logo ?>" alt="business_logo" width="20%" height="20%">
                                         </figure>
                                     </div><br>
                                     <div class="view-sec text-center">
-                                        
+
                                         <h4>Business Owners</h4>
                                         <section class="d-flex justify-content-around">
-                                        <?php list_business_onwers($business_id)?>
-                                            
+                                            <?php list_business_onwers($business_id) ?>
+
                                         </section>
                                     </div><br>
 
-                                    <h5>Business Email:</h5> <p><?php echo $email ?></p>
-                                    <h5>Business Contact: </h5> <p><?php echo $contact ?></p>
-                                    <h5>Business Location:</h5> <p><?php echo $location?></p>
-                                    <h5>Business Sector: </h5> <p><?php echo $sector ?></p>
-                                    <h5>Business Formalised structure: </h5> <p>  <?php echo $formalised_structure;?>   </p>
-                                    <h5>SDG Goals: </h5> <p><?php echo $sdg_alignment; ?></p>
-                                    <br>                                   
+                                    <h5>Business Email:</h5>
+                                    <p><?php echo $email ?></p>
+                                    <h5>Business Contact: </h5>
+                                    <p><?php echo $contact ?></p>
+                                    <h5>Business Location:</h5>
+                                    <p><?php echo $location ?></p>
+                                    <h5>Business Sector: </h5>
+                                    <p><?php echo $sector ?></p>
+                                    <h5>Business Formalised structure: </h5>
+                                    <p> <?php echo $formalised_structure; ?> </p>
+                                    <h5>SDG Goals: </h5>
+                                    <p><?php echo $sdg_alignment; ?></p>
+                                    <br>
                                     <h5>
                                         Business Description
                                     </h5>
                                     <p>
-                                        <?php echo $description;?>
-                                        <!-- <br><br>
-                                        Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                                        luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                                        mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                                        nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                                        Etiam nec pulvinar mauris, et ultrices ipsum. -->
+                                        <?php echo $description; ?>
                                     </p>
                                     <br>
                                     <h5>
-                                        Business Revenue 
-                                        <button class="btn btn-outline-primary">Add Revenue +</button>
+                                        Business Revenue
+                                        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">Add Revenue +</button>
                                     </h5>
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class="bg-light">
-                                                    <tr class="border-0">
-                                                        <th class="border-0">Year</th>
-                                                        <th class="border-0">Revenue</th>
-                                                        <th class="border-0">Actions</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php display_business_revenue($business_id); ?>
-                                                    <!-- <tr>
-                                                        <td>2018</td>
-                                                        <td>$80.00</td>
-                                                        <td>
-                                                            <button class="btn btn-outline-warning">Edit</button>
-                                                            <button class="btn btn-outline-danger">Remove</button>
-                                                        </td>
-                                                    </tr> -->
-                                                </tbody>
-                                            </table>
-                                        </div> <br>
-                                        <h5>
-                                            Business Grants 
-                                            <button class="btn btn-outline-primary">Add Grant +</button>
-                                        </h5>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead class="bg-light">
-                                                        <tr class="border-0">
-                                                            <th class="border-0">Company Name</th>
-                                                            <th class="border-0">Grant Received</th>
-                                                            <th class="border-0">Date Received</th>
-                                                            <th class="border-0">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php display_business_grants($business_id) ?>
-                                                        <!-- <tr>
-                                                            <td>Coco-cola</td>
-                                                            <td>$80.00</td>
-                                                            <td>27-08-2018</td>
-                                                            <td>
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                                <button class="btn btn-outline-danger">Remove</button>
-                                                            </td>
-                                                        </tr> -->
-                                                    </tbody>
-                                                </table>
-                                            </div> <br>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">Year</th>
+                                                    <th class="border-0">Revenue</th>
+                                                    <th class="border-0">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php display_business_revenue($business_id); ?>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div> <br>
+                                    <h5>
+                                        Business Grants
+                                        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#business_grant">Add Grant +</button>
+                                    </h5>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr class="border-0">
+                                                    <th class="border-0">Company Name</th>
+                                                    <th class="border-0">Grant Received</th>
+                                                    <th class="border-0">Date Received</th>
+                                                    <th class="border-0">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php display_business_grants($business_id) ?>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div> <br>
                                 </div>
                             </div>
                         </div>
@@ -342,6 +314,111 @@
         </div>
     </div>
     </div>
+    <!-- Modal For Adding Revenue -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Business Revenue</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../actions/insertions/add_business_revenue.php" method="post">
+                        <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                        <input type="hidden" name="department" value="<?php echo $department ?>">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="business_name" placeholder="Business Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Revenue Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business year</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="<?php echo date("Y") ?>" required name="year" placeholder="Business Year" class="form-control">
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Add Revenue</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Grant -->
+    <!-- Modal -->
+    <div class="modal fade" id="business_grant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Business Grant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../actions/insertions/add_business_grant.php" method="post">
+                        <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                        <input type="hidden" name="department" value="<?php echo $department ?>">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="business_name" placeholder="Business Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Grants</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="grant_id" id="" class="form-control">
+                                   <?php department_grant_dropdown(TAC) ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Date</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="date" value="" required name="date" placeholder="Business Year" class="form-control">
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Give Grant</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <?php if (isset($_GET['message'])) : ?>
+
+        <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
+
+    <?php endif; ?>
+    <script>
+        sweetAlert("Revenue Added Successfully", "Update Successfully");
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

@@ -20,8 +20,8 @@
             return $this->db_query($sql);
         }
 
-        function add_business_grant($grant_id,$business_id, $amount){
-            $sql = "INSERT INTO `business_grants`(`grant_id`, `business_id`, `amount`) VALUES ('$grant_id','$business_id','$amount')";
+        function add_business_grant($grant_id,$business_id, $amount, $date){
+            $sql = "INSERT INTO `business_grants`(`grant_id`, `business_id`, `amount`, `date`) VALUES ('$grant_id','$business_id','$amount', '$date')";
 
             return $this->db_query($sql);
         }
@@ -218,7 +218,7 @@
          * insert into the business_Revenue
          */
         function report_business_revenue($business_id, $amount, $year){
-            $sql = "INSERT INTO `business_revenue`(`business_id`, `revenue_amount`, `revenue_year`) VALUES ('$business_id','$amount','$year'";
+            $sql = "INSERT INTO `business_revenue`(`business_id`, `revenue_amount`, `revenue_year`) VALUES ('$business_id','$amount','$year')";
             return $this->db_query($sql);
         }
 
@@ -227,8 +227,8 @@
             return $this->db_query($sql);
         }
 
-        function delete_business_revenue($business_id, $year){
-            $sql = "DELETE FROM `business_revenue` WHERE `business_id`='$business_id' and revenue_year = '$year' ";
+        function delete_business_revenue($business_id, $year, $amount){
+            $sql = "DELETE FROM `business_revenue` WHERE `business_id`='$business_id' and revenue_year = '$year' and revenue_amount = '$amount' ";
             
             return $this->db_query($sql);
         }

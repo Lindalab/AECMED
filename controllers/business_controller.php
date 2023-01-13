@@ -12,9 +12,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->create_business_details($business_id,$number_of_employees, $formalised_structure, $sdg_alignment);
     }
 
-    function add_business_grant_ctr($grant_id,$business_id, $amount){
+    function add_business_grant_ctr($grant_id,$business_id, $amount, $date){
         $business= new Business;
-        return $business->add_business_grant($grant_id,$business_id, $amount);
+        return $business->add_business_grant($grant_id,$business_id, $amount, $date);
     }
 
     function update_business_ctr($business_id, $year_started, $business_name, $business_location, $business_contact, $business_email,$department, $sector, $business_description){
@@ -94,9 +94,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
         return $business->update_business_revenue($business_id, $amount, $year);
     }
 
-    function delete_business_revenue_ctr($business_id, $year){
+    function delete_business_revenue_ctr($business_id, $year, $amount){
         $business = new Business;
-        return $business->delete_business_revenue($business_id, $year);
+        return $business->delete_business_revenue($business_id, $year, $amount);
     }
 
     function select_one_business_revenue($business_id){
