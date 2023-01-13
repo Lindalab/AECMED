@@ -56,7 +56,7 @@
         $status
     </td>
     <td>
-    <a href='projects students view.php?project_id=$project_id'>
+    <a href='student projects view.php?project_id=$project_id'>
     <button class='btn btn-outline-info'>View</button>
 </a>
 <button class='btn btn-outline-warning'>Edit</button>
@@ -102,7 +102,7 @@
        <a href='courses view.php?course_id=$course_id'>
             <button class='btn btn-outline-info'>View</button>
         </a>
-        <a href='../../forms/edit/edit-course.php'>
+        <a href='../../forms/edit/edit-course.php?course_id=$course_id'>
             <button class='btn btn-outline-warning'>Edit</button>
         </a>
         <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_course.php?course_id=$course_id')>Remove</button>

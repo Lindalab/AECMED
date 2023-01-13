@@ -8,8 +8,8 @@
      $description = $club['description'];
      $males =  $club['number_of_males'];
      $females = $club['number_of_females'];
-     $executives = $club['number_of_executives'];
- 
+     $executives = $club['number_of_excutives'];
+     $lead = $club['lead_name'];
 ?>
 <!doctype html>
 <html lang="en">
@@ -237,9 +237,10 @@
                             <div class="card">
                                 <div class="card-body">
                                 <h3>Club Name: <?php echo $club_name ?></h3>
+                                <h5>Lead Name: </h5> <ps><?php echo $lead?></p>
                 <h5>Number of male members: </h5> <ps><?php echo $males?></p>
                 <h5>Number of female members: </h5> <p> <?php echo $females?></p>
-                <h5>Number of Executive members: </h5><p> <?php print_r($executives) ?></p>
+                <h5>Number of Executive members: </h5><p> <?php echo $executives ?></p>
                 <h5>Club Registration date: </h5><p><?php echo $club_date ?></p>
                                     <br>                                   
                                     <h5>

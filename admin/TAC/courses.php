@@ -270,7 +270,7 @@ $data_for_courses_and_students = list_of_courses_and_student();
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="table-responsive">
+                                    <!-- <div class="table-responsive">
                                         <br>
                                         <table class="table">
                                             <thead class="bg-light">
@@ -282,8 +282,8 @@ $data_for_courses_and_students = list_of_courses_and_student();
                                                     <th class="border-0">Actions</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <?php echo list_student_project_row() ?>
+                                            <tbody> -->
+                                                <?php // echo list_student_project_row() ?>
                                                 <!-- <tr>
                                                         <td>Company #1 </td>
                                                         <td>67 </td>
@@ -299,8 +299,8 @@ $data_for_courses_and_students = list_of_courses_and_student();
                                                     </tr> -->
 
 
-                                            </tbody>
-                                        </table>
+                                            <!-- </tbody>
+                                        </table> -->
 
                                         <!-- <tr>
                                                         <td>Company #1 </td>

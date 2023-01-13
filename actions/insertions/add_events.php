@@ -14,9 +14,21 @@
     $insert = create_event_ctr($event_name, $date, $target_group, $desc, $males, $females, $event_type, $department_id);
 
     if($insert){
-        header("location: ../view/index.php?message=1");
+        if ($department_id === AVI) {
+            header("location: ../../admin/AVI/events.php?message=1");
+        } elseif ($department_id === TAC) {
+            header("location: ../../admin/TAC/events.php?message=1");
+        } elseif ($department_id === D_Lab) {
+            header("location: ../../admin/D-Lab/events.php?message=1");
+        }
     }else{
-        header("location:../view/index.php?message=2");
+        if ($department_id === AVI) {
+            header("location: ../../admin/AVI/events.php?message=2");
+        } elseif ($department_id === TAC) {
+            header("location: ../../admin/TAC/events.php?message=2");
+        } elseif ($department_id === D_Lab) {
+            header("location: ../../admin/D-Lab/events.php?message=2");
+        }
     }
 
 

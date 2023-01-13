@@ -1,3 +1,18 @@
+<?php 
+    require_once dirname(__FILE__)."/../../admin_functions/course_functions.php";
+    require_once dirname(__FILE__)."/../../controllers/general_controller.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
+    $course_id = $_GET['course_id'];
+    $course = select_one_course_ctr($course_id);
+    $course_name = $course['course_name'];
+    $course_desc = $course['course_description'];
+    $date = $course['date_started'];
+    $course_status = $course['status'];
+    $department = TAC;
+    // $student_number = selet_a_course_student_ctr($course_id)['count'];
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -192,34 +207,47 @@
                         <div class="card">
                             <h5 class="card-header">Edit a course</h5>
                             <div class="card-body">
-                                <form id="validationform" data-parsley-validate="" novalidate="">
+                            <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/updates/update_course.php" method="POST">
+                                    <input type="hidden" name="course_id" value="<?php echo $course_id ?>">        
+
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Name</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="text" required="" placeholder="Business Name"
+                                            <input type="text" name="course_name" value="<?php echo $course_name ?>" required="" placeholder="Course Name"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Department</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <select name="department" id="" class="form-control">
-                                                <option value="">Ashesi Venture Incubator</option>
-                                                <option value="">Undergraduate Programs</option>
+                                            <select name="department" id="" class="form-control" name="department">
+                                                <!-- <option value="">Ashesi Venture Incubator</option> -->
+                                                <?php show_department_dropdown($department) ?>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Status</label>
+                                        <div class="col-12 col-sm-8 col-lg-6">
+                                            <select name="status" id="" class="form-control" name="department">
+                                                <!-- <option value="">Ashesi Venture Incubator</option> -->
+                                                <?php course_status_dropdown($course_status) ?>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Date started</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <input type="date" required="" placeholder="Date started"
+                                            <input type="date" name = "date_started" value="<?php echo $date ?>" required="" placeholder="Date started"
                                                 class="form-control">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-12 col-sm-3 col-form-label text-sm-right">Course Description</label>
                                         <div class="col-12 col-sm-8 col-lg-6">
-                                            <textarea required="" class="form-control"></textarea>
+                                            <textarea required="" name="desc" class="form-control"><?php echo $course_desc ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row text-right">

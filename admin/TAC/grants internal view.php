@@ -215,16 +215,16 @@ require_once dirname(__FILE__) . "/../../admin_functions/grant_view_functions.ph
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="view-sec text-center">
-                                        
-                                        <section class="d-flex justify-content-around">
+                                <h3 class=""><?php echo $name ?></h3>
+                                    <div class="view-sec ">
+                            
                                             <figure class='img-frame'>
-                                                <img class='img-view' src='#' alt='grant_logo'>
+                                                <img class='img-view' src='../<?php echo $image?>' alt='grant_logo' width="20%" height="20%">
 
                                             </figure>
-                                        </section>
-                                    </div><br>
-                                    <h3 class=""><?php echo $name ?></h3>
+                                
+                                    </div>
+                                    
                                     <h5>Date Received</h5>
                                     <p><?php echo $date ?></p>
                                     <h5>Amount</h5>

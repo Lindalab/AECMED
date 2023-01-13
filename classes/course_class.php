@@ -14,7 +14,7 @@ class course extends db_connection
 
     function update_course($course_id, $course_name, $date_started, $desc, $status, $department)
     {
-        $sql = "UPDATE `course` SET `course_name`=' $course_name',`date_started`='$date_started',`course_description`='$desc`course_status`='$status',`department_id`='$department' WHERE `course_id`='$course_id'";
+        $sql = "UPDATE `course` SET `course_name`='$course_name',`date_started`='$date_started',`course_description`='$desc', `course_status`='$status',`department_id`='$department' WHERE `course_id`='$course_id'";
         return $this->db_query($sql);
     }
 

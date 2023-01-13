@@ -18,6 +18,14 @@ function project_status($status){
     }
 }
 
+function course_status($status){
+    if($status == ACTIVE){
+        return "active";
+    }else{
+        return "inactive";
+    }
+}
+
 function get_gender($gender){
     if($gender === 1){
         return "male";

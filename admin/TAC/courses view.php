@@ -1,6 +1,16 @@
 <?php 
     require_once dirname(__FILE__)."/../../admin_functions/course_functions.php";
+    require_once dirname(__FILE__)."/../../controllers/general_controller.php";
+    require_once dirname(__FILE__)."/../../functions/dropdowns.php";
+    
     $course_id = $_GET['course_id'];
+    $course = select_one_course_ctr($course_id);
+    $course_name = $course['course_name'];
+    $course_desc = $course['course_description'];
+    $date = $course['date_started'];
+    $course_status = $course['status'];
+    $department = TAC;
+    $student_number = selet_a_course_student_ctr($course_id)['count'];
 
 ?>
 <!doctype html>
@@ -230,12 +240,16 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="">Course Name</h3>
-                                    <h5>Number of studenst</h5> <p>87</p>
+                                    <h3 class="">Course Name: <?php echo $course_name ?></h3>
+                                    <h5>Number of students Taken Course</h5> <p><?php echo $student_number ?></p>
+                                    <h5>Status</h5> <p><?php echo course_status($course_status)?></p>
+                                    <h5>Date Started</h5> <p><?php echo $date ?></p>
+                                    
                                     <h5>
                                         Course Description
                                     </h5>
                                     <p>
+                                        <?php echo $course_desc ?>
                                         <!-- <br><br>
                                         Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
                                         luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 

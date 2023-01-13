@@ -181,4 +181,17 @@ function role_dropdown($role){
     }
 }
 
+
+function course_status_dropdown($status){
+    if($status === ACTIVE){
+        department_row_selected(ACTIVE, "Active");
+        department_row(INACTIVE, "Inactive");
+    }elseif($status == INACTIVE){
+        department_row(ACTIVE, "Active");
+        department_row_selected(INACTIVE, "Inactive");
+    }else{
+        department_row(ACTIVE, "Active");
+        department_row(INACTIVE, "Inactive");
+    }
+}
 ?>
