@@ -1,5 +1,6 @@
 <?php
 require_once dirname(__FILE__)."/../controllers/department_controller.php";
+require_once dirname(__FILE__)."/../controllers/grant_controller.php";
 
 function getDepartmentDropdown_fnc()
 {

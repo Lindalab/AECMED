@@ -255,8 +255,9 @@ class Grant extends db_connection
      * 
      */
 
-     function add_grant_project(){
-
+     function add_project_grant($grant_id, $project_id, $amount){
+        $sql = "INSERT INTO `project_grants`(`grant_id`, `project_id`, `amount`) VALUES ('$grant_id','$project_id','$amount')";
+        return $this->db_query($sql);
      }
 
      function delete_grant_project(){

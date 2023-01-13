@@ -175,6 +175,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->number_of_project_grant($department, $type);
     }
 
+    function add_project_grant_ctr($grant_id, $project_id, $amount){
+        $grant = new Grant;
+        return $grant->add_project_grant($grant_id, $project_id, $amount);
+    }
+
     function number_of_business_grants_ctr($department, $type){
         $grant = new Grant;
         return $grant->number_of_business_grants($department, $type);

@@ -1,15 +1,17 @@
-<?php 
-    require_once dirname(__FILE__)."/../../admin_functions/project_functions.php";
+<?php
+require_once dirname(__FILE__) . "/../../admin_functions/project_functions.php";
+require_once dirname(__FILE__) . "/../../functions/dropdowns.php";
 
-    $project_id = $_GET['project_id'];
-    $project = select_one_project_ctr($project_id);
-    $projet_name = $project['project_name'];
-    $project_desc = $project['project_description'];
-    $project_status = $project['project_status'];
-    $date = $project['date_started'];
-    $sdg_goals = $project['sdg_goals'];
-    $project_status = project_status($project['project_status']);
-    $sector = $project['sector'];
+$project_id = $_GET['project_id'];
+$project = select_one_project_ctr($project_id);
+$projet_name = $project['project_name'];
+$project_desc = $project['project_description'];
+$project_status = $project['project_status'];
+$date = $project['date_started'];
+$sdg_goals = $project['sdg_goals'];
+$project_status = project_status($project['project_status']);
+$sector = $project['sector'];
+$department = $project['department_id'];
 
 
 ?>
@@ -31,6 +33,10 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="../../javascript/delete.js"></script>
+    <script src="../../javascript/alerts.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>AEC - Undergraduate Programs Student Projects</title>
 </head>
 
@@ -45,9 +51,7 @@
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
                 <a class="navbar-brand" href="../index.php">AEC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
@@ -62,8 +66,7 @@
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -72,23 +75,19 @@
                                 Main
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../index.php"><i
-                                        class="fa fa-fw fa-sticky-note"></i>Summary</a>
+                                <a class="nav-link" href="../index.php"><i class="fa fa-fw fa-sticky-note"></i>Summary</a>
                             </li>
                             <li class="nav-divider">
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/business hybrid.php"><i
-                                        class="fab fa-black-tie"></i>Businesses</a>
+                                <a class="nav-link" href="../AVI/business hybrid.php"><i class="fab fa-black-tie"></i>Businesses</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/fellows.php"><i
-                                        class="fab fa-black-tie"></i>Fellows</a>
+                                <a class="nav-link" href="../AVI/fellows.php"><i class="fab fa-black-tie"></i>Fellows</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link" href="../AVI/modules.php"><i
-                                        class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
+                                <a class="nav-link" href="../AVI/modules.php"><i class="fa fa-fw fa-puzzle-piece"></i>Modules</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
@@ -110,9 +109,7 @@
                                 Design Lab
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                                    data-target="#submenu-3" aria-controls="submenu-3"><i
-                                        class="fa fa-fw fa-clipboard"></i>Projects</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
                                 <div id="submenu-3" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -128,13 +125,10 @@
                     </div>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="../D-Lab/events.php"><i
-                                class="fa fa-fw fa-calendar-alt"></i>Events</a>
+                        <a class="nav-link" href="../D-Lab/events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-4" aria-controls="submenu-4"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
                         <div id="submenu-4" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -153,17 +147,13 @@
                         Undergraduate Programs
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="businesses.php"><i
-                                class="fab fa-black-tie"></i>Businesses</a>
+                        <a class="nav-link" href="businesses.php"><i class="fab fa-black-tie"></i>Businesses</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="community entrepreneurship.php"><i
-                                class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
+                        <a class="nav-link" href="community entrepreneurship.php"><i class="fa fa-fw fas fa-handshake"></i>Comm. Entrepreneurship</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-5" aria-controls="submenu-5"><i
-                                class="fa fa-fw fas fa-book"></i>Courses</a>
+                        <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
                         <div id="submenu-5" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -183,9 +173,7 @@
                         <a class="nav-link" href="events.php"><i class="fa fa-fw fa-calendar-alt"></i>Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
-                            data-target="#submenu-6" aria-controls="submenu-6"><i
-                                class="far fa-money-bill-alt"></i>Grants</a>
+                        <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
                         <div id="submenu-6" class="collapse submenu">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
@@ -223,8 +211,7 @@
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="projects students.php"
-                                                class="breadcrumb-link">Student Projects</a></li>
+                                        <li class="breadcrumb-item"><a href="projects students.php" class="breadcrumb-link">Student Projects</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">Student Projects (View)</li>
                                     </ol>
                                 </nav>
@@ -243,26 +230,30 @@
                                     <h4 class="text-center">Project Members</h4>
                                     <div class="view-sec">
                                         <section class="d-flex justify-content-around">
-                                            <?php 
-                                                show_project_stakeholders($project_id);
+                                            <?php
+                                            show_project_stakeholders($project_id);
                                             ?>
                                             <!-- <figure class="img-frame">
-                                                <img class="img-view" src="../<?php // echo $business_logo;?>"
+                                                <img class="img-view" src="../<?php // echo $business_logo;
+                                                                                ?>"
                                                     alt="img name">
                                                 <figcaption>
                                                     Gupta Sanchez <br>
                                                     <sub class="text-muted">
-                                                        <?php //echo // $business_email;?>
+                                                        <?php //echo // $business_email;
+                                                        ?>
                                                     </sub>
                                                 </figcaption>
                                             </figure>
                                             <figure class="img-frame">
-                                                <img class="img-view" src="../<?php // echo $business_logo;?>"
+                                                <img class="img-view" src="../<?php // echo $business_logo;
+                                                                                ?>"
                                                     alt="img name">
                                                 <figcaption>
                                                     Gupta Sanchez <br>
                                                     <sub class="text-muted">
-                                                        <?php // echo $business_email;?>
+                                                        <?php // echo $business_email;
+                                                        ?>
                                                     </sub>
                                                 </figcaption>
                                             </figure> -->
@@ -306,35 +297,35 @@
                                         Etiam nec pulvinar mauris, et ultrices ipsum. -->
                                     </p>
                                     <br>
-                                        <h5>
-                                            Project Grants 
-                                            <button class="btn btn-outline-primary">Add Grant +</button>
-                                        </h5>
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <thead class="bg-light">
+                                    <h5>
+                                        Project Grants
+                                        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#business_grant">Add Grant +</button>
+                                    </h5>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
 
-                                                        <tr class="border-0">
-                                                            <th class="border-0">Company Name</th>
-                                                            <th class="border-0">Grant Received</th>
-                                                            <th class="border-0">Date Received</th>
-                                                            <th class="border-0">Actions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                       
-                                                        <tr>
-                                                            <td>Coco-cola</td>
-                                                            <td>$80.00</td>
-                                                            <td>27-08-2018</td>
-                                                            <td>
-                                                                <button class="btn btn-outline-warning">Edit</button>
-                                                                <button class="btn btn-outline-danger">Remove</button>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div> <br>
+                                                <tr class="border-0">
+                                                    <th class="border-0">Company Name</th>
+                                                    <th class="border-0">Grant Received</th>
+                                                    <th class="border-0">Date Received</th>
+                                                    <th class="border-0">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>Coco-cola</td>
+                                                    <td>$80.00</td>
+                                                    <td>27-08-2018</td>
+                                                    <td>
+                                                        <button class="btn btn-outline-warning">Edit</button>
+                                                        <button class="btn btn-outline-danger">Remove</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div> <br>
                                 </div>
                             </div>
                         </div>
@@ -344,6 +335,61 @@
         </div>
     </div>
     </div>
+
+    <!-- Project Grant -->
+    <!-- Modal -->
+    <div class="modal fade" id="business_grant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add Business Grant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../actions/insertions/add_project_grant.php" method="post">
+                        <input type="hidden" name="project_id" value="<?php echo $project_id ?>">
+                        <input type="hidden" name="department" value="<?php echo $department ?>">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $projet_name ?>" name="business_name" placeholder="Business Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Grants</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="grant_id" id="" class="form-control">
+                                    <?php department_grant_dropdown($department) ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Give Grant</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <?php if (isset($_GET['message'])) : ?>
+
+        <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
+
+    <?php endif; ?>
+    <script>
+        sweetAlert("Revenue Added Successfully", "Update Successfully");
+    </script>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
