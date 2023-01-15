@@ -246,6 +246,8 @@ $department = $business['department_id'];
                                         </section>
                                     </div><br>
 
+                                    <button class="btn btn-primary" type="button" onclick="edit()">edit</button>
+
                                     <h5>Business Email:</h5>
                                     <p><?php echo $email ?></p>
                                     <h5>Business Contact: </h5>
@@ -281,7 +283,7 @@ $department = $business['department_id'];
                                             </thead>
                                             <tbody>
                                                 <?php display_business_revenue($business_id); ?>
-                                                
+
                                             </tbody>
                                         </table>
                                     </div> <br>
@@ -301,7 +303,7 @@ $department = $business['department_id'];
                                             </thead>
                                             <tbody>
                                                 <?php display_business_grants($business_id) ?>
-                                                
+
                                             </tbody>
                                         </table>
                                     </div> <br>
@@ -384,7 +386,7 @@ $department = $business['department_id'];
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Grants</label>
                             <div class="col-12 col-sm-8 col-lg-6">
                                 <select name="grant_id" id="" class="form-control">
-                                   <?php department_grant_dropdown(TAC) ?>
+                                    <?php department_grant_dropdown(TAC) ?>
                                 </select>
                             </div>
                         </div>
@@ -411,6 +413,104 @@ $department = $business['department_id'];
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="edit_business_grant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Business Grant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="../../actions/insertions/add_business_grant.php" method="post">
+                        <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                        <input type="hidden" name="department" value="<?php echo $department ?>">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="business_name" placeholder="Business Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Grants</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="grant_id" id="" class="form-control">
+                                    <?php department_grant_dropdown(TAC) ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Date</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="date" value="" required name="date" placeholder="Business Year" class="form-control">
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Give Grant</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function edit(grant_name, old_amount, old_date, grant_id) {
+            Swal.fire({
+                title: 'Update Grant Given',
+                html: `
+                 <form action='../../actions/updates/update_business_grant.php' method='POST'>
+                       <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                       <input type="hidden" name="department" value="<?php echo $department ?>">
+            
+                        <input type="hidden" id="old_amount" name="old_amount" value="${old_amount}">
+                        <input type="hidden" id="old_date" name="old_date" value="${old_date}">
+                        <input type="hidden" id="new_grant_id" name="new_grant_id" value="${grant_id}">
+                        <input type="hidden" id="old_grant_id" name="old_grant_id" value="${grant_id}">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="${grant_name}" name="" placeholder="Grant Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount $</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="${old_amount}" id="new_amount" name="new_amount" placeholder="Amount $" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="date" value="${old_date}" id="new_date" name="new_date" placeholder="Date" required class="form-control">
+                            </div>
+                        </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary">Give Grant</button>
+               
+                </form>
+                        
+                        `,
+                
+                focusConfirm: false,
+                showConfirmButton: false,
+                showCloseButton:true,
+                
+            })
+        }
+    </script>
     <?php if (isset($_GET['message'])) : ?>
 
         <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>

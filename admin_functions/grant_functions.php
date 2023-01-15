@@ -76,7 +76,7 @@ function display_grants($department)
     $list = select_grant_for_dpt_ordered_by_amount_ctr($department);
     $count = 0;
     foreach ($list as $grant) {
-        if ($count > 3) {
+        if ($count >= 3) {
             return;
         }
 

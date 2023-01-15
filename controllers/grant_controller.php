@@ -196,5 +196,10 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         $grant = new Grant;
         return $grant->delete_business_grant($business_id, $grant_id, $date_received);
     }
-   
+    
+    function update_business_grant_ctr( $business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date){
+        $grant = new Grant;
+        return $grant->update_business_grant( $business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date);
+    }
+
 ?>

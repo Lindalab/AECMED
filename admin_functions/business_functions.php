@@ -5,7 +5,7 @@ require_once dirname(__FILE__) . "/../controllers/grant_controller.php";
 function display_business_grants($business_id){
     $grant_list = grant_for_a_business_ctr($business_id);
     foreach($grant_list as $grant){
-        business_grants($business_id,$grant['grant_id'], $grant['grant_name'], $grant['amount_received'],$grant['date']);
+        business_grants($grant['busines_name'],$business_id,$grant['grant_id'], $grant['grant_name'], $grant['amount_received'],$grant['date']);
     }
 }
 
@@ -37,13 +37,13 @@ function show_business_owner($image, $name, $email,$phone){
 }
 
 
-function business_grants($business_id, $grant_id, $name, $amount,$date){
+function business_grants($business_name,$business_id, $grant_id, $name, $amount,$date){
     echo "<tr>
     <td>$name</td>
     <td>$$amount</td>
     <td>$date</td>
     <td>
-        <button class='btn btn-outline-warning'>Edit</button>
+        <button class='btn btn-outline-warning' onclick=edit('$name','$amount','$date','$grant_id')>Edit</button>
         <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_grant.php?business_id=$business_id&grant_id=$grant_id&date=$date')>Remove</button>
     </td>
 </tr>";

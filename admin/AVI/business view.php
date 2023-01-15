@@ -412,6 +412,7 @@
         </div>
     </div>
 
+
     <?php if (isset($_GET['message'])) : ?>
 
         <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
@@ -420,6 +421,54 @@
     <script>
         sweetAlert("Revenue Added Successfully", "Update Successfully");
     </script>
+    
+    <script>
+        function edit(grant_name, old_amount, old_date, grant_id) {
+            Swal.fire({
+                title: 'Update Grant Given',
+                html: `
+                 <form action='../../actions/updates/update_business_grant.php' method='POST'>
+                       <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                       <input type="hidden" name="department" value="<?php echo $department ?>">
+            
+                        <input type="hidden" id="old_amount" name="old_amount" value="${old_amount}">
+                        <input type="hidden" id="old_date" name="old_date" value="${old_date}">
+                        <input type="hidden" id="new_grant_id" name="new_grant_id" value="${grant_id}">
+                        <input type="hidden" id="old_grant_id" name="old_grant_id" value="${grant_id}">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Grant Name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="${grant_name}" name="" placeholder="Grant Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount $</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="${old_amount}" id="new_amount" name="new_amount" placeholder="Amount $" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Business name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="date" value="${old_date}" id="new_date" name="new_date" placeholder="Date" required class="form-control">
+                            </div>
+                        </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary">Give Grant</button>
+               
+                </form>
+                        
+                        `,
+                
+                focusConfirm: false,
+                showConfirmButton: false,
+                showCloseButton:true,
+                
+            })
+        }
+    </script>
+
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

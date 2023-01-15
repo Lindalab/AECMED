@@ -277,8 +277,9 @@ class Grant extends db_connection
 
      }
 
-     function update_business_grant(){
-
+     function update_business_grant( $business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date){
+        $sql = "UPDATE `business_grants` SET grant_id= '$new_grant_id' ,`amount`='$new_amount',`date`='$new_date' WHERE `grant_id`='$old_grant_id' and `business_id`='$business_id' and `date`='$old_date' and `amount`='$old_amount'";
+        return $this->db_query($sql);
      }
 
      function delete_business_grant($business_id, $grant_id, $date_received){
@@ -287,3 +288,4 @@ class Grant extends db_connection
         return $this->db_query($sql);
      }
 }
+

@@ -207,8 +207,30 @@ function department_grant_dropdown($department){
     }
 }
 
+function department_grant_dropdown_selected($grantId, $department){
+    $grantList = select_grant_for_dpt_ctr($department);
+    $grant_id = "";
+    $grant_name = "";
+    foreach($grantList as $grant){
+        $grant_id = $grant['grant_id'];
+        $grant_name = $grant['grant_name'];  
+        if($grant_id === $grantId){ 
+            options_selected($grant_id, $grant_name); 
+       
+        }else{
+            options($grant_id, $grant_name);
+        }
+    }
+}
+
 
 function options($id, $name){
+    echo "<option value='$id'>$name</option>";
+}
+
+function options_selected($id, $name){
     echo "<option value='$id' selected>$name</option>";
 }
+
+
 ?>

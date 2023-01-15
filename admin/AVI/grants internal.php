@@ -209,7 +209,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/business_functions.php"
                                 <div class="card-body">
                                     <h5 class="text-muted">Total number of internal grants received</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1"><?php echo count_grant_type_and_department_ctr(D_Lab, INTERNAL) ?></h1>
+                                        <h1 class="mb-1"><?php echo count_grant_type_and_department_ctr(AVI, INTERNAL) ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +219,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/business_functions.php"
                                 <div class="card-body">
                                     <h5 class="text-muted">Total internal grants amount</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(D_Lab, INTERNAL)['amount'] ?></h1>
+                                        <h1 class="mb-1">$<?php echo grant_department_and_type_ctr(AVI, INTERNAL)['amount'] ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@ require_once dirname(__FILE__) . "/../../admin_functions/business_functions.php"
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php displa_all_grant_types(D_Lab, INTERNAL) ?>
+                                                <?php displa_all_grant_types(AVI, INTERNAL) ?>
 
                                             </tbody>
                                         </table>
