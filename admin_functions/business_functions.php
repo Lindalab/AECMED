@@ -38,6 +38,7 @@ function show_business_owner($image, $name, $email,$phone){
 
 
 function business_grants($business_name,$business_id, $grant_id, $name, $amount,$date){
+   
     echo "<tr>
     <td>$name</td>
     <td>$$amount</td>
