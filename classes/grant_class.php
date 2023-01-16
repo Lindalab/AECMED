@@ -265,8 +265,8 @@ class Grant extends db_connection
         return $this->db_query($sql);
      }
 
-     function update_grant_project($grant_id, $project_id, $old_amount, $old_date){
-        $sql = "";
+     function update_grant_project($grant_id, $project_id, $old_amount, $old_date, $new_amount, $new_date){
+        $sql = "UPDATE `project_grants` SET `grant_id`='$grant_id', `amount`='$new_amount', `date`='$new_date' WHERE `project_id`='$project_id' and `grant_id`='$grant_id' and `amount`='$old_amount' and `date`='$old_date' ";
 
         return $this->db_query($sql);
      }

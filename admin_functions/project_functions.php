@@ -93,13 +93,15 @@
     }
 
     function project_grant_row($grant_id,$project_id, $name, $grant_received, $date){
+        $g_name = str_replace(" ", "_", trim($name));
+        $grant_received = trim($grant_received);
         echo "
         <tr>
             <td>$name</td>
             <td>$$grant_received</td>
             <td>$date</td>
             <td>
-                <button class='btn btn-outline-warning'>Edit</button>
+                <button class='btn btn-outline-warning' onclick=edit('$g_name','$grant_received','$date','$grant_id')>Edit</button>
                 <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_project_grant.php?grant_id=$grant_id&project_id=$project_id&date=$date&amount=$grant_received')>Remove</button>
             </td>
         </tr>";
