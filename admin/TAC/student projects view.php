@@ -233,30 +233,7 @@ $department = $project['department_id'];
                                             <?php
                                             show_project_stakeholders($project_id);
                                             ?>
-                                            <!-- <figure class="img-frame">
-                                                <img class="img-view" src="../<?php // echo $business_logo;
-                                                                                ?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        <?php //echo // $business_email;
-                                                        ?>
-                                                    </sub>
-                                                </figcaption>
-                                            </figure>
-                                            <figure class="img-frame">
-                                                <img class="img-view" src="../<?php // echo $business_logo;
-                                                                                ?>"
-                                                    alt="img name">
-                                                <figcaption>
-                                                    Gupta Sanchez <br>
-                                                    <sub class="text-muted">
-                                                        <?php // echo $business_email;
-                                                        ?>
-                                                    </sub>
-                                                </figcaption>
-                                            </figure> -->
+                                            
                                         </section>
                                     </div><br>
                                     <h5>

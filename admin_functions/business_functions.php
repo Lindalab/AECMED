@@ -12,17 +12,17 @@ function display_business_grants($business_id){
 function list_business_onwers($business_id){
     $stakeholder = stakeholder_business($business_id);
     foreach($stakeholder as $owner){
-        show_business_owner($owner['stakeholder_image'], $owner['first_name']." ".$owner['last_name'], $owner['stakeholder_email'], $owner['phone_number']);
+        show_business_owner($owner['stakeholder_image'], $owner['first_name']." ".$owner['last_name'], $owner['stakeholder_email'], $owner['phone_number'], $business_id, $owner['stakeholder_id']);
     }
 }
 
 
 
-function show_business_owner($image, $name, $email,$phone){
+function show_business_owner($image, $name, $email,$phone, $business_id, $stakeholder_id){
     echo "
     <figure class='img-frame'>
     <img class='img-view' src='../$image'
-        alt='img name'>
+        alt='img name' width='20%' height='50%'>
     <figcaption>
         $name <br>
         <sub class='text-muted'>
@@ -30,6 +30,14 @@ function show_business_owner($image, $name, $email,$phone){
         </sub><br>
         <sub class='text-muted'>
          $phone
+        </sub><br>
+        <sub>
+        <button class='btn btn-outline-warning'>
+        <i class='bi bi-pencil-square'></i>
+        </button>
+        <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_stakeholder.php?business_id=$business_id&stakeholder_id=$stakeholder_id')>
+        <i class='bi bi-trash3-fill'></i>
+        </button>
         </sub>
     </figcaption>
 </figure>
