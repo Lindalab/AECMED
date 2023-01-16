@@ -89,9 +89,9 @@ require_once dirname(__FILE__)."/../classes/business_class.php";
     }
      
 
-    function update_business_revenue_ctr($business_id, $amount, $year){
+    function update_business_revenue_ctr($business_id, $amount, $year, $old_amount, $old_year){
         $business = new Business;
-        return $business->update_business_revenue($business_id, $amount, $year);
+        return $business->update_business_revenue($business_id, $amount, $year, $old_amount, $old_year);
     }
 
     function delete_business_revenue_ctr($business_id, $year, $amount){

@@ -38,13 +38,13 @@ function show_business_owner($image, $name, $email,$phone){
 
 
 function business_grants($business_name,$business_id, $grant_id, $name, $amount,$date){
-   
+   $grant_name = str_replace(' ', "_", trim($name));
     echo "<tr>
     <td>$name</td>
     <td>$$amount</td>
     <td>$date</td>
     <td>
-        <button class='btn btn-outline-warning' onclick=edit('$name','$amount','$date','$grant_id')>Edit</button>
+        <button class='btn btn-outline-warning' onclick=edit('$grant_name','$amount','$date','$grant_id')>Edit</button>
         <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_grant.php?business_id=$business_id&grant_id=$grant_id&date=$date')>Remove</button>
     </td>
 </tr>";
@@ -62,7 +62,7 @@ function show_business_revenue_row($business_id,$revenue, $year){
     <td>$year</td>
     <td>$$revenue</td>
     <td>
-        <button class='btn btn-outline-warning'>Edit</button>
+        <button class='btn btn-outline-warning' onclick=edit_business_revenue('$year','$revenue')>Edit</button>
         <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_business_revenue.php?business_id=$business_id&year=$year&amount=$revenue')>Remove</button>
     </td>
 </tr>";

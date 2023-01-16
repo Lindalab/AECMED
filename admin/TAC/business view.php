@@ -245,9 +245,6 @@ $department = $business['department_id'];
 
                                         </section>
                                     </div><br>
-
-                                    <button class="btn btn-primary" type="button" onclick="edit()">edit</button>
-
                                     <h5>Business Email:</h5>
                                     <p><?php echo $email ?></p>
                                     <h5>Business Contact: </h5>
@@ -413,6 +410,8 @@ $department = $business['department_id'];
         </div>
     </div>
 
+
+
     <!-- Modal -->
     <div class="modal fade" id="edit_business_grant" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -466,6 +465,52 @@ $department = $business['department_id'];
 
 
     <script>
+
+        function edit_business_revenue(old_year, old_amount){
+            old_year = parseInt(old_year);
+            Swal.fire({
+                title: 'Edit Revenue Generated',
+                html: `
+                 <form action='../../actions/updates/update_business_revenue.php' method='POST'>
+                       <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                       <input type="hidden" name="department" value="<?php echo $department ?>">
+            
+                        <input type="hidden" id="old_amount" name="old_amount" value="${old_amount}">
+                        <input type="hidden" id="old_date" name="old_year" value="${old_year}">
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Businesss Name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="" placeholder="Grant Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount $</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="${old_amount}" id="new_amount" name="new_amount" placeholder="Amount $" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Year</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="${old_year}" id="new_date" name="new_year" placeholder="Date" required class="form-control">
+                            </div>
+                        </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary">Update Revenue</button>
+               
+                </form>
+                        `,
+                
+                focusConfirm: false,
+                showConfirmButton: false,
+                showCloseButton:true,
+                
+            })
+        }
+        
+
         function edit(grant_name, old_amount, old_date, grant_id) {
             Swal.fire({
                 title: 'Update Grant Given',

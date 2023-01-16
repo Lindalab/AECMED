@@ -222,8 +222,8 @@
             return $this->db_query($sql);
         }
 
-        function update_business_revenue($business_id, $amount, $year){
-            $sql = "UPDATE `business_revenue` SET `revenue_amount`=' $amount',`revenue_year`='$year' WHERE and `business_id`='$business_id'";
+        function update_business_revenue($business_id, $amount, $year, $old_amount, $old_year){
+            $sql = "UPDATE `business_revenue` SET `revenue_amount`=' $amount',`revenue_year`='$year' WHERE `business_id`='$business_id' and `revenue_amount` = $old_amount and `revenue_year` = '$old_year'";
             return $this->db_query($sql);
         }
 

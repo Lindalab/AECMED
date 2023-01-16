@@ -467,6 +467,50 @@
                 
             })
         }
+
+        function edit_business_revenue(old_year, old_amount){
+            old_year = parseInt(old_year);
+            Swal.fire({
+                title: 'Edit Revenue Generated',
+                html: `
+                 <form action='../../actions/updates/update_business_revenue.php' method='POST'>
+                       <input type="hidden" name="business_id" value="<?php echo $business_id ?>">
+                       <input type="hidden" name="department" value="<?php echo $department ?>">
+            
+                        <input type="hidden" id="old_amount" name="old_amount" value="${old_amount}">
+                        <input type="hidden" id="old_date" name="old_year" value="${old_year}">
+
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Businesss Name</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="text" value="<?php echo $name ?>" name="" placeholder="Grant Name" readonly required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount $</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="${old_amount}" id="new_amount" name="new_amount" placeholder="Amount $" required class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Year</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="number" value="${old_year}" id="new_date" name="new_year" placeholder="Date" required class="form-control">
+                            </div>
+                        </div>
+                   
+                
+                    <button type="submit" class="btn btn-primary">Update Revenue</button>
+               
+                </form>
+                        `,
+                
+                focusConfirm: false,
+                showConfirmButton: false,
+                showCloseButton:true,
+                
+            })
+        }
     </script>
 
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
