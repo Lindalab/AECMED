@@ -1,5 +1,6 @@
 <?php 
     require_once dirname(__FILE__)."/../controllers/project_controller.php";
+    require_once dirname(__FILE__)."/../controllers/grant_controller.php";
     require_once dirname(__FILE__)."/../controllers/general_controller.php";
 
     function list_student_project_row($department){
@@ -76,5 +77,31 @@
     }
 
 
-    
+    function display_project_grant($project_id){
+        $projectList = grant_for_project_ctr($project_id);
+        $name = "";
+        $grant_received = "";
+        $date = "";
+        $grant_id = "";
+        foreach($projectList as $grant){
+            $name = $grant['grant_name'];
+            $grant_received = $grant['amount'];
+            $date = $grant['date'];
+            $grant_id = $grant['grant_id'];
+            project_grant_row($grant_id, $project_id, $name, $grant_received, $date);
+        }
+    }
+
+    function project_grant_row($grant_id,$project_id, $name, $grant_received, $date){
+        echo "
+        <tr>
+            <td>$name</td>
+            <td>$$grant_received</td>
+            <td>$date</td>
+            <td>
+                <button class='btn btn-outline-warning'>Edit</button>
+                <button class='btn btn-outline-danger' onclick=delete_action('../../actions/deletions/delete_project_grant.php?grant_id=$grant_id&project_id=$project_id&date=$date&amount=$grant_received')>Remove</button>
+            </td>
+        </tr>";
+    }
 ?>

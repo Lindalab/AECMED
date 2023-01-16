@@ -313,16 +313,7 @@ $department = $project['department_id'];
                                                 </tr>
                                             </thead>
                                             <tbody>
-
-                                                <tr>
-                                                    <td>Coco-cola</td>
-                                                    <td>$80.00</td>
-                                                    <td>27-08-2018</td>
-                                                    <td>
-                                                        <button class="btn btn-outline-warning">Edit</button>
-                                                        <button class="btn btn-outline-danger">Remove</button>
-                                                    </td>
-                                                </tr>
+                                                <?php display_project_grant($project_id) ?>
                                             </tbody>
                                         </table>
                                     </div> <br>
@@ -369,6 +360,12 @@ $department = $project['department_id'];
                             <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount</label>
                             <div class="col-12 col-sm-8 col-lg-6">
                                 <input type="number" name="amount" placeholder="Amount" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Amount</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="date" name="date" placeholder="Amount" class="form-control" required>
                             </div>
                         </div>
 

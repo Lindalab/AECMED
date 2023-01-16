@@ -175,9 +175,14 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->number_of_project_grant($department, $type);
     }
 
-    function add_project_grant_ctr($grant_id, $project_id, $amount){
+    function add_project_grant_ctr($grant_id, $project_id, $amount, $date){
         $grant = new Grant;
-        return $grant->add_project_grant($grant_id, $project_id, $amount);
+        return $grant->add_project_grant($grant_id, $project_id, $amount, $date);
+    }
+
+    function delete_project_grant_ctr($grant_id, $project_id, $amount, $date){
+        $grant = new Grant;
+        return $grant->delete_grant_project($grant_id, $project_id, $amount, $date);
     }
 
     function number_of_business_grants_ctr($department, $type){
@@ -197,9 +202,11 @@ require_once dirname(__FILE__)."/../classes/grant_class.php";
         return $grant->delete_business_grant($business_id, $grant_id, $date_received);
     }
     
-    function update_business_grant_ctr( $business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date){
+    function update_business_grant_ctr($business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date){
         $grant = new Grant;
-        return $grant->update_business_grant( $business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date);
+        return $grant->update_business_grant($business_id, $new_grant_id, $new_amount, $new_date, $old_grant_id, $old_amount, $old_date);
     }
+
+
 
 ?>

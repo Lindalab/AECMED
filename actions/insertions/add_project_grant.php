@@ -6,8 +6,9 @@
     $grant_id = $_POST['grant_id'];
     $department = $_POST['department'];
     $amount = $_POST['amount'];
+    $date = $_POST['date'];
 
-    $inserted = add_project_grant_ctr($grant_id, $project_id, $amount);
+    $inserted = add_project_grant_ctr($grant_id, $project_id, $amount, $date);
 
     if ($inserted) {
         if($department === TAC){

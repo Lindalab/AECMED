@@ -219,7 +219,7 @@ $tac_project_grants = sum_grant_for_project_under_dpt_ctr(TAC);
                                 <div class="card-body">
                                     <h5 class="text-muted">Total student projects grants</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$<?php echo      $tac_project_grants ?></h1>
+                                        <h1 class="mb-1">$<?php echo $tac_project_grants ?></h1>
                                     </div>
                                 </div>
                             </div>
