@@ -243,7 +243,10 @@
                                         </figure>
                                     </div><br>
                                     <div class="view-sec text-center">
-                                        <h4>Business Owners</h4>
+                                        <div class="row d-flex justify-content-center">
+                                            <h4 class="col">Business Owners</h4>
+                                            <button class="btn btn-outline-primary d-inline" data-toggle="modal" data-target="#business_grant">Add Business owner +</button>
+                                        </div>
                                         <section class="d-flex justify-content-around">
                                            <?php list_business_onwers($business_id)?>
                                             
