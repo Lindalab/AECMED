@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="../assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="../assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="../assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../javascript/delete.js"></script>
     <script src="../../javascript/alerts.js"></script>
@@ -411,6 +413,82 @@
                     <button type="submit" class="btn btn-primary">Give Grant</button>
                 </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Business Modal Owner -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add A Business Owner</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_business_owner.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Name</label>
+                            <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
+                                <input id="name" type="text" required="" placeholder="First Name" name="fname" class="form-control">
+                            </div>
+                            <div class="col-sm-4 col-lg-3">
+                                <input type="text" required="" placeholder="Last Name" name="lname" class="form-control">
+                            </div>
+                            <input type="hidden" placeholder="" value="<?php echo $department ?>" name="department" class="form-control">
+                            <input type="hidden" placeholder="" value="<?php echo $business_id ?>" name="business_id" class="form-control">
+
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder role</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="role" id="" class="form-control">
+                                    <option value="<?php echo STUDENT ?>">Student</option>
+                                    <option value="<?php echo ALUMNI ?>">Alumni</option>
+                                    <option value="<?php echo LECTURER ?>">Lecturer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder gender</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="gender" id="" class="form-control">
+                                    <option value="<?php echo  MALE ?>">Male</option>
+                                    <option value="<?php echo FEMALE ?>">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder E-Mail</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="email" required="" data-parsley-type="email" name="email" placeholder="Enter a valid e-mail" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Contact</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input data-parsley-type="number" type="number" required="" name="phone_number" placeholder="Enter only numbers" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Image</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input name="stakeholder_image" type="file" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-group center">
+                                <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

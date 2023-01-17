@@ -219,7 +219,7 @@ $tac_project_grants = sum_grant_for_project_under_dpt_ctr(TAC);
                                 <div class="card-body">
                                     <h5 class="text-muted">Total student projects grants</h5>
                                     <div class="metric-value d-inline-block">
-                                        <h1 class="mb-1">$<?php echo      $tac_project_grants ?></h1>
+                                        <h1 class="mb-1">$<?php echo $tac_project_grants ?></h1>
                                     </div>
                                 </div>
                             </div>
@@ -269,6 +269,7 @@ $tac_project_grants = sum_grant_for_project_under_dpt_ctr(TAC);
     <script>
         sweetAlert("Project Added Successfully", "Project Updated Successfully");
     </script>
+
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

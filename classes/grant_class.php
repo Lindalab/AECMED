@@ -255,17 +255,20 @@ class Grant extends db_connection
      * 
      */
 
-     function add_project_grant($grant_id, $project_id, $amount){
-        $sql = "INSERT INTO `project_grants`(`grant_id`, `project_id`, `amount`) VALUES ('$grant_id','$project_id','$amount')";
+     function add_project_grant($grant_id, $project_id, $amount, $date){
+        $sql = "INSERT INTO `project_grants`(`grant_id`, `project_id`, `amount`, `date`) VALUES ('$grant_id','$project_id','$amount', '$date')";
         return $this->db_query($sql);
      }
 
-     function delete_grant_project(){
-
+     function delete_grant_project($grant_id, $project_id, $amount, $date){
+        $sql = "DELETE FROM project_grants WHERE `grant_id` = '$grant_id' and `project_id`='$project_id' and `amount`='$amount' and `date`='$date'";
+        return $this->db_query($sql);
      }
 
-     function update_grant_project(){
+     function update_grant_project($grant_id, $project_id, $old_amount, $old_date, $new_amount, $new_date){
+        $sql = "UPDATE `project_grants` SET `grant_id`='$grant_id', `amount`='$new_amount', `date`='$new_date' WHERE `project_id`='$project_id' and `grant_id`='$grant_id' and `amount`='$old_amount' and `date`='$old_date' ";
 
+        return $this->db_query($sql);
      }
 
     /**

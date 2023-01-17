@@ -32,6 +32,12 @@
                 title: 'Grant Given Successfully',
                 text: '',
             });
+        }else if (message == 6){
+            Swal.fire({
+                icon: 'success',
+                title: 'Business Owner Added Successfully',
+                text: '',
+            });
         }
     }
 
