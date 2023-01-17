@@ -18,9 +18,9 @@
             if($insert_stakeholder){
                 if($insert_stakeholder){
                     if($department === TAC){
-                        header("location: ../../admin/TAC/business view.php?business_id=$business_id&message=5");
+                        header("location: ../../admin/TAC/business view.php?business_id=$business_id&message=6");
                     }elseif($department === AVI){
-                        header("location: ../../admin/AVI/business view.php?business_id=$business_id&message=5");
+                        header("location: ../../admin/AVI/business view.php?business_id=$business_id&message=6");
                     }
                 }else{
                     if($department === TAC){
@@ -52,9 +52,9 @@
             if($insert_stakeholder){
                 if($insert_stakeholder){
                     if($department === TAC){
-                        header("location: ../../admin/TAC/business view.php?business_id=$business_id&message=5");
+                        header("location: ../../admin/TAC/business view.php?business_id=$business_id&message=6");
                     }elseif($department === AVI){
-                        header("location: ../../admin/AVI/business view.php?business_id=$business_id&message=5");
+                        header("location: ../../admin/AVI/business view.php?business_id=$business_id&message=6");
                     }
                 }else{
                     if($department === TAC){
