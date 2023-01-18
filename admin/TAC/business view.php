@@ -69,7 +69,7 @@ $department = $business['department_id'];
         <!-- ============================================================== -->
         <!-- left sidebar -->
         <!-- ============================================================== -->
-        <div class="nav-left-sidebar sidebar-dark">
+        <div class="nav-left-sidebar sidebar-danger">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
                     <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
@@ -98,7 +98,7 @@ $department = $business['department_id'];
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
-                                <div id="submenu-4" class="collapse submenu" style="">
+                                <div id="submenu-4" class="collapse submenu-danger">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="../AVI/grants overview.php">Overview</a>
@@ -117,7 +117,7 @@ $department = $business['department_id'];
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
-                                <div id="submenu-3" class="collapse submenu" style="">
+                                <div id="submenu-3" class="collapse submenu-danger">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                         <li class="nav-item">
@@ -136,7 +136,7 @@ $department = $business['department_id'];
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-4" class="collapse submenu" style="">
+                        <div id="submenu-4" class="collapse submenu-danger">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="../D-Lab/grants overview.php">Overview</a>
@@ -161,7 +161,7 @@ $department = $business['department_id'];
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
-                        <div id="submenu-5" class="collapse submenu" style="">
+                        <div id="submenu-5" class="collapse submenu-danger">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="courses.php">Overview</a>
@@ -181,7 +181,7 @@ $department = $business['department_id'];
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-6" class="collapse submenu" style="">
+                        <div id="submenu-6" class="collapse submenu-danger">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="grants overview.php">Overview</a>

@@ -81,7 +81,7 @@ $graph_1_data = number_of_event_organised_per_year(D_Lab);
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
-                                <div id="submenu-4" class="collapse submenu" style="">
+                                <div id="submenu-4" class="collapse submenu-danger">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                             <a class="nav-link" href="../AVI/grants overview.php">Overview</a>
@@ -100,7 +100,7 @@ $graph_1_data = number_of_event_organised_per_year(D_Lab);
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fa fa-fw fa-clipboard"></i>Projects</a>
-                                <div id="submenu-3" class="collapse submenu" style="">
+                                <div id="submenu-3" class="collapse submenu-danger">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
                                         <li class="nav-item">
@@ -119,7 +119,7 @@ $graph_1_data = number_of_event_organised_per_year(D_Lab);
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-4" class="collapse submenu" style="">
+                        <div id="submenu-4" class="collapse submenu-danger">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="grants overview.php">Overview</a>
@@ -144,7 +144,7 @@ $graph_1_data = number_of_event_organised_per_year(D_Lab);
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fas fa-book"></i>Courses</a>
-                        <div id="submenu-5" class="collapse submenu">
+                        <div id="submenu-5" class="collapse submenu-danger">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="../TAC/courses.php">Overview</a>
@@ -164,7 +164,7 @@ $graph_1_data = number_of_event_organised_per_year(D_Lab);
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="far fa-money-bill-alt"></i>Grants</a>
-                        <div id="submenu-6" class="collapse submenu">
+                        <div id="submenu-6" class="collapse submenu-danger">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
                                     <a class="nav-link" href="../TAC/grants overview.php">Overview</a>
