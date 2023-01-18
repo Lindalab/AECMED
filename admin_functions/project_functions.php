@@ -61,8 +61,8 @@
     function project_stakeholders_row($image, $name, $email, $phone){
         echo "
         <figure class='img-frame'>
-        <img class='img-view' src='../<?php echo $image;?>'
-            alt='img name'>
+        <img class='img-view' src='../$image'
+            alt='img name' width='10%' height='40%'>
         <figcaption>
             $name <br>
             <sub class='text-muted'>

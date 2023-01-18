@@ -155,7 +155,7 @@ function graph_business_revenue_years(){
 
 
 function modal_business_stakeholder($department, $business_id){
-    echo "<div class='modal fade bd-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true'>
+    echo "<div class='modal fade bd-edit-modal-lg' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true'>
     <div class='modal-dialog modal-lg'>
         <div class='modal-content'>
             <div class='modal-header'>

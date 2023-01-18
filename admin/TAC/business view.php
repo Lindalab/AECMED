@@ -647,6 +647,11 @@ $department = $business['department_id'];
     <script>
         sweetAlert("Revenue Added Successfully", "Update Successfully");
     </script>
+
+
+    <?php 
+        modal_business_stakeholder($department, $business_id)
+    ?>
     <script src="../assets/vendor/jquery/jquery-3.3.1.min.js"></script>
     <!-- bootstap bundle js -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>

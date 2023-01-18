@@ -227,7 +227,10 @@ $department = $project['department_id'];
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class=""><?php echo $projet_name ?></h3>
-                                    <h4 class="text-center">Project Members</h4>
+                                    <h4 class="text-center">
+                                        Project Members
+                                        <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Add Business Owner</button>
+                                    </h4>
                                     <div class="view-sec">
                                         <section class="d-flex justify-content-around">
                                             <?php
@@ -266,12 +269,7 @@ $department = $project['department_id'];
                                     </h5>
                                     <p>
                                         <?php echo $project_desc ?>
-                                        <!-- <br><br>
-                                        Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                                        luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                                        mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                                        nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                                        Etiam nec pulvinar mauris, et ultrices ipsum. -->
+                                       
                                     </p>
                                     <br>
                                     <h5>
@@ -356,6 +354,84 @@ $department = $project['department_id'];
             </div>
         </div>
     </div>
+
+
+    <!-- Business Modal Owner -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Add Stakeholder</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="validationform" data-parsley-validate="" novalidate="" action="../../actions/insertions/add_stakeholder_project.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Name</label>
+                            <div class="col-sm-4 col-lg-3 mb-3 mb-sm-0">
+                                <input id="name" type="text" required="" placeholder="First Name" name="fname" class="form-control">
+                            </div>
+                            <div class="col-sm-4 col-lg-3">
+                                <input type="text" required="" placeholder="Last Name" name="lname" class="form-control">
+                            </div>
+                            <input type="hidden" placeholder="" value="<?php echo $department ?>" name="department" class="form-control">
+                            <input type="hidden" placeholder="" value="<?php echo $project_id ?>" name="project_id" class="form-control">
+
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder role</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="role" id="" class="form-control">
+                                    <option value="<?php echo STUDENT ?>">Student</option>
+                                    <option value="<?php echo ALUMNI ?>">Alumni</option>
+                                    <option value="<?php echo LECTURER ?>">Lecturer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder gender</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <select name="gender" id="" class="form-control">
+                                    <option value="<?php echo  MALE ?>">Male</option>
+                                    <option value="<?php echo FEMALE ?>">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder E-Mail</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input type="email" required="" data-parsley-type="email" name="email" placeholder="Enter a valid e-mail" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Contact</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input data-parsley-type="number" type="number" required="" name="phone_number" placeholder="Enter only numbers" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right">Stakeholder Image</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                <input name="stakeholder_image" type="file" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-group center">
+                                <div class="col col-sm-10 col-lg-9 offset-sm-1 offset-lg-0">
+                                    <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> -->
+                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <?php if (isset($_GET['message'])) : ?>
 
         <div class='alert' style="display: none;" aria-hidden="true" data-id="<?php echo $_GET['message']; ?>"></div>
