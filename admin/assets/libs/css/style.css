@@ -1856,6 +1856,81 @@ Leftsidebar - dark
 /*-----navigation dark ---*/
 
 
+/* -----------------------
+Leftsidebar - danger
+------------------------- */
+
+.sidebar-danger {
+    background-color: #D60B0B;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
+    box-shadow: 0px 0px 28px 0px rgba(82, 63, 105, 0.13);
+    -webkit-transition: all 0.3s ease;
+}
+
+.sidebar-danger .nav-divider {
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar-danger.nav-left-sidebar .nav-link i {
+    color: #FFF;
+}
+
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-item {}
+
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-link {
+    color: #FFF;
+}
+
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-link:focus,
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-link:hover {
+    color: #fff;
+    background-color: #700505;
+    border-radius: 2px;
+}
+
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-link:focus,
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-link.active {
+    background-color: #700505;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.sidebar-danger.nav-left-sidebar .submenu .nav .nav-item .nav-link:hover {
+    color: #fff;
+    border-radius: 2px;
+    background-color: #700505;
+}
+
+.sidebar-danger.nav-left-sidebar .navbar-nav .nav-item .badge{
+    position: absolute;
+    right: 40px;
+    display: none;
+}
+
+/* Submenu */
+.nav-left-sidebar .submenu-danger {
+    padding-left: 12px;
+    padding-right: 12px;
+    /* margin-top: 5px; */
+    background: #700505;
+}
+
+.nav-left-sidebar .submenu-danger .nav .nav-item .nav-link {
+    font-size: 14px;
+    padding: 6px 12px;
+    transition: 0.3s;
+}
+
+.nav-left-sidebar .submenu .nav .nav-item .nav-link:hover {
+    color: #D60B0B;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+/*-----navigation danger ---*/
+
 /*-----------------------
 Sidebar Page Navigations
 -------------------------*/
