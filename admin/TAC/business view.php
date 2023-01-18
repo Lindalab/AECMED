@@ -242,12 +242,10 @@ $department = $business['department_id'];
                                     </div><br>
                                     <div class="view-sec text-center">
 
-                                        <h4>
-                                            Business Owners
-                                            <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target=".bd-example-modal-lg">Add Business Owner</button>
-
-                                        </h4>
-
+                                    <div class="row d-flex justify-content-center">
+                                            <h4 class="col">Business Owners</h4>
+                                            <button class="btn btn-outline-primary d-inline" data-toggle="modal" data-target="#business_grant">Add Business owner +</button>
+                                        </div>
                                         <section class="d-flex justify-content-around">
                                             <?php list_business_onwers($business_id) ?>
 
