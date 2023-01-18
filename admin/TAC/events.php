@@ -241,38 +241,7 @@ $graph_1_data = number_of_event_organised_per_year(TAC);
                                     <h4>Attendance Over The Years</h4>
                                     <div class="row">
                                         <?php event_attendance_per_year(TAC) ?>
-                                        <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3"><span>54</span></h2>
-                                                <div class="mb-0 mt-3 legend-item">
-                                                    <span class="fa-xs text-primary mr-1 legend-title "></span>
-                                                    <span class="legend-text">Year #1</span></div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>65</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> <span class="fa-xs text-secondary mr-1 legend-title">
-                                                    </span><span class="legend-text">Year #2</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>35</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> 
-                                                    <span class="fa-xs text-success mr-1 legend-title"></span>
-                                                    <span class="legend-text">Year #3</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 p-3">
-                                                <h2 class="font-weight-normal mb-3">
-                                                    <span>45</span>
-                                                </h2>
-                                                <div class="text-muted mb-0 mt-3 legend-item"> 
-                                                    <span class="fa-xs text-success mr-1 legend-title"></span>
-                                                    <span class="legend-text">Year #4</span>
-                                                </div>
-                                            </div> -->
+                                        
                                     </div>
                                 </div>
                             </div>

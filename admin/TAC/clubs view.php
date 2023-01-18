@@ -248,12 +248,7 @@
                                     </h5>
                                     <p>
                                     <?php echo $description ?>
-                                        <!-- <br><br>
-                                        Vivamus luctus non ipsum tempor placerat. Cras vitae orci velit. Maecenas sagittis nisl et sapien molestie, eget 
-                                        luctus justo hendrerit. Curabitur commodo lectus quam, vitae ullamcorper nibh hendrerit sit amet. Maecenas eget 
-                                        mauris justo. Donec at neque maximus diam tempor imperdiet. Ut convallis sollicitudin magna in mattis. Nam blandit 
-                                        nisi orci. Cras fermentum arcu erat. Curabitur mollis tellus sit amet felis fermentum dignissim. Nulla facilisi. 
-                                        Etiam nec pulvinar mauris, et ultrices ipsum. -->
+                                        
                                     </p>
                                     <br>
                                     

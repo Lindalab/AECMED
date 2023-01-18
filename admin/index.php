@@ -67,7 +67,7 @@
                             <li class="nav-item ">
                                 <a class="nav-link active" href="index.php"><i class="fa fa-fw fa-sticky-note"></i>Summary</a>
                             </li>
-                            <li class="nav-divider">
+                            <li class="nav-divider" >
                                 Ashesi Venture Incubator
                             </li>
                             <li class="nav-item ">
